@@ -6,6 +6,21 @@
 
 Main 𝑲𝑶𝑵𝑮 Panel interface image, packaged for the GitHub description and linked to the button/procedure map in `docs/PANEL_GUIDE.html`.
 
+## Documentation
+
+Start with these two guides when browsing the package on GitHub:
+
+- [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
+- [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
+
+The repository also includes interactive HTML manuals with search and navigation:
+
+- [Function Book HTML](docs/FUNCTION_BOOK.html)
+- [Panel Guide HTML](docs/PANEL_GUIDE.html)
+- [Package Summary HTML](docs/SUMMARY.html)
+
+GitHub shows the Markdown files directly in the browser. For the interactive HTML versions, download the repository or open the files from a local clone so the search and cross-page navigation run normally.
+
 Selected KP modules and related standalone tools have also been posted separately on WaveMetrics:
 
 - Author page: [https://www.wavemetrics.com/user/lykong](https://www.wavemetrics.com/user/lykong)
