@@ -234,14 +234,14 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Hamiltonian Tools", "mpc", "Complex Tensor Product", "Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians."),
     ("Hamiltonian Tools", "mpt", "Text Tensor Product", "Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable."),
     ("Hamiltonian Tools", "plust", "Text Matrix Sum", "Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms."),
-    ("Hamiltonian Tools", "s0", "Complex Pauli Identity", "Returns the 2x2 complex identity matrix used as \\(\\sigma_0\\) in numerical Pauli products."),
-    ("Hamiltonian Tools", "sx", "Complex Pauli X", "Returns the 2x2 complex \\(\\sigma_x\\) matrix for numerical Hamiltonian construction."),
-    ("Hamiltonian Tools", "sy", "Complex Pauli Y", "Returns the 2x2 complex \\(\\sigma_y\\) matrix with imaginary off-diagonal elements for numerical Hamiltonian construction."),
-    ("Hamiltonian Tools", "sz", "Complex Pauli Z", "Returns the 2x2 complex \\(\\sigma_z\\) matrix for numerical Hamiltonian construction."),
-    ("Hamiltonian Tools", "st0", "Text Pauli Identity", "Returns the 2x2 text identity matrix used as \\(\\sigma_0\\) in symbolic Pauli products."),
-    ("Hamiltonian Tools", "stx", "Text Pauli X", "Returns the 2x2 text \\(\\sigma_x\\) matrix for symbolic Hamiltonian derivation."),
-    ("Hamiltonian Tools", "sty", "Text Pauli Y", "Returns the 2x2 text \\(\\sigma_y\\) matrix using \\(i\\) and \\(-i\\) entries for symbolic Hamiltonian derivation."),
-    ("Hamiltonian Tools", "stz", "Text Pauli Z", "Returns the 2x2 text \\(\\sigma_z\\) matrix for symbolic Hamiltonian derivation."),
+    ("Hamiltonian Tools", "s0", "Complex Pauli Identity", "Returns the numerical \\(2\\times2\\) identity matrix, \\(\\sigma_0\\)."),
+    ("Hamiltonian Tools", "sx", "Complex Pauli X", "Returns the numerical \\(2\\times2\\) Pauli matrix \\(\\sigma_x\\)."),
+    ("Hamiltonian Tools", "sy", "Complex Pauli Y", "Returns the numerical \\(2\\times2\\) Pauli matrix \\(\\sigma_y\\)."),
+    ("Hamiltonian Tools", "sz", "Complex Pauli Z", "Returns the numerical \\(2\\times2\\) Pauli matrix \\(\\sigma_z\\)."),
+    ("Hamiltonian Tools", "st0", "Text Pauli Identity", "Returns the symbolic text identity matrix, \\(\\sigma_0\\)."),
+    ("Hamiltonian Tools", "stx", "Text Pauli X", "Returns the symbolic text Pauli matrix \\(\\sigma_x\\)."),
+    ("Hamiltonian Tools", "sty", "Text Pauli Y", "Returns the symbolic text Pauli matrix \\(\\sigma_y\\)."),
+    ("Hamiltonian Tools", "stz", "Text Pauli Z", "Returns the symbolic text Pauli matrix \\(\\sigma_z\\)."),
 ]
 
 FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
@@ -1597,12 +1597,41 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
   font-size: 92%;
 }
 .featured-cluster-hamiltonian-tools .featured-grid {
-  grid-template-columns: minmax(360px, 2.2fr) minmax(130px, .7fr) minmax(130px, .7fr);
-  align-items: start;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: stretch;
+}
+.featured-cluster-hamiltonian-tools .featured-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.featured-note-pauli-sequence-hamiltonian-recipe {
+  grid-column: 1 / -1;
+}
+.featured-card-builder {
+  grid-column: span 6;
+  min-height: 168px;
+}
+.featured-card-tensor {
+  grid-column: span 4;
+  min-height: 142px;
+}
+.featured-card-pauli {
+  grid-column: span 3;
+  min-height: 136px;
+}
+.featured-card-pauli p {
+  font-size: 10.2pt;
 }
 @media (max-width: 980px) {
   .featured-cluster-hamiltonian-tools .featured-grid {
     grid-template-columns: 1fr;
+  }
+  .featured-note-pauli-sequence-hamiltonian-recipe,
+  .featured-card-builder,
+  .featured-card-tensor,
+  .featured-card-pauli {
+    grid-column: auto;
   }
 }
 .summary-grid {
@@ -2011,10 +2040,11 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
     for group, title, summary, usage in FEATURED_TEXT_CARDS:
         if group not in group_order:
             group_order.append(group)
+        note_class = f"featured-note-{slugify(title)}"
         groups[group].append(
             "\n".join(
                 [
-                    '<article class="featured-card featured-note">',
+                    f'<article class="featured-card featured-note {note_class}">',
                     f'<b>{html.escape(title)}</b>',
                     f'<p>{linkify_text(summary, anchor_by_name)}</p>',
                     f'<p>{linkify_text(usage, anchor_by_name)}</p>',
@@ -2031,10 +2061,19 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
         if not entry:
             continue
         anchor = entry_anchor(entry)
+        name_slug = slugify(entry["name"])
+        extra_classes = [f"featured-card-fn-{name_slug}"]
+        if entry["name"] in {"automatrixT", "automatrixC"}:
+            extra_classes.append("featured-card-builder")
+        if entry["name"] in {"mpc", "mpt", "plust"}:
+            extra_classes.append("featured-card-tensor")
+        if entry["name"] in {"s0", "sx", "sy", "sz", "st0", "stx", "sty", "stz"}:
+            extra_classes.append("featured-card-pauli")
+        card_class = "featured-card " + " ".join(extra_classes)
         groups[group].append(
             "\n".join(
                 [
-                    '<article class="featured-card">',
+                    f'<article class="{card_class}">',
                     f'<a href="#{anchor}">{html.escape(entry["name"])}()</a>',
                     f'<b>{html.escape(title)}</b>',
                     f'<p>{linkify_text(summary, anchor_by_name)}</p>',

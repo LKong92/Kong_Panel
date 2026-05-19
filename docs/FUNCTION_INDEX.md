@@ -125,14 +125,14 @@ Use the Pauli code convention \[\begin{aligned}0&\rightarrow\sigma_0,&1&\rightar
 - `mpc()`: **Complex Tensor Product.** Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians.
 - `mpt()`: **Text Tensor Product.** Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable.
 - `plust()`: **Text Matrix Sum.** Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms.
-- `s0()`: **Complex Pauli Identity.** Returns the 2x2 complex identity matrix used as \(\sigma_0\) in numerical Pauli products.
-- `sx()`: **Complex Pauli X.** Returns the 2x2 complex \(\sigma_x\) matrix for numerical Hamiltonian construction.
-- `sy()`: **Complex Pauli Y.** Returns the 2x2 complex \(\sigma_y\) matrix with imaginary off-diagonal elements for numerical Hamiltonian construction.
-- `sz()`: **Complex Pauli Z.** Returns the 2x2 complex \(\sigma_z\) matrix for numerical Hamiltonian construction.
-- `st0()`: **Text Pauli Identity.** Returns the 2x2 text identity matrix used as \(\sigma_0\) in symbolic Pauli products.
-- `stx()`: **Text Pauli X.** Returns the 2x2 text \(\sigma_x\) matrix for symbolic Hamiltonian derivation.
-- `sty()`: **Text Pauli Y.** Returns the 2x2 text \(\sigma_y\) matrix using \(i\) and \(-i\) entries for symbolic Hamiltonian derivation.
-- `stz()`: **Text Pauli Z.** Returns the 2x2 text \(\sigma_z\) matrix for symbolic Hamiltonian derivation.
+- `s0()`: **Complex Pauli Identity.** Returns the numerical \(2\times2\) identity matrix, \(\sigma_0\).
+- `sx()`: **Complex Pauli X.** Returns the numerical \(2\times2\) Pauli matrix \(\sigma_x\).
+- `sy()`: **Complex Pauli Y.** Returns the numerical \(2\times2\) Pauli matrix \(\sigma_y\).
+- `sz()`: **Complex Pauli Z.** Returns the numerical \(2\times2\) Pauli matrix \(\sigma_z\).
+- `st0()`: **Text Pauli Identity.** Returns the symbolic text identity matrix, \(\sigma_0\).
+- `stx()`: **Text Pauli X.** Returns the symbolic text Pauli matrix \(\sigma_x\).
+- `sty()`: **Text Pauli Y.** Returns the symbolic text Pauli matrix \(\sigma_y\).
+- `stz()`: **Text Pauli Z.** Returns the symbolic text Pauli matrix \(\sigma_z\).
 
 ## Start Here: Main Panel, Menus, and Window Entries
 
