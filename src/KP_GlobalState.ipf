@@ -28,11 +28,11 @@ Function KP_EnsurePhysicalConstants()
 	// Common SI constants used by modeling and command-line calculations.
 	Variable/G root:q0 = 1.602176634e-19		// elementary charge [C]
 	Variable/G root:h = 6.62607015e-34		// Planck constant [J s]
-	Variable/G root:G0 = root:q0^2 / root:h	// conductance quantum e^2/h [S]
+	Variable/G root:G0 = 3.87404586493e-5	// conductance quantum e^2/h [S]
 	Variable/G root:muB = 9.2740100783e-24	// Bohr magneton [J/T]
 	Variable/G root:kB = 1.380649e-23		// Boltzmann constant [J/K]
-	Variable/G root:eV = root:q0			// electron volt [J]
-	Variable/G root:meV = 1e-3 * root:eV	// millielectron volt [J]
+	Variable/G root:eV = 1.602176634e-19	// electron volt [J]
+	Variable/G root:meV = 1.602176634e-22	// millielectron volt [J]
 	Variable/G root:m0 = 9.1093837015e-31	// electron mass [kg]
 	Variable/G root:epslon0 = 8.8541878128e-12	// vacuum permittivity [F/m]; keeps the historical KP spelling
 End
