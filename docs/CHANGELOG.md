@@ -7,6 +7,7 @@ This file is a polished GitHub-facing version of the original `KP update log.rtf
 - Exported 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 procedure pages from `template.pxp` through Igor Pro.
 - Reorganized the package into source files under `src/`, with `src/KongPanel.ipf` as the umbrella include file.
 - Added `Load_KongPanel.ipf`, the recommended loader that compiles all panel action procedures before opening KP.
+- Added `templates/KongPanel_Template_20260520.pxp`, a clean self-contained Igor experiment template for per-dataset use.
 - Made `Kong_Igor_panel.ipf` self-contained, so opening the panel file also includes the required source files instead of creating a button-only shell.
 - Using Codex assistance, rewrote and organically integrated the KP-used Nanonis loading routines that previously depended on KM macro into `KP_NanonisLoaders.ipf`.
 - Removed the runtime dependency on Kohsaka Macro (KM) from the KP Nanonis `.3ds`, `.sxm`, and `.nsp` linecut, grid, and topography workflows.

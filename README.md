@@ -13,6 +13,7 @@ Start with these two guides when browsing the package on GitHub:
 - [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
 - [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
 - [Startup State](docs/STARTUP_STATE.md): exact list of color-table, physical-constant, graph/color, popup, and compatibility globals recreated when the panel starts in a clean Igor experiment.
+- [Ready-to-use PXP template](templates/KongPanel_Template_20260520.pxp): self-contained Igor experiment template with the KP procedure pages and startup objects already packed in.
 
 The repository also includes interactive HTML manuals with search and navigation. After GitHub Pages is enabled for this repository, these links open the rendered manuals directly in a browser:
 
@@ -52,10 +53,16 @@ Nature 640, 55-61 (2025). https://doi.org/10.1038/s41586-025-08703-x
 - Custom color-table waves are loaded from `src/KP_NewColorTables.itx` when the panel opens.
 - Startup globals saved as Igor experiment objects in `template.pxp` are recreated from `src/KP_GlobalState.ipf` when the panel opens.
 - `src/Kong_Igor_panel.ipf` is self-contained: opening that panel source also includes all of the action-procedure files used by its controls.
+- A clean self-contained Igor experiment template is included at `templates/KongPanel_Template_20260520.pxp`.
 
 ## Quick Start
 
-𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 is distributed as an Igor Pro 9 source package. The loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
+𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 can be used in two ways:
+
+- **Source install:** copy `src/` into Igor's `User Procedures` area, include `Load_KongPanel.ipf`, and compile. This keeps KP available from any new Igor experiment.
+- **PXP template:** copy `templates/KongPanel_Template_20260520.pxp` into a dataset folder and open that copy directly. This starts from a self-contained Igor experiment with the KP procedure pages, custom color tables, physical constants, startup globals, and main panel template already packed in.
+
+For the source install, the loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
 
 ## Prerequisite: Install Igor Pro 9
 
@@ -98,7 +105,22 @@ You can also explicitly open the loader file using `File -> Open File -> Procedu
 
 ## Alternative: Per-Experiment PXP Template
 
-If you prefer each dataset to live in its own self-contained Igor experiment, you can make a KP template `.pxp` once and then copy that template into each new data folder.
+If you prefer each dataset to live in its own self-contained Igor experiment, use the included clean template:
+
+```text
+templates/KongPanel_Template_20260520.pxp
+```
+
+Recommended workflow:
+
+1. Create a new folder for the dataset you want to analyze.
+2. Copy `templates/KongPanel_Template_20260520.pxp` into that folder.
+3. Rename the copied file for the dataset or sample if desired.
+4. Open the copied `.pxp` in Igor Pro 9 and load/analyze the data there.
+
+The template has a short cleaned command history, opens without requiring the source files to be in `User Procedures`, and contains the adopted KP procedure pages plus the required startup objects. This mode is convenient for keeping each experiment folder portable and independent.
+
+To rebuild your own template from the source package:
 
 1. Start from a clean Igor Pro 9 experiment.
 2. Load and compile KP using the User Procedures method above, or explicitly open the KP procedure files from the local `src/` folder.
