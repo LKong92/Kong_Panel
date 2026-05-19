@@ -10,4 +10,5 @@
 - KP can now load the KP-used Nanonis `.3ds`, `.sxm`, and `.nsp` workflows without requiring the KM package at runtime.
 - Updated `AutoNanislinecut`, `autoloadgrid`, and topography extraction paths to call the KP-local Nanonis loader.
 - Added source initialization for the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`, so clean source installs provide the same modeling constants.
+- Added source restoration for root-level globals preserved in `template.pxp`, including graph/color/popup state variables and strings used by older KP workflows.
 - Added README, changelog, code inventory, and Git ignore rules for GitHub release.

@@ -11,19 +11,6 @@
 //////////////////////////////////////////////////////////////////////////
 //**********************************************************************//
 
-// Ensure common SI constants for source-based KP sessions.
-Function KP_EnsurePhysicalConstants()
-	// Common SI constants used by modeling and command-line calculations.
-	Variable/G q0 = 1.602176634e-19			// elementary charge [C]
-	Variable/G h = 6.62607015e-34			// Planck constant [J s]
-	Variable/G G0 = q0^2 / h				// conductance quantum e^2/h [S]
-	Variable/G muB = 9.2740100783e-24		// Bohr magneton [J/T]
-	Variable/G kB = 1.380649e-23			// Boltzmann constant [J/K]
-	Variable/G eV = q0						// electron volt [J]
-	Variable/G meV = 1e-3 * eV				// millielectron volt [J]
-	Variable/G m0 = 9.1093837015e-31		// electron mass [kg]
-End
-
 //# 01. New version Text; equation (2) of PRB 98, 214503
 Function NewDerivPRB98_214503_eq2_T()
 	//** Create Parameter waves

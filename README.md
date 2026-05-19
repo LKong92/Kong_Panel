@@ -269,6 +269,7 @@ KP contains model simulators and teaching/research calculations that can be laun
 - PDW, CDW, multi-order, vortex-pair, topological-defect, and 2D PDM simulations.
 - Temperature convolution, batch temperature convolution, RCSJ model, and P(E) theory calculations.
 - Global SI constants for command-line and modeling work: `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`.
+- Source-install startup restoration for root-level template globals used by older graph/color/popup workflows, including `topgraph*`, `colorsetedc*`, `colorinverseedc`, `zn_cons`, and related strings.
 - Matrix-Hamiltonian construction with complex/text Pauli matrices (`s0/sx/sy/sz`, `st0/stx/sty/stz`), tensor products (`mpc/mpn/mpt`), text matrix addition (`plust`), and automated Pauli-sequence builders (`automatrixT/automatrixC`).
 - Band calculations and model-Hamiltonian demonstrations.
 

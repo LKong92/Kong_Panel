@@ -229,6 +229,8 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Drift, strain, and correction workflows", "correct2Dmapc", "Gate-Leak Map Correction", "Shifts gate-dependent dI/dV curves individually and recombines them into a corrected 2D gate map."),
     ("Graph annotation and color helpers", "color3s_for3dm", "Subwindow Color Range", "Calculates a robust symmetric color range for a 3D-viewer subwindow image."),
     ("Graph annotation and color helpers", "Drawarrow", "Lattice Direction Arrows", "Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length."),
+    ("Physical constants and Hamiltonian tools", "KP_EnsureStartupGlobals", "Startup Global State", "Runs the source-install startup state restoration: SI constants plus the template root globals that older panel workflows expect to exist."),
+    ("Physical constants and Hamiltonian tools", "KP_EnsureTemplateRootGlobals", "Template Root Globals", "Recreates the root-level numeric and string globals that were saved in the original template experiment, using create-if-missing behavior so existing analysis state is not overwritten."),
     ("Physical constants and Hamiltonian tools", "KP_EnsurePhysicalConstants", "Load SI Constants", "Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0` so they can be used directly in Igor expressions, procedures, and modeling notebooks."),
     ("Physical constants and Hamiltonian tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
     ("Physical constants and Hamiltonian tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
@@ -254,6 +256,12 @@ FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
         "Physical constants and units",
         "The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0=q0^2/h` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV=q0` converts electron-volts to joules, `meV=1e-3*eV` converts millielectron-volts to joules, and `m0` is the electron mass in kilograms.",
         "After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.",
+    ),
+    (
+        "Physical constants and Hamiltonian tools",
+        "Template root globals",
+        "The source version also restores root-level globals that were stored as experiment objects in `template.pxp`: graph/color state variables such as `topgraphnum`, `topimagemin`, `topimagemax`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `zn_cons`, and strings such as `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.",
+        "`KP_EnsureTemplateRootGlobals()` creates these objects only when they are missing. This protects older display, color-table, and popup workflows that assume the globals exist, while avoiding resets when the user already has active graph state in the experiment.",
     ),
     (
         "Physical constants and Hamiltonian tools",

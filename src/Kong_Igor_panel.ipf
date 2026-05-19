@@ -6,6 +6,7 @@
 // Opening this file compiles the panel and all action procedures used by its controls.
 
 #include "KP_ColorTables"
+#include "KP_GlobalState"
 #include "Procedure"
 #include "KP_NanonisLoaders"
 #include "ModelingTunneling"
@@ -32,7 +33,7 @@ Window Kong_Igor_panel() : Panel
 	PauseUpdate; Silent 1		// building window...
 	// Source installs do not carry template.pxp data waves, so restore color tables before controls read them.
 	KP_EnsureNewColorTables()
-	KP_EnsurePhysicalConstants()
+	KP_EnsureStartupGlobals()
 	NewPanel /K=2 /W=(909,66,1475,910) as "Kong_Igor_panel"
 	ModifyPanel cbRGB=(0,52224,0)
 	SetDrawLayer UserBack

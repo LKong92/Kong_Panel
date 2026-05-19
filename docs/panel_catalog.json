@@ -1443,7 +1443,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 223,
+    "line": 224,
     "window": "Kong_Igor_panel",
     "control": "button14",
     "control_kind": "Button",
@@ -1457,7 +1457,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 225,
+    "line": 226,
     "window": "Kong_Igor_panel",
     "control": "button_Generatecut",
     "control_kind": "Button",
@@ -1471,7 +1471,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 227,
+    "line": 228,
     "window": "Kong_Igor_panel",
     "control": "button_mat3d_pi",
     "control_kind": "Button",
@@ -1485,7 +1485,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 229,
+    "line": 230,
     "window": "Kong_Igor_panel",
     "control": "button5",
     "control_kind": "Button",
@@ -1499,7 +1499,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 231,
+    "line": 232,
     "window": "Kong_Igor_panel",
     "control": "button6",
     "control_kind": "Button",
@@ -1513,7 +1513,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 233,
+    "line": 234,
     "window": "Kong_Igor_panel",
     "control": "button7",
     "control_kind": "Button",
@@ -1527,7 +1527,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 235,
+    "line": 236,
     "window": "Kong_Igor_panel",
     "control": "button8",
     "control_kind": "Button",
@@ -1541,7 +1541,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 237,
+    "line": 238,
     "window": "Kong_Igor_panel",
     "control": "button12",
     "control_kind": "Button",
@@ -1555,7 +1555,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 239,
+    "line": 240,
     "window": "Kong_Igor_panel",
     "control": "button13",
     "control_kind": "Button",
@@ -1569,7 +1569,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 241,
+    "line": 242,
     "window": "Kong_Igor_panel",
     "control": "button15",
     "control_kind": "Button",
@@ -1583,7 +1583,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 243,
+    "line": 244,
     "window": "Kong_Igor_panel",
     "control": "button16",
     "control_kind": "Button",
@@ -1597,7 +1597,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 245,
+    "line": 246,
     "window": "Kong_Igor_panel",
     "control": "button17",
     "control_kind": "Button",
@@ -1611,7 +1611,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 247,
+    "line": 248,
     "window": "Kong_Igor_panel",
     "control": "button18",
     "control_kind": "Button",
@@ -1625,7 +1625,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 249,
+    "line": 250,
     "window": "Kong_Igor_panel",
     "control": "button19",
     "control_kind": "Button",
@@ -1639,7 +1639,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 251,
+    "line": 252,
     "window": "Kong_Igor_panel",
     "control": "button20",
     "control_kind": "Button",
@@ -1653,7 +1653,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 253,
+    "line": 254,
     "window": "Kong_Igor_panel",
     "control": "button21",
     "control_kind": "Button",
@@ -1667,7 +1667,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 255,
+    "line": 256,
     "window": "Kong_Igor_panel",
     "control": "button22",
     "control_kind": "Button",
@@ -1681,7 +1681,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 257,
+    "line": 258,
     "window": "Kong_Igor_panel",
     "control": "button23",
     "control_kind": "Button",
@@ -1695,7 +1695,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 259,
+    "line": 260,
     "window": "Kong_Igor_panel",
     "control": "button24",
     "control_kind": "Button",
@@ -1709,7 +1709,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 261,
+    "line": 262,
     "window": "Kong_Igor_panel",
     "control": "button25",
     "control_kind": "Button",
@@ -1723,7 +1723,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 263,
+    "line": 264,
     "window": "Kong_Igor_panel",
     "control": "button26",
     "control_kind": "Button",
@@ -1737,7 +1737,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 265,
+    "line": 266,
     "window": "Kong_Igor_panel",
     "control": "button45",
     "control_kind": "Button",
@@ -1751,7 +1751,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 267,
+    "line": 268,
     "window": "Kong_Igor_panel",
     "control": "button46",
     "control_kind": "Button",
@@ -1765,7 +1765,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 269,
+    "line": 270,
     "window": "Kong_Igor_panel",
     "control": "button27",
     "control_kind": "Button",
@@ -1779,7 +1779,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 271,
+    "line": 272,
     "window": "Kong_Igor_panel",
     "control": "button30",
     "control_kind": "Button",
@@ -1793,7 +1793,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 273,
+    "line": 274,
     "window": "Kong_Igor_panel",
     "control": "button44",
     "control_kind": "Button",
@@ -1807,7 +1807,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 275,
+    "line": 276,
     "window": "Kong_Igor_panel",
     "control": "button31",
     "control_kind": "Button",
@@ -1821,7 +1821,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 277,
+    "line": 278,
     "window": "Kong_Igor_panel",
     "control": "button2001",
     "control_kind": "Button",
@@ -1835,7 +1835,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 279,
+    "line": 280,
     "window": "Kong_Igor_panel",
     "control": "button32",
     "control_kind": "Button",
@@ -1849,7 +1849,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 281,
+    "line": 282,
     "window": "Kong_Igor_panel",
     "control": "button34",
     "control_kind": "Button",
@@ -1863,7 +1863,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 283,
+    "line": 284,
     "window": "Kong_Igor_panel",
     "control": "button36",
     "control_kind": "Button",
@@ -1877,7 +1877,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 285,
+    "line": 286,
     "window": "Kong_Igor_panel",
     "control": "button37",
     "control_kind": "Button",
@@ -1891,7 +1891,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 287,
+    "line": 288,
     "window": "Kong_Igor_panel",
     "control": "button38",
     "control_kind": "Button",
@@ -1905,7 +1905,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 289,
+    "line": 290,
     "window": "Kong_Igor_panel",
     "control": "button39",
     "control_kind": "Button",
@@ -1919,7 +1919,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 291,
+    "line": 292,
     "window": "Kong_Igor_panel",
     "control": "button40",
     "control_kind": "Button",
@@ -1933,7 +1933,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 293,
+    "line": 294,
     "window": "Kong_Igor_panel",
     "control": "button43",
     "control_kind": "Button",
@@ -1947,7 +1947,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 295,
+    "line": 296,
     "window": "Kong_Igor_panel",
     "control": "but_mat3dHD",
     "control_kind": "Button",
@@ -1961,7 +1961,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 297,
+    "line": 298,
     "window": "Kong_Igor_panel",
     "control": "but_rm_simpleedc",
     "control_kind": "Button",
@@ -1975,7 +1975,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 299,
+    "line": 300,
     "window": "Kong_Igor_panel",
     "control": "but_rm_mat",
     "control_kind": "Button",
@@ -1989,7 +1989,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 301,
+    "line": 302,
     "window": "Kong_Igor_panel",
     "control": "but_sym_edc",
     "control_kind": "Button",
@@ -2003,7 +2003,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 303,
+    "line": 304,
     "window": "Kong_Igor_panel",
     "control": "Data_type",
     "control_kind": "PopupMenu",
@@ -2017,7 +2017,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 305,
+    "line": 306,
     "window": "Kong_Igor_panel",
     "control": "button_copy_traces",
     "control_kind": "Button",
@@ -2031,7 +2031,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 307,
+    "line": 308,
     "window": "Kong_Igor_panel",
     "control": "tab_matrices",
     "control_kind": "TabControl",
@@ -2045,7 +2045,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 324,
+    "line": 325,
     "window": "Kong_Igor_panel",
     "control": "buttonefedc",
     "control_kind": "Button",
@@ -2059,7 +2059,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 326,
+    "line": 327,
     "window": "Kong_Igor_panel",
     "control": "buttonEFimage",
     "control_kind": "Button",
@@ -2073,7 +2073,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 328,
+    "line": 329,
     "window": "Kong_Igor_panel",
     "control": "coloredcnow",
     "control_kind": "Button",
@@ -2087,7 +2087,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 330,
+    "line": 331,
     "window": "Kong_Igor_panel",
     "control": "inversecoloredc",
     "control_kind": "PopupMenu",
@@ -2101,7 +2101,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 332,
+    "line": 333,
     "window": "Kong_Igor_panel",
     "control": "edccolorset",
     "control_kind": "PopupMenu",
@@ -2115,7 +2115,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 337,
+    "line": 338,
     "window": "Kong_Igor_panel",
     "control": "buttonintbe",
     "control_kind": "Button",
@@ -2129,7 +2129,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 339,
+    "line": 340,
     "window": "Kong_Igor_panel",
     "control": "buttonintke",
     "control_kind": "Button",
@@ -2143,7 +2143,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 341,
+    "line": 342,
     "window": "Kong_Igor_panel",
     "control": "buttonbeangle",
     "control_kind": "Button",
@@ -2157,7 +2157,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 343,
+    "line": 344,
     "window": "Kong_Igor_panel",
     "control": "buttonKEangle",
     "control_kind": "Button",
@@ -2171,7 +2171,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 345,
+    "line": 346,
     "window": "Kong_Igor_panel",
     "control": "buttonBEvsmom_pi",
     "control_kind": "Button",
@@ -2185,7 +2185,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 348,
+    "line": 349,
     "window": "Kong_Igor_panel",
     "control": "buttonBEvsmom_pi1",
     "control_kind": "Button",
@@ -2199,7 +2199,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 353,
+    "line": 354,
     "window": "Kong_Igor_panel",
     "control": "mirror_onoff",
     "control_kind": "PopupMenu",
@@ -2213,7 +2213,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 355,
+    "line": 356,
     "window": "Kong_Igor_panel",
     "control": "popupthicks_inout",
     "control_kind": "PopupMenu",
@@ -2227,7 +2227,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 357,
+    "line": 358,
     "window": "Kong_Igor_panel",
     "control": "button33",
     "control_kind": "Button",
@@ -2241,7 +2241,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 359,
+    "line": 360,
     "window": "Kong_Igor_panel",
     "control": "button35",
     "control_kind": "Button",
@@ -2255,7 +2255,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 361,
+    "line": 362,
     "window": "Kong_Igor_panel",
     "control": "for_copy_TB2f",
     "control_kind": "Button",
@@ -2269,7 +2269,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 363,
+    "line": 364,
     "window": "Kong_Igor_panel",
     "control": "for_image_fs2f",
     "control_kind": "Button",
@@ -2283,7 +2283,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 365,
+    "line": 366,
     "window": "Kong_Igor_panel",
     "control": "for_image_fsH",
     "control_kind": "Button",
@@ -2297,7 +2297,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 367,
+    "line": 368,
     "window": "Kong_Igor_panel",
     "control": "button41",
     "control_kind": "Button",
@@ -2311,7 +2311,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 369,
+    "line": 370,
     "window": "Kong_Igor_panel",
     "control": "button42",
     "control_kind": "Button",
@@ -2325,7 +2325,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 371,
+    "line": 372,
     "window": "Kong_Igor_panel",
     "control": "button47",
     "control_kind": "Button",
@@ -2339,7 +2339,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 373,
+    "line": 374,
     "window": "Kong_Igor_panel",
     "control": "button48",
     "control_kind": "Button",
@@ -2353,7 +2353,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 375,
+    "line": 376,
     "window": "Kong_Igor_panel",
     "control": "button49",
     "control_kind": "Button",
@@ -2367,7 +2367,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 377,
+    "line": 378,
     "window": "Kong_Igor_panel",
     "control": "button50",
     "control_kind": "Button",
@@ -2381,7 +2381,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 379,
+    "line": 380,
     "window": "Kong_Igor_panel",
     "control": "button51",
     "control_kind": "Button",
@@ -2395,7 +2395,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 381,
+    "line": 382,
     "window": "Kong_Igor_panel",
     "control": "button52",
     "control_kind": "Button",
@@ -2409,7 +2409,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 383,
+    "line": 384,
     "window": "Kong_Igor_panel",
     "control": "button55",
     "control_kind": "Button",
@@ -2423,7 +2423,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 385,
+    "line": 386,
     "window": "Kong_Igor_panel",
     "control": "button56",
     "control_kind": "Button",
@@ -2437,7 +2437,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 387,
+    "line": 388,
     "window": "Kong_Igor_panel",
     "control": "button58",
     "control_kind": "Button",
@@ -2451,7 +2451,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 389,
+    "line": 390,
     "window": "Kong_Igor_panel",
     "control": "button59",
     "control_kind": "Button",
@@ -2465,7 +2465,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 391,
+    "line": 392,
     "window": "Kong_Igor_panel",
     "control": "buttonini",
     "control_kind": "Button",
@@ -2479,7 +2479,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 394,
+    "line": 395,
     "window": "Kong_Igor_panel",
     "control": "buttonhelptools1",
     "control_kind": "Button",
@@ -2493,7 +2493,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 397,
+    "line": 398,
     "window": "Kong_Igor_panel",
     "control": "buttonhelptools2",
     "control_kind": "Button",
@@ -2507,7 +2507,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 400,
+    "line": 401,
     "window": "Kong_Igor_panel",
     "control": "buttonhelptools4",
     "control_kind": "Button",
@@ -2521,7 +2521,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 403,
+    "line": 404,
     "window": "Kong_Igor_panel",
     "control": "button4",
     "control_kind": "Button",
@@ -2535,7 +2535,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 405,
+    "line": 406,
     "window": "Kong_Igor_panel",
     "control": "button10",
     "control_kind": "Button",
@@ -2549,7 +2549,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 407,
+    "line": 408,
     "window": "Kong_Igor_panel",
     "control": "button60",
     "control_kind": "Button",
@@ -2563,7 +2563,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 409,
+    "line": 410,
     "window": "Kong_Igor_panel",
     "control": "button61",
     "control_kind": "Button",
@@ -2577,7 +2577,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 413,
+    "line": 414,
     "window": "Kong_Igor_panel",
     "control": "button63",
     "control_kind": "Button",
@@ -2591,7 +2591,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 415,
+    "line": 416,
     "window": "Kong_Igor_panel",
     "control": "button64",
     "control_kind": "Button",
@@ -2605,7 +2605,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 417,
+    "line": 418,
     "window": "Kong_Igor_panel",
     "control": "button65",
     "control_kind": "Button",
@@ -2619,7 +2619,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 419,
+    "line": 420,
     "window": "Kong_Igor_panel",
     "control": "button66",
     "control_kind": "Button",
@@ -2633,7 +2633,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 421,
+    "line": 422,
     "window": "Kong_Igor_panel",
     "control": "button67",
     "control_kind": "Button",
@@ -2647,7 +2647,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 423,
+    "line": 424,
     "window": "Kong_Igor_panel",
     "control": "button68",
     "control_kind": "Button",
@@ -2661,7 +2661,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 425,
+    "line": 426,
     "window": "Kong_Igor_panel",
     "control": "button69",
     "control_kind": "Button",
@@ -2675,7 +2675,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 427,
+    "line": 428,
     "window": "Kong_Igor_panel",
     "control": "button70",
     "control_kind": "Button",
@@ -2689,7 +2689,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 429,
+    "line": 430,
     "window": "Kong_Igor_panel",
     "control": "button71",
     "control_kind": "Button",
@@ -2703,7 +2703,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 431,
+    "line": 432,
     "window": "Kong_Igor_panel",
     "control": "button72",
     "control_kind": "Button",
@@ -2717,7 +2717,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 433,
+    "line": 434,
     "window": "Kong_Igor_panel",
     "control": "button108",
     "control_kind": "Button",
@@ -2731,7 +2731,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 435,
+    "line": 436,
     "window": "Kong_Igor_panel",
     "control": "button74",
     "control_kind": "Button",
@@ -2745,7 +2745,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 437,
+    "line": 438,
     "window": "Kong_Igor_panel",
     "control": "setvargrnum",
     "control_kind": "SetVariable",
@@ -2759,7 +2759,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 440,
+    "line": 441,
     "window": "Kong_Igor_panel",
     "control": "topimagetop",
     "control_kind": "Slider",
@@ -2773,7 +2773,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 443,
+    "line": 444,
     "window": "Kong_Igor_panel",
     "control": "topimagebot",
     "control_kind": "Slider",
@@ -2787,7 +2787,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 445,
+    "line": 446,
     "window": "Kong_Igor_panel",
     "control": "button_a_up",
     "control_kind": "Button",
@@ -2801,7 +2801,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 447,
+    "line": 448,
     "window": "Kong_Igor_panel",
     "control": "button_a_down",
     "control_kind": "Button",
@@ -2815,7 +2815,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 449,
+    "line": 450,
     "window": "Kong_Igor_panel",
     "control": "button_0_up",
     "control_kind": "Button",
@@ -2829,7 +2829,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 451,
+    "line": 452,
     "window": "Kong_Igor_panel",
     "control": "button_0_down",
     "control_kind": "Button",
@@ -2843,7 +2843,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 453,
+    "line": 454,
     "window": "Kong_Igor_panel",
     "control": "button_a_both",
     "control_kind": "Button",
@@ -2857,7 +2857,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 456,
+    "line": 457,
     "window": "Kong_Igor_panel",
     "control": "popupmatcolor",
     "control_kind": "PopupMenu",
@@ -2871,7 +2871,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 458,
+    "line": 459,
     "window": "Kong_Igor_panel",
     "control": "popupinvmatcolor",
     "control_kind": "PopupMenu",
@@ -2885,7 +2885,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 463,
+    "line": 464,
     "window": "Kong_Igor_panel",
     "control": "button75",
     "control_kind": "Button",
@@ -2899,7 +2899,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 465,
+    "line": 466,
     "window": "Kong_Igor_panel",
     "control": "button76",
     "control_kind": "Button",
@@ -2913,7 +2913,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 467,
+    "line": 468,
     "window": "Kong_Igor_panel",
     "control": "button77",
     "control_kind": "Button",
@@ -2927,7 +2927,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 469,
+    "line": 470,
     "window": "Kong_Igor_panel",
     "control": "button78",
     "control_kind": "Button",
@@ -2941,7 +2941,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 471,
+    "line": 472,
     "window": "Kong_Igor_panel",
     "control": "button79",
     "control_kind": "Button",
@@ -2955,7 +2955,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 473,
+    "line": 474,
     "window": "Kong_Igor_panel",
     "control": "button80",
     "control_kind": "Button",
@@ -2969,7 +2969,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 475,
+    "line": 476,
     "window": "Kong_Igor_panel",
     "control": "button81",
     "control_kind": "Button",
@@ -2983,7 +2983,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 477,
+    "line": 478,
     "window": "Kong_Igor_panel",
     "control": "button82",
     "control_kind": "Button",
@@ -2997,7 +2997,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 479,
+    "line": 480,
     "window": "Kong_Igor_panel",
     "control": "button83",
     "control_kind": "Button",
@@ -3011,7 +3011,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 481,
+    "line": 482,
     "window": "Kong_Igor_panel",
     "control": "button84",
     "control_kind": "Button",
@@ -3025,7 +3025,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 483,
+    "line": 484,
     "window": "Kong_Igor_panel",
     "control": "button85",
     "control_kind": "Button",
@@ -3039,7 +3039,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 486,
+    "line": 487,
     "window": "Kong_Igor_panel",
     "control": "button86",
     "control_kind": "Button",
@@ -3053,7 +3053,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 489,
+    "line": 490,
     "window": "Kong_Igor_panel",
     "control": "button87",
     "control_kind": "Button",
@@ -3067,7 +3067,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 492,
+    "line": 493,
     "window": "Kong_Igor_panel",
     "control": "button88",
     "control_kind": "Button",
@@ -3081,7 +3081,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 494,
+    "line": 495,
     "window": "Kong_Igor_panel",
     "control": "button89",
     "control_kind": "Button",
@@ -3095,7 +3095,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 496,
+    "line": 497,
     "window": "Kong_Igor_panel",
     "control": "button90",
     "control_kind": "Button",
@@ -3109,7 +3109,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 498,
+    "line": 499,
     "window": "Kong_Igor_panel",
     "control": "button91",
     "control_kind": "Button",
@@ -3123,7 +3123,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 500,
+    "line": 501,
     "window": "Kong_Igor_panel",
     "control": "button92",
     "control_kind": "Button",
@@ -3137,7 +3137,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 502,
+    "line": 503,
     "window": "Kong_Igor_panel",
     "control": "button93",
     "control_kind": "Button",
@@ -3151,7 +3151,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 505,
+    "line": 506,
     "window": "Kong_Igor_panel",
     "control": "button94",
     "control_kind": "Button",
@@ -3165,7 +3165,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 508,
+    "line": 509,
     "window": "Kong_Igor_panel",
     "control": "button95",
     "control_kind": "Button",
@@ -3179,7 +3179,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 510,
+    "line": 511,
     "window": "Kong_Igor_panel",
     "control": "button111",
     "control_kind": "Button",
@@ -3193,7 +3193,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 512,
+    "line": 513,
     "window": "Kong_Igor_panel",
     "control": "button112",
     "control_kind": "Button",
@@ -3207,7 +3207,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 514,
+    "line": 515,
     "window": "Kong_Igor_panel",
     "control": "button113",
     "control_kind": "Button",
@@ -3221,7 +3221,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 516,
+    "line": 517,
     "window": "Kong_Igor_panel",
     "control": "button114",
     "control_kind": "Button",
@@ -3235,7 +3235,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 518,
+    "line": 519,
     "window": "Kong_Igor_panel",
     "control": "button115",
     "control_kind": "Button",
@@ -3249,7 +3249,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 520,
+    "line": 521,
     "window": "Kong_Igor_panel",
     "control": "lykongmap",
     "control_kind": "Button",
@@ -3263,7 +3263,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 522,
+    "line": 523,
     "window": "Kong_Igor_panel",
     "control": "button00",
     "control_kind": "Button",
@@ -3277,7 +3277,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 524,
+    "line": 525,
     "window": "Kong_Igor_panel",
     "control": "button02",
     "control_kind": "Button",
@@ -3291,7 +3291,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 526,
+    "line": 527,
     "window": "Kong_Igor_panel",
     "control": "lykongmap2",
     "control_kind": "Button",
@@ -3305,7 +3305,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 528,
+    "line": 529,
     "window": "Kong_Igor_panel",
     "control": "MBEkly1",
     "control_kind": "Button",
@@ -3319,7 +3319,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 530,
+    "line": 531,
     "window": "Kong_Igor_panel",
     "control": "MBEkly2",
     "control_kind": "Button",
@@ -3333,7 +3333,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 532,
+    "line": 533,
     "window": "Kong_Igor_panel",
     "control": "AuFit",
     "control_kind": "Button",
@@ -3347,7 +3347,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 534,
+    "line": 535,
     "window": "Kong_Igor_panel",
     "control": "Normformap",
     "control_kind": "Button",
@@ -3361,7 +3361,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 536,
+    "line": 537,
     "window": "Kong_Igor_panel",
     "control": "button116",
     "control_kind": "Button",
@@ -3375,7 +3375,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 538,
+    "line": 539,
     "window": "Kong_Igor_panel",
     "control": "Normformap1",
     "control_kind": "Button",
@@ -3389,7 +3389,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 540,
+    "line": 541,
     "window": "Kong_Igor_panel",
     "control": "Map51",
     "control_kind": "Button",
@@ -3403,7 +3403,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 542,
+    "line": 543,
     "window": "Kong_Igor_panel",
     "control": "button_LoadAll",
     "control_kind": "Button",
@@ -3417,7 +3417,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 544,
+    "line": 545,
     "window": "Kong_Igor_panel",
     "control": "button_LoadDA30SSRF",
     "control_kind": "Button",
@@ -3431,7 +3431,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 546,
+    "line": 547,
     "window": "Kong_Igor_panel",
     "control": "button3",
     "control_kind": "Button",
@@ -3445,7 +3445,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 548,
+    "line": 549,
     "window": "Kong_Igor_panel",
     "control": "button05",
     "control_kind": "Button",
@@ -3459,7 +3459,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 550,
+    "line": 551,
     "window": "Kong_Igor_panel",
     "control": "PeakvsGate",
     "control_kind": "Button",
@@ -3473,7 +3473,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 552,
+    "line": 553,
     "window": "Kong_Igor_panel",
     "control": "PKvsGrid",
     "control_kind": "Button",
@@ -3487,7 +3487,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 554,
+    "line": 555,
     "window": "Kong_Igor_panel",
     "control": "button53",
     "control_kind": "Button",
@@ -3501,7 +3501,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 556,
+    "line": 557,
     "window": "Kong_Igor_panel",
     "control": "Map59",
     "control_kind": "Button",
@@ -3515,7 +3515,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 558,
+    "line": 559,
     "window": "Kong_Igor_panel",
     "control": "button100",
     "control_kind": "Button",
@@ -3529,7 +3529,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 560,
+    "line": 561,
     "window": "Kong_Igor_panel",
     "control": "button01",
     "control_kind": "Button",
@@ -3543,7 +3543,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 562,
+    "line": 563,
     "window": "Kong_Igor_panel",
     "control": "Normline2p3",
     "control_kind": "Button",
@@ -3557,7 +3557,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 564,
+    "line": 565,
     "window": "Kong_Igor_panel",
     "control": "button03",
     "control_kind": "Button",
@@ -3571,7 +3571,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 566,
+    "line": 567,
     "window": "Kong_Igor_panel",
     "control": "button04",
     "control_kind": "Button",
@@ -3585,7 +3585,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 568,
+    "line": 569,
     "window": "Kong_Igor_panel",
     "control": "Symx3",
     "control_kind": "Button",
@@ -3599,7 +3599,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 570,
+    "line": 571,
     "window": "Kong_Igor_panel",
     "control": "Map13",
     "control_kind": "Button",
@@ -3613,7 +3613,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 572,
+    "line": 573,
     "window": "Kong_Igor_panel",
     "control": "Symx1",
     "control_kind": "Button",
@@ -3627,7 +3627,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 574,
+    "line": 575,
     "window": "Kong_Igor_panel",
     "control": "Symx2",
     "control_kind": "Button",
@@ -3641,7 +3641,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 576,
+    "line": 577,
     "window": "Kong_Igor_panel",
     "control": "Symx4",
     "control_kind": "Button",
@@ -3655,7 +3655,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 578,
+    "line": 579,
     "window": "Kong_Igor_panel",
     "control": "Map1",
     "control_kind": "Button",
@@ -3669,7 +3669,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 580,
+    "line": 581,
     "window": "Kong_Igor_panel",
     "control": "Normline2p",
     "control_kind": "Button",
@@ -3683,7 +3683,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 582,
+    "line": 583,
     "window": "Kong_Igor_panel",
     "control": "Map5",
     "control_kind": "Button",
@@ -3697,7 +3697,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 584,
+    "line": 585,
     "window": "Kong_Igor_panel",
     "control": "Map7",
     "control_kind": "Button",
@@ -3711,7 +3711,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 586,
+    "line": 587,
     "window": "Kong_Igor_panel",
     "control": "Map8",
     "control_kind": "Button",
@@ -3725,7 +3725,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 588,
+    "line": 589,
     "window": "Kong_Igor_panel",
     "control": "Map9",
     "control_kind": "Button",
@@ -3739,7 +3739,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 590,
+    "line": 591,
     "window": "Kong_Igor_panel",
     "control": "Map2",
     "control_kind": "Button",
@@ -3753,7 +3753,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 592,
+    "line": 593,
     "window": "Kong_Igor_panel",
     "control": "Map03",
     "control_kind": "Button",
@@ -3767,7 +3767,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 594,
+    "line": 595,
     "window": "Kong_Igor_panel",
     "control": "Map01",
     "control_kind": "Button",
@@ -3781,7 +3781,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 596,
+    "line": 597,
     "window": "Kong_Igor_panel",
     "control": "Map02",
     "control_kind": "Button",
@@ -3795,7 +3795,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 598,
+    "line": 599,
     "window": "Kong_Igor_panel",
     "control": "Map07",
     "control_kind": "Button",
@@ -3809,7 +3809,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 600,
+    "line": 601,
     "window": "Kong_Igor_panel",
     "control": "Map10",
     "control_kind": "Button",
@@ -3823,7 +3823,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 602,
+    "line": 603,
     "window": "Kong_Igor_panel",
     "control": "Map11",
     "control_kind": "Button",
@@ -3837,7 +3837,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 604,
+    "line": 605,
     "window": "Kong_Igor_panel",
     "control": "Map12",
     "control_kind": "Button",
@@ -3851,7 +3851,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 606,
+    "line": 607,
     "window": "Kong_Igor_panel",
     "control": "Map14",
     "control_kind": "Button",
@@ -3865,7 +3865,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 608,
+    "line": 609,
     "window": "Kong_Igor_panel",
     "control": "Map15",
     "control_kind": "Button",
@@ -3879,7 +3879,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 610,
+    "line": 611,
     "window": "Kong_Igor_panel",
     "control": "Symx9",
     "control_kind": "Button",
@@ -3893,7 +3893,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 612,
+    "line": 613,
     "window": "Kong_Igor_panel",
     "control": "Map16",
     "control_kind": "Button",
@@ -3907,7 +3907,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 614,
+    "line": 615,
     "window": "Kong_Igor_panel",
     "control": "Map20",
     "control_kind": "Button",
@@ -3921,7 +3921,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 616,
+    "line": 617,
     "window": "Kong_Igor_panel",
     "control": "Map21",
     "control_kind": "Button",
@@ -3935,7 +3935,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 618,
+    "line": 619,
     "window": "Kong_Igor_panel",
     "control": "Map22",
     "control_kind": "Button",
@@ -3949,7 +3949,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 620,
+    "line": 621,
     "window": "Kong_Igor_panel",
     "control": "Map23",
     "control_kind": "Button",
@@ -3963,7 +3963,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 622,
+    "line": 623,
     "window": "Kong_Igor_panel",
     "control": "Map24",
     "control_kind": "Button",
@@ -3977,7 +3977,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 624,
+    "line": 625,
     "window": "Kong_Igor_panel",
     "control": "Map19",
     "control_kind": "Button",
@@ -3991,7 +3991,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 626,
+    "line": 627,
     "window": "Kong_Igor_panel",
     "control": "Symx0",
     "control_kind": "Button",
@@ -4005,7 +4005,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 628,
+    "line": 629,
     "window": "Kong_Igor_panel",
     "control": "Symx01",
     "control_kind": "Button",
@@ -4019,7 +4019,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 630,
+    "line": 631,
     "window": "Kong_Igor_panel",
     "control": "Map30",
     "control_kind": "Button",
@@ -4033,7 +4033,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 632,
+    "line": 633,
     "window": "Kong_Igor_panel",
     "control": "Map31",
     "control_kind": "Button",
@@ -4047,7 +4047,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 634,
+    "line": 635,
     "window": "Kong_Igor_panel",
     "control": "Map32",
     "control_kind": "Button",
@@ -4061,7 +4061,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 636,
+    "line": 637,
     "window": "Kong_Igor_panel",
     "control": "Map33",
     "control_kind": "Button",
@@ -4075,7 +4075,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 638,
+    "line": 639,
     "window": "Kong_Igor_panel",
     "control": "Normline2p1",
     "control_kind": "Button",
@@ -4089,7 +4089,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 640,
+    "line": 641,
     "window": "Kong_Igor_panel",
     "control": "Symx03",
     "control_kind": "Button",
@@ -4103,7 +4103,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 642,
+    "line": 643,
     "window": "Kong_Igor_panel",
     "control": "Normline2p2",
     "control_kind": "Button",
@@ -4117,7 +4117,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 644,
+    "line": 645,
     "window": "Kong_Igor_panel",
     "control": "Map37",
     "control_kind": "Button",
@@ -4131,7 +4131,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 646,
+    "line": 647,
     "window": "Kong_Igor_panel",
     "control": "Symx06",
     "control_kind": "Button",
@@ -4145,7 +4145,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 648,
+    "line": 649,
     "window": "Kong_Igor_panel",
     "control": "Map4",
     "control_kind": "Button",
@@ -4159,7 +4159,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 650,
+    "line": 651,
     "window": "Kong_Igor_panel",
     "control": "Map57",
     "control_kind": "Button",
@@ -4173,7 +4173,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 652,
+    "line": 653,
     "window": "Kong_Igor_panel",
     "control": "Map0",
     "control_kind": "Button",
@@ -4187,7 +4187,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 654,
+    "line": 655,
     "window": "Kong_Igor_panel",
     "control": "Map04",
     "control_kind": "Button",
@@ -4201,7 +4201,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 656,
+    "line": 657,
     "window": "Kong_Igor_panel",
     "control": "Map61",
     "control_kind": "Button",
@@ -4215,7 +4215,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 658,
+    "line": 659,
     "window": "Kong_Igor_panel",
     "control": "Map62",
     "control_kind": "Button",
@@ -4229,7 +4229,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 660,
+    "line": 661,
     "window": "Kong_Igor_panel",
     "control": "Map63",
     "control_kind": "Button",
@@ -4243,7 +4243,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 662,
+    "line": 663,
     "window": "Kong_Igor_panel",
     "control": "KMExist",
     "control_kind": "Button",
@@ -4257,7 +4257,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 665,
+    "line": 666,
     "window": "Kong_Igor_panel",
     "control": "Map75",
     "control_kind": "Button",
@@ -4271,7 +4271,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 667,
+    "line": 668,
     "window": "Kong_Igor_panel",
     "control": "Map76",
     "control_kind": "Button",
@@ -4285,7 +4285,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 669,
+    "line": 670,
     "window": "Kong_Igor_panel",
     "control": "Map69",
     "control_kind": "Button",
@@ -4299,7 +4299,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 671,
+    "line": 672,
     "window": "Kong_Igor_panel",
     "control": "Map70",
     "control_kind": "Button",
@@ -4313,7 +4313,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 673,
+    "line": 674,
     "window": "Kong_Igor_panel",
     "control": "SMap",
     "control_kind": "Button",
@@ -4327,7 +4327,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 675,
+    "line": 676,
     "window": "Kong_Igor_panel",
     "control": "SMap1",
     "control_kind": "Button",
@@ -4341,7 +4341,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 677,
+    "line": 678,
     "window": "Kong_Igor_panel",
     "control": "Map3",
     "control_kind": "Button",
@@ -4355,7 +4355,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 679,
+    "line": 680,
     "window": "Kong_Igor_panel",
     "control": "SMap2",
     "control_kind": "Button",
@@ -4369,7 +4369,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 681,
+    "line": 682,
     "window": "Kong_Igor_panel",
     "control": "Line2D2",
     "control_kind": "Button",
@@ -4383,7 +4383,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 683,
+    "line": 684,
     "window": "Kong_Igor_panel",
     "control": "Rotate4",
     "control_kind": "Button",
@@ -4397,7 +4397,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 685,
+    "line": 686,
     "window": "Kong_Igor_panel",
     "control": "Line2D3",
     "control_kind": "Button",
@@ -4411,7 +4411,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 687,
+    "line": 688,
     "window": "Kong_Igor_panel",
     "control": "Map45",
     "control_kind": "Button",
@@ -4425,7 +4425,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 689,
+    "line": 690,
     "window": "Kong_Igor_panel",
     "control": "Map78",
     "control_kind": "Button",
@@ -4439,7 +4439,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 691,
+    "line": 692,
     "window": "Kong_Igor_panel",
     "control": "Map79",
     "control_kind": "Button",
@@ -4453,7 +4453,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 693,
+    "line": 694,
     "window": "Kong_Igor_panel",
     "control": "Map80",
     "control_kind": "Button",
@@ -4467,7 +4467,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 695,
+    "line": 696,
     "window": "Kong_Igor_panel",
     "control": "Map84",
     "control_kind": "Button",
@@ -4481,7 +4481,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 697,
+    "line": 698,
     "window": "Kong_Igor_panel",
     "control": "button96",
     "control_kind": "Button",
@@ -4495,7 +4495,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 699,
+    "line": 700,
     "window": "Kong_Igor_panel",
     "control": "setvargrnum1",
     "control_kind": "SetVariable",
@@ -4509,7 +4509,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 702,
+    "line": 703,
     "window": "Kong_Igor_panel",
     "control": "popuptest",
     "control_kind": "PopupMenu",
@@ -4523,7 +4523,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 704,
+    "line": 705,
     "window": "Kong_Igor_panel",
     "control": "C",
     "control_kind": "Button",
@@ -4537,7 +4537,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 706,
+    "line": 707,
     "window": "Kong_Igor_panel",
     "control": "popuptest1",
     "control_kind": "PopupMenu",
@@ -4551,7 +4551,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 708,
+    "line": 709,
     "window": "Kong_Igor_panel",
     "control": "button62",
     "control_kind": "Button",
@@ -4565,7 +4565,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 710,
+    "line": 711,
     "window": "Kong_Igor_panel",
     "control": "Symx07",
     "control_kind": "Button",
@@ -4579,7 +4579,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 712,
+    "line": 713,
     "window": "Kong_Igor_panel",
     "control": "Symx02",
     "control_kind": "Button",
@@ -4593,7 +4593,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 714,
+    "line": 715,
     "window": "Kong_Igor_panel",
     "control": "Symx08",
     "control_kind": "Button",
@@ -4607,7 +4607,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 716,
+    "line": 717,
     "window": "Kong_Igor_panel",
     "control": "Symx04",
     "control_kind": "Button",
@@ -4621,7 +4621,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 718,
+    "line": 719,
     "window": "Kong_Igor_panel",
     "control": "Symx10",
     "control_kind": "Button",
@@ -4635,7 +4635,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 720,
+    "line": 721,
     "window": "Kong_Igor_panel",
     "control": "Normline2p4",
     "control_kind": "Button",
@@ -4649,7 +4649,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 722,
+    "line": 723,
     "window": "Kong_Igor_panel",
     "control": "Symx11",
     "control_kind": "Button",
@@ -4663,7 +4663,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 724,
+    "line": 725,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints5",
     "control_kind": "Button",
@@ -4677,7 +4677,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 727,
+    "line": 728,
     "window": "Kong_Igor_panel",
     "control": "Jumpcal",
     "control_kind": "Button",
@@ -4691,7 +4691,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 730,
+    "line": 731,
     "window": "Kong_Igor_panel",
     "control": "Map77",
     "control_kind": "Button",
@@ -4705,7 +4705,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 732,
+    "line": 733,
     "window": "Kong_Igor_panel",
     "control": "Map82",
     "control_kind": "Button",
@@ -4719,7 +4719,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 734,
+    "line": 735,
     "window": "Kong_Igor_panel",
     "control": "setvarsetciu",
     "control_kind": "SetVariable",
@@ -4733,7 +4733,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 738,
+    "line": 739,
     "window": "Kong_Igor_panel",
     "control": "setvarsetciu1",
     "control_kind": "SetVariable",
@@ -4747,7 +4747,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 742,
+    "line": 743,
     "window": "Kong_Igor_panel",
     "control": "button73",
     "control_kind": "Button",
@@ -4761,7 +4761,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 744,
+    "line": 745,
     "window": "Kong_Igor_panel",
     "control": "Map88",
     "control_kind": "Button",
@@ -4775,7 +4775,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 746,
+    "line": 747,
     "window": "Kong_Igor_panel",
     "control": "Map85",
     "control_kind": "Button",
@@ -4789,7 +4789,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 748,
+    "line": 749,
     "window": "Kong_Igor_panel",
     "control": "Map89",
     "control_kind": "Button",
@@ -4803,7 +4803,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 750,
+    "line": 751,
     "window": "Kong_Igor_panel",
     "control": "Symx15",
     "control_kind": "Button",
@@ -4817,7 +4817,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 752,
+    "line": 753,
     "window": "Kong_Igor_panel",
     "control": "button97",
     "control_kind": "Button",
@@ -4831,7 +4831,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 754,
+    "line": 755,
     "window": "Kong_Igor_panel",
     "control": "Symx17",
     "control_kind": "Button",
@@ -4845,7 +4845,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 756,
+    "line": 757,
     "window": "Kong_Igor_panel",
     "control": "button28",
     "control_kind": "Button",
@@ -4859,7 +4859,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 758,
+    "line": 759,
     "window": "Kong_Igor_panel",
     "control": "Symx18",
     "control_kind": "Button",
@@ -4873,7 +4873,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 760,
+    "line": 761,
     "window": "Kong_Igor_panel",
     "control": "Map81",
     "control_kind": "Button",
@@ -4887,7 +4887,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 765,
+    "line": 766,
     "window": "Kong_Igor_panel",
     "control": "Map54",
     "control_kind": "Button",
@@ -4901,7 +4901,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 767,
+    "line": 768,
     "window": "Kong_Igor_panel",
     "control": "Map55",
     "control_kind": "Button",
@@ -4915,7 +4915,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 769,
+    "line": 770,
     "window": "Kong_Igor_panel",
     "control": "Theo1",
     "control_kind": "Button",
@@ -4929,7 +4929,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 771,
+    "line": 772,
     "window": "Kong_Igor_panel",
     "control": "Map97",
     "control_kind": "Button",
@@ -4943,7 +4943,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 773,
+    "line": 774,
     "window": "Kong_Igor_panel",
     "control": "Map90",
     "control_kind": "Button",
@@ -4957,7 +4957,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 776,
+    "line": 777,
     "window": "Kong_Igor_panel",
     "control": "Map09",
     "control_kind": "Button",
@@ -4971,7 +4971,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 778,
+    "line": 779,
     "window": "Kong_Igor_panel",
     "control": "Map17",
     "control_kind": "Button",
@@ -4985,7 +4985,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 780,
+    "line": 781,
     "window": "Kong_Igor_panel",
     "control": "Map18",
     "control_kind": "Button",
@@ -4999,7 +4999,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 782,
+    "line": 783,
     "window": "Kong_Igor_panel",
     "control": "Map25",
     "control_kind": "Button",
@@ -5013,7 +5013,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 784,
+    "line": 785,
     "window": "Kong_Igor_panel",
     "control": "Map26",
     "control_kind": "Button",
@@ -5027,7 +5027,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 786,
+    "line": 787,
     "window": "Kong_Igor_panel",
     "control": "Map27",
     "control_kind": "Button",
@@ -5041,7 +5041,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 788,
+    "line": 789,
     "window": "Kong_Igor_panel",
     "control": "Map28",
     "control_kind": "Button",
@@ -5055,7 +5055,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 790,
+    "line": 791,
     "window": "Kong_Igor_panel",
     "control": "Map29",
     "control_kind": "Button",
@@ -5069,7 +5069,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 792,
+    "line": 793,
     "window": "Kong_Igor_panel",
     "control": "Map36",
     "control_kind": "Button",
@@ -5083,7 +5083,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 794,
+    "line": 795,
     "window": "Kong_Igor_panel",
     "control": "Map47",
     "control_kind": "Button",
@@ -5097,7 +5097,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 796,
+    "line": 797,
     "window": "Kong_Igor_panel",
     "control": "Map48",
     "control_kind": "Button",
@@ -5111,7 +5111,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 798,
+    "line": 799,
     "window": "Kong_Igor_panel",
     "control": "Map49",
     "control_kind": "Button",
@@ -5125,7 +5125,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 800,
+    "line": 801,
     "window": "Kong_Igor_panel",
     "control": "Map50",
     "control_kind": "Button",
@@ -5139,7 +5139,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 802,
+    "line": 803,
     "window": "Kong_Igor_panel",
     "control": "Jump1",
     "control_kind": "Button",
@@ -5153,7 +5153,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 804,
+    "line": 805,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr5",
     "control_kind": "Button",
@@ -5167,7 +5167,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 806,
+    "line": 807,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr3",
     "control_kind": "Button",
@@ -5181,7 +5181,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 808,
+    "line": 809,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr4",
     "control_kind": "Button",
@@ -5195,7 +5195,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 810,
+    "line": 811,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr1",
     "control_kind": "Button",
@@ -5209,7 +5209,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 812,
+    "line": 813,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr2",
     "control_kind": "Button",
@@ -5223,7 +5223,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 814,
+    "line": 815,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr",
     "control_kind": "Button",
@@ -5237,7 +5237,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 816,
+    "line": 817,
     "window": "Kong_Igor_panel",
     "control": "KMExist3",
     "control_kind": "Button",
@@ -5251,7 +5251,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 818,
+    "line": 819,
     "window": "Kong_Igor_panel",
     "control": "KMExist2",
     "control_kind": "Button",
@@ -5265,7 +5265,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 820,
+    "line": 821,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr6",
     "control_kind": "Button",
@@ -5279,7 +5279,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 822,
+    "line": 823,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr7",
     "control_kind": "Button",
@@ -5293,7 +5293,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 824,
+    "line": 825,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr9",
     "control_kind": "Button",
@@ -5307,7 +5307,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 826,
+    "line": 827,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr8",
     "control_kind": "Button",
@@ -5321,7 +5321,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 828,
+    "line": 829,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr0",
     "control_kind": "Button",
@@ -5335,7 +5335,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 830,
+    "line": 831,
     "window": "Kong_Igor_panel",
     "control": "KMExist1",
     "control_kind": "Button",
@@ -5349,7 +5349,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 832,
+    "line": 833,
     "window": "Kong_Igor_panel",
     "control": "KMExist4",
     "control_kind": "Button",
@@ -5363,7 +5363,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 834,
+    "line": 835,
     "window": "Kong_Igor_panel",
     "control": "KMExist5",
     "control_kind": "Button",
@@ -5377,7 +5377,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 836,
+    "line": 837,
     "window": "Kong_Igor_panel",
     "control": "Symx23",
     "control_kind": "Button",
@@ -5391,7 +5391,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 838,
+    "line": 839,
     "window": "Kong_Igor_panel",
     "control": "Symx22",
     "control_kind": "Button",
@@ -5405,7 +5405,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 840,
+    "line": 841,
     "window": "Kong_Igor_panel",
     "control": "Map71",
     "control_kind": "Button",
@@ -5419,7 +5419,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 842,
+    "line": 843,
     "window": "Kong_Igor_panel",
     "control": "Map72",
     "control_kind": "Button",
@@ -5433,7 +5433,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 844,
+    "line": 845,
     "window": "Kong_Igor_panel",
     "control": "Map73",
     "control_kind": "Button",
@@ -5447,7 +5447,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 846,
+    "line": 847,
     "window": "Kong_Igor_panel",
     "control": "Map74",
     "control_kind": "Button",
@@ -5461,7 +5461,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 848,
+    "line": 849,
     "window": "Kong_Igor_panel",
     "control": "Map83",
     "control_kind": "Button",
@@ -5475,7 +5475,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 850,
+    "line": 851,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr10",
     "control_kind": "Button",
@@ -5489,7 +5489,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 852,
+    "line": 853,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr11",
     "control_kind": "Button",
@@ -5503,7 +5503,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 854,
+    "line": 855,
     "window": "Kong_Igor_panel",
     "control": "Map60",
     "control_kind": "Button",
@@ -5517,7 +5517,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 856,
+    "line": 857,
     "window": "Kong_Igor_panel",
     "control": "Symx24",
     "control_kind": "Button",
@@ -5531,7 +5531,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 858,
+    "line": 859,
     "window": "Kong_Igor_panel",
     "control": "Symx12",
     "control_kind": "Button",
@@ -5545,7 +5545,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 860,
+    "line": 861,
     "window": "Kong_Igor_panel",
     "control": "Symx25",
     "control_kind": "Button",
@@ -5559,7 +5559,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 862,
+    "line": 863,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr12",
     "control_kind": "Button",
@@ -5573,7 +5573,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 864,
+    "line": 865,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr09",
     "control_kind": "Button",
@@ -5587,7 +5587,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 866,
+    "line": 867,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr13",
     "control_kind": "Button",
@@ -5601,7 +5601,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 868,
+    "line": 869,
     "window": "Kong_Igor_panel",
     "control": "Symx5",
     "control_kind": "Button",
@@ -5615,7 +5615,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 870,
+    "line": 871,
     "window": "Kong_Igor_panel",
     "control": "Symx6",
     "control_kind": "Button",
@@ -5629,7 +5629,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 872,
+    "line": 873,
     "window": "Kong_Igor_panel",
     "control": "Map06",
     "control_kind": "Button",
@@ -5643,7 +5643,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 874,
+    "line": 875,
     "window": "Kong_Igor_panel",
     "control": "Map39",
     "control_kind": "Button",
@@ -5657,7 +5657,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 876,
+    "line": 877,
     "window": "Kong_Igor_panel",
     "control": "Map91",
     "control_kind": "Button",
@@ -5671,7 +5671,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 878,
+    "line": 879,
     "window": "Kong_Igor_panel",
     "control": "Map92",
     "control_kind": "Button",
@@ -5685,7 +5685,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 880,
+    "line": 881,
     "window": "Kong_Igor_panel",
     "control": "Map93",
     "control_kind": "Button",
@@ -5699,7 +5699,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 882,
+    "line": 883,
     "window": "Kong_Igor_panel",
     "control": "Map94",
     "control_kind": "Button",
@@ -5713,7 +5713,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 884,
+    "line": 885,
     "window": "Kong_Igor_panel",
     "control": "Map95",
     "control_kind": "Button",
@@ -5727,7 +5727,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 886,
+    "line": 887,
     "window": "Kong_Igor_panel",
     "control": "Map00",
     "control_kind": "Button",
@@ -5741,7 +5741,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 888,
+    "line": 889,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints",
     "control_kind": "Button",
@@ -5755,7 +5755,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 890,
+    "line": 891,
     "window": "Kong_Igor_panel",
     "control": "Symx",
     "control_kind": "Button",
@@ -5769,7 +5769,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 892,
+    "line": 893,
     "window": "Kong_Igor_panel",
     "control": "Symx7",
     "control_kind": "Button",
@@ -5783,7 +5783,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 894,
+    "line": 895,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints1",
     "control_kind": "Button",
@@ -5797,7 +5797,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 896,
+    "line": 897,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints2",
     "control_kind": "Button",
@@ -5811,7 +5811,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 898,
+    "line": 899,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints3",
     "control_kind": "Button",
@@ -5825,7 +5825,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 900,
+    "line": 901,
     "window": "Kong_Igor_panel",
     "control": "DeletePoints4",
     "control_kind": "Button",
@@ -5839,7 +5839,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 902,
+    "line": 903,
     "window": "Kong_Igor_panel",
     "control": "PAD_1D",
     "control_kind": "Button",
@@ -5853,7 +5853,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 904,
+    "line": 905,
     "window": "Kong_Igor_panel",
     "control": "Map56",
     "control_kind": "Button",
@@ -5867,7 +5867,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 906,
+    "line": 907,
     "window": "Kong_Igor_panel",
     "control": "Map58",
     "control_kind": "Button",
@@ -5881,7 +5881,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 908,
+    "line": 909,
     "window": "Kong_Igor_panel",
     "control": "Map40",
     "control_kind": "Button",
@@ -5895,7 +5895,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 910,
+    "line": 911,
     "window": "Kong_Igor_panel",
     "control": "Map41",
     "control_kind": "Button",
@@ -5909,7 +5909,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 912,
+    "line": 913,
     "window": "Kong_Igor_panel",
     "control": "Map53",
     "control_kind": "Button",
@@ -5923,7 +5923,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 914,
+    "line": 915,
     "window": "Kong_Igor_panel",
     "control": "Map6",
     "control_kind": "Button",
@@ -5937,7 +5937,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 916,
+    "line": 917,
     "window": "Kong_Igor_panel",
     "control": "Map64",
     "control_kind": "Button",
@@ -5951,7 +5951,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 918,
+    "line": 919,
     "window": "Kong_Igor_panel",
     "control": "Map65",
     "control_kind": "Button",
@@ -5965,7 +5965,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 920,
+    "line": 921,
     "window": "Kong_Igor_panel",
     "control": "Map68",
     "control_kind": "Button",
@@ -5979,7 +5979,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 922,
+    "line": 923,
     "window": "Kong_Igor_panel",
     "control": "Map05",
     "control_kind": "Button",
@@ -5993,7 +5993,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 924,
+    "line": 925,
     "window": "Kong_Igor_panel",
     "control": "Rotate2",
     "control_kind": "Button",
@@ -6007,7 +6007,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 926,
+    "line": 927,
     "window": "Kong_Igor_panel",
     "control": "Pad2D",
     "control_kind": "Button",
@@ -6021,7 +6021,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 928,
+    "line": 929,
     "window": "Kong_Igor_panel",
     "control": "Map86",
     "control_kind": "Button",
@@ -6035,7 +6035,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 930,
+    "line": 931,
     "window": "Kong_Igor_panel",
     "control": "Map87",
     "control_kind": "Button",
@@ -6049,7 +6049,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 932,
+    "line": 933,
     "window": "Kong_Igor_panel",
     "control": "Rotate3",
     "control_kind": "Button",
@@ -6063,7 +6063,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 934,
+    "line": 935,
     "window": "Kong_Igor_panel",
     "control": "Symx05",
     "control_kind": "Button",
@@ -6077,7 +6077,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 936,
+    "line": 937,
     "window": "Kong_Igor_panel",
     "control": "Symx09",
     "control_kind": "Button",
@@ -6091,7 +6091,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 938,
+    "line": 939,
     "window": "Kong_Igor_panel",
     "control": "Symx13",
     "control_kind": "Button",
@@ -6105,7 +6105,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 940,
+    "line": 941,
     "window": "Kong_Igor_panel",
     "control": "Symx14",
     "control_kind": "Button",
@@ -6119,7 +6119,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 942,
+    "line": 943,
     "window": "Kong_Igor_panel",
     "control": "Symx21",
     "control_kind": "Button",
@@ -6133,7 +6133,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 944,
+    "line": 945,
     "window": "Kong_Igor_panel",
     "control": "Symx27",
     "control_kind": "Button",
@@ -6147,7 +6147,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 946,
+    "line": 947,
     "window": "Kong_Igor_panel",
     "control": "Symx29",
     "control_kind": "Button",
@@ -6161,7 +6161,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 948,
+    "line": 949,
     "window": "Kong_Igor_panel",
     "control": "Symx19",
     "control_kind": "Button",
@@ -6175,7 +6175,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 950,
+    "line": 951,
     "window": "Kong_Igor_panel",
     "control": "Symx20",
     "control_kind": "Button",
@@ -6189,7 +6189,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 952,
+    "line": 953,
     "window": "Kong_Igor_panel",
     "control": "Symx28",
     "control_kind": "Button",
@@ -6203,7 +6203,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 954,
+    "line": 955,
     "window": "Kong_Igor_panel",
     "control": "Symx30",
     "control_kind": "Button",
@@ -6217,7 +6217,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 956,
+    "line": 957,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr14",
     "control_kind": "Button",
@@ -6231,7 +6231,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 958,
+    "line": 959,
     "window": "Kong_Igor_panel",
     "control": "Symx31",
     "control_kind": "Button",
@@ -6245,7 +6245,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 960,
+    "line": 961,
     "window": "Kong_Igor_panel",
     "control": "Map52",
     "control_kind": "Button",
@@ -6259,7 +6259,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 962,
+    "line": 963,
     "window": "Kong_Igor_panel",
     "control": "Map99",
     "control_kind": "Button",
@@ -6273,7 +6273,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 964,
+    "line": 965,
     "window": "Kong_Igor_panel",
     "control": "Map96",
     "control_kind": "Button",
@@ -6287,7 +6287,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 966,
+    "line": 967,
     "window": "Kong_Igor_panel",
     "control": "Map67",
     "control_kind": "Button",
@@ -6301,7 +6301,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 968,
+    "line": 969,
     "window": "Kong_Igor_panel",
     "control": "Map98",
     "control_kind": "Button",
@@ -6315,7 +6315,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 970,
+    "line": 971,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr15",
     "control_kind": "Button",
@@ -6329,7 +6329,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 972,
+    "line": 973,
     "window": "Kong_Igor_panel",
     "control": "Symx32",
     "control_kind": "Button",
@@ -6343,7 +6343,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 974,
+    "line": 975,
     "window": "Kong_Igor_panel",
     "control": "b98",
     "control_kind": "Button",
@@ -6357,7 +6357,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 976,
+    "line": 977,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr16",
     "control_kind": "Button",
@@ -6371,7 +6371,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 978,
+    "line": 979,
     "window": "Kong_Igor_panel",
     "control": "Theo2",
     "control_kind": "Button",
@@ -6385,7 +6385,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 981,
+    "line": 982,
     "window": "Kong_Igor_panel",
     "control": "buttoncg",
     "control_kind": "Button",
@@ -6399,7 +6399,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 983,
+    "line": 984,
     "window": "Kong_Igor_panel",
     "control": "Theo3",
     "control_kind": "Button",
@@ -6413,7 +6413,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 987,
+    "line": 988,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr17",
     "control_kind": "Button",
@@ -6427,7 +6427,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 989,
+    "line": 990,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr18",
     "control_kind": "Button",
@@ -6441,7 +6441,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 991,
+    "line": 992,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr19",
     "control_kind": "Button",
@@ -6455,7 +6455,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 993,
+    "line": 994,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr20",
     "control_kind": "Button",
@@ -6469,7 +6469,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 995,
+    "line": 996,
     "window": "Kong_Igor_panel",
     "control": "Symx33",
     "control_kind": "Button",
@@ -6483,7 +6483,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 997,
+    "line": 998,
     "window": "Kong_Igor_panel",
     "control": "Symx34",
     "control_kind": "Button",
@@ -6497,7 +6497,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 999,
+    "line": 1000,
     "window": "Kong_Igor_panel",
     "control": "Symx35",
     "control_kind": "Button",
@@ -6511,7 +6511,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1001,
+    "line": 1002,
     "window": "Kong_Igor_panel",
     "control": "SMap3",
     "control_kind": "Button",
@@ -6525,7 +6525,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1003,
+    "line": 1004,
     "window": "Kong_Igor_panel",
     "control": "Map60cpr21",
     "control_kind": "Button",
@@ -6539,7 +6539,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1006,
+    "line": 1007,
     "window": "Kong_Igor_panel",
     "control": "SMap4",
     "control_kind": "Button",
@@ -6553,7 +6553,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1008,
+    "line": 1009,
     "window": "Kong_Igor_panel",
     "control": "sym_c4",
     "control_kind": "Button",
@@ -6567,7 +6567,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1010,
+    "line": 1011,
     "window": "Kong_Igor_panel",
     "control": "sym_c5",
     "control_kind": "Button",
@@ -6581,7 +6581,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1013,
+    "line": 1014,
     "window": "Kong_Igor_panel",
     "control": "sym_c6",
     "control_kind": "Button",
@@ -6595,7 +6595,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1015,
+    "line": 1016,
     "window": "Kong_Igor_panel",
     "control": "sym_c7",
     "control_kind": "Button",
@@ -6609,7 +6609,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1017,
+    "line": 1018,
     "window": "Kong_Igor_panel",
     "control": "sym_c8",
     "control_kind": "Button",
@@ -6623,7 +6623,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1019,
+    "line": 1020,
     "window": "Kong_Igor_panel",
     "control": "sym_c9",
     "control_kind": "Button",
@@ -6637,7 +6637,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1021,
+    "line": 1022,
     "window": "Kong_Igor_panel",
     "control": "sym_c0",
     "control_kind": "Button",
@@ -6651,7 +6651,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1023,
+    "line": 1024,
     "window": "Kong_Igor_panel",
     "control": "sym_c1",
     "control_kind": "Button",
@@ -6665,7 +6665,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1025,
+    "line": 1026,
     "window": "Kong_Igor_panel",
     "control": "buttonpntreader",
     "control_kind": "Button",
@@ -6679,7 +6679,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1027,
+    "line": 1028,
     "window": "Kong_Igor_panel",
     "control": "Getp",
     "control_kind": "Button",
@@ -6693,7 +6693,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1029,
+    "line": 1030,
     "window": "Kong_Igor_panel",
     "control": "Getp1",
     "control_kind": "Button",
@@ -6707,7 +6707,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1031,
+    "line": 1032,
     "window": "Kong_Igor_panel",
     "control": "Getp2",
     "control_kind": "Button",
@@ -6721,7 +6721,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1033,
+    "line": 1034,
     "window": "Kong_Igor_panel",
     "control": "Symx26",
     "control_kind": "Button",
@@ -6735,7 +6735,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1035,
+    "line": 1036,
     "window": "Kong_Igor_panel",
     "control": "Symx16",
     "control_kind": "Button",
@@ -6749,7 +6749,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1037,
+    "line": 1038,
     "window": "Kong_Igor_panel",
     "control": "Symx8",
     "control_kind": "Button",
@@ -6763,7 +6763,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1039,
+    "line": 1040,
     "window": "Kong_Igor_panel",
     "control": "Getp3",
     "control_kind": "Button",
@@ -6777,7 +6777,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1041,
+    "line": 1042,
     "window": "Kong_Igor_panel",
     "control": "SMap5",
     "control_kind": "Button",
@@ -6791,7 +6791,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1043,
+    "line": 1044,
     "window": "Kong_Igor_panel",
     "control": "SMap6",
     "control_kind": "Button",
@@ -6805,7 +6805,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1045,
+    "line": 1046,
     "window": "Kong_Igor_panel",
     "control": "SMap7",
     "control_kind": "Button",
@@ -6819,7 +6819,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1047,
+    "line": 1048,
     "window": "Kong_Igor_panel",
     "control": "Map66",
     "control_kind": "Button",
@@ -6833,7 +6833,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1049,
+    "line": 1050,
     "window": "Kong_Igor_panel",
     "control": "Map08",
     "control_kind": "Button",
@@ -6847,7 +6847,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1051,
+    "line": 1052,
     "window": "Kong_Igor_panel",
     "control": "Map34",
     "control_kind": "Button",
@@ -6861,7 +6861,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1053,
+    "line": 1054,
     "window": "Kong_Igor_panel",
     "control": "Map35",
     "control_kind": "Button",
@@ -6875,7 +6875,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1055,
+    "line": 1056,
     "window": "Kong_Igor_panel",
     "control": "Symx36",
     "control_kind": "Button",
@@ -6889,7 +6889,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1057,
+    "line": 1058,
     "window": "Kong_Igor_panel",
     "control": "Map38",
     "control_kind": "Button",
@@ -6903,7 +6903,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1059,
+    "line": 1060,
     "window": "Kong_Igor_panel",
     "control": "Map42",
     "control_kind": "Button",
@@ -6917,7 +6917,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1061,
+    "line": 1062,
     "window": "Kong_Igor_panel",
     "control": "Map43",
     "control_kind": "Button",
@@ -6931,7 +6931,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1063,
+    "line": 1064,
     "window": "Kong_Igor_panel",
     "control": "Map44",
     "control_kind": "Button",
@@ -6945,7 +6945,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1065,
+    "line": 1066,
     "window": "Kong_Igor_panel",
     "control": "Map46",
     "control_kind": "Button",
@@ -6959,7 +6959,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1067,
+    "line": 1068,
     "window": "Kong_Igor_panel",
     "control": "SMap9",
     "control_kind": "Button",
@@ -6973,7 +6973,7 @@
   },
   {
     "file": "Kong_Igor_panel.ipf",
-    "line": 1069,
+    "line": 1070,
     "window": "Kong_Igor_panel",
     "control": "SMap0",
     "control_kind": "Button",
