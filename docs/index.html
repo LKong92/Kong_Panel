@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>𝑲𝑶𝑵𝑮 Panel Documentation</title>
+<style>
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #5b667a;
+  --line: #d8e0ec;
+  --panel: #ffffff;
+  --accent: #1457d9;
+  --accent-2: #b51f4c;
+  --bg: #f4f7fb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+main {
+  width: min(1100px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0 56px;
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 30px;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 32px;
+}
+h1 {
+  margin: 0 0 12px;
+  font-size: 42px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+.hero img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 26px;
+}
+a.card {
+  display: block;
+  min-height: 160px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: inherit;
+  text-decoration: none;
+}
+a.card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 10px 28px rgba(20, 87, 217, 0.10);
+}
+.card b {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--accent);
+  font-size: 19px;
+}
+.card span {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.secondary {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.secondary a {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 650;
+}
+.secondary a:hover { text-decoration: underline; }
+@media (max-width: 760px) {
+  main { width: min(100% - 28px, 1100px); padding-top: 28px; }
+  .hero { grid-template-columns: 1fr; }
+  h1 { font-size: 34px; }
+  .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<main>
+  <section class="hero">
+    <div>
+      <h1>𝑲𝑶𝑵𝑮 Panel Documentation</h1>
+      <p>Interactive guides for the Igor Pro package: browse the main panel, jump from controls to action procedures, search the function library, and inspect source-level package statistics.</p>
+    </div>
+    <img src="assets/kong_panel_main.png" alt="𝑲𝑶𝑵𝑮 Panel main interface">
+  </section>
+
+  <section class="grid" aria-label="Documentation links">
+    <a class="card" href="PANEL_GUIDE.html">
+      <b>Panel Guide</b>
+      <span>Visual map of the main panel, each button/control, the action procedure it calls, and related internal panels.</span>
+    </a>
+    <a class="card" href="FUNCTION_BOOK.html">
+      <b>Function Book</b>
+      <span>Searchable function/procedure manual organized by workflow, with Igor-style syntax highlighting and source references.</span>
+    </a>
+    <a class="card" href="SUMMARY.html">
+      <b>Package Summary</b>
+      <span>Source statistics for IPF files, functions, procedures, panel controls, generated catalogs, and package structure.</span>
+    </a>
+  </section>
+
+  <nav class="secondary" aria-label="Repository links">
+    <a href="https://github.com/LKong92/Kong_Panel#readme">README</a>
+    <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/PANEL_GUIDE.md">Panel Guide Markdown</a>
+    <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/FUNCTION_INDEX.md">Function Index Markdown</a>
+    <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/CHANGELOG.md">Changelog</a>
+  </nav>
+</main>
+</body>
+</html>

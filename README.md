@@ -13,13 +13,14 @@ Start with these two guides when browsing the package on GitHub:
 - [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
 - [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
 
-The repository also includes interactive HTML manuals with search and navigation:
+The repository also includes interactive HTML manuals with search and navigation. After GitHub Pages is enabled for this repository, these links open the rendered manuals directly in a browser:
 
-- [Function Book HTML](docs/FUNCTION_BOOK.html)
-- [Panel Guide HTML](docs/PANEL_GUIDE.html)
-- [Package Summary HTML](docs/SUMMARY.html)
+- [Interactive documentation site](https://lkong92.github.io/Kong_Panel/)
+- [Function Book HTML](https://lkong92.github.io/Kong_Panel/FUNCTION_BOOK.html)
+- [Panel Guide HTML](https://lkong92.github.io/Kong_Panel/PANEL_GUIDE.html)
+- [Package Summary HTML](https://lkong92.github.io/Kong_Panel/SUMMARY.html)
 
-GitHub shows the Markdown files directly in the browser. For the interactive HTML versions, download the repository or open the files from a local clone so the search and cross-page navigation run normally.
+GitHub shows the Markdown files directly in the repository browser. The GitHub Pages links above are the preferred way to use the interactive HTML versions from the web.
 
 Selected KP modules and related standalone tools have also been posted separately on WaveMetrics:
 
