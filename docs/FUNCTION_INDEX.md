@@ -58,11 +58,65 @@ These entries highlight reusable shortcuts, physical constants, and Hamiltonian-
 - `color3s_for3dm()`: **Subwindow Color Range.** Calculates a robust symmetric color range for a 3D-viewer subwindow image.
 - `Drawarrow()`: **Lattice Direction Arrows.** Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length.
 
+### Physical Constants: Elementary charge `q0`
+
+\(q_0 = 1.602176634\times10^{-19}\,\mathrm{C}\). KP stores this as `q0` in `root:`.
+
+Use `q0` directly when converting between electron-volts and joules, or when writing charge-based model expressions.
+
+### Physical Constants: Planck constant `h`
+
+\(h = 6.62607015\times10^{-34}\,\mathrm{J\,s}\). KP stores this as `h` in `root:`.
+
+Use `h` together with `q0` or frequency/energy scales in tunneling and model calculations.
+
+### Physical Constants: Conductance quantum `G0`
+
+\(G_0=e^2/h=3.87404586493\times10^{-5}\,\mathrm{S}\). KP stores this as `G0`.
+
+Example: `2*G0` evaluates \(2G_0\) in siemens for quick conductance-scale estimates.
+
+### Physical Constants: Bohr magneton `muB`
+
+\(\mu_B = 9.2740100783\times10^{-24}\,\mathrm{J/T}\). KP stores this as `muB`.
+
+Example: `muB*B/meV` converts the Zeeman energy \(\mu_B B\) from joules to meV.
+
+### Physical Constants: Boltzmann constant `kB`
+
+\(k_B = 1.380649\times10^{-23}\,\mathrm{J/K}\). KP stores this as `kB`.
+
+Example: `5*meV/kB` converts \(5\,\mathrm{meV}\) into a temperature scale in kelvin.
+
+### Physical Constants: Electron-volt `eV`
+
+\(1\,\mathrm{eV}=1.602176634\times10^{-19}\,\mathrm{J}\). KP stores this conversion factor as `eV`.
+
+Use `energy/eV` to convert a joule-valued expression into electron-volts.
+
+### Physical Constants: Millielectron-volt `meV`
+
+\(1\,\mathrm{meV}=1.602176634\times10^{-22}\,\mathrm{J}\). KP stores this conversion factor as `meV`.
+
+Use `energy/meV` for STM/STS gap, Zeeman, and thermal-energy estimates in meV.
+
+### Physical Constants: Electron mass `m0`
+
+\(m_0 = 9.1093837015\times10^{-31}\,\mathrm{kg}\). KP stores this as `m0`.
+
+Use `m0` in effective-mass, dispersion, and model-Hamiltonian calculations.
+
+### Physical Constants: Vacuum permittivity `epslon0`
+
+\(\epsilon_0 = 8.8541878128\times10^{-12}\,\mathrm{F/m}\). KP stores this as `epslon0`.
+
+The historical spelling `epslon0` is preserved so older KP procedures and notebooks keep working.
+
 ### Hamiltonian Tools: Pauli-sequence Hamiltonian recipe
 
-Represent a Hamiltonian as \[ H = \sum_j c_j\,\bigotimes_{\ell=1}^{N}\sigma_{a_{\ell j}}, \qquad a_{\ell j}\in\{0,x,y,z\}. \] In KP, create one 1x1 parameter wave for each coefficient \(c_j\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows label Pauli slots \(\ell\) and whose columns label Hamiltonian terms \(j\).
+Represent a Hamiltonian as \[\begin{aligned} H &= \sum_j c_j\,\bigotimes_{\ell=1}^{N}\sigma_{a_{\ell j}},\\ a_{\ell j} &\in \{0,x,y,z\}. \end{aligned}\] In KP, create one 1x1 parameter wave for each coefficient \(c_j\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows label Pauli slots \(\ell\) and whose columns label Hamiltonian terms \(j\).
 
-Use the Pauli code convention \[0\rightarrow\sigma_0,\qquad 1\rightarrow\sigma_x,\qquad 2\rightarrow\sigma_y,\qquad 3\rightarrow\sigma_z.\] Call `automatrixT("p1;p2;...", xyzseq)` for the symbolic text Hamiltonian, or `automatrixC("p1;p2;...", xyzseq)` for the complex numerical matrix. For example, a column `{3,1,2}` represents \(\sigma_z\otimes\sigma_x\otimes\sigma_y\), multiplied by the matching coefficient wave.
+Use the Pauli code convention \[\begin{aligned}0&\rightarrow\sigma_0,&1&\rightarrow\sigma_x,\\2&\rightarrow\sigma_y,&3&\rightarrow\sigma_z.\end{aligned}\] Call `automatrixT("p1;p2;...", xyzseq)` for the symbolic text Hamiltonian, or `automatrixC("p1;p2;...", xyzseq)` for the complex numerical matrix. For example, a column `{3,1,2}` represents \(\sigma_z\otimes\sigma_x\otimes\sigma_y\), multiplied by the matching coefficient wave.
 
 ### Hamiltonian Tools: functions
 

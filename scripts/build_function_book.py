@@ -249,10 +249,64 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
 
 FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
     (
+        "Physical Constants",
+        "Elementary charge `q0`",
+        "\\(q_0 = 1.602176634\\times10^{-19}\\,\\mathrm{C}\\). KP stores this as `q0` in `root:`.",
+        "Use `q0` directly when converting between electron-volts and joules, or when writing charge-based model expressions.",
+    ),
+    (
+        "Physical Constants",
+        "Planck constant `h`",
+        "\\(h = 6.62607015\\times10^{-34}\\,\\mathrm{J\\,s}\\). KP stores this as `h` in `root:`.",
+        "Use `h` together with `q0` or frequency/energy scales in tunneling and model calculations.",
+    ),
+    (
+        "Physical Constants",
+        "Conductance quantum `G0`",
+        "\\(G_0=e^2/h=3.87404586493\\times10^{-5}\\,\\mathrm{S}\\). KP stores this as `G0`.",
+        "Example: `2*G0` evaluates \\(2G_0\\) in siemens for quick conductance-scale estimates.",
+    ),
+    (
+        "Physical Constants",
+        "Bohr magneton `muB`",
+        "\\(\\mu_B = 9.2740100783\\times10^{-24}\\,\\mathrm{J/T}\\). KP stores this as `muB`.",
+        "Example: `muB*B/meV` converts the Zeeman energy \\(\\mu_B B\\) from joules to meV.",
+    ),
+    (
+        "Physical Constants",
+        "Boltzmann constant `kB`",
+        "\\(k_B = 1.380649\\times10^{-23}\\,\\mathrm{J/K}\\). KP stores this as `kB`.",
+        "Example: `5*meV/kB` converts \\(5\\,\\mathrm{meV}\\) into a temperature scale in kelvin.",
+    ),
+    (
+        "Physical Constants",
+        "Electron-volt `eV`",
+        "\\(1\\,\\mathrm{eV}=1.602176634\\times10^{-19}\\,\\mathrm{J}\\). KP stores this conversion factor as `eV`.",
+        "Use `energy/eV` to convert a joule-valued expression into electron-volts.",
+    ),
+    (
+        "Physical Constants",
+        "Millielectron-volt `meV`",
+        "\\(1\\,\\mathrm{meV}=1.602176634\\times10^{-22}\\,\\mathrm{J}\\). KP stores this conversion factor as `meV`.",
+        "Use `energy/meV` for STM/STS gap, Zeeman, and thermal-energy estimates in meV.",
+    ),
+    (
+        "Physical Constants",
+        "Electron mass `m0`",
+        "\\(m_0 = 9.1093837015\\times10^{-31}\\,\\mathrm{kg}\\). KP stores this as `m0`.",
+        "Use `m0` in effective-mass, dispersion, and model-Hamiltonian calculations.",
+    ),
+    (
+        "Physical Constants",
+        "Vacuum permittivity `epslon0`",
+        "\\(\\epsilon_0 = 8.8541878128\\times10^{-12}\\,\\mathrm{F/m}\\). KP stores this as `epslon0`.",
+        "The historical spelling `epslon0` is preserved so older KP procedures and notebooks keep working.",
+    ),
+    (
         "Hamiltonian Tools",
         "Pauli-sequence Hamiltonian recipe",
-        "Represent a Hamiltonian as \\[ H = \\sum_j c_j\\,\\bigotimes_{\\ell=1}^{N}\\sigma_{a_{\\ell j}}, \\qquad a_{\\ell j}\\in\\{0,x,y,z\\}. \\] In KP, create one 1x1 parameter wave for each coefficient \\(c_j\\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows label Pauli slots \\(\\ell\\) and whose columns label Hamiltonian terms \\(j\\).",
-        "Use the Pauli code convention \\[0\\rightarrow\\sigma_0,\\qquad 1\\rightarrow\\sigma_x,\\qquad 2\\rightarrow\\sigma_y,\\qquad 3\\rightarrow\\sigma_z.\\] Call `automatrixT(\"p1;p2;...\", xyzseq)` for the symbolic text Hamiltonian, or `automatrixC(\"p1;p2;...\", xyzseq)` for the complex numerical matrix. For example, a column `{3,1,2}` represents \\(\\sigma_z\\otimes\\sigma_x\\otimes\\sigma_y\\), multiplied by the matching coefficient wave.",
+        "Represent a Hamiltonian as \\[\\begin{aligned} H &= \\sum_j c_j\\,\\bigotimes_{\\ell=1}^{N}\\sigma_{a_{\\ell j}},\\\\ a_{\\ell j} &\\in \\{0,x,y,z\\}. \\end{aligned}\\] In KP, create one 1x1 parameter wave for each coefficient \\(c_j\\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows label Pauli slots \\(\\ell\\) and whose columns label Hamiltonian terms \\(j\\).",
+        "Use the Pauli code convention \\[\\begin{aligned}0&\\rightarrow\\sigma_0,&1&\\rightarrow\\sigma_x,\\\\2&\\rightarrow\\sigma_y,&3&\\rightarrow\\sigma_z.\\end{aligned}\\] Call `automatrixT(\"p1;p2;...\", xyzseq)` for the symbolic text Hamiltonian, or `automatrixC(\"p1;p2;...\", xyzseq)` for the complex numerical matrix. For example, a column `{3,1,2}` represents \\(\\sigma_z\\otimes\\sigma_x\\otimes\\sigma_y\\), multiplied by the matching coefficient wave.",
     ),
 ]
 
@@ -263,6 +317,7 @@ FEATURED_GROUP_ORDER = [
     "Linecut, spectra, and matrix extraction",
     "Drift, strain, and correction workflows",
     "Graph annotation and color helpers",
+    "Physical Constants",
     "Hamiltonian Tools",
 ]
 
@@ -1537,6 +1592,28 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
   color: #333333;
   font-size: 10.5pt;
 }
+.featured-note mjx-container[display="true"] {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 2px;
+  font-size: 92%;
+}
+.featured-cluster-hamiltonian-tools .featured-grid {
+  grid-template-columns: minmax(360px, 2.2fr) minmax(130px, .7fr) minmax(130px, .7fr);
+  align-items: stretch;
+}
+.featured-cluster-hamiltonian-tools .featured-note {
+  grid-row: span 3;
+}
+@media (max-width: 980px) {
+  .featured-cluster-hamiltonian-tools .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  .featured-cluster-hamiltonian-tools .featured-note {
+    grid-row: auto;
+  }
+}
 .summary-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -1986,7 +2063,7 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
         sections.append(
             "\n".join(
                 [
-                    '<section class="featured-cluster">',
+                    f'<section class="featured-cluster featured-cluster-{slugify(group)}">',
                     f'<h3>{html.escape(group)}</h3>',
                     f'<div class="featured-grid">{"".join(cards)}</div>',
                     '</section>',

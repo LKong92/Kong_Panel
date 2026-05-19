@@ -31,15 +31,15 @@ These variables are created in `root:` for command-line calculations and modelin
 
 | Variable | Default value | Meaning |
 |---|---:|---|
-| `q0` | `1.602176634e-19` | Elementary charge, C |
-| `h` | `6.62607015e-34` | Planck constant, J s |
-| `G0` | `3.87404586493e-5` | Conductance quantum `e^2/h`, S |
-| `muB` | `9.2740100783e-24` | Bohr magneton, J/T |
-| `kB` | `1.380649e-23` | Boltzmann constant, J/K |
-| `eV` | `1.602176634e-19` | Electron volt, J |
-| `meV` | `1.602176634e-22` | Millielectron volt, J |
-| `m0` | `9.1093837015e-31` | Electron mass, kg |
-| `epslon0` | `8.8541878128e-12` | Vacuum permittivity, F/m. The historical spelling `epslon0` is preserved for compatibility. |
+| `q0` | `1.602176634e-19` | Elementary charge, \(q_0\), in \(\mathrm{C}\). |
+| `h` | `6.62607015e-34` | Planck constant, \(h\), in \(\mathrm{J\,s}\). |
+| `G0` | `3.87404586493e-5` | Conductance quantum, \(G_0=e^2/h\), in \(\mathrm{S}\). |
+| `muB` | `9.2740100783e-24` | Bohr magneton, \(\mu_B\), in \(\mathrm{J/T}\). |
+| `kB` | `1.380649e-23` | Boltzmann constant, \(k_B\), in \(\mathrm{J/K}\). |
+| `eV` | `1.602176634e-19` | Electron-volt conversion, \(1\,\mathrm{eV}\), in \(\mathrm{J}\). |
+| `meV` | `1.602176634e-22` | Millielectron-volt conversion, \(1\,\mathrm{meV}\), in \(\mathrm{J}\). |
+| `m0` | `9.1093837015e-31` | Electron rest mass, \(m_0\), in \(\mathrm{kg}\). |
+| `epslon0` | `8.8541878128e-12` | Vacuum permittivity, \(\epsilon_0\), in \(\mathrm{F/m}\). The historical spelling `epslon0` is preserved for compatibility. |
 
 ## Template Numeric Globals
 

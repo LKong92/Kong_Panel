@@ -101,6 +101,16 @@ code {
   background: #fff;
 }
 </style>
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['\\(', '\\)']],
+    displayMath: [['\\[', '\\]']]
+  },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <main>
@@ -135,15 +145,15 @@ NewPanel ...</code></pre>
   <table>
     <thead><tr><th>Variable</th><th>Default value</th><th>Meaning</th></tr></thead>
     <tbody>
-      <tr><td><code>q0</code></td><td>1.602176634e-19</td><td>Elementary charge, C</td></tr>
-      <tr><td><code>h</code></td><td>6.62607015e-34</td><td>Planck constant, J s</td></tr>
-      <tr><td><code>G0</code></td><td>3.87404586493e-5</td><td>Conductance quantum e^2/h, S</td></tr>
-      <tr><td><code>muB</code></td><td>9.2740100783e-24</td><td>Bohr magneton, J/T</td></tr>
-      <tr><td><code>kB</code></td><td>1.380649e-23</td><td>Boltzmann constant, J/K</td></tr>
-      <tr><td><code>eV</code></td><td>1.602176634e-19</td><td>Electron volt, J</td></tr>
-      <tr><td><code>meV</code></td><td>1.602176634e-22</td><td>Millielectron volt, J</td></tr>
-      <tr><td><code>m0</code></td><td>9.1093837015e-31</td><td>Electron mass, kg</td></tr>
-      <tr><td><code>epslon0</code></td><td>8.8541878128e-12</td><td>Vacuum permittivity, F/m. The historical spelling is preserved.</td></tr>
+      <tr><td><code>q0</code></td><td>1.602176634e-19</td><td>Elementary charge, \(q_0\), in \(\mathrm{C}\).</td></tr>
+      <tr><td><code>h</code></td><td>6.62607015e-34</td><td>Planck constant, \(h\), in \(\mathrm{J\,s}\).</td></tr>
+      <tr><td><code>G0</code></td><td>3.87404586493e-5</td><td>Conductance quantum, \(G_0=e^2/h\), in \(\mathrm{S}\).</td></tr>
+      <tr><td><code>muB</code></td><td>9.2740100783e-24</td><td>Bohr magneton, \(\mu_B\), in \(\mathrm{J/T}\).</td></tr>
+      <tr><td><code>kB</code></td><td>1.380649e-23</td><td>Boltzmann constant, \(k_B\), in \(\mathrm{J/K}\).</td></tr>
+      <tr><td><code>eV</code></td><td>1.602176634e-19</td><td>Electron-volt conversion, \(1\,\mathrm{eV}\), in \(\mathrm{J}\).</td></tr>
+      <tr><td><code>meV</code></td><td>1.602176634e-22</td><td>Millielectron-volt conversion, \(1\,\mathrm{meV}\), in \(\mathrm{J}\).</td></tr>
+      <tr><td><code>m0</code></td><td>9.1093837015e-31</td><td>Electron rest mass, \(m_0\), in \(\mathrm{kg}\).</td></tr>
+      <tr><td><code>epslon0</code></td><td>8.8541878128e-12</td><td>Vacuum permittivity, \(\epsilon_0\), in \(\mathrm{F/m}\). The historical spelling is preserved.</td></tr>
     </tbody>
   </table>
 </section>
