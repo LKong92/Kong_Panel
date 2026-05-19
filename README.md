@@ -268,7 +268,9 @@ KP contains model simulators and teaching/research calculations that can be laun
 - Majorana bound-state splitting, CdGM states, Landau-level DOS, vortex-line and superconducting vortex simulations.
 - PDW, CDW, multi-order, vortex-pair, topological-defect, and 2D PDM simulations.
 - Temperature convolution, batch temperature convolution, RCSJ model, and P(E) theory calculations.
-- Matrix-Hamiltonian construction, Pauli matrices, tensor products, and band calculations.
+- Global SI constants for command-line and modeling work: `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`.
+- Matrix-Hamiltonian construction with complex/text Pauli matrices (`s0/sx/sy/sz`, `st0/stx/sty/stz`), tensor products (`mpc/mpn/mpt`), text matrix addition (`plust`), and automated Pauli-sequence builders (`automatrixT/automatrixC`).
+- Band calculations and model-Hamiltonian demonstrations.
 
 Main files:
 

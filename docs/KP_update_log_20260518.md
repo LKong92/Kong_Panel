@@ -9,4 +9,5 @@
 - Using Codex assistance, rewrote the Nanonis loading routines that KP previously borrowed from KM macro and integrated them into `KP_NanonisLoaders.ipf`.
 - KP can now load the KP-used Nanonis `.3ds`, `.sxm`, and `.nsp` workflows without requiring the KM package at runtime.
 - Updated `AutoNanislinecut`, `autoloadgrid`, and topography extraction paths to call the KP-local Nanonis loader.
+- Added source initialization for the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`, so clean source installs provide the same modeling constants.
 - Added README, changelog, code inventory, and Git ignore rules for GitHub release.

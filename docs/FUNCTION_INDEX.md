@@ -4,7 +4,91 @@ This Markdown index is generated from `src/*.ipf` and organized by workflow rath
 
 The HTML manual is the preferred browsing format. This Markdown version keeps the same workflow order for GitHub text search.
 
-Total entries: 3203
+Total entries: 3204
+
+## Featured Utilities
+
+These entries highlight reusable shortcuts, physical constants, and Hamiltonian-construction helpers that are especially useful from the Igor command line or from panel-driven workflows.
+
+### Physical constants and Hamiltonian tools: Physical constants and units
+
+The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0=q0^2/h` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV=q0` converts electron-volts to joules, `meV=1e-3*eV` converts millielectron-volts to joules, and `m0` is the electron mass in kilograms.
+
+After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.
+
+### Physical constants and Hamiltonian tools: Pauli-sequence Hamiltonian recipe
+
+For a Hamiltonian written as a sum of Pauli tensor products, create one 1x1 parameter wave for each term with `wT()`/`wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate terms. Pauli codes are 0=σ0, 1=σx, 2=σy, and 3=σz.
+
+Call `automatrixT("p1;p2;...", xyzseq)` for a symbolic text matrix, or `automatrixC("p1;p2;...", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` means σz⊗σx⊗σy; the matching parameter wave multiplies that tensor product.
+
+### Physical constants and Hamiltonian tools: functions
+
+- `KP_EnsurePhysicalConstants()`: **Load SI Constants.** Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0` so they can be used directly in Igor expressions, procedures, and modeling notebooks.
+- `automatrixTC()`: **Interactive Hamiltonian Builder.** Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output.
+- `automatrixT()`: **Text Hamiltonian Derivation.** Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation.
+- `automatrixC()`: **Numerical Hamiltonian Matrix.** Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations.
+- `mpc()`: **Complex Tensor Product.** Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians.
+- `mpt()`: **Text Tensor Product.** Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable.
+- `plust()`: **Text Matrix Sum.** Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms.
+- `s0()`: **Complex Pauli Identity.** Returns the 2x2 complex identity matrix used as σ0 in numerical Pauli products.
+- `sx()`: **Complex Pauli X.** Returns the 2x2 complex σx matrix for numerical Hamiltonian construction.
+- `sy()`: **Complex Pauli Y.** Returns the 2x2 complex σy matrix with imaginary off-diagonal elements for numerical Hamiltonian construction.
+- `sz()`: **Complex Pauli Z.** Returns the 2x2 complex σz matrix for numerical Hamiltonian construction.
+- `st0()`: **Text Pauli Identity.** Returns the 2x2 text identity matrix used as σ0 in symbolic Pauli products.
+- `stx()`: **Text Pauli X.** Returns the 2x2 text σx matrix for symbolic Hamiltonian derivation.
+- `sty()`: **Text Pauli Y.** Returns the 2x2 text σy matrix using `i` and `-i` entries for symbolic Hamiltonian derivation.
+- `stz()`: **Text Pauli Z.** Returns the 2x2 text σz matrix for symbolic Hamiltonian derivation.
+- `NewDerivPRB98_214503_eq2_T()`: **Text Derivation Demo.** Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`.
+- `NewDerivPRB98_214503_eq2_N()`: **Numerical Derivation Demo.** Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result.
+
+### Daily wave/window shortcuts: functions
+
+- `tpw()`: **Topmost Image Wave.** Returns the wave name from the topmost active image or subwindow, so KP commands can operate on the current graph without retyping wave names.
+- `di()`: **Smart Image Display.** Displays a wave only when it is not already shown alone in a graph; otherwise it brings the existing graph forward. Use `di2()` for forced redisplay.
+- `ed()`: **Smart Table Display.** Table counterpart of `di()`: opens a wave table intelligently and avoids duplicate table windows.
+- `grabwin()`: **Find Window by Wave.** Returns the graph/window name containing a given wave, opening the display when needed.
+- `grabwinnonew()`: **Find Window Without Opening.** Returns the containing window name without creating a new display, useful for non-invasive checks inside interactive workflows.
+- `grabtable()`: **Find Table by Wave.** Finds the table containing a given wave, searching beyond the first graph element where `grabwin()` is not enough.
+- `ckfig()`: **Prevent Duplicate Figures.** Call immediately after creating a complex graph to remove or reuse duplicate figure windows; `cklayout()` and `cktable()` provide the same pattern for layouts and tables.
+- `wavelistsub()`: **Subwindow Wave List.** Returns wave names from subwindows while ignoring waves in the main window, useful for multi-panel graph management.
+
+### Smart display and 3D workflows: functions
+
+- `d()`: **Compact 2D Displayer.** A one-command image displayer for 2D matrices with KP color controls and formatting hooks.
+- `d3d()`: **Smarter 3D Matrix Plotter.** Interactive 3D grid viewer with constant-Z image, integrated spectrum, FFT image, linecut extraction, Z normalization, and FFT-engineering integration.
+- `getall3dwave()`: **3D Wave Picker Helper.** Builds the 3D-wave list used by the `d3d()` prompt and related panel buttons.
+- `sumoned()`: **Average Z Spectrum.** Sums or averages a 3D grid along one dimension to obtain a representative 1D spectrum, skipping NaN curves in the updated workflow.
+- `Normalinecut()`: **Normalize Linecut.** Normalizes a 2D linecut along the x direction for cleaner waterfall and MDC/EDC-style display.
+- `Gridtolinecut()`: **Grid to Linecut.** Extracts all spectra from a 3D grid along a selected energy dimension and arranges them as a linecut-style dataset.
+
+### Fourier, filtering, and phase tools: functions
+
+- `f()`: **Smart FFT.** Runs FFT on the first wave in the topmost graph, with handling for arbitrary point counts and NaN-containing data.
+- `Const2dfilter()`: **Interactive 2D FFT Filter.** Opens the interactive FFT-filter controller for continuous tuning of the filter window and selected q vector.
+- `extendffterealimage()`: **Expand Real-Image FFT.** Expands the half reciprocal-space FFT of a real image into an XY-symmetric image for PR-QPI and related visualization.
+- `cyclecolorwave()`: **Cyclic Color Table.** Creates cyclic color waves with a selectable number of periods for phase/cycle visualizations.
+
+### Linecut, spectra, and matrix extraction: functions
+
+- `sEDC()`: **Slice EDC Curves.** Slices a 2D matrix into EDC-style 1D waves for waterfall or spectral display.
+- `sMDC()`: **Slice MDC Curves.** Slices a 2D matrix into MDC-style 1D waves for momentum/position-resolved inspection.
+- `sum2dlinecut()`: **Integrate Linecut Dimension.** Integrates one dimension of a 2D linecut to produce a representative spectrum or profile.
+- `diffeall()`: **Differentiate I/V Batch.** Calculates dI/dV curves from a batch of I/V curves and keeps the result organized for downstream display.
+- `padm()`: **Pad 2D Matrix.** Pads a 2D matrix with zeros around the edge and enlarges the matrix dimensions for FFT/filter workflows.
+
+### Drift, strain, and correction workflows: functions
+
+- `ConstLF()`: **Interactive LF Drift Correction.** Opens the Lawler-Fujita drift-correction controller after the required q-vector setup has been prepared.
+- `t2dlockin()`: **2D Lock-In Processing.** Runs the two-dimensional lock-in workflow sharing q-vector selection with FFT Engineering.
+- `shearall()`: **3D Shear Correction.** Applies shear correction to a 3D matrix using a corrected 2D reference wave, typically the matching topography.
+- `cal_strainbyshear()`: **Shear to Strain Estimate.** Calculates lattice mismatch/strain from a shear correction with an arbitrary angle between the lattice and shear axis.
+- `correct2Dmapc()`: **Gate-Leak Map Correction.** Shifts gate-dependent dI/dV curves individually and recombines them into a corrected 2D gate map.
+
+### Graph annotation and color helpers: functions
+
+- `color3s_for3dm()`: **Subwindow Color Range.** Calculates a robust symmetric color range for a 3D-viewer subwindow image.
+- `Drawarrow()`: **Lattice Direction Arrows.** Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length.
 
 ## Start Here: Main Panel, Menus, and Window Entries
 
@@ -61,7 +145,7 @@ Menu "Kong Panel"
 Window Kong_Igor_panel() : Panel
 ```
 - Usage: call `Kong_Igor_panel()` to recreate or bring up the Igor window/panel.
-- Notes: Igor window/panel recreation routine for geometric correction, rotation, shear, drift, or strain analysis; ARPES-style loading, plotting, or momentum conversion; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; smooths wave data; differentiates wave data. Main internal calls: `KP_EnsureNewColorTables()`, `txt()`, `dat()`, `asc()`, `tabLabel()`.
+- Notes: Igor window/panel recreation routine for geometric correction, rotation, shear, drift, or strain analysis; ARPES-style loading, plotting, or momentum conversion; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; smooths wave data; differentiates wave data. Main internal calls: `KP_EnsureNewColorTables()`, `KP_EnsurePhysicalConstants()`, `txt()`, `dat()`, `asc()`, `tabLabel()`.
 - Source: `Kong_Igor_panel.ipf:31`
 
 
@@ -9620,7 +9704,7 @@ Function ButtonProc_automatrixTC(ctrlName) : ButtonControl
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Cal. Matrix H(k)`
-- Source: `MatrixCalculation.ipf:79`
+- Source: `MatrixCalculation.ipf:92`
 
 #### `ButtonProc_deletepoint`
 
@@ -10914,7 +10998,7 @@ Proc automatrixTC(paralist,xyzseq,sel)
   - `paralist`: List (by;) of parameter waves (1x1 waves)
   - `xyzseq`: Wave of Pauli sequence, e.g. a polynomial with 6 terms, each term has 3 paulis, the wave should be like {{0,1,2},{2,3,1},{0,2,2},{1,1,1},{2,2,2},{1,0,0}}
   - `sel`: Select Modes
-- Source: `MatrixCalculation.ipf:83`
+- Source: `MatrixCalculation.ipf:96`
 
 #### `AVG_wavein`
 
@@ -12319,7 +12403,7 @@ Function/Wave automatrixC(paralist,xyzseq)
 - Parameters:
   - `paralist`: String name used to locate an Igor wave, graph, folder, or output object.
   - `xyzseq`: Momentum or Q-vector coordinate/index.
-- Source: `MatrixCalculation.ipf:214`
+- Source: `MatrixCalculation.ipf:227`
 
 #### `automatrixT`
 
@@ -12330,7 +12414,7 @@ Function automatrixT(paralist,xyzseq)
 - Parameters:
   - `paralist`: String name used to locate an Igor wave, graph, folder, or output object.
   - `xyzseq`: Momentum or Q-vector coordinate/index.
-- Source: `MatrixCalculation.ipf:103`
+- Source: `MatrixCalculation.ipf:116`
 
 #### `bkremover`
 
@@ -12425,7 +12509,7 @@ Function/Wave diagM(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/29/2023: Added diagM(num) SuperdiagM(num) SubdiagM(num) (V2: added cursor hooks to also the bulk bands) (V3 is a debugged version).
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:865`
+- Source: `MatrixCalculation.ipf:878`
 
 #### `diagM_cmplx`
 
@@ -12437,7 +12521,7 @@ Function/Wave diagM_cmplx(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:822`
+- Source: `MatrixCalculation.ipf:835`
 
 #### `DoLSegreXY`
 
@@ -12799,6 +12883,15 @@ Function/WAVE intersectionforCsrslider()
 - Notes: Wave-returning helper for linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Source: `Pierre's Template.ipf:25366`
 
+#### `KP_EnsurePhysicalConstants`
+
+```igor
+Function KP_EnsurePhysicalConstants()
+```
+- Usage: call `KP_EnsurePhysicalConstants()` from Igor procedure code or the command line.
+- Notes: Ensure common SI constants for source-based KP sessions.
+- Source: `MatrixCalculation.ipf:15`
+
 #### `LDOSofmatrix`
 
 ```igor
@@ -12954,7 +13047,7 @@ Function/wave mpc(A,B)
 - Parameters:
   - `A`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `B`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
-- Source: `MatrixCalculation.ipf:331`
+- Source: `MatrixCalculation.ipf:344`
 
 #### `mpn`
 
@@ -12965,7 +13058,7 @@ Function/wave mpn(A,B)
 - Parameters:
   - `A`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `B`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
-- Source: `MatrixCalculation.ipf:343`
+- Source: `MatrixCalculation.ipf:356`
 
 #### `mpt`
 
@@ -12976,7 +13069,7 @@ Function/Wave mpt(A,B)
 - Parameters:
   - `A`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `B`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
-- Source: `MatrixCalculation.ipf:355`
+- Source: `MatrixCalculation.ipf:368`
 
 #### `NewDerivPRB98_214503_eq2_N`
 
@@ -12984,7 +13077,7 @@ Function/Wave mpt(A,B)
 Function NewDerivPRB98_214503_eq2_N()
 ```
 - Notes: # 02. New version numerical; equation (2) of PRB 98, 214503 Usage: call `NewDerivPRB98_214503_eq2_N()` from Igor procedure code or the command line. Main internal calls: `wC()`, `Wn()`, `automatrixC()`, `cktable()`. Update log: 10/12/2023: (4) NewDerivPRB98_214503_eq2_N(): Demo to show how to do complex numerical wave Hamiltonian derivation.
-- Source: `MatrixCalculation.ipf:42`
+- Source: `MatrixCalculation.ipf:55`
 
 #### `NewDerivPRB98_214503_eq2_T`
 
@@ -12992,7 +13085,7 @@ Function NewDerivPRB98_214503_eq2_N()
 Function NewDerivPRB98_214503_eq2_T()
 ```
 - Notes: # 01. New version Text; equation (2) of PRB 98, 214503 Usage: call `NewDerivPRB98_214503_eq2_T()` from Igor procedure code or the command line. Main internal calls: `wT()`, `Wn()`, `automatrixT()`. Update log: 10/12/2023: (3) NewDerivPRB98_214503_eq2_T(): Demo to show how to do Text wave Hamiltonian derivation.
-- Source: `MatrixCalculation.ipf:15`
+- Source: `MatrixCalculation.ipf:28`
 
 #### `Norma3dmatrix`
 
@@ -13031,7 +13124,7 @@ Function/Wave numslicevnam()
 Function OldderivPRB98_214503_eq1_T()
 ```
 - Notes: # 01. Old version Text; equation (1) of PRB 98, 214503 Usage: call `OldderivPRB98_214503_eq1_T()` from Igor procedure code or the command line. Code behavior: creates output waves; duplicates or stages waves for downstream processing. Main internal calls: `mpt()`, `st0()`, `stz()`, `stx()`, `sty()`, `plust()`.
-- Source: `MatrixCalculation.ipf:578`
+- Source: `MatrixCalculation.ipf:591`
 
 #### `OldDerivPRB98_214503_eq2_N`
 
@@ -13039,7 +13132,7 @@ Function OldderivPRB98_214503_eq1_T()
 Function OldDerivPRB98_214503_eq2_N()
 ```
 - Notes: # 03. Old version Numerical; equation (2) of PRB 98, 214503 Usage: call `OldDerivPRB98_214503_eq2_N()` from Igor procedure code or the command line. Code behavior: creates output waves; duplicates or stages waves for downstream processing. Main internal calls: `mpc()`, `sz()`, `s0()`, `sx()`, `sy()`, `cktable()`.
-- Source: `MatrixCalculation.ipf:733`
+- Source: `MatrixCalculation.ipf:746`
 
 #### `OldderivPRB98_214503_eq2_T`
 
@@ -13047,7 +13140,7 @@ Function OldDerivPRB98_214503_eq2_N()
 Function OldderivPRB98_214503_eq2_T()
 ```
 - Notes: # 02. Old version Text; equation (2) of PRB 98, 214503 Usage: call `OldderivPRB98_214503_eq2_T()` from Igor procedure code or the command line. Code behavior: creates output waves; duplicates or stages waves for downstream processing. Main internal calls: `mpt()`, `stz()`, `st0()`, `stx()`, `sty()`, `plust()`.
-- Source: `MatrixCalculation.ipf:634`
+- Source: `MatrixCalculation.ipf:647`
 
 #### `onedpad2d`
 
@@ -13096,7 +13189,7 @@ Function/Wave plust(A,B)
 - Parameters:
   - `A`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `B`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
-- Source: `MatrixCalculation.ipf:399`
+- Source: `MatrixCalculation.ipf:412`
 
 #### `PrintMarqueeCoords`
 
@@ -13239,7 +13332,7 @@ Function/Wave Rotxy(degree,x0,y0,Dis)
 Function/wave s0()
 ```
 - Notes: Complex Pauli matrix Usage: call `s0()` from Igor procedure code or the command line. Code behavior: creates output waves. Update log: 10/12/2023: (7) s0() sx() sy() sz(): Complex numerical Pauli matrix.
-- Source: `MatrixCalculation.ipf:474`
+- Source: `MatrixCalculation.ipf:487`
 
 #### `scalewave`
 
@@ -13331,7 +13424,7 @@ Function smoothtimes(name)
 Function/wave st0()
 ```
 - Notes: Text Pauli matrix Usage: call `st0()` from Igor procedure code or the command line. Code behavior: creates output waves. Update log: 10/12/2023: (8) st0() stx() sty() stz(): Text Pauli matrix.
-- Source: `MatrixCalculation.ipf:525`
+- Source: `MatrixCalculation.ipf:538`
 
 #### `stx`
 
@@ -13340,7 +13433,7 @@ Function/wave stx()
 ```
 - Usage: call `stx()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (8) st0() stx() sty() stz(): Text Pauli matrix.
-- Source: `MatrixCalculation.ipf:547`
+- Source: `MatrixCalculation.ipf:560`
 
 #### `sty`
 
@@ -13349,7 +13442,7 @@ Function/wave sty()
 ```
 - Usage: call `sty()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (8) st0() stx() sty() stz(): Text Pauli matrix.
-- Source: `MatrixCalculation.ipf:558`
+- Source: `MatrixCalculation.ipf:571`
 
 #### `stz`
 
@@ -13358,7 +13451,7 @@ Function/wave stz()
 ```
 - Usage: call `stz()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (8) st0() stx() sty() stz(): Text Pauli matrix.
-- Source: `MatrixCalculation.ipf:536`
+- Source: `MatrixCalculation.ipf:549`
 
 #### `subbkgndremover`
 
@@ -13385,7 +13478,7 @@ Function/Wave SubdiagM(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/29/2023: Added diagM(num) SuperdiagM(num) SubdiagM(num) (V2: added cursor hooks to also the bulk bands) (V3 is a debugged version).
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:879`
+- Source: `MatrixCalculation.ipf:892`
 
 #### `SubdiagM_cmplx`
 
@@ -13397,7 +13490,7 @@ Function/Wave SubdiagM_cmplx(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:836`
+- Source: `MatrixCalculation.ipf:849`
 
 #### `SuperdiagM`
 
@@ -13409,7 +13502,7 @@ Function/Wave SuperdiagM(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/29/2023: Added diagM(num) SuperdiagM(num) SubdiagM(num) (V2: added cursor hooks to also the bulk bands) (V3 is a debugged version).
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:893`
+- Source: `MatrixCalculation.ipf:906`
 
 #### `SuperdiagM_cmplx`
 
@@ -13421,7 +13514,7 @@ Function/Wave SuperdiagM_cmplx(num)
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `num`: Number of spectra, waves, points, bins, or iterations to process.
-- Source: `MatrixCalculation.ipf:850`
+- Source: `MatrixCalculation.ipf:863`
 
 #### `sx`
 
@@ -13430,7 +13523,7 @@ Function/wave sx()
 ```
 - Usage: call `sx()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (7) s0() sx() sy() sz(): Complex numerical Pauli matrix.
-- Source: `MatrixCalculation.ipf:496`
+- Source: `MatrixCalculation.ipf:509`
 
 #### `sy`
 
@@ -13439,7 +13532,7 @@ Function/wave sy()
 ```
 - Usage: call `sy()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (7) s0() sx() sy() sz(): Complex numerical Pauli matrix.
-- Source: `MatrixCalculation.ipf:507`
+- Source: `MatrixCalculation.ipf:520`
 
 #### `sz`
 
@@ -13448,7 +13541,7 @@ Function/wave sz()
 ```
 - Usage: call `sz()` from Igor procedure code or the command line.
 - Notes: Wave-returning helper for Igor wave/matrix/cube data operation. Code behavior: creates output waves. Update log: 10/12/2023: (7) s0() sx() sy() sz(): Complex numerical Pauli matrix.
-- Source: `MatrixCalculation.ipf:485`
+- Source: `MatrixCalculation.ipf:498`
 
 #### `tdtod`
 
@@ -13471,7 +13564,7 @@ Function testkrnkproduct(wave1,wave2)
 - Parameters:
   - `wave1`: Igor wave reference used as input or output.
   - `wave2`: Igor wave reference used as input or output.
-- Source: `MatrixCalculation.ipf:424`
+- Source: `MatrixCalculation.ipf:437`
 
 #### `Transformpredicted`
 
@@ -13578,7 +13671,7 @@ Function/Wave wC(name,ww)
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
-- Source: `MatrixCalculation.ipf:459`
+- Source: `MatrixCalculation.ipf:472`
 
 #### `WFofmatrix`
 
@@ -13600,7 +13693,7 @@ Function/Wave wN(name,ww)
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
-- Source: `MatrixCalculation.ipf:441`
+- Source: `MatrixCalculation.ipf:454`
 
 #### `wT`
 
@@ -13611,7 +13704,7 @@ Function/Wave wT(name,ww)
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
-- Source: `MatrixCalculation.ipf:450`
+- Source: `MatrixCalculation.ipf:463`
 
 #### `xreflectmatrix`
 

@@ -229,6 +229,38 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Drift, strain, and correction workflows", "correct2Dmapc", "Gate-Leak Map Correction", "Shifts gate-dependent dI/dV curves individually and recombines them into a corrected 2D gate map."),
     ("Graph annotation and color helpers", "color3s_for3dm", "Subwindow Color Range", "Calculates a robust symmetric color range for a 3D-viewer subwindow image."),
     ("Graph annotation and color helpers", "Drawarrow", "Lattice Direction Arrows", "Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length."),
+    ("Physical constants and Hamiltonian tools", "KP_EnsurePhysicalConstants", "Load SI Constants", "Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0` so they can be used directly in Igor expressions, procedures, and modeling notebooks."),
+    ("Physical constants and Hamiltonian tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
+    ("Physical constants and Hamiltonian tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
+    ("Physical constants and Hamiltonian tools", "automatrixC", "Numerical Hamiltonian Matrix", "Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations."),
+    ("Physical constants and Hamiltonian tools", "mpc", "Complex Tensor Product", "Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians."),
+    ("Physical constants and Hamiltonian tools", "mpt", "Text Tensor Product", "Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable."),
+    ("Physical constants and Hamiltonian tools", "plust", "Text Matrix Sum", "Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms."),
+    ("Physical constants and Hamiltonian tools", "s0", "Complex Pauli Identity", "Returns the 2x2 complex identity matrix used as σ0 in numerical Pauli products."),
+    ("Physical constants and Hamiltonian tools", "sx", "Complex Pauli X", "Returns the 2x2 complex σx matrix for numerical Hamiltonian construction."),
+    ("Physical constants and Hamiltonian tools", "sy", "Complex Pauli Y", "Returns the 2x2 complex σy matrix with imaginary off-diagonal elements for numerical Hamiltonian construction."),
+    ("Physical constants and Hamiltonian tools", "sz", "Complex Pauli Z", "Returns the 2x2 complex σz matrix for numerical Hamiltonian construction."),
+    ("Physical constants and Hamiltonian tools", "st0", "Text Pauli Identity", "Returns the 2x2 text identity matrix used as σ0 in symbolic Pauli products."),
+    ("Physical constants and Hamiltonian tools", "stx", "Text Pauli X", "Returns the 2x2 text σx matrix for symbolic Hamiltonian derivation."),
+    ("Physical constants and Hamiltonian tools", "sty", "Text Pauli Y", "Returns the 2x2 text σy matrix using `i` and `-i` entries for symbolic Hamiltonian derivation."),
+    ("Physical constants and Hamiltonian tools", "stz", "Text Pauli Z", "Returns the 2x2 text σz matrix for symbolic Hamiltonian derivation."),
+    ("Physical constants and Hamiltonian tools", "NewDerivPRB98_214503_eq2_T", "Text Derivation Demo", "Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`."),
+    ("Physical constants and Hamiltonian tools", "NewDerivPRB98_214503_eq2_N", "Numerical Derivation Demo", "Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result."),
+]
+
+FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
+    (
+        "Physical constants and Hamiltonian tools",
+        "Physical constants and units",
+        "The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0=q0^2/h` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV=q0` converts electron-volts to joules, `meV=1e-3*eV` converts millielectron-volts to joules, and `m0` is the electron mass in kilograms.",
+        "After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.",
+    ),
+    (
+        "Physical constants and Hamiltonian tools",
+        "Pauli-sequence Hamiltonian recipe",
+        "For a Hamiltonian written as a sum of Pauli tensor products, create one 1x1 parameter wave for each term with `wT()`/`wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate terms. Pauli codes are 0=σ0, 1=σx, 2=σy, and 3=σz.",
+        "Call `automatrixT(\"p1;p2;...\", xyzseq)` for a symbolic text matrix, or `automatrixC(\"p1;p2;...\", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` means σz⊗σx⊗σy; the matching parameter wave multiplies that tensor product.",
+    ),
 ]
 
 SECTION_COLORS = [
@@ -1889,7 +1921,24 @@ def build_search_index(entries: list[dict], files: dict[str, list[str]], control
 
 def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: dict[str, str]) -> str:
     groups: dict[str, list[str]] = defaultdict(list)
+    group_order: list[str] = []
+    for group, title, summary, usage in FEATURED_TEXT_CARDS:
+        if group not in group_order:
+            group_order.append(group)
+        groups[group].append(
+            "\n".join(
+                [
+                    '<article class="featured-card featured-note">',
+                    f'<b>{html.escape(title)}</b>',
+                    f'<p>{linkify_text(summary, anchor_by_name)}</p>',
+                    f'<p>{linkify_text(usage, anchor_by_name)}</p>',
+                    '</article>',
+                ]
+            )
+        )
     for group, name, title, summary in FEATURED_FUNCTIONS:
+        if group not in group_order:
+            group_order.append(group)
         entry = entries_by_name.get(name)
         if entry is None:
             entry = next((e for e in entries_by_name.values() if e["name"].lower() == name.lower()), None)
@@ -1910,7 +1959,7 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
     if not groups:
         return ""
     sections = []
-    for group, _name, _title, _summary in FEATURED_FUNCTIONS:
+    for group in group_order:
         cards = groups.pop(group, None)
         if not cards:
             continue
@@ -1927,7 +1976,7 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
     return (
         '<section id="featured-utilities">\n'
         '<h2>Featured Utilities</h2>\n'
-        '<p>These entries are curated from the source code and the preserved update log. They highlight daily shortcuts, smart display tools, FFT/filter workflows, linecut extraction, and correction routines that are easy to reuse from the command line or from the panel.</p>\n'
+        '<p>These entries are curated from the source code and the preserved update log. They highlight daily shortcuts, smart display tools, FFT/filter workflows, linecut extraction, correction routines, physical constants, and Pauli-matrix Hamiltonian builders that are easy to reuse from the command line or from the panel.</p>\n'
         f'{"".join(sections)}\n'
         '</section>'
     )
@@ -2401,6 +2450,7 @@ def render_md(entries: list[dict]) -> str:
     by_category: dict[str, list[dict]] = defaultdict(list)
     for e in entries:
         by_category[e["category"]].append(e)
+    entries_by_name = {e["name"]: e for e in entries}
     lines = [
         f"# {BRAND} Function Index",
         "",
@@ -2410,7 +2460,32 @@ def render_md(entries: list[dict]) -> str:
         "",
         f"Total entries: {len(entries)}",
         "",
+        "## Featured Utilities",
+        "",
+        "These entries highlight reusable shortcuts, physical constants, and Hamiltonian-construction helpers that are especially useful from the Igor command line or from panel-driven workflows.",
+        "",
     ]
+    for group, title, summary, usage in FEATURED_TEXT_CARDS:
+        lines += [f"### {group}: {title}", "", summary, "", usage, ""]
+    by_feature_group: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
+    for group, name, title, summary in FEATURED_FUNCTIONS:
+        entry = entries_by_name.get(name)
+        if entry is None:
+            entry = next((e for e in entries if e["name"].lower() == name.lower()), None)
+        if entry:
+            by_feature_group[group].append((entry["name"], title, summary))
+    seen_feature_groups: set[str] = set()
+    for group, *_ in FEATURED_TEXT_CARDS + FEATURED_FUNCTIONS:
+        if group in seen_feature_groups:
+            continue
+        seen_feature_groups.add(group)
+        cards = by_feature_group.get(group, [])
+        if not cards:
+            continue
+        lines += [f"### {group}: functions", ""]
+        for name, title, summary in cards:
+            lines.append(f"- `{name}()`: **{title}.** {summary}")
+        lines.append("")
     for category, _ in CATEGORY_RULES:
         items = by_category.get(category, [])
         if not items:
