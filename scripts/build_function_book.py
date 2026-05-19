@@ -229,46 +229,96 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Drift, strain, and correction workflows", "correct2Dmapc", "Gate-Leak Map Correction", "Shifts gate-dependent dI/dV curves individually and recombines them into a corrected 2D gate map."),
     ("Graph annotation and color helpers", "color3s_for3dm", "Subwindow Color Range", "Calculates a robust symmetric color range for a 3D-viewer subwindow image."),
     ("Graph annotation and color helpers", "Drawarrow", "Lattice Direction Arrows", "Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length."),
-    ("Physical constants and Hamiltonian tools", "KP_EnsureStartupGlobals", "Startup Global State", "Runs the source-install startup state restoration: SI constants plus the template root globals that older panel workflows expect to exist."),
-    ("Physical constants and Hamiltonian tools", "KP_EnsureTemplateRootGlobals", "Template Root Globals", "Recreates the root-level numeric and string globals that were saved in the original template experiment, using create-if-missing behavior so existing analysis state is not overwritten."),
-    ("Physical constants and Hamiltonian tools", "KP_EnsurePhysicalConstants", "Load SI Constants", "Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, `m0`, and `epslon0` so they can be used directly in Igor expressions, procedures, and modeling notebooks."),
-    ("Physical constants and Hamiltonian tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
-    ("Physical constants and Hamiltonian tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
-    ("Physical constants and Hamiltonian tools", "automatrixC", "Numerical Hamiltonian Matrix", "Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations."),
-    ("Physical constants and Hamiltonian tools", "mpc", "Complex Tensor Product", "Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians."),
-    ("Physical constants and Hamiltonian tools", "mpt", "Text Tensor Product", "Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable."),
-    ("Physical constants and Hamiltonian tools", "plust", "Text Matrix Sum", "Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms."),
-    ("Physical constants and Hamiltonian tools", "s0", "Complex Pauli Identity", "Returns the 2x2 complex identity matrix used as σ0 in numerical Pauli products."),
-    ("Physical constants and Hamiltonian tools", "sx", "Complex Pauli X", "Returns the 2x2 complex σx matrix for numerical Hamiltonian construction."),
-    ("Physical constants and Hamiltonian tools", "sy", "Complex Pauli Y", "Returns the 2x2 complex σy matrix with imaginary off-diagonal elements for numerical Hamiltonian construction."),
-    ("Physical constants and Hamiltonian tools", "sz", "Complex Pauli Z", "Returns the 2x2 complex σz matrix for numerical Hamiltonian construction."),
-    ("Physical constants and Hamiltonian tools", "st0", "Text Pauli Identity", "Returns the 2x2 text identity matrix used as σ0 in symbolic Pauli products."),
-    ("Physical constants and Hamiltonian tools", "stx", "Text Pauli X", "Returns the 2x2 text σx matrix for symbolic Hamiltonian derivation."),
-    ("Physical constants and Hamiltonian tools", "sty", "Text Pauli Y", "Returns the 2x2 text σy matrix using `i` and `-i` entries for symbolic Hamiltonian derivation."),
-    ("Physical constants and Hamiltonian tools", "stz", "Text Pauli Z", "Returns the 2x2 text σz matrix for symbolic Hamiltonian derivation."),
-    ("Physical constants and Hamiltonian tools", "NewDerivPRB98_214503_eq2_T", "Text Derivation Demo", "Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`."),
-    ("Physical constants and Hamiltonian tools", "NewDerivPRB98_214503_eq2_N", "Numerical Derivation Demo", "Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result."),
+    ("Hamiltonian Tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
+    ("Hamiltonian Tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
+    ("Hamiltonian Tools", "automatrixC", "Numerical Hamiltonian Matrix", "Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations."),
+    ("Hamiltonian Tools", "mpc", "Complex Tensor Product", "Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians."),
+    ("Hamiltonian Tools", "mpt", "Text Tensor Product", "Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable."),
+    ("Hamiltonian Tools", "plust", "Text Matrix Sum", "Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms."),
+    ("Hamiltonian Tools", "s0", "Complex Pauli Identity", "Returns the 2x2 complex identity matrix used as \\(\\sigma_0\\) in numerical Pauli products."),
+    ("Hamiltonian Tools", "sx", "Complex Pauli X", "Returns the 2x2 complex \\(\\sigma_x\\) matrix for numerical Hamiltonian construction."),
+    ("Hamiltonian Tools", "sy", "Complex Pauli Y", "Returns the 2x2 complex \\(\\sigma_y\\) matrix with imaginary off-diagonal elements for numerical Hamiltonian construction."),
+    ("Hamiltonian Tools", "sz", "Complex Pauli Z", "Returns the 2x2 complex \\(\\sigma_z\\) matrix for numerical Hamiltonian construction."),
+    ("Hamiltonian Tools", "st0", "Text Pauli Identity", "Returns the 2x2 text identity matrix used as \\(\\sigma_0\\) in symbolic Pauli products."),
+    ("Hamiltonian Tools", "stx", "Text Pauli X", "Returns the 2x2 text \\(\\sigma_x\\) matrix for symbolic Hamiltonian derivation."),
+    ("Hamiltonian Tools", "sty", "Text Pauli Y", "Returns the 2x2 text \\(\\sigma_y\\) matrix using \\(i\\) and \\(-i\\) entries for symbolic Hamiltonian derivation."),
+    ("Hamiltonian Tools", "stz", "Text Pauli Z", "Returns the 2x2 text \\(\\sigma_z\\) matrix for symbolic Hamiltonian derivation."),
+    ("Hamiltonian Tools", "NewDerivPRB98_214503_eq2_T", "Text Derivation Demo", "Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`."),
+    ("Hamiltonian Tools", "NewDerivPRB98_214503_eq2_N", "Numerical Derivation Demo", "Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result."),
 ]
 
 FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
     (
-        "Physical constants and Hamiltonian tools",
-        "Physical constants and units",
-        "The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV` converts electron-volts to joules, `meV` converts millielectron-volts to joules, `m0` is the electron mass in kilograms, and `epslon0` is the vacuum permittivity with its historical KP spelling preserved.",
-        "After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.",
+        "Physical Constants",
+        "Elementary charge `q0`",
+        "\\(q_0 = 1.602176634\\times10^{-19}\\,\\mathrm{C}\\). KP stores this as `q0` in `root:`.",
+        "Use `q0` directly when converting between electron-volts and joules, or when writing charge-based model expressions.",
     ),
     (
-        "Physical constants and Hamiltonian tools",
-        "Template root globals",
-        "The source version also restores root-level globals that were stored as experiment objects in `template.pxp`: graph/color state variables such as `topgraphnum`, `topimagemin`, `topimagemax`, `topimageminratio`, `topimagemaxratio`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `typeofdata`, `minsetvar`, `maxsetvar`, `zn_cons`, and strings such as `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.",
-        "`KP_EnsureTemplateRootGlobals()` creates these objects only when they are missing. This protects older display, color-table, and popup workflows that assume the globals exist, while avoiding resets when the user already has active graph state in the experiment. The complete startup-state table is in `STARTUP_STATE.html` / `STARTUP_STATE.md`.",
+        "Physical Constants",
+        "Planck constant `h`",
+        "\\(h = 6.62607015\\times10^{-34}\\,\\mathrm{J\\,s}\\). KP stores this as `h` in `root:`.",
+        "Use `h` together with `q0` or frequency/energy scales in tunneling and model calculations.",
     ),
     (
-        "Physical constants and Hamiltonian tools",
+        "Physical Constants",
+        "Conductance quantum `G0`",
+        "\\(G_0=e^2/h=3.87404586493\\times10^{-5}\\,\\mathrm{S}\\). KP stores this as `G0`.",
+        "Example: `2*G0` evaluates \\(2G_0\\) in siemens for quick conductance-scale estimates.",
+    ),
+    (
+        "Physical Constants",
+        "Bohr magneton `muB`",
+        "\\(\\mu_B = 9.2740100783\\times10^{-24}\\,\\mathrm{J/T}\\). KP stores this as `muB`.",
+        "Example: `muB*B/meV` converts the Zeeman energy \\(\\mu_B B\\) from joules to meV.",
+    ),
+    (
+        "Physical Constants",
+        "Boltzmann constant `kB`",
+        "\\(k_B = 1.380649\\times10^{-23}\\,\\mathrm{J/K}\\). KP stores this as `kB`.",
+        "Example: `5*meV/kB` converts \\(5\\,\\mathrm{meV}\\) into a temperature scale in kelvin.",
+    ),
+    (
+        "Physical Constants",
+        "Electron-volt `eV`",
+        "\\(1\\,\\mathrm{eV}=1.602176634\\times10^{-19}\\,\\mathrm{J}\\). KP stores this conversion factor as `eV`.",
+        "Use `energy/eV` to convert a joule-valued expression into electron-volts.",
+    ),
+    (
+        "Physical Constants",
+        "Millielectron-volt `meV`",
+        "\\(1\\,\\mathrm{meV}=1.602176634\\times10^{-22}\\,\\mathrm{J}\\). KP stores this conversion factor as `meV`.",
+        "Use `energy/meV` for STM/STS gap, Zeeman, and thermal-energy estimates in meV.",
+    ),
+    (
+        "Physical Constants",
+        "Electron mass `m0`",
+        "\\(m_0 = 9.1093837015\\times10^{-31}\\,\\mathrm{kg}\\). KP stores this as `m0`.",
+        "Use `m0` in effective-mass, dispersion, and model-Hamiltonian calculations.",
+    ),
+    (
+        "Physical Constants",
+        "Vacuum permittivity `epslon0`",
+        "\\(\\epsilon_0 = 8.8541878128\\times10^{-12}\\,\\mathrm{F/m}\\). KP stores this as `epslon0`.",
+        "The historical spelling `epslon0` is preserved so older KP procedures and notebooks keep working.",
+    ),
+    (
+        "Hamiltonian Tools",
         "Pauli-sequence Hamiltonian recipe",
-        "For a Hamiltonian written as a sum of Pauli tensor products, create one 1x1 parameter wave for each term with `wT()`/`wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate terms. Pauli codes are 0=σ0, 1=σx, 2=σy, and 3=σz.",
-        "Call `automatrixT(\"p1;p2;...\", xyzseq)` for a symbolic text matrix, or `automatrixC(\"p1;p2;...\", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` means σz⊗σx⊗σy; the matching parameter wave multiplies that tensor product.",
+        "For a Hamiltonian written as \\(H=\\sum_j c_j\\,\\sigma_{a_j}\\otimes\\sigma_{b_j}\\otimes\\cdots\\), create one 1x1 parameter wave for each coefficient \\(c_j\\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate Hamiltonian terms. Pauli codes are \\(0=\\sigma_0\\), \\(1=\\sigma_x\\), \\(2=\\sigma_y\\), and \\(3=\\sigma_z\\).",
+        "Call `automatrixT(\"p1;p2;...\", xyzseq)` for a symbolic text matrix, or `automatrixC(\"p1;p2;...\", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` represents \\(\\sigma_z\\otimes\\sigma_x\\otimes\\sigma_y\\), multiplied by the matching parameter wave.",
     ),
+]
+
+FEATURED_GROUP_ORDER = [
+    "Daily wave/window shortcuts",
+    "Smart display and 3D workflows",
+    "Fourier, filtering, and phase tools",
+    "Linecut, spectra, and matrix extraction",
+    "Drift, strain, and correction workflows",
+    "Graph annotation and color helpers",
+    "Physical Constants",
+    "Hamiltonian Tools",
 ]
 
 SECTION_COLORS = [
@@ -1977,7 +2027,9 @@ def render_featured_utilities(entries_by_name: dict[str, dict], anchor_by_name: 
     if not groups:
         return ""
     sections = []
-    for group in group_order:
+    ordered_groups = [group for group in FEATURED_GROUP_ORDER if group in groups]
+    ordered_groups.extend(group for group in group_order if group not in ordered_groups)
+    for group in ordered_groups:
         cards = groups.pop(group, None)
         if not cards:
             continue
@@ -2310,6 +2362,13 @@ def render_html(entries: list[dict], files: dict[str, list[str]], controls: list
 <meta charset="utf-8">
 <title>{BRAND} Function Book</title>
 <style>{css()}</style>
+<script>
+window.MathJax = {{
+  tex: {{ inlineMath: [['\\\\(', '\\\\)']] }},
+  svg: {{ fontCache: 'global' }}
+}};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <header>
@@ -2487,20 +2546,30 @@ def render_md(entries: list[dict]) -> str:
         "These entries highlight reusable shortcuts, physical constants, and Hamiltonian-construction helpers that are especially useful from the Igor command line or from panel-driven workflows.",
         "",
     ]
+    by_text_group: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
+    text_group_order: list[str] = []
     for group, title, summary, usage in FEATURED_TEXT_CARDS:
-        lines += [f"### {group}: {title}", "", summary, "", usage, ""]
+        if group not in text_group_order:
+            text_group_order.append(group)
+        by_text_group[group].append((title, summary, usage))
     by_feature_group: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
+    function_group_order: list[str] = []
     for group, name, title, summary in FEATURED_FUNCTIONS:
+        if group not in function_group_order:
+            function_group_order.append(group)
         entry = entries_by_name.get(name)
         if entry is None:
             entry = next((e for e in entries if e["name"].lower() == name.lower()), None)
         if entry:
             by_feature_group[group].append((entry["name"], title, summary))
-    seen_feature_groups: set[str] = set()
-    for group, *_ in FEATURED_TEXT_CARDS + FEATURED_FUNCTIONS:
-        if group in seen_feature_groups:
-            continue
-        seen_feature_groups.add(group)
+    md_feature_groups = [group for group in FEATURED_GROUP_ORDER if group in by_text_group or group in by_feature_group]
+    md_feature_groups.extend(
+        group for group in text_group_order + function_group_order
+        if group not in md_feature_groups
+    )
+    for group in md_feature_groups:
+        for title, summary, usage in by_text_group.get(group, []):
+            lines += [f"### {group}: {title}", "", summary, "", usage, ""]
         cards = by_feature_group.get(group, [])
         if not cards:
             continue

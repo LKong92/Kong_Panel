@@ -10,46 +10,6 @@ Total entries: 3208
 
 These entries highlight reusable shortcuts, physical constants, and Hamiltonian-construction helpers that are especially useful from the Igor command line or from panel-driven workflows.
 
-### Physical constants and Hamiltonian tools: Physical constants and units
-
-The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV` converts electron-volts to joules, `meV` converts millielectron-volts to joules, `m0` is the electron mass in kilograms, and `epslon0` is the vacuum permittivity with its historical KP spelling preserved.
-
-After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.
-
-### Physical constants and Hamiltonian tools: Template root globals
-
-The source version also restores root-level globals that were stored as experiment objects in `template.pxp`: graph/color state variables such as `topgraphnum`, `topimagemin`, `topimagemax`, `topimageminratio`, `topimagemaxratio`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `typeofdata`, `minsetvar`, `maxsetvar`, `zn_cons`, and strings such as `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.
-
-`KP_EnsureTemplateRootGlobals()` creates these objects only when they are missing. This protects older display, color-table, and popup workflows that assume the globals exist, while avoiding resets when the user already has active graph state in the experiment. The complete startup-state table is in `STARTUP_STATE.html` / `STARTUP_STATE.md`.
-
-### Physical constants and Hamiltonian tools: Pauli-sequence Hamiltonian recipe
-
-For a Hamiltonian written as a sum of Pauli tensor products, create one 1x1 parameter wave for each term with `wT()`/`wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate terms. Pauli codes are 0=σ0, 1=σx, 2=σy, and 3=σz.
-
-Call `automatrixT("p1;p2;...", xyzseq)` for a symbolic text matrix, or `automatrixC("p1;p2;...", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` means σz⊗σx⊗σy; the matching parameter wave multiplies that tensor product.
-
-### Physical constants and Hamiltonian tools: functions
-
-- `KP_EnsureStartupGlobals()`: **Startup Global State.** Runs the source-install startup state restoration: SI constants plus the template root globals that older panel workflows expect to exist.
-- `KP_EnsureTemplateRootGlobals()`: **Template Root Globals.** Recreates the root-level numeric and string globals that were saved in the original template experiment, using create-if-missing behavior so existing analysis state is not overwritten.
-- `KP_EnsurePhysicalConstants()`: **Load SI Constants.** Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, `m0`, and `epslon0` so they can be used directly in Igor expressions, procedures, and modeling notebooks.
-- `automatrixTC()`: **Interactive Hamiltonian Builder.** Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output.
-- `automatrixT()`: **Text Hamiltonian Derivation.** Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation.
-- `automatrixC()`: **Numerical Hamiltonian Matrix.** Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations.
-- `mpc()`: **Complex Tensor Product.** Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians.
-- `mpt()`: **Text Tensor Product.** Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable.
-- `plust()`: **Text Matrix Sum.** Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms.
-- `s0()`: **Complex Pauli Identity.** Returns the 2x2 complex identity matrix used as σ0 in numerical Pauli products.
-- `sx()`: **Complex Pauli X.** Returns the 2x2 complex σx matrix for numerical Hamiltonian construction.
-- `sy()`: **Complex Pauli Y.** Returns the 2x2 complex σy matrix with imaginary off-diagonal elements for numerical Hamiltonian construction.
-- `sz()`: **Complex Pauli Z.** Returns the 2x2 complex σz matrix for numerical Hamiltonian construction.
-- `st0()`: **Text Pauli Identity.** Returns the 2x2 text identity matrix used as σ0 in symbolic Pauli products.
-- `stx()`: **Text Pauli X.** Returns the 2x2 text σx matrix for symbolic Hamiltonian derivation.
-- `sty()`: **Text Pauli Y.** Returns the 2x2 text σy matrix using `i` and `-i` entries for symbolic Hamiltonian derivation.
-- `stz()`: **Text Pauli Z.** Returns the 2x2 text σz matrix for symbolic Hamiltonian derivation.
-- `NewDerivPRB98_214503_eq2_T()`: **Text Derivation Demo.** Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`.
-- `NewDerivPRB98_214503_eq2_N()`: **Numerical Derivation Demo.** Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result.
-
 ### Daily wave/window shortcuts: functions
 
 - `tpw()`: **Topmost Image Wave.** Returns the wave name from the topmost active image or subwindow, so KP commands can operate on the current graph without retyping wave names.
@@ -97,6 +57,85 @@ Call `automatrixT("p1;p2;...", xyzseq)` for a symbolic text matrix, or `automatr
 
 - `color3s_for3dm()`: **Subwindow Color Range.** Calculates a robust symmetric color range for a 3D-viewer subwindow image.
 - `Drawarrow()`: **Lattice Direction Arrows.** Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length.
+
+### Physical Constants: Elementary charge `q0`
+
+\(q_0 = 1.602176634\times10^{-19}\,\mathrm{C}\). KP stores this as `q0` in `root:`.
+
+Use `q0` directly when converting between electron-volts and joules, or when writing charge-based model expressions.
+
+### Physical Constants: Planck constant `h`
+
+\(h = 6.62607015\times10^{-34}\,\mathrm{J\,s}\). KP stores this as `h` in `root:`.
+
+Use `h` together with `q0` or frequency/energy scales in tunneling and model calculations.
+
+### Physical Constants: Conductance quantum `G0`
+
+\(G_0=e^2/h=3.87404586493\times10^{-5}\,\mathrm{S}\). KP stores this as `G0`.
+
+Example: `2*G0` evaluates \(2G_0\) in siemens for quick conductance-scale estimates.
+
+### Physical Constants: Bohr magneton `muB`
+
+\(\mu_B = 9.2740100783\times10^{-24}\,\mathrm{J/T}\). KP stores this as `muB`.
+
+Example: `muB*B/meV` converts the Zeeman energy \(\mu_B B\) from joules to meV.
+
+### Physical Constants: Boltzmann constant `kB`
+
+\(k_B = 1.380649\times10^{-23}\,\mathrm{J/K}\). KP stores this as `kB`.
+
+Example: `5*meV/kB` converts \(5\,\mathrm{meV}\) into a temperature scale in kelvin.
+
+### Physical Constants: Electron-volt `eV`
+
+\(1\,\mathrm{eV}=1.602176634\times10^{-19}\,\mathrm{J}\). KP stores this conversion factor as `eV`.
+
+Use `energy/eV` to convert a joule-valued expression into electron-volts.
+
+### Physical Constants: Millielectron-volt `meV`
+
+\(1\,\mathrm{meV}=1.602176634\times10^{-22}\,\mathrm{J}\). KP stores this conversion factor as `meV`.
+
+Use `energy/meV` for STM/STS gap, Zeeman, and thermal-energy estimates in meV.
+
+### Physical Constants: Electron mass `m0`
+
+\(m_0 = 9.1093837015\times10^{-31}\,\mathrm{kg}\). KP stores this as `m0`.
+
+Use `m0` in effective-mass, dispersion, and model-Hamiltonian calculations.
+
+### Physical Constants: Vacuum permittivity `epslon0`
+
+\(\epsilon_0 = 8.8541878128\times10^{-12}\,\mathrm{F/m}\). KP stores this as `epslon0`.
+
+The historical spelling `epslon0` is preserved so older KP procedures and notebooks keep working.
+
+### Hamiltonian Tools: Pauli-sequence Hamiltonian recipe
+
+For a Hamiltonian written as \(H=\sum_j c_j\,\sigma_{a_j}\otimes\sigma_{b_j}\otimes\cdots\), create one 1x1 parameter wave for each coefficient \(c_j\) with `wT()` or `wC()`, then create a real wave `xyzseq` whose rows enumerate Pauli choices and whose columns enumerate Hamiltonian terms. Pauli codes are \(0=\sigma_0\), \(1=\sigma_x\), \(2=\sigma_y\), and \(3=\sigma_z\).
+
+Call `automatrixT("p1;p2;...", xyzseq)` for a symbolic text matrix, or `automatrixC("p1;p2;...", xyzseq)` for the complex numerical matrix. For example, a three-Pauli term column `{3,1,2}` represents \(\sigma_z\otimes\sigma_x\otimes\sigma_y\), multiplied by the matching parameter wave.
+
+### Hamiltonian Tools: functions
+
+- `automatrixTC()`: **Interactive Hamiltonian Builder.** Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output.
+- `automatrixT()`: **Text Hamiltonian Derivation.** Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation.
+- `automatrixC()`: **Numerical Hamiltonian Matrix.** Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations.
+- `mpc()`: **Complex Tensor Product.** Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians.
+- `mpt()`: **Text Tensor Product.** Computes the tensor product for text matrices, simplifying zero and one factors so symbolic Hamiltonian expressions stay readable.
+- `plust()`: **Text Matrix Sum.** Adds two text matrices element by element and removes explicit zero terms, used by `automatrixT()` to combine Hamiltonian terms.
+- `s0()`: **Complex Pauli Identity.** Returns the 2x2 complex identity matrix used as \(\sigma_0\) in numerical Pauli products.
+- `sx()`: **Complex Pauli X.** Returns the 2x2 complex \(\sigma_x\) matrix for numerical Hamiltonian construction.
+- `sy()`: **Complex Pauli Y.** Returns the 2x2 complex \(\sigma_y\) matrix with imaginary off-diagonal elements for numerical Hamiltonian construction.
+- `sz()`: **Complex Pauli Z.** Returns the 2x2 complex \(\sigma_z\) matrix for numerical Hamiltonian construction.
+- `st0()`: **Text Pauli Identity.** Returns the 2x2 text identity matrix used as \(\sigma_0\) in symbolic Pauli products.
+- `stx()`: **Text Pauli X.** Returns the 2x2 text \(\sigma_x\) matrix for symbolic Hamiltonian derivation.
+- `sty()`: **Text Pauli Y.** Returns the 2x2 text \(\sigma_y\) matrix using \(i\) and \(-i\) entries for symbolic Hamiltonian derivation.
+- `stz()`: **Text Pauli Z.** Returns the 2x2 text \(\sigma_z\) matrix for symbolic Hamiltonian derivation.
+- `NewDerivPRB98_214503_eq2_T()`: **Text Derivation Demo.** Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`.
+- `NewDerivPRB98_214503_eq2_N()`: **Numerical Derivation Demo.** Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result.
 
 ## Start Here: Main Panel, Menus, and Window Entries
 
