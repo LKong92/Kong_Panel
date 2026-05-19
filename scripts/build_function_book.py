@@ -1571,9 +1571,10 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
   color: var(--procedure);
 }
 .featured-card {
+  box-sizing: border-box;
   border: 1px solid #e3e7ee;
   border-radius: 7px;
-  padding: 11px 12px;
+  padding: 9px 10px;
   background: #fbfcfe;
 }
 .featured-card a {
@@ -1581,13 +1582,14 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
 }
 .featured-card b {
   display: block;
-  margin: 3px 0 5px;
+  margin: 2px 0 4px;
   color: var(--procedure);
 }
 .featured-card p {
   margin: 0;
   color: #333333;
   font-size: 10.5pt;
+  line-height: 1.45;
 }
 .featured-note mjx-container[display="true"] {
   max-width: 100%;
@@ -1603,25 +1605,26 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
 .featured-cluster-hamiltonian-tools .featured-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  margin-bottom: 12px;
 }
 .featured-note-pauli-sequence-hamiltonian-recipe {
   grid-column: 1 / -1;
 }
 .featured-card-builder {
   grid-column: span 6;
-  min-height: 168px;
+  min-height: 132px;
 }
 .featured-card-tensor {
   grid-column: span 4;
-  min-height: 142px;
+  min-height: 118px;
 }
 .featured-card-pauli {
   grid-column: span 3;
-  min-height: 136px;
+  min-height: 104px;
 }
 .featured-card-pauli p {
-  font-size: 10.2pt;
+  font-size: 9.8pt;
+  line-height: 1.38;
 }
 @media (max-width: 980px) {
   .featured-cluster-hamiltonian-tools .featured-grid {
