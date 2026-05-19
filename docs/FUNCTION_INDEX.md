@@ -120,7 +120,6 @@ Use the Pauli code convention \[\begin{aligned}0&\rightarrow\sigma_0,&1&\rightar
 
 ### Hamiltonian Tools: functions
 
-- `automatrixTC()`: **Interactive Hamiltonian Builder.** Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output.
 - `automatrixT()`: **Text Hamiltonian Derivation.** Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation.
 - `automatrixC()`: **Numerical Hamiltonian Matrix.** Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations.
 - `mpc()`: **Complex Tensor Product.** Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians.
@@ -134,8 +133,6 @@ Use the Pauli code convention \[\begin{aligned}0&\rightarrow\sigma_0,&1&\rightar
 - `stx()`: **Text Pauli X.** Returns the 2x2 text \(\sigma_x\) matrix for symbolic Hamiltonian derivation.
 - `sty()`: **Text Pauli Y.** Returns the 2x2 text \(\sigma_y\) matrix using \(i\) and \(-i\) entries for symbolic Hamiltonian derivation.
 - `stz()`: **Text Pauli Z.** Returns the 2x2 text \(\sigma_z\) matrix for symbolic Hamiltonian derivation.
-- `NewDerivPRB98_214503_eq2_T()`: **Text Derivation Demo.** Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`.
-- `NewDerivPRB98_214503_eq2_N()`: **Numerical Derivation Demo.** Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result.
 
 ## Start Here: Main Panel, Menus, and Window Entries
 

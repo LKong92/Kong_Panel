@@ -229,7 +229,6 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Drift, strain, and correction workflows", "correct2Dmapc", "Gate-Leak Map Correction", "Shifts gate-dependent dI/dV curves individually and recombines them into a corrected 2D gate map."),
     ("Graph annotation and color helpers", "color3s_for3dm", "Subwindow Color Range", "Calculates a robust symmetric color range for a 3D-viewer subwindow image."),
     ("Graph annotation and color helpers", "Drawarrow", "Lattice Direction Arrows", "Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length."),
-    ("Hamiltonian Tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
     ("Hamiltonian Tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
     ("Hamiltonian Tools", "automatrixC", "Numerical Hamiltonian Matrix", "Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations."),
     ("Hamiltonian Tools", "mpc", "Complex Tensor Product", "Computes the matrix tensor product for complex square matrices. Use with `s0()`, `sx()`, `sy()`, and `sz()` when assembling numerical Pauli Hamiltonians."),
@@ -243,8 +242,6 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Hamiltonian Tools", "stx", "Text Pauli X", "Returns the 2x2 text \\(\\sigma_x\\) matrix for symbolic Hamiltonian derivation."),
     ("Hamiltonian Tools", "sty", "Text Pauli Y", "Returns the 2x2 text \\(\\sigma_y\\) matrix using \\(i\\) and \\(-i\\) entries for symbolic Hamiltonian derivation."),
     ("Hamiltonian Tools", "stz", "Text Pauli Z", "Returns the 2x2 text \\(\\sigma_z\\) matrix for symbolic Hamiltonian derivation."),
-    ("Hamiltonian Tools", "NewDerivPRB98_214503_eq2_T", "Text Derivation Demo", "Demonstrates symbolic Hamiltonian derivation for equation (2) of PRB 98, 214503 by creating parameter waves, a Pauli-sequence wave, and running `automatrixT()`."),
-    ("Hamiltonian Tools", "NewDerivPRB98_214503_eq2_N", "Numerical Derivation Demo", "Demonstrates the numerical Hamiltonian workflow for equation (2) of PRB 98, 214503 and runs `MatrixEigenV` on the `automatrixC()` result."),
 ]
 
 FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
@@ -1601,17 +1598,11 @@ code, .sig, .s, .v, .w, .df, .kw-function, .fn-name {
 }
 .featured-cluster-hamiltonian-tools .featured-grid {
   grid-template-columns: minmax(360px, 2.2fr) minmax(130px, .7fr) minmax(130px, .7fr);
-  align-items: stretch;
-}
-.featured-cluster-hamiltonian-tools .featured-note {
-  grid-row: span 3;
+  align-items: start;
 }
 @media (max-width: 980px) {
   .featured-cluster-hamiltonian-tools .featured-grid {
     grid-template-columns: 1fr;
-  }
-  .featured-cluster-hamiltonian-tools .featured-note {
-    grid-row: auto;
   }
 }
 .summary-grid {
