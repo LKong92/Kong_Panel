@@ -55,7 +55,7 @@ p {
 }
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
   margin-top: 26px;
 }
@@ -103,6 +103,9 @@ a.card:hover {
   h1 { font-size: 34px; }
   .grid { grid-template-columns: 1fr; }
 }
+@media (min-width: 761px) and (max-width: 980px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
 </style>
 </head>
 <body>
@@ -124,6 +127,10 @@ a.card:hover {
       <b>Function Book</b>
       <span>Searchable function/procedure manual organized by workflow, with Igor-style syntax highlighting and source references.</span>
     </a>
+    <a class="card" href="STARTUP_STATE.html">
+      <b>Startup State</b>
+      <span>Exact list of source-restored color tables, physical constants, graph/color globals, string globals, and validation commands.</span>
+    </a>
     <a class="card" href="SUMMARY.html">
       <b>Package Summary</b>
       <span>Source statistics for IPF files, functions, procedures, panel controls, generated catalogs, and package structure.</span>
@@ -134,6 +141,7 @@ a.card:hover {
     <a href="https://github.com/LKong92/Kong_Panel#readme">README</a>
     <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/PANEL_GUIDE.md">Panel Guide Markdown</a>
     <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/FUNCTION_INDEX.md">Function Index Markdown</a>
+    <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/STARTUP_STATE.md">Startup State Markdown</a>
     <a href="https://github.com/LKong92/Kong_Panel/blob/main/docs/CHANGELOG.md">Changelog</a>
   </nav>
 </main>

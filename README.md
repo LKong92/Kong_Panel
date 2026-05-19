@@ -12,12 +12,14 @@ Start with these two guides when browsing the package on GitHub:
 
 - [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
 - [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
+- [Startup State](docs/STARTUP_STATE.md): exact list of color-table, physical-constant, graph/color, popup, and compatibility globals recreated when the panel starts in a clean Igor experiment.
 
 The repository also includes interactive HTML manuals with search and navigation. After GitHub Pages is enabled for this repository, these links open the rendered manuals directly in a browser:
 
 - [Interactive documentation site](https://lkong92.github.io/Kong_Panel/)
 - [Function Book HTML](https://lkong92.github.io/Kong_Panel/FUNCTION_BOOK.html)
 - [Panel Guide HTML](https://lkong92.github.io/Kong_Panel/PANEL_GUIDE.html)
+- [Startup State HTML](https://lkong92.github.io/Kong_Panel/STARTUP_STATE.html)
 - [Package Summary HTML](https://lkong92.github.io/Kong_Panel/SUMMARY.html)
 
 GitHub shows the Markdown files directly in the repository browser. The GitHub Pages links above are the preferred way to use the interactive HTML versions from the web.
@@ -48,11 +50,12 @@ Nature 640, 55-61 (2025). https://doi.org/10.1038/s41586-025-08703-x
 - Recommended Igor Pro version: Igor Pro 9 series; this package was prepared from the Igor 9.04 KP line.
 - KP-local Nanonis loading code is now in `src/KP_NanonisLoaders.ipf`.
 - Custom color-table waves are loaded from `src/KP_NewColorTables.itx` when the panel opens.
+- Startup globals saved as Igor experiment objects in `template.pxp` are recreated from `src/KP_GlobalState.ipf` when the panel opens.
 - `src/Kong_Igor_panel.ipf` is self-contained: opening that panel source also includes all of the action-procedure files used by its controls.
 
 ## Quick Start
 
-𝑲𝑶𝑵𝑮 Panel is distributed as an Igor Pro 9 source package. The loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel also loads the custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable`.
+𝑲𝑶𝑵𝑮 Panel is distributed as an Igor Pro 9 source package. The loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
 
 ## Prerequisite: Install Igor Pro 9
 
@@ -269,7 +272,7 @@ KP contains model simulators and teaching/research calculations that can be laun
 - PDW, CDW, multi-order, vortex-pair, topological-defect, and 2D PDM simulations.
 - Temperature convolution, batch temperature convolution, RCSJ model, and P(E) theory calculations.
 - Global SI constants for command-line and modeling work: `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`.
-- Source-install startup restoration for root-level template globals used by older graph/color/popup workflows, including `topgraph*`, `colorsetedc*`, `colorinverseedc`, `zn_cons`, and related strings.
+- Source-install startup restoration for root-level template globals used by older graph/color/popup workflows, including `topgraph*`, `colorsetedc*`, `colorinverseedc`, `zn_cons`, and related strings. The exact defaults and validation commands are listed in `docs/STARTUP_STATE.md`.
 - Matrix-Hamiltonian construction with complex/text Pauli matrices (`s0/sx/sy/sz`, `st0/stx/sty/stz`), tensor products (`mpc/mpn/mpt`), text matrix addition (`plust`), and automated Pauli-sequence builders (`automatrixT/automatrixC`).
 - Band calculations and model-Hamiltonian demonstrations.
 
@@ -284,6 +287,7 @@ Main files:
 The `docs/` folder contains both release notes and generated code references.
 
 - `docs/CHANGELOG.md`: polished GitHub-facing changelog.
+- `docs/STARTUP_STATE.md`: startup-state compatibility note listing the globals restored from `template.pxp`.
 - `docs/KP_update_log_20260518.md`: short update entry for the 2026-05-18 GitHub preparation.
 - `docs/KP_update_log_original.rtf`: original update-log copy.
 - `docs/KP_update_log_raw.txt`: plain-text conversion of the original log.

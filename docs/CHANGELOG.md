@@ -11,8 +11,9 @@ This file is a polished GitHub-facing version of the original `KP update log.rtf
 - Using Codex assistance, rewrote and organically integrated the KP-used Nanonis loading routines that previously depended on KM macro into `KP_NanonisLoaders.ipf`.
 - Removed the runtime dependency on Kohsaka Macro (KM) from the KP Nanonis `.3ds`, `.sxm`, and `.nsp` linecut, grid, and topography workflows.
 - Updated the panel's visible KM cleanup button label from `KMExist` to `Clean`.
-- Added source initialization for the global SI constants introduced in 9.04.13, so clean source installs also provide `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0`.
-- Added source restoration for root-level globals that were stored in `template.pxp`, so source installs recreate the graph/color/popup state variables expected by older workflows.
+- Added source initialization for the global SI constants introduced in 9.04.13, so clean source installs also provide `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, `m0`, and the historical `epslon0`.
+- Added `src/KP_GlobalState.ipf` to restore root-level globals that were stored as experiment objects in `template.pxp`, so source installs recreate the graph/color/popup state variables and strings expected by older workflows.
+- Added `docs/STARTUP_STATE.md` and `docs/STARTUP_STATE.html`, documenting the 29 root numeric globals, 9 root string globals, default values, startup entry point, and Igor validation commands.
 - Added GitHub documentation, `.gitignore`, and code inventory notes.
 
 ## 9.04.15 - 2025-06-08

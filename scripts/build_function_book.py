@@ -231,7 +231,7 @@ FEATURED_FUNCTIONS: list[tuple[str, str, str, str]] = [
     ("Graph annotation and color helpers", "Drawarrow", "Lattice Direction Arrows", "Draws x/y and a/b lattice-direction arrows on the active graph from an origin, angle, and length."),
     ("Physical constants and Hamiltonian tools", "KP_EnsureStartupGlobals", "Startup Global State", "Runs the source-install startup state restoration: SI constants plus the template root globals that older panel workflows expect to exist."),
     ("Physical constants and Hamiltonian tools", "KP_EnsureTemplateRootGlobals", "Template Root Globals", "Recreates the root-level numeric and string globals that were saved in the original template experiment, using create-if-missing behavior so existing analysis state is not overwritten."),
-    ("Physical constants and Hamiltonian tools", "KP_EnsurePhysicalConstants", "Load SI Constants", "Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, and `m0` so they can be used directly in Igor expressions, procedures, and modeling notebooks."),
+    ("Physical constants and Hamiltonian tools", "KP_EnsurePhysicalConstants", "Load SI Constants", "Creates the global SI constants `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, `m0`, and `epslon0` so they can be used directly in Igor expressions, procedures, and modeling notebooks."),
     ("Physical constants and Hamiltonian tools", "automatrixTC", "Interactive Hamiltonian Builder", "Panel/command prompt wrapper for `automatrixT()` and `automatrixC()`. Provide a semicolon-separated list of 1x1 parameter waves and a Pauli-sequence wave, then choose text derivation or numerical output."),
     ("Physical constants and Hamiltonian tools", "automatrixT", "Text Hamiltonian Derivation", "Builds a symbolic/text Hamiltonian matrix from parameter waves and a Pauli-sequence wave. It is useful for deriving and checking Pauli-matrix equations before numerical calculation."),
     ("Physical constants and Hamiltonian tools", "automatrixC", "Numerical Hamiltonian Matrix", "Builds the complex numerical Hamiltonian matrix from the same parameter-list plus Pauli-sequence representation, returning the final complex matrix for eigenvalue or spectral-function calculations."),
@@ -254,14 +254,14 @@ FEATURED_TEXT_CARDS: list[tuple[str, str, str, str]] = [
     (
         "Physical constants and Hamiltonian tools",
         "Physical constants and units",
-        "The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0=q0^2/h` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV=q0` converts electron-volts to joules, `meV=1e-3*eV` converts millielectron-volts to joules, and `m0` is the electron mass in kilograms.",
+        "The panel initializes root-level Igor global variables for common SI quantities: `q0` is the elementary charge in coulombs, `h` is the Planck constant in J s, `G0` is the conductance quantum in siemens, `muB` is the Bohr magneton in J/T, `kB` is the Boltzmann constant in J/K, `eV` converts electron-volts to joules, `meV` converts millielectron-volts to joules, `m0` is the electron mass in kilograms, and `epslon0` is the vacuum permittivity with its historical KP spelling preserved.",
         "After compiling KP or opening `Kong_Igor_panel()`, use these names directly in Igor code or the command line. Examples: `5*meV/kB` converts 5 meV to kelvin, `2*G0` gives two spinless conductance quanta in siemens, and `muB*B/meV` converts a Zeeman scale at field `B` from joules to meV.",
     ),
     (
         "Physical constants and Hamiltonian tools",
         "Template root globals",
-        "The source version also restores root-level globals that were stored as experiment objects in `template.pxp`: graph/color state variables such as `topgraphnum`, `topimagemin`, `topimagemax`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `zn_cons`, and strings such as `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.",
-        "`KP_EnsureTemplateRootGlobals()` creates these objects only when they are missing. This protects older display, color-table, and popup workflows that assume the globals exist, while avoiding resets when the user already has active graph state in the experiment.",
+        "The source version also restores root-level globals that were stored as experiment objects in `template.pxp`: graph/color state variables such as `topgraphnum`, `topimagemin`, `topimagemax`, `topimageminratio`, `topimagemaxratio`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `typeofdata`, `minsetvar`, `maxsetvar`, `zn_cons`, and strings such as `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.",
+        "`KP_EnsureTemplateRootGlobals()` creates these objects only when they are missing. This protects older display, color-table, and popup workflows that assume the globals exist, while avoiding resets when the user already has active graph state in the experiment. The complete startup-state table is in `STARTUP_STATE.html` / `STARTUP_STATE.md`.",
     ),
     (
         "Physical constants and Hamiltonian tools",
@@ -1877,6 +1877,16 @@ def build_search_index(entries: list[dict], files: dict[str, list[str]], control
             "summary": "Package-level counts for source files, functions, procedures, panels, controls, and code lines.",
         }
     )
+    index.append(
+        {
+            "title": "Startup State",
+            "kind": "Documentation",
+            "page": "Startup State",
+            "url": "STARTUP_STATE.html",
+            "text": "startup state template.pxp KP_GlobalState KP_EnsureStartupGlobals physical constants color tables root globals strings topgraphnum colorsetedc3 topgraphcolor S_info epslon0 validation",
+            "summary": "Exact list of source-restored physical constants, graph/color globals, string globals, and validation commands.",
+        }
+    )
     for e in entries:
         index.append(
             {
@@ -2052,6 +2062,7 @@ def documentation_nav() -> str:
         [
             '<li><a href="PANEL_GUIDE.html">Panel Guide</a></li>',
             '<li><a href="FUNCTION_BOOK.html">Function Book</a></li>',
+            '<li><a href="STARTUP_STATE.html">Startup State</a></li>',
         ]
     )
 
@@ -2372,6 +2383,9 @@ def render_summary_html(entries: list[dict], files: dict[str, list[str]], contro
         ("IPF files", len(files)),
         ("Total source lines", source_lines),
         ("Non-empty source lines", nonblank_lines),
+        ("Custom color tables", 47),
+        ("Startup numeric globals", 29),
+        ("Startup string globals", 9),
         ("Function entries", kind_counts.get("Function", 0)),
         ("Procedure entries", kind_counts.get("Proc", 0)),
         ("Macro entries", kind_counts.get("Macro", 0)),

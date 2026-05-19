@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Startup State - 𝑲𝑶𝑵𝑮 Panel</title>
+<style>
+:root {
+  color-scheme: light;
+  --ink: #172033;
+  --muted: #5b667a;
+  --line: #d8e0ec;
+  --panel: #ffffff;
+  --accent: #1457d9;
+  --accent-2: #b51f4c;
+  --bg: #f4f7fb;
+  --code: #f0f4fb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+main {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 42px 0 56px;
+}
+header {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+}
+h1 {
+  margin: 0 0 10px;
+  font-size: 38px;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+h2 {
+  margin: 30px 0 12px;
+  font-size: 24px;
+}
+p, li {
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.62;
+}
+a { color: var(--accent); text-decoration: none; font-weight: 650; }
+a:hover { text-decoration: underline; }
+.toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 18px;
+}
+.tool-button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+  padding: 8px 12px;
+  color: var(--accent);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 12px 0 22px;
+}
+th, td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #edf3fb;
+  color: var(--ink);
+}
+td:first-child, code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+pre {
+  padding: 14px 16px;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--code);
+}
+code {
+  font-size: 0.94em;
+}
+.note {
+  padding: 14px 16px;
+  border-left: 4px solid var(--accent);
+  background: #fff;
+}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <h1>Startup State Restored from <code>template.pxp</code></h1>
+  <p>This page documents the non-code Igor objects that were present in <code>Template_kly_2025_06_08/template.pxp</code> and are now recreated by the source release.</p>
+  <nav class="toolbar" aria-label="Documentation links">
+    <a class="tool-button" href="index.html">Documentation Home</a>
+    <a class="tool-button" href="PANEL_GUIDE.html">Panel Guide</a>
+    <a class="tool-button" href="FUNCTION_BOOK.html">Function Book</a>
+    <a class="tool-button" href="SUMMARY.html">Package Summary</a>
+    <a class="tool-button" href="https://github.com/LKong92/Kong_Panel/blob/main/docs/STARTUP_STATE.md">Markdown Source</a>
+  </nav>
+</header>
+
+<section>
+  <h2>Why This Exists</h2>
+  <p>The GitHub release is source based: the panel is loaded from <code>src/*.ipf</code> files and the color tables are loaded from <code>KP_NewColorTables.itx</code>. A clean Igor experiment does not automatically contain root-level globals that were previously saved as experiment objects inside <code>template.pxp</code>.</p>
+  <p>Some older 𝑲𝑶𝑵𝑮 Panel display, graph-color, popup, and modeling workflows assume these globals already exist. To keep the source release compatible with those workflows, <code>src/KP_GlobalState.ipf</code> recreates the required root-level variables and strings when the main panel starts.</p>
+</section>
+
+<section>
+  <h2>Startup Entry Point</h2>
+  <pre><code>KP_EnsureNewColorTables()
+KP_EnsureStartupGlobals()
+NewPanel ...</code></pre>
+  <p><code>KP_EnsureStartupGlobals()</code> runs <code>KP_EnsurePhysicalConstants()</code> and <code>KP_EnsureTemplateRootGlobals()</code>. Template root globals are created only when missing, so existing analysis state in an active experiment is not reset.</p>
+</section>
+
+<section>
+  <h2>Physical Constants</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Default value</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><code>q0</code></td><td>1.602176634e-19</td><td>Elementary charge, C</td></tr>
+      <tr><td><code>h</code></td><td>6.62607015e-34</td><td>Planck constant, J s</td></tr>
+      <tr><td><code>G0</code></td><td>3.87404586493e-5</td><td>Conductance quantum e^2/h, S</td></tr>
+      <tr><td><code>muB</code></td><td>9.2740100783e-24</td><td>Bohr magneton, J/T</td></tr>
+      <tr><td><code>kB</code></td><td>1.380649e-23</td><td>Boltzmann constant, J/K</td></tr>
+      <tr><td><code>eV</code></td><td>1.602176634e-19</td><td>Electron volt, J</td></tr>
+      <tr><td><code>meV</code></td><td>1.602176634e-22</td><td>Millielectron volt, J</td></tr>
+      <tr><td><code>m0</code></td><td>9.1093837015e-31</td><td>Electron mass, kg</td></tr>
+      <tr><td><code>epslon0</code></td><td>8.8541878128e-12</td><td>Vacuum permittivity, F/m. The historical spelling is preserved.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Template Numeric Globals</h2>
+  <table>
+    <thead><tr><th>Variable</th><th>Default value</th><th>Typical use</th></tr></thead>
+    <tbody>
+      <tr><td><code>topgraphnum</code></td><td>0</td><td>Active graph/image index used by display helper controls.</td></tr>
+      <tr><td><code>topimagemin</code></td><td>3.39009e-35</td><td>Stored lower color-scale bound for top image display.</td></tr>
+      <tr><td><code>topimagemax</code></td><td>4747.39</td><td>Stored upper color-scale bound for top image display.</td></tr>
+      <tr><td><code>topimageminratio</code></td><td>2.38308e-44</td><td>Stored lower color-scale ratio for top image display.</td></tr>
+      <tr><td><code>topimagemaxratio</code></td><td>0.0432301</td><td>Stored upper color-scale ratio for top image display.</td></tr>
+      <tr><td><code>colorsetedc</code></td><td>5</td><td>Color-table popup/index state for EDC or graph coloring workflows.</td></tr>
+      <tr><td><code>colorsetedc2</code></td><td>6</td><td>Secondary color-table popup/index state.</td></tr>
+      <tr><td><code>colorinverseedc</code></td><td>1</td><td>Inverted-color flag for EDC or graph coloring workflows.</td></tr>
+      <tr><td><code>topgraphnum1</code></td><td>0</td><td>Secondary active graph/image index used by related display helpers.</td></tr>
+      <tr><td><code>topimagemin1</code></td><td>0.0234619</td><td>Secondary lower image color-scale bound.</td></tr>
+      <tr><td><code>topimagemax1</code></td><td>0.120291</td><td>Secondary upper image color-scale bound.</td></tr>
+      <tr><td><code>topimageminratio1</code></td><td>0</td><td>Secondary lower color-scale ratio.</td></tr>
+      <tr><td><code>topimagemaxratio1</code></td><td>1</td><td>Secondary upper color-scale ratio.</td></tr>
+      <tr><td><code>colorindexuser</code></td><td>1</td><td>User color-index selector state.</td></tr>
+      <tr><td><code>colorsetedc3</code></td><td>47</td><td>Custom color-table selector state; matches the 47 KP color tables.</td></tr>
+      <tr><td><code>typeofdata</code></td><td>4</td><td>Data-type selector state used by panel and loader branches.</td></tr>
+      <tr><td><code>minsetvar</code></td><td>0</td><td>Stored minimum value from display/format controls.</td></tr>
+      <tr><td><code>maxsetvar</code></td><td>0</td><td>Stored maximum value from display/format controls.</td></tr>
+      <tr><td><code>zn_cons</code></td><td>2</td><td>3D matrix Z/energy-plane selector used by smart display and graph controls.</td></tr>
+      <tr><td><code>V_Flag</code></td><td>0</td><td>Branch flag retained for compatibility with older procedures.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Template String Globals</h2>
+  <table>
+    <thead><tr><th>String</th><th>Default value</th><th>Typical use</th></tr></thead>
+    <tbody>
+      <tr><td><code>topgraphimage</code></td><td>Zslice_g2_padFFT_Modula</td><td>Stored image-wave name for active graph display workflows.</td></tr>
+      <tr><td><code>topgraphname</code></td><td>Graph11</td><td>Stored graph/window name used by graph helper routines.</td></tr>
+      <tr><td><code>topgraphcolor</code></td><td>root:Packages:NewColortable:dvg_bwr_20_95_c54</td><td>Stored color table path for the active image.</td></tr>
+      <tr><td><code>topgraphcolorinv</code></td><td>0</td><td>Stored inverse-color flag as a string.</td></tr>
+      <tr><td><code>topgraphimage1</code></td><td></td><td>Secondary stored image-wave name.</td></tr>
+      <tr><td><code>topgraphname1</code></td><td></td><td>Secondary stored graph/window name.</td></tr>
+      <tr><td><code>topgraphcolor1</code></td><td>Rainbow256</td><td>Secondary stored color-table name.</td></tr>
+      <tr><td><code>topgraphcolorinv1</code></td><td>0</td><td>Secondary inverse-color flag as a string.</td></tr>
+      <tr><td><code>S_info</code></td><td>ProcGlobal#KMFileOpenHook;</td><td>Preserved Igor hook information string from the template experiment.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Validation Commands</h2>
+  <pre><code>print ItemsInList(WaveList("*",";","",root:Packages:NewColortable:))
+// Expected: 47
+
+print topgraphnum, colorsetedc3, G0, epslon0
+// Expected: 0  47  3.87405e-05  8.85419e-12
+
+print topgraphcolor, S_info
+// Expected: root:Packages:NewColortable:dvg_bwr_20_95_c54  ProcGlobal#KMFileOpenHook;</code></pre>
+  <p class="note">The current source release was validated in a clean Igor Pro 9 experiment with these checks.</p>
+</section>
+</main>
+</body>
+</html>

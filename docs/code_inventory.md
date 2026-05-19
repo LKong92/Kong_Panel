@@ -16,6 +16,7 @@ The GitHub package keeps the KP-specific Igor Pro files in `src/`:
 - `Load_KongPanel.ipf`
 - `Kong_Igor_panel.ipf`
 - `KP_ColorTables.ipf`
+- `KP_GlobalState.ipf`
 - `KP_NewColorTables.itx`
 - `KP_NanonisLoaders.ipf`
 - `Procedure.ipf`
@@ -81,6 +82,15 @@ KP now uses `KP_NanonisLoaders.ipf` instead of `KMLoadData()` and `KMExit()`.
 - `Kong_Igor_panel.ipf` includes `KP_ColorTables` and calls `KP_EnsureNewColorTables()` before creating the panel, so a clean experiment can rebuild `root:Packages:NewColortable`.
 - Any GitHub release or ZIP archive must include `KP_NewColorTables.itx` next to the `.ipf` files, preferably in the same `KongPanel` or `src` folder.
 
+## Startup Global State
+
+- `KP_GlobalState.ipf` provides `KP_EnsureStartupGlobals()`.
+- `Kong_Igor_panel.ipf` calls `KP_EnsureStartupGlobals()` before `NewPanel`, after `KP_EnsureNewColorTables()`.
+- The source release recreates root-level globals that were saved as Igor experiment objects in `Template_kly_2025_06_08/template.pxp`.
+- `KP_EnsurePhysicalConstants()` creates `q0`, `h`, `G0`, `muB`, `kB`, `eV`, `meV`, `m0`, and the historical `epslon0`.
+- `KP_EnsureTemplateRootGlobals()` creates the missing graph/color/popup compatibility variables and strings, including `topgraphnum`, `topimagemin`, `topimagemax`, `colorsetedc`, `colorsetedc2`, `colorsetedc3`, `colorinverseedc`, `colorindexuser`, `zn_cons`, `topgraphimage`, `topgraphname`, `topgraphcolor`, `topgraphcolorinv`, `topgraphcolor1`, and `S_info`.
+- The complete list of 29 root numeric globals and 9 root string globals is documented in `docs/STARTUP_STATE.md` and `docs/STARTUP_STATE.html`.
+
 ## Generated Function Book
 
 The function reference was generated from all `src/*.ipf` files with `scripts/build_function_book.py`.
@@ -90,13 +100,16 @@ The function reference was generated from all `src/*.ipf` files with `scripts/bu
 - `docs/assets/kong_panel_main.png`: main 𝑲𝑶𝑵𝑮 Panel image for use in the GitHub README and panel guide.
 - `docs/PANEL_GUIDE.html`: main-panel image plus button-to-procedure guide.
 - `docs/PANEL_GUIDE.md`: Markdown version of the panel guide.
+- `docs/STARTUP_STATE.html`: browser-readable startup-state compatibility note.
+- `docs/STARTUP_STATE.md`: Markdown startup-state compatibility note.
 - `docs/function_catalog.json`: machine-readable catalog.
 - `docs/panel_catalog.json`: machine-readable panel/control catalog.
 
-The current function catalog contains 3203 entries from 25 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
+The current function catalog contains 3208 entries from 26 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
 
 ## Verification Notes
 
 - `rg` confirms there are no remaining `KMLoadData`, `KMloadData`, or `KMExit` calls in `src/`.
 - Igor Pro was able to scan and compile the new source package after `src/` was synced into Igor's User Procedures folder.
+- Clean-Igor startup validation returned 47 custom color-table waves and confirmed that `topgraphnum`, `colorsetedc3`, `G0`, `epslon0`, `topgraphcolor`, and `S_info` are available after `Kong_Igor_panel()` opens.
 - Compiling inside the original exported PXP can hit duplicate definitions such as `imtb`, because both the old PXP procedure pages and the new `src/` package are loaded at the same time. Use a clean experiment/session for this source package.
