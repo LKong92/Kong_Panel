@@ -1,0 +1,2032 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2820
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fmodern\fcharset0 Courier;\f2\fswiss\fcharset0 Helvetica;
+\f3\fnil\fcharset134 PingFangSC-Regular;\f4\fmodern\fcharset0 Courier-Bold;}
+{\colortbl;\red255\green255\blue255;\red19\green142\blue2;\red179\green179\blue179;\red136\green0\blue252;
+\red0\green0\blue255;\red0\green0\blue0;\red0\green0\blue0;\red0\green0\blue255;\red13\green99\blue98;
+\red251\green2\blue7;\red180\green58\blue4;\red251\green0\blue7;\red183\green177\blue7;}
+{\*\expandedcolortbl;;\cssrgb\c0\c61176\c0;\cssrgb\c75294\c75294\c75294;\cssrgb\c61176\c0\c99216;
+\cssrgb\c0\c0\c100000;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c1680\c19835\c100000;\cssrgb\c0\c45882\c45882;
+\cssrgb\c100000\c14913\c0;\cssrgb\c76471\c30588\c0;\cssrgb\c100000\c0\c0;\cssrgb\c76768\c73671\c0;}
+\paperw11905\paperh16837\margl1440\margr1440\vieww18760\viewh17340\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 06/08/2025  
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.04.15\cf3   \cf2 (Date:\cf3  \cf2 06/08/2025)\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added simulation of P(E) theory. \
+	V2: debug
+\f0\b \
+\
+05/22/2025  
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.04.14\cf3   \cf2 (Date:\cf3  \cf2 05/22/2025)	\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added simulation of RCSJ model, \
+
+\f0\b \
+\
+05/19/2025 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.13\cf3   \cf2 (Date:\cf3  \cf2 05/19/2025)\'94\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added some elementary quantities as global variable, all value is based on SI, \
+		elementary charge: 
+\f0\b q0
+\f2\b0 \
+		Plank constant: 
+\f0\b h
+\f2\b0 \
+		Conductance quantum: 
+\f0\b G0
+\f2\b0  (e^2/h)\
+		Bohr Magneton: 
+\f0\b muB
+\f2\b0 \
+		Boltzmann constant: 
+\f0\b kB\
+
+\f2\b0 		Electron volt: 
+\f0\b eV
+\f2\b0 \
+		Millielectron volt: 
+\f0\b meV
+\f2\b0 \
+		electron mass: 
+\f0\b m0\
+	\
+
+\f2\b0 	Added a new function group into panel \'93Tip Height Experiment\'94\
+		New functions for rescale the dI/dV curve as applying a voltage divider, 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+scalewave\cf0 ($name,s);\cf4 calculates\cf0 (Pvalue,xshouldbe,$name)\
+		
+\f2\fs24 \kerning1\expnd0\expndtw0 Make linecut from the dI/dV curves after divider correction, 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+rescalegroup\cf0 (ratiowave,batchname,num)\
+
+\f2\fs24 \kerning1\expnd0\expndtw0  		Reformat a wave as a reference wave, 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+madewavebytemplate2\cf0 (datawave,templatewave)\
+		
+\f2\fs24 \kerning1\expnd0\expndtw0 Make linecut from random dim delta waves batch,  
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+unevenlinep\cf0 (batchname,templatewave,num)\
+
+\f2\fs24 \kerning1\expnd0\expndtw0 	\
+	Added a function to caculate dI/dV curve from I/V curve by differentiate 
+\f1\fs26 \cf5 \expnd0\expndtw0\kerning0
+Proc\cf3  \cf0 diffeall(mat,totalnum,notes)\
+\
+
+\f2\fs24 \kerning1\expnd0\expndtw0 	Added a function to extract all the dI/dV curve from a 3D wave, and make these waves as a linecut. 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+Gridtolinecut\cf0 ($grid,indexdim)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 		\
+\
+\
+11/25/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.12\cf3   \cf2 (Date:\cf3  \cf2 11/27/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added lattice append,  including honeycomb, triangular, and square lattice. \
+	This is an advanced version. The old \'93line draw\'94 mode was removed.\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs26 \cf0 \expnd0\expndtw0\kerning0
+	Fitimagehoneycombc()\
+	Fitimagetriangularc()\
+	Fitimagesquarec()\
+	
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/25/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.11\cf3   \cf2 (Date:\cf3  \cf2 11/25/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added honeycomb lattice simulator.\
+
+\f0\b \
+11/23/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.10\cf3   \cf2 (Date:\cf3  \cf2 11/23/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added Lattice simulator of TBG and TTG.\
+	The honeycomb lattice position can be calculated by function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+CreateTriangularLatticeCoordinates\cf0 (xx,\cf3  \cf0 yy,\cf3  \cf0 a,\cf3  \cf0 theta)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+07/30/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.06\cf3   \cf2 (Date:\cf3  \cf2 07/30/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added L map
+\f0\b \
+\
+07/14/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.05\cf3   \cf2 (Date:\cf3  \cf2 07/14/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Upgrade QPI simulator, FS and correlation was rotated 45 degree. 
+\f0\b \
+\
+07/08/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.04\cf3   \cf2 (Date:\cf3  \cf2 07/08/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Upgrade the FFT in Smart 3D displayer, now you can choose the symmetrization mode. \
+	V2: correct the bug in close window button\
+
+\f0\b \
+07/07_02/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.03\cf3   \cf2 (Date:\cf3  \cf2 07/07/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Upgrade the arbitrary linecut in Smart 3D displayer. 
+\f0\b \
+\
+07/07/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.02\cf3   \cf2 (Date:\cf3  \cf2 07/07/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added symmetrization. 
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+07/04/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.04.01\cf3   \cf2 (Date:\cf3  \cf2 07/04/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Adapted the  template for Igor 9.04\
+	Change the  image trend remover from 2D fit to 1D fit mode.\
+	Fix the bug in QPI estimator, label KF/G to lamda(a0), Further checked the quantity in the simulator, all the quantity is correct.\
+	V2: GRAPH remove trend now can do both 1D and 2D fitting
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+07/01/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+"Ver.\cf3  \cf2 9.03.06\cf3   \cf2 (Date:\cf3  \cf2 07/01/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added T-conv to a batch of spectrum. 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+convall\cf0 (bathname,num,mode,temp)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+06/27/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.03.05\cf3   \cf2 (Date:\cf3  \cf2 06/27/2024)\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6237\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Upgrade the Multipack 1D. New function was added, now you can manually change the extraction wave by click a button, or equivalently, using command line 
+\f1 \cf0 \cb1 manualvalue_1Dextrac(\cf2 ";0;"\cf0 ,\cf3  \cf2 ";0;"\cf0 )\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+Two stringlists contains the value for the left or right peaks. Blank means change the value to be NaN (the peak does not exist), 0 means do not change the value of that peaks.\
+	In the stringlist, from left to right the absolute value of peak energy increase.
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+05/12/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.03.04\cf3   \cf2 (Date:\cf3  \cf2 05/12/2023)\
+	
+\f2 \cf6 \cb7 Added 
+\f1 \cf5 \cb1 Function\cf3  \cf4 DyneS\cf0 (a,delta,width), 
+\f2 \cf6 \cb7 for example you can use like\
+		make/n=100/o test; setscale/I x,-5,5,\'94\'94,test; test=
+\f1 \cf4 \cb1 DyneS\cf0 (x,1,0.1)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7  	Added a new simulation program for 2D PDM with 2 gaps. 
+\f1 \cf0 \cb1 choiceparameterc()
+\f2 \cf6 \cb7 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 	
+\f2\b0 V02:debug\
+	V03:updated and added examples
+\f0\b \
+\
+05/10/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.03.03\cf3   \cf2 (Date:\cf3  \cf2 05/10/2023)\
+	
+\f2 \cf6 \cb7 Added a new area \'94General Simu.\'94  in panel.  \
+	Added T_convolve for any 1D curve 
+\f1 \cf4 \cb1 convolvetemp\cf0 (name,tt2)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5956\pardirnatural\partightenfactor0
+\cf0 	
+\f2 \cf6 \cb7 Added
+\f1 \cf0 \cb1  \cf4 ave_inmarque\cf0 () 
+\f2 \cf6 \cb7 to the popup window of 
+\f1 \cf4 \cb1 Frommarqueegetsubmatrixs\cf0 (name) 
+\f2 \cf6 \cb7 which can calculate the average value on the partial image (only count the non-Nan value)
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7  
+\f1 \cf0 \cb1 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+05/09/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.03.02\cf3   \cf2 (Date:\cf3  \cf2 05/09/2023)\
+	
+\f0\b\fs24 \cf8 \kerning1\expnd0\expndtw0 New Function (Refine Q)
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Calculate the gradient median of the phase map, while changing the q location. New button was added to the popup window of Launch. After the \'93refined\'93 button was clicked, it will show a calculated map of phase gradient, you can do further refinement or fit the center by 2D Gaussian, you can also save the fitted results to Qa and Qb.\
+	
+\f1 \cf5 \cb1 Proc\cf3  \cf0 determineqbyphasec()\
+\pard\pardeftab720\partightenfactor0
+\cf4 	determineqbyphase\cf0 (grid)\
+\
+	
+\f2 \cf6 \cb7 Added a new get Q button on the main panel.\
+	Fixed bugs for 
+\f1 \cf4 \cb1 Frommarqueegetsubmatrixs\cf0 (name)\
+	
+\f2 \cf6 \cb7 Added Global or just fitted Q for LF correction.\
+\
+	V02: debug
+\f1 \cf0 \cb1 \
+
+\f2 \cf6 \cb7 	V03: debug\
+\pard\pardeftab720\partightenfactor0
+
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 05/04/2024 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.03.01\cf3   \cf2 (Date:\cf3  \cf2 05/04/2023)\
+	
+\f0\b\fs24 \cf8 \kerning1\expnd0\expndtw0 New Function (nanoscale strain analysis)
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Using the Lawler-Fujita extracted displacement field, the strain tensor along arbitrary axis can be computed.\
+	To use this new function, you need to \'93launch\'94 first, and do 2D LF codes next, then you can run strain analysis by extracted displacement fields from LF codes.\
+	V02: debug\
+	V03: debug for partial differential code, pervious code have a bug for dx, dy\
+	V04: debug for line indicator of angle
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+05/03/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.21\cf3   \cf2 (Date:\cf3  \cf2 05/02/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6172\pardirnatural\partightenfactor0
+
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+	Added 
+\f1 \cf4 \cb1 Drawarrow\cf0 (zerox,zeroy,angle,length), 
+\f2 \cf6 \cb7 can automatically draw x/y and a/b lattice indicator to graph.\
+	Added new user color table dvg_BCstrain.\
+	Introduce 
+\f1 \cf5 \cb1 variable\cf0 /G\cf3  \cf0 theta_lattice 
+\f2 \cf6 \cb7 to FFT engineering launch, it is the lattice angle in degree
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\
+05/01/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.20\cf3   \cf2 (Date:\cf3  \cf2 05/01/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6172\pardirnatural\partightenfactor0
+
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+	Chang the method for converting the relative amplitude from 2D lock-in to the real value from individual factor mode to averaged factor modes. (Changes implemented in 
+\f1 \cf4 \cb1 Correct2Dlockinamp\cf0 (scr,angle,windowsize)
+\f2 \cf6 \cb7 )
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+04/28/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.19\cf3   \cf2 (Date:\cf3  \cf2 04/28/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6172\pardirnatural\partightenfactor0
+
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+	Added Model simulation 
+\f1 \cf0 \cb1 oneUCFeSegapsimu() 
+\f2 \cf6 \cb7 To plot the 3D surface Gizmo of the 1UC-FeSe gap function.
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+04/10/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.18\cf3   \cf2 (Date:\cf3  \cf2 04/10/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+Added 
+\f1 \cf0 \cb1 simuCDWc(theta,wLength,c1,c2,c3). 
+\f2\fs24 \kerning1\expnd0\expndtw0 Simulation of NbSe2 CDW and PDW.\
+	V02: added two color tables.\
+	V03: modified the input default\
+	V04: added a color table.
+\f0\b \
+\
+\
+04/09_02/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.17\cf3   \cf2 (Date:\cf3  \cf2 04/09/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added calculation of Moire wavelength for triangular lattice heterostructure with twist angle\
+	
+\f0\b \
+04/09/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.16\cf3   \cf2 (Date:\cf3  \cf2 04/09/2024)"\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added 
+\f1\fs26 \expnd0\expndtw0\kerning0
+FFTstripesimulationc()\
+	Fixed the bug for \'93\'94
+\f2\fs24 \kerning1\expnd0\expndtw0 capture 2D wave name from a child graph.
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+02/02_02/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.15\cf3   \cf2 (Date:\cf3  \cf2 02/02/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5946\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added capture 2D wave name from a child	 graph.\
+	Added Special 3D displayer for simulation 3D waves.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+02/02/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.14\cf3   \cf2 (Date:\cf3  \cf2 02/02/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5946\pardirnatural\partightenfactor0
+\cf0 	\cf8 A wonderful simulation.\cf0 	\
+
+\f2\b0 	A new simulation. This time I achieved a more sophisticated version. This time I borrow a two-band tight binding model, which mimic the minimal behavior of FeSC, only a hole band at gamma and an electron band at M. Organized very well in a compact panel, we can simultaneously 	simulate spectral function, QPI and LDOS for both SC states and normal states.\
+	Cheers! \
+	V2: removed a lot of bugs on coherence factor assignment, and added template parameters.\
+	V3: debug
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+01/29/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.13\cf3   \cf2 (Date:\cf3  \cf2 01/29/2024)"
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5946\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 A new wave can make arbitrary cycle of the color
+\f0\b  
+\f1\b0\fs26 \cf4 \expnd0\expndtw0\kerning0
+cyclecolorwave\cf0 (c,index)
+\f2 , c is the how many circle, should be >= 2, and index is the color index that used to put into the cyclecolor. The sequences is same of that in the color modulation panel.
+\f1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6026\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 	
+\f2\b0 Added 
+\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+vortex-anti vortex pair simulation. You can turn multiple parameters including the sign of the vorticity the absolute value of the vorticity, the phase shift of the vorticity and several other shape parameters.\
+	V2: debug
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+01/27/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.12\cf3   \cf2 (Date:\cf3  \cf2 01/27/2024)"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5861\pardirnatural\partightenfactor0
+\cf2 	
+\f2 \cf6 \cb7 Added vector field plot, and a shrink matrix function to make the matrix coarser.
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+01/24-02/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.11\cf3   \cf2 (Date:\cf3  \cf2 01/24/2024)"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5861\pardirnatural\partightenfactor0
+\cf2 	
+\f2 \cf6 \cb7 Added a tunable incommensurate vector to the multi order simulator\
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 01/24/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ "Ver.\cf3  \cf2 9.02.10\cf3   \cf2 (Date:\cf3  \cf2 01/24/2024)"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5861\pardirnatural\partightenfactor0
+\cf2 	
+\f2 \cf6 \cb7 Added
+\f1 \cf2 \cb1  \cf4 cal_strainbyshear\cf0 (angleoff,sh) 
+\f2 \cf6 \cb7 which can calculate lattice mismatch after shear, the lattice can under arbitrary angle as comparing to the shear axis. Added a new button \'93\uc0\u949 \'94, which call this function.
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+01/22/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ Ver.\cf3  \cf2 9.02.09\cf3   \cf2 (Date:\cf3  \cf2 01/22/2024)\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-6060\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Added 
+\f1 \cf4 \cb1 getall2dwaveongraph\cf0 (), 
+\f2 \cf6 \cb7 which can return the 2D wave name on the top graph, use this function correct the get A and get B of FFT engineer.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5864\pardirnatural\partightenfactor0
+\cf6 	Added LF to move Q modes. This is combined in the Lockin/Ftd, when you select \'93DO FL ?\'94 to be 1, when do interaction, the LF correction can also be calculated.\
+	Added 
+\f1 \cf4 \cb1 Rotxy\cf0 (degree,x0,y0,Dis),
+\f2 \cf6 \cb7 which can calculate the rotated (x,y) coordinate by an arbitrary rotation.
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+01/20/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ Ver.\cf3  \cf2 9.02.08\cf3   \cf2 (Date:\cf3  \cf2 01/20/2024)\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+Added two color table\
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+01/10/2024
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+ Ver.\cf3  \cf2 9.02.07\cf3   \cf2 (Date:\cf3  \cf2 01/10/2024)\cf0 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0\fs26 \cf6 \cb7 \expnd0\expndtw0\kerning0
+Added TTG twist angle map, using moving window algorithm \
+	V2: debug\
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+01/03/2024  
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.02.06\cf3   \cf2 (Date:\cf3  0\cf2 1/03/2024)\
+	
+\f2 \cf6 \cb7 Added QPI Range estimation to FFT engineering.\
+	V2; debug
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\
+12/03-02/2023 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.02.05\cf3   \cf2 (Date:\cf3  \cf2 12/03/2023)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Added integrate one dimension of a 3d wave, it is useful if you want to sum all the energy layer of a grid, for example the FFT(x,y,E), sum all the E, get a energy integrated FFT(x,y) to check the existing vector.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 12/03/2023 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.02.04\cf3   \cf2 (Date:\cf3  \cf2 12/03/2023)\
+	
+\f0\b\fs24 \cf8 \kerning1\expnd0\expndtw0 New Function (PR-QPI)
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Added New Procedure page, PR_QPI. Which can perform phase referenced QPI to resolve the sign of superconducting order parameters related to a define Q. A button \'93PR-QPI: Do it\'94 was added to the area of FFT engineering on the panel. There are several modes can be selected, but the default mode 1 works best.\
+	Some functional functions were added.\
+	(1) 
+\f1 \cf4 \cb1 color3s_for3dmprqpi\cf0 (name,tt) 
+\f2 \cf6 \cb7 to return the value of sigma for diverging color, it can be used as,	 
+\f1 \cf9 \cb1 ModifyImage\cf0  wave\cf3  \cf0 ctab=\cf3  \cf0 \{-\cf4 color3s_for3dmprqpi\cf0 (wave,100), \cf4 color3s_for3dmprqpi\cf0 (wave,100),:Packages:NewColortable:dvg_seismic,0\};\
+	
+\f2 \cf6 \cb7 (2)  
+\f1 \cf4 \cb1 extendffterealimage\cf0 (name), \cf4 extendffterealimage_c\cf0 (name) 
+\f2 \cf6 \cb7 The FFT of real image only have half of the reciprocal space, this can expand the FFT image to a XY symmetric form.\
+	(3) 
+\f1 \cf4 \cb1 C4sym\cf0 (name): 
+\f2 \cf6 \cb7 C4 symmetrize of a wave\
+\
+	(V2: debug)
+\f1 \cf0 \cb1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/26/2023 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.02.03\cf3   \cf2 (Date:\cf3  \cf2 11/26/2023)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5858\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Added More functional PDW linecut simulation, can do both 1Q and 2Q, as well as calculate the inelastic scattering as linear in E; Added a function to integrate one dimension get a spectrum for 2D data, 
+\f1 \cf4 \cb1 sum2dlinecut\cf0 ($name,zn,sufout,show)
+\f2 \cf6 \cb7 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+11/24/2023 
+\f1\b0\fs26 \cf2 \expnd0\expndtw0\kerning0
+Ver.\cf3  \cf2 9.02.02\cf3   \cf2 (Date:\cf3  \cf2 11/24/2023)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2 \cf6 \cb7 	Added Lattice simulation from multi component order vector. (Square lattice and Triangular lattice)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \cb1 \kerning1\expnd0\expndtw0 \
+11/15/2023 ver. 9.02.01\
+
+\f2\b0 	Added New image Displayer, now you can call it by d()\
+
+\f0\b 	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5795\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Moving window correction of relative value of 2D lock-in amplitude. For a given Q, the image will be sliced to be multiple lines first, and moving window along these lines, calculate all the amplitude. Then we have an average value of absolute amplitude, the lock-in results can be scaled by this reference. 	
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+
+\f2\b0 	NOTE: this code paste on the Graph building procedure, can introduce a Graph turn off button\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5765\pardirnatural\partightenfactor0
+
+\f0\b \cf0 	
+\f1\b0\fs26 \cf9 \expnd0\expndtw0\kerning0
+Button\cf3  \cf0 turnoffls3d\cf3  \cf0 title=\cf2 "BACK"\cf0 ,size=\{45,12\},valueColor=(0,0,0),fColor=(1,65535,33232),pos=\{650,585\},\cf5 proc\cf0 =ButtonProc_lsturnoff3d\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\
+11/13_03/2023 ver. 9.01.03\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5521\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Upgrade the topological defect.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/13_02/2023 ver. 9.01.02\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5521\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Reorganized codes, gathering procedure windows into one documents. Delete lykong_d, STS_kly, gathering the code to be new \'93miscellaneous code\'94, gathering all the old codes belong to  to \'93Pierre\'92s template\'94.\
+	(V2: debug)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/13/2023 ver. 9.01.01 \cf10 Major change\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Reformat the Panel Display.\
+	Rename the Panel to be Kong Panel. \
+	Define a version number, Ver. 9.01.01 \
+		First digit to indicate the Igor version, each revision can increase the number behind the dot. The middle sector increase when has big improvement of the code.\
+\
+	Added PDW polarization calculation.\
+	(V2: debug)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/12-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added three tight binding band simulate FeSC Fermi surface.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/12/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Topological defect
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/09-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added two Cyclic_dvg color to newcolortable.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/09/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improved the Moving window technique for tracing the phase difference of two image. Keep the original algorithm, but now fixed a artifact made by the code. In the original version, when the moving window cross a phase jump of the lattice, there is a phase difference artifact. Now we implement new function that is 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+correctboundPhMap\cf0 (nn,ref,block)
+\f2 to remove the artifacts, a new button related is added also \'93FixBnd\'94
+\fs24 \kerning1\expnd0\expndtw0 \
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/06-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the GUI of 2D-lockin and Filter, made a new function combine them two. The related new button \'93Lckin/Ftd\'94\
+	You can fine tune the Q in the display of \'93Lckin/Ftd\'94.\
+	Modify the FFT peak searching procedure, \'93Launch\'94, now, the FFT follow exactly the same manner used in data processing, (padx3)\
+	Modify the \'93FFT\'94, added interpolation function to it.\
+	(V4: modify the MultiM on 3Dplotter; added global Q: GlobalQA GlobalQB; you can choose if you want to use global one or just fitted one at the start of running 2dlockin; global Q can be saved on  \'93Lckin/Ftd\'94.)\
+	(V5: debug)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/06-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the GUI of LF drift code, now we use a unified graph with multiple subwindows, instead of a bunch of windows.\
+	** Function LF2() and affiliated Functions are deleted. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/06-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5425\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added LF drift correction for 3D wave. A new button \'933D\'94 can be found in the FFT engineering panel, the previous LFdrift button change to be \'932D\'94. Before start, you need get the LF XX and YY corrected location waves first. Generally we can get these waves by apply LF 2D code to the corresponding topograph.\
+	\
+	Corrected the FFT modification from (Version: 
+\f0\b 10/02-03/2023
+\f2\b0 ), we added selected area FFT there, but somehow it missing on the later versions, we fixed that problem. \
+	(V2: debug)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+11/06/2023\
+	
+\f2\b0 Fixed range bug for ZRRho map, and added an individual button for the ZRRho.\
+	(V2,V3: debug)\
+ 
+\f0\b \
+11/04/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	
+\f0\b \cf8 Final version of QHZ model.
+\f2\b0 \cf0 \
+	(1) Corrected the k*p/periodic conversion of QWZ and QHZ model.\
+	(2) Corrected the complex paring term in the BdG equation.\
+	(3) Added complex slab function for s+is and other pairing symmetry\
+	(4) Added several gap symmetry, including s/s+is/p+ip/s\'b1/dx2-y2/dxy/px/py; the slab Hamiltonian of only 3 pairings are complex, namely s+is/dxy/py.\
+	(5) Added simultaneous normal band structure of \'933D\'94 button, it is calculated from QWZ model with same parameters.\
+	(6) Fixed some other bugs and made some more improvements.\
+	(V2: debugged)\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 11/01/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Layer weighted Spectral function calculation of Slab bands to QHZ model.\
+	(V2: added rename of the Slab band spectral function, added autoupdate of spectral function when changing parameters)\
+	(V3: debug)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/31/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added LDOS calculation to QHZ model, you can choose mode for these calculation, either (1) directly plot the LDOS as a function of eigenvector index [This is band resolved LDOS], or (2) LDOS as a function of eigenvalue [This is overall LDOS defined as usual].\
+	Added several functions to do matrix calculation.\
+	(1) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+MergeColumneach\cf0 (name,each): 
+\f2 Merge number of \'93each\'94 column of the matrix, the output the dimsize(name,1) reduced to be 1/each 
+\f1 \
+	
+\f2\fs24 \kerning1\expnd0\expndtw0 (2) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+sortColumnindex\cf0 (ref,src): 
+\f2 Sort the column order of src by the ref. This is useful to sort the eigenvector following the ordering of eigenvalue.
+\fs24 \kerning1\expnd0\expndtw0 \
+	(3) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+Indexofmatrix\cf0 (mat,show): 
+\f2 Calculate the LDOS distribution of each band, indexed by the eigenvalue index.
+\fs24 \kerning1\expnd0\expndtw0 \
+	(4) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+WFofmatrix\cf0 (mat,show): 
+\f2 Calculate the wavefucntion distribution of each band, indexed by the eigenvalue index.
+\fs24 \kerning1\expnd0\expndtw0 \
+	(5) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+LDOSofmatrix\cf0 (mat,Vmin,Vmax,show): 
+\f2 Calculate the overall LDOS as a function of energy.
+\fs24 \kerning1\expnd0\expndtw0 \
+	(6) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+MergeRoweach\cf0 (name,each): 
+\f2 Merge number of \'93each\'94 row of the matrix, the output the dimsize(name,0)\ul  \ulnone reduced to be 1/each 
+\f1 \
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 (7)
+\f0\b  
+\f1\b0\fs26 \cf4 \expnd0\expndtw0\kerning0
+RefY\cf0 (name): 
+\f2 Reflect Y axis of the data matrix\
+\
+	(V3 is a debugged version)\
+	(V4: Performance upgrade)\
+	(V5: added Multithread to 
+\f1 \cf4 LDOSofmatrix
+\f2 \cf0 () spectral weight calculation)\
+	(V6: LDOS calculation range corrected to be [0,num-1))\
+	(V7: added main panel control for edge modes)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+10/29/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added slab calculation of QHZ model.\
+	Added 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+diagM\cf0 (num) \cf4 SuperdiagM\cf0 (num) \cf4 SubdiagM\cf0 (num)\
+	(V2: added cursor hooks to also the bulk bands)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	 
+\f2\b0 (V3 is a debugged version)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/28_02/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Qi-Hughes-Zhang model for 2D Chern insulator + SC. The interactive plot are only based on  band structure along G-X and G-M, the Berry phase and Chern number only calculated on some specific trace in the phase space. Please refer to Ref. PRB 82, \
+184516 (2010).  \
+
+\f0\b 	
+\f2\b0 (V3 is a debugged version)\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10/28/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Qi-Wu-Zhang model for 2D Chern insulator. 
+\f0\b  
+\f1\b0\fs26 \cf4 \expnd0\expndtw0\kerning0
+ChernN_QWZ\cf0 (BCname)
+\f0\b\fs24 \kerning1\expnd0\expndtw0 ,
+\f2\b0  [ , ) for square lattice. \
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10/25/2023	\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5255\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added automatic extraction of KM loaded Topograph, use KM \'97> Load from data folder to load all the .sxm file first, and then click the \'93Extr. topo\'94 from the panel.\
+	Added Extract single spectrum (a Button titled \'93p\'94) to smart 3d displayer. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/23/2023	\
+	
+\f2\b0 Upgraded monolayer graphene Landau Level calculation.
+\f0\b \
+\
+10/18_03/2023	\
+	
+\f2\b0 Added new Berry Curvature method
+\f0\b  
+\f1\b0\fs26 \cf4 \expnd0\expndtw0\kerning0
+HaldaneBCFukui\cf0 (t1,t2,M,phi,numxy)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Correct the counting range of
+\f0\b  
+\f1\b0\fs26 \cf4 \expnd0\expndtw0\kerning0
+ChernN_haldane\cf0 (BCname)
+\f0\b\fs24 \kerning1\expnd0\expndtw0 .
+\f2\b0  now it is [ , ) for both dimension
+\f0\b \
+\
+10/18_02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve Haldane Model performance, added Chern number calculation 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+ChernN_haldane\cf0 (BCname)
+\f2\fs24 \kerning1\expnd0\expndtw0 \
+	added 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+ShrinkDigit\cf0 (value,\cf3  \cf0 numSigDigits) 
+\f2\fs24 \kerning1\expnd0\expndtw0 to shrink a variable to some digit numbers.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/18/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Haldane Model, figured out the calculation of Berry Curvature through Igor Pro.\
+	Debugs for 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+automatrixC() automatrixT()
+\f2\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+	Previous version can not be applicable	to Hamiltonian with only one Pauli matrix (2x2), the problem solved now.
+\f0\b \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10/17_02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Debug for 
+\f1\fs26 \expnd0\expndtw0\kerning0
+FTlinecutc() [Y-select pass filter for both 1D and 2D wave] and FTclp() [2D-low pass filter for 2D wave]. Now, the even dimsize requirement was removed from the procedure.
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/17/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 TB Simulation for Nat. Phys. 15, 41 (2019).\
+	Added vertical linecut to d3d()\
+	use \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+
+\f1\fs26 \cf9 \expnd0\expndtw0\kerning0
+Button\cf3  \cf0 launchLinecut\cf3  \cf0 title=\cf2 "Linecut"\cf0 ,size=\{65,14\},fSize=10,\cf5 proc\cf0 =ButtonProc_Cons3dplotZ\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx17955\ri-5234\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf0 \kerning1\expnd0\expndtw0 after call d3d in a function, to replace the previous linecut function by the new one.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5220\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/12-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Fixed bugs on model simulations of eq(1) and eq(2) from PRB 98, 214503.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10/12-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added selected sub lattice dI/dV curve average to smart 3D displayer.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/12-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5234\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added two model simulations of eq(1) and eq(2) from PRB 98, 214503. Using the eigenvalue of the Hamiltonian to construct spectral function\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+10/12/2023 \cf8 Big improvement\cf0 \
+	
+\f2\b0 Added 
+\f0\b Matrix calculation
+\f2\b0  which can be used for deriving Hamiltonian from Pauli matrix equation.\
+	List of new functions\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5113\pardirnatural\partightenfactor0
+\cf0 	(1) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+automatrixT\cf0 (paralist,xyzseq): 
+\f2\fs24 \kerning1\expnd0\expndtw0 deriving the text wave matrix equation, the paralist is the name list of parameter waves, 
+\f1\fs26 \expnd0\expndtw0\kerning0
+xyzseq 
+\f2\fs24 \kerning1\expnd0\expndtw0 is a real numerical wave containing the Pauli matrix sequence.\
+	(2) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+automatrixC\cf0 (paralist,$xyzseq): 
+\f2\fs24 \kerning1\expnd0\expndtw0 deriving the complex numerical wave.\
+	(3) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+NewDerivPRB98_214503_eq2_T\cf0 (): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Demo to show how to do Text wave Hamiltonian derivation.
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f2\fs24 \kerning1\expnd0\expndtw0 	(4) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+NewDerivPRB98_214503_eq2_N\cf0 (): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Demo to show how to do complex numerical  wave Hamiltonian derivation. The calculation results are the final matrix.\
+	(5) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+mpc\cf0 (A,B) \cf4 mpn\cf0 (A,B) \cf4 mpt\cf0 (A,B): 
+\f2\fs24 \kerning1\expnd0\expndtw0 matrix tensor product for complex, real, text square matrix, A and B matrix should be under same dimension.\
+	(6) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+plust\cf0 (A,B): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Text matrix wave summation.\
+	(7) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+s0\cf0 () \cf4 sx\cf0 () \cf4 sy\cf0 () \cf4 sz\cf0 (): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Complex numerical Pauli matrix.\
+	(8) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+st0\cf0 () \cf4 stx\cf0 () \cf4 sty\cf0 () \cf4 stz\cf0 (): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Text Pauli matrix.\
+	(9) 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+wN\cf0 (name,ww) \cf4 wC\cf0 (name,ww) \cf4 wT\cf0 (name,ww): 
+\f2\fs24 \kerning1\expnd0\expndtw0 Make wave ww under \'93name\'94 for real wave, complex wave, text wave
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+10/04/2023\
+	
+\f2\b0 Can normalize STS by average STS on FFT 3D smart displayer\
+
+\f0\b \
+10/03/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Create Grid Lattice segregation, and incorporating it to 3D smart Displayer.\
+	Upgrade the 3D smart Displayer\
+		(1) The average curve now can be updated to be partial area selected automatically follow the Marquee.\
+		(2) The global string mat3dn_cons can be automatically relocate to current Graph when setting variable of zn_cons (the energy), that means you can open multiple 3D player and they will not interference with each other.\
+		(3) when set variable of zn_cons, all the appended image will be removed except the original one.\
+		(4) Change the color inversion of FFT plot\
+		(5) Added a new global variable to control the sigma ratio of the FFT image color scale. A control was added to every FFT.\
+		(6) Added a simple close button to close the graph created by 3D displayer initially.\
+		(7) Upgrade the 
+\fs26 \expnd0\expndtw0\kerning0
+sumoned() function which is for sum over the Grid to get average 1D wave. Now it can apply to a Grid with Nan value, the procedure will skip that 1D curve while counting the averages.
+\fs24 \kerning1\expnd0\expndtw0 \
+	
+\f0\b Roughly finalized Lattice Segregation.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/02-03/2023 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Upgrade the FFT button, now selected area FFT incorporated.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/02-02/2023 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Selected area FFT  by Marquee to 3D smart Displayer.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/02/2023 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Lattice segregation to 3D smart displayer.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+10/01_02/2023 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Upgrade Lattice segregation. Added \'93other\'94, Added Contour plot, diff plot and dif_ave displayer to Extracted panel.\
+	Upgrade FFT, now it will covert nan to zero on the original data.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 10/01/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Lattice segregation. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+09/28-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5038\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added 2D lowpass filter 
+\f1\fs26 \expnd0\expndtw0\kerning0
+FTclp(), only lock to (0,0)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+09/28/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5038\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Minor modification of the panel. Put the manual 1D line jump remover active on the panel. (Titled as \'931\'94), fixed the color scale problem, now when calculate 3sigma, do not count the datapoint with value 0, this is for a dataset stopped before the measurement finished.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+09/21/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Upgrade Multipeak extraction for 1d or 2d wave
+\f1\fs26 \expnd0\expndtw0\kerning0
+. \cf4 t2nddpeak\cf0 (), upgrade layout, now it can display arbitrary number of figures. Added kill layout that will kill all the figures generated, added Turn off, by clicking you will kill all the windows belong to this procedure.\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 09/19/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Multipeak extraction for 1d or 2d wave
+\f1\fs26 \expnd0\expndtw0\kerning0
+. \cf4 t2nddpeak\cf0 ()
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+09/16/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Matrix normalization Y mode. 
+\f1\fs26 \cf3 \expnd0\expndtw0\kerning0
+ \cf0 added\cf3  \cf0 1D\cf3  \cf5 wave\cf3  \cf0 filter to \'93filter Y\'94 button,\cf3  \cf0 the\cf3  \cf0 procedure\cf3  \cf0 can\cf3  \cf0 recongnize\cf3  \cf0 it\cf3  \cf0 automatically.\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+09/15/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added RDF that extract a Radius distribution function from a 2D graph, for example from the correlation.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+09/14/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added CPR simulator and PDW-linecut simulator
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 09/13/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx14172\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added FFT filter for Y linecut, this is only do fft filter along the Y of a linecut, this procedure does not require to click \'93Launch\'94 before run it, so that you need to put the q value by hand, the interactive function can continuously tune the gaussian cutoff and q. 
+\f1\fs26 \expnd0\expndtw0\kerning0
+FTlinecutc(name,avedia,q0)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+09/12/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5120\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Shearcorrection to 3d matrix, the Button \'93Go3D\'94, Function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+shearall\cf0 (mat3dn,refwave,factor). Before launch this procedure, you need to do the shear correction on the reference 2D matrix, generally the corresponding Typograph, after that tell shearall
+\f3 ()
+\f1  the name of the topography. This procedure only works for the 3D matrix with the energy dimension index equal to 2.
+\f2\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+09/09/2023\
+	
+\f2\b0 Incorporate Transfer graph between experiments. (https://www.wavemetrics.com/project/TransferGrpahs)\
+
+\f0\b \
+08/27-02/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Multi 2D-Lock-IN to 3D smart displayer. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/27/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added 3D FFT to 3D smart displayer. You can choice different FFT channel as well as different 2D window functions. The generated 3D FFT matrix are also put into an adopted d3df(), that enables arbitrary linecut extraction, note that in this FFT part, the linecut are X/Y swaps in order to mimic the arrangement of ARPES data.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/25-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Fix that problem. [New bug found for Append T(r), name issue, it can not work when d3d() grab g(r,V), fix it in future by using the bare name introduced in Shear(V)]\
+	Fix a bug on Multimap generator.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/25/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5061\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added new function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+wavelistsub\cf0 (name)
+\f2\fs24 \kerning1\expnd0\expndtw0  to get wave list from all the subwindow, only in subwindow, the wave in the main window will not be accounted .\
+	Added new 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+ckfig_child\cf0 ()
+\f2\fs24 \kerning1\expnd0\expndtw0 to check if there is a window with multiple subwindow display  already exist. As same as other ck functions, you need put it in your procedure right below the display by this form 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+ckfig_child\cf0 (winname(0,1)).\
+	Fix bug for 
+\f2\fs24 \kerning1\expnd0\expndtw0 Shear(V) of 3D smart displayer\
+	[New bug found for Append T(r), name issue, it can not work when d3d() grab g(r,V), fix it in future by using the bare name introduced in Shear(V)]
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/24/2023\
+	
+\f2\b0 Added Shear(V) to 3D smart displayer.
+\f0\b \
+\
+08/23-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Fully Remove the bugs in jump remover in 2D smart displayer.\
+	Now you can choice two mode for jump removing, \
+	(1) Auto mode will automatically given jump amount and jump criteria by calculate the data itself. This mode is suitable for arbitrary jump.\
+	(2) Given mode requires you put the jump amount and jump criteria in. This is suitable for physics meaningful jump, for example the phase jump at phase map. In that case we usually fix the jump amount to be 2*pi, and put the criteria as half of the jump amount. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/23-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Remove some bug from 2D and 3D smart displayer.\
+	(1) Fix the bug in jump remover. Now it works well.  After activate the advanced profile mode, if the jump remove did not work well, try to rerun the jump remover through the popup.\
+	(2) Improve the two point mode. Previous version only get linecut through P sweep, that means if you define a linecut is roughly perpendicular, there is only a little points can select. In this new version, we mounted Q sweep, and the procedure can judge which mode they should take.\
+	(3) Added Colorscale to the Image.\
+	(4) Added pi-norm to the extracted line profile, it is useful when tackle with phase map, it will automatically renormalize the profile by pi, and shift the first point to zero.\
+\
+	(5) Adjust Buttons in 3D displayer \'97> launch linecut\
+	(6) Improve the two point mode. Same as the 2D case, previous version only get linecut through P sweep, that means if you define a linecut is roughly perpendicular, there is only a little points can select. In this new version, we mounted Q sweep, and the procedure can judge which mode they should take.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/23-02/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Combined gap map to 3D smart displayer;\
+	Added T(r) & delta(r) appender to 3D smart displayer;\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/23/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added automatic display of R Z Rho I map to 3D smart displayer. If the Multlimap exist and the input 3D matrix of the 3D smart displayer is the g(r,V), a button will show up entitled by \'93Multimap\'94, click it will display a large graph with 4x3 subwindow. Tuning the bias, every window will be updated automatically.\
+\
+	Added some new functions:\
+	(1) updated 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+tpw\cf0 ()
+\f2\fs24 \kerning1\expnd0\expndtw0  in order to read out active subwindow.\
+	(2) Function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+checkmultiopen\cf0 ()
+\f2\fs24 \kerning1\expnd0\expndtw0  to check if there are a graph with specific number of subwindow exist.\
+	(3) New Grabwin function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+grabwinchild\cf0 (\cf11 nameofwave\cf0 (name)) 
+\f2\fs24 \kerning1\expnd0\expndtw0 for subwindow, this will only check the wave appear at a subwindow, if the wave also displayed in a main graph, this function will ignore that, for that case please use 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+grabwin\cf0 (\cf11 nameofwave\cf0 (name)) 
+\f2\fs24 \kerning1\expnd0\expndtw0 and related variants.\
+	(4) New image color scale function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+color3s_for3dm\cf0 (name,tt)
+\f2\fs24 \kerning1\expnd0\expndtw0 , which is for the wave at a subwindow. \
+	(5) New FFT function, that do magnitude FFT by a give name 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+f_for3dmulti\cf0 (name).
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/22/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Update Nanonis 3ds loading, mounted automatic create R map Z map and Rho map, which defined by Seamus\'92s guys.\
+	Fix bug in LF layout and the coordinate of indicative circle plot.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/21/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Finalized Advanced EMDC for 2D smart EMDC
+\f1\fs26 \expnd0\expndtw0\kerning0
+, several major bugs remain were removed.\
+	Added Advanced Linecut to Smart 3D plotter.\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/20/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5081\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Update smarter EMDC. Added Polar plot for circular mode, and jump remover. I suspect there are some bugs remain, wait for further inspection. No major problem.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/20/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5081\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Update smarter EMDC, new display, adjust tilewindow, format codes.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/19-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5081\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Initial version of smarter EMDC, keep developing. It is cable to get line profile from arbitrary trace, there are basic EMDC mode, Two Points mode, circle mode, and free hand drawing mode.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/19/2023\
+
+\f2\b0 	Some small debugs.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5067\pardirnatural\partightenfactor0
+\cf0 	Solve the problem of Z-norm 3D wave can not redo. Previously, if the Z-norm is equal to 1 when rerun d3d(), the 3D matrix will be overwirte by the normalized 3D wave thus lose the raw data, we fixed this problem, the Setvariable current item will be automatically set to the current status when run d3d()\
+	Remove the check process in Load Nanonis Grid.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+08/18-02/2023\
+
+\f2\b0 	Some small debugs.\
+	correct the scale bar location problem in modifyphase() modifyphasetopo() modifyphasefr() and format/topo.\
+	fix the color range in 2D lock-in phase to be [-pi,pi]\
+	Modify the width of the FFT FWHM SetVariable.\
+	Add KMexist() at the end of Auto Linecut and Auto Grid.
+\f0\b \
+\
+08/18/2023\
+
+\f2\b0 	Added real-time 1D STS extraction by cursor to the smarter 3D plotter. \
+	Update the Auto Grid Map by using new 3d plotter.
+\f0\b \
+\
+08/17/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Smarter New 3D Matrix plotter 
+\f4\b\fs26 \cf10 \expnd0\expndtw0\kerning0
+d3d(mat3dn,zn)
+\f1\b0 \cf0 , \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+
+\f4\b \cf0 	##[Remainder for the old version]
+\f0\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	The old version was created on early 2021 and was modified until late of 2022, the old version is functional by sequentially running (1) 
+\f1\fs26 \expnd0\expndtw0\kerning0
+getslicerData(name,a,b,c,xs,ys,Es,Ed) 
+\f2\fs24 \kerning1\expnd0\expndtw0 (for slicing a 3D matrix <name>, to be multiple 2D matrix), (2) 
+\f1\fs26 \expnd0\expndtw0\kerning0
+mapforSTMf(num,name,suff,start,delta) (
+\f2\fs24 \kerning1\expnd0\expndtw0 combining them together to a 3D matrix again, (3) 
+\f1\fs26 \expnd0\expndtw0\kerning0
+makeextra(), 
+\f2\fs24 \kerning1\expnd0\expndtw0 (launch the smarter plot). This is a stupid algorithm owing to retro back to early year, I am trying to make use of some well written procedures in the General ARPES template, in order to make them compatible, I need to slice every layer to be 2D image first.\
+	**The slicer may be potentially useful in the future 
+\f1\fs26 \expnd0\expndtw0\kerning0
+getslicerData(name,a,b,c,xs,ys,Es,Ed)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0  	##[Features of the new version],
+\f4\fs26 \expnd0\expndtw0\kerning0
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+
+\f1\b0 \cf0 	
+\f2\fs24 \kerning1\expnd0\expndtw0 In the New version, you need first launch 
+\f4\b\fs26 \cf10 \expnd0\expndtw0\kerning0
+d3d(\'93name\'94,zn)
+\f2\b0\fs24 \cf0 \kerning1\expnd0\expndtw0  , if you are using the button, the prompt function automatically return a list of 3D wave at the root by using a new installed function 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+getall3dwave\cf0 ()
+\f2\fs24 \kerning1\expnd0\expndtw0 , zn is the index of the dimension of energy which is usually the last dimension, i.e. 2, the index of other two dimensions (xn, yn) are automatically corrected to make sure xn is always smaller than yn. After 
+\f4\b\fs26 \cf10 \expnd0\expndtw0\kerning0
+d3d(\'93name\'94,zn)
+\f2\b0\fs24 \cf0 \kerning1\expnd0\expndtw0  is launched, you can find a graph showing a constant-Z image, an integrated f(Z) curve in the bottom subwindow and a FFT image. There are 3 controllers, (1) a SetVariable to interactively tuning the Z value, when it was tuned, the constant-Z image and FFT image will update automatically, in addition, a bar indicator move in the subwindow. (2) a button entitled \'93Launch Linecut\'94, by clicking this button, the procedure will launch a linecut slicer, which can get Horizontal and vertical linecut along arbitrary shifting or rotational trace. On the linecut panels, there are also capable to tune on or off the normalization of the linecut, as well as controls the smooth parameters of the linecut. (3) a popup that asking if you want to do Z normalization of the 3D matrix, that will normalize all the (x,y)-spatial resolved Z curve by dividing the average number. All the functions are reversible, e.g. the  Z-normalization will generate a Raw_name data that is equal to the original 3D matrix.\
+	There are some advanced applications of this Smarter Plotter. \
+	(1) Incorporating FFT enginnering. Let the constant-Z image be active, click the \'93Launch\'94 from the FFT engineering domain of the main panel, the FFT engineering will get the name of the constant-Z image to be the global string unitizing in the subsequent processings. Then, you can following the manipulation method in the FFT engineering part, to do 2D lock-in analysis, and FFT filter analysis. One amazing utility here is mounted by this 3D smarter plotter, you can continuously change the Z plane used in FFT engineering. The existence of the graph containing \'93_phi_A\'94 (\'93_ftd\'94) is the condition for tuning 2d-lock-in by 3D plotter (FFT filter).\
+	(2) Incorporating Z_color to make 1D wave waterfall. After \'93Launch linecut\'94 you can choose a linecut interested to run \'93MDC\'94 that will slicing the Linecut to be 1D wave waterfall, and you can do Z_color after that to activate to smart waterfall displayer.\
+
+\f1\fs26 \expnd0\expndtw0\kerning0
+	New functions mounted, \cf4 Normalinecut\cf0 (name) to normalize 2D linecut along x direction. \cf4 sumoned\cf0 (dest,orin,zn) to calculate averaged Z curve from a 3D martrix. \cf4 grabwinnonew\cf0 (name) can grab the winname of a wave without display a new window.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/15/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Improve the 
+\f1\fs26 \expnd0\expndtw0\kerning0
+Intensity_digimage2(), now you can choose the value range of the color bar
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/14/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added a special RGB2Int, 
+\f1\fs26 \expnd0\expndtw0\kerning0
+Intensity_digimage2() 
+\f2\fs24 \kerning1\expnd0\expndtw0 which can be used to extract image data from a paper, screenshot both the color bar and data image, then use the color bar to reproduce the data.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/13-02/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5065\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the performance of FFT engineering domain. The previous \'93PreFFT\'94 was change to be \'93Launch\'94, by click \'93launch\'94, KIP will display the interpolated FFT image, and also the control buttons for all the applications on this domain. The Q_A and Q_B can be got from a button on the preFFT image, and also, in this new version, it no long requires Cursor to read out fitting limit, instead we can use Marquee now! All the interactive procedure belonging to this domain was improved on the calculation speed and final layout of the output figures by \'93titewindows\'94. The redundant waves generated from LF() are removed. Other redundant waves can be remove in the future.\
+	In this new version, you can chose different application on a sam work flow just by clicking different buttons. But to be awared that the [FFT filter], [LFdrift], [2D-lock-in] are written based on QA and QB in 1st and 4th quadrant, but [C4 Shearing correction] requires QA and QB at 2nd and 1st quadrant respectively.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/13/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added color map from https://matplotlib.org/stable/tutorials/colors/colormaps.html\
+	Added Three Set variable function to continues change the colorable of image plot, color waterfall, and Z-color water fall.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5083\pardirnatural\partightenfactor0
+\cf0 08/12-03/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added
+\f0\b  
+\f4\fs26 \expnd0\expndtw0\kerning0
+t2dlockin()
+\f1\b0  
+\f2\fs24 \kerning1\expnd0\expndtw0 for 2D lock-in processing.\
+	Added three user-defined Color table for Positive/negative contrast.
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+08/12-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Have no idea how the kernel procedure of remove fig trend disappeared on some stages of codes development, now the bug fixed.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 08/12/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Debug for Z_color.\
+	Improve the Quick Format domain on the panel.\
+	Added 
+\f1\fs26 \cf5 \expnd0\expndtw0\kerning0
+Function\cf3  \cf4 ButtonProc_sizemapauto\cf0 (ctrlName)\cf3  \cf0 :\cf3  \cf0 ButtonControl\cf3  \cf0 to automatically format a topography, with color bar and scale bar.\
+	Introduce tpw() to Peng\'92s Curvature.\
+	Added Error saving syntax to 2D_GCB.
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/11-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added 
+\f1\fs26 \cf4 \expnd0\expndtw0\kerning0
+autoallfigure\cf0 ()
+\f2 which can do some command going through all the graphs.\
+	Modified 2DSTS, apply tile.\
+	Added dic() to smart display a single 1D wave.\
+	Added Auto Histogram 
+\f1 Conshist(), the single function is \cf4 gethistgram\cf0 ()\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+08/11-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added 
+\fs26 \expnd0\expndtw0\kerning0
+Z_color button on Adjust panel doamin, which can do smart Z_color plot of waterfall. 
+\f1 \cf5 Function\cf3  \cf4 ButtonProc_Zcoloro\cf0 (ctrlName)\cf3  \cf0 :\cf3  \cf0 ButtonControl
+\f2 \
+	Added 
+\f1 \cf4 maxwaterfall\cf0 () and \cf4 minwaterfall\cf0 () which can get the max and min value from a figure of waterfall traces.\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/11/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	\cf10 ***Validity limitation found for LF drift correction and FFT filter. \cf0 Because I use FFT Padding for these two functions, the Padding  procedure should work well. That requires at the edge of the data there is no big jump between the data and zero-valued padding part. It requires to remove the trend of the image before transfer the data into LF and filter.\
+	Added Remove trend for image, this is a interactive procedure, the knob control the power of Poly2D fitting for this trend removing, 
+\f1\fs26 \expnd0\expndtw0\kerning0
+Conslevel()
+\f2\fs24 \kerning1\expnd0\expndtw0 \
+	Added several color tables from gwyddion.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+08/09/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added 
+\fs26 \expnd0\expndtw0\kerning0
+gate map gate leak corrector, which can shift the dI/dV measured on different gate voltages individually and combine them to be a 2D matrix. New Botton \'93Fix gate leak\'94, and procedure, 
+\f1 correct2Dmapc(zbwavename)\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 	
+\f2\b0 Adjust the panel, added section \'93get information\'94\
+	Added linear background subtraction from a waterfall graph 
+\f1\fs26 \expnd0\expndtw0\kerning0
+linenorm2pongraphc(p1,p2)
+\f2\fs24 \kerning1\expnd0\expndtw0 .\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+08/08/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added 
+\fs26 \expnd0\expndtw0\kerning0
+new color tables in the datafolder, root:Packages:NewColortable, Cividis; Colorcet_diverging_bwr_20_95_c54; Inferno;Magma; Plasma; Viridis; Biploar_matlab; if need to add new table, just put the wave in the datafolder, the procedure can search it automatically. The popupmenu is created by \cf9 PopupMenu\cf3  \cf0 popup0\cf3  \cf0 value=\cf11 WaveList\cf0 (\cf2 "*"\cf0 ,\cf3  \cf2 ";"\cf0 ,\cf3  \cf2 ""\cf0 ,\cf3  \cf0 root:Packages:NewColortable)
+\f1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f3 \cf0  
+\f1  
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/31-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added continuously tuning smooth 
+\f1\fs26 \expnd0\expndtw0\kerning0
+Consmoo()
+\f2\fs24 \kerning1\expnd0\expndtw0 and trace offset 
+\f1\fs26 \expnd0\expndtw0\kerning0
+Consoffset()
+\f2\fs24 \kerning1\expnd0\expndtw0 .
+\f1\fs26 \expnd0\expndtw0\kerning0
+\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/31/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Modified Panel
+\f1\fs26 \expnd0\expndtw0\kerning0
+.\
+
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/30/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added 
+\f1\fs26 \expnd0\expndtw0\kerning0
+sEDC()a
+\f2\fs24 \kerning1\expnd0\expndtw0 nd 
+\f1\fs26 \expnd0\expndtw0\kerning0
+sMDC() which can slice a 2D matrix to be 1D waves.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+
+\f2 \cf0 .
+\f0\b\fs24 \kerning1\expnd0\expndtw0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/29/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added Auto gatemapm 
+\fs26 \expnd0\expndtw0\kerning0
+gatemapauto(), and improved the UnevenY by removing redundant waves.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+07/24/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added interactive procedures Const2dfilter() for continuously tuning the window size of FFT filter. Bug fixed.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+07/20/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added interactive procedures ConstLF() for Lawler-Fujita, and 
+\fs26 \expnd0\expndtw0\kerning0
+ContinitialShearFit() 
+\fs24 \kerning1\expnd0\expndtw0 for shear correction coef fitting. To use these two procedures, please normally run the single variable procedures first, and after that, click the \'93adj\'94.\
+	Added 
+\fs26 \cf4 \expnd0\expndtw0\kerning0
+grabtable\cf0 () which can get the table name of a specific wave, different from \cf4 grabwin\cf0 () which can only count the first element at the fig, the \cf4 grabtable\cf0 () search among all the element at a fig.\
+
+\fs24 \kerning1\expnd0\expndtw0 \
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/19-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Minor improvement of \cf6 Shear-Correction.\cf0 \
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/19/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added 
+\f0\b \cf10 Shear-Correction
+\f2\b0 \cf0 . In this procedure, assuming the shear distortion is a X-Shear but the Shear axis can be rotated by some angle theta, This procedure can correct the data by provide the q1 (1st quadrant) q2 (2nd quadrant) coordinate from the FFT of distorted image. When using this procedure,  they share same PreFFT and GetA GetB with FFT filter. Please first do PreFFT, and pick up the coordinate of Q1 Q2, then use \'93Fit Shear\'94 do global fitting to get the shear parameters, finally do \'93Go\'94 to make correction.\
+	[Known Bug: a small bug only influence the corrected data orientation, the global fitting procedure may lead to multiple solution depending on the initial value put into the function, but even these fitted result are not the exactly same value the data is, as long as the Q1 and Q2 are fitted very well, the image can be corrected, but may be needs some rotation later.]\
+\
+	Added Rotated shear Data, a function can X-shear a data with a rotated shear axis.\
+	Added a Demo procedure, which can create a data and a  sheared data image follow the parameters given. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+07/16-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Adjust the panel arrangement. \
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/16/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the algorithm of the phase jump remover in Lawler-Fujita code. This new version #3 of the phase jump remover works very good, and is capable for dealing with multiple times phase jump. The result is much better than the JumpRemover added in 07/08/2023. We made a new Botton for this remover. Function 
+\fs26 \cf3 \expnd0\expndtw0\kerning0
+ \cf4 cnfyj\cf0 (namew,cond,add).\
+	Note: This procedure does not work if there are missing phase jump and phase vortex in the image, if that happens, try use the first version of phase jump remover and do some manual work.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+07/13-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Fix small bugs.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+07/13-03/2023 \cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added 
+\f0\b \cf10 Lawler-Fujita Drift correction
+\f2\b0 \cf0 , they share same PreFFT and GetA GetB with FFT filter\
+	Added 
+\fs26 \expnd0\expndtw0\kerning0
+grabwin(\'93\'94),which can grab the Winname of a given wave.This function will return a string which is the winname\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+07/13-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Added cktable() which can kill redundant table, this should be insert in the function or procedure where new table displayed, in the form of  cktable(winname(0,2)), this can automatically display without repeat. \
+	Added smart single wave table display ed() and ed2(), same as di() and di2(), mode 1 is check if there already displayed if so stop display, and mode 2 is kill the displayed window and display new.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+07/13/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5009\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Add LtE, that can transfer a 2D matrix to be new scaled x quantity. In the procedure, we change the X from wave length (nm) to Energy (eV). You need to tell the procedure the name of the original 2D wave.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5049\pardirnatural\partightenfactor0
+\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/12/2023\
+	
+\f2\b0 Add color range n*sigma. \
+
+\f0\b \
+07/11-2/2023\
+	
+\f2\b0 debug of FFT filter, and 2D peak picker. \
+
+\f0\b \
+07/11/2023\
+	
+\f2\b0 Add FFT filter, and 2D peak picker by 2D Gaussian function fitting.\
+
+\f0\b \
+07/10/2023\
+	
+\f2\b0 Add tpw() return a string which 
+\fs26 \cf12 \expnd0\expndtw0\kerning0
+is\cf3  \cf12 the\cf3  \cf12 name\cf3  \cf12 of\cf3  \cf12 the\cf3  \cf12 wave\cf3  \cf12 in\cf3  \cf12 the\cf3  \cf12 topmost\cf3  \cf12 image.\
+	
+\fs24 \cf0 \kerning1\expnd0\expndtw0 Add an additional mode for line FFT in a 2D wave, by FFT/COLS or FFT/ROWS\
+	Add Smart FFT, which can do it on any data, no matter how many points or if there are NAN data point. \
+	f() do FFT on the first wave of the topmost figure.\
+
+\f0\b \
+07/09-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Add tiling window. A good number is around \
+	
+\fs26 \cf9 \expnd0\expndtw0\kerning0
+tilewindows\cf0 /WINS=\cf11 WinList\cf0 (\cf2 "*"\cf0 ,\cf3  \cf2 ";"\cf0 ,\cf2 "WIN:1"\cf0 )/R/w=(4,0,56,80)\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 \kerning1\expnd0\expndtw0 \
+07/09-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Add function ckfig() and cklayout(), which can kill redundant figure and layout, this should be insert in the function or procedure where new figure or layout displayed, in the form of  ckfig(winname(0,1)) and cklayout(winname(0,4)), this can automatically display without repeat. The Jump Remover 2D  is improved based on these new features, \'93don\'94 is removed.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/09-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Add function padm() to pad the 2D matrix, add some 0 points in the outer of the data and enlarge the dimsize.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+07/09-01/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Improve auto image display function di(), add an new di2(), they now can search and check if the destwave already displayed solely at a graph, if so, di() will not display again but bring that window to front, but  di2() will kill that window and display again. Also inside these function, they calls two function that one can kill a window with a specific name and one can kill a graph which only contains the destwave.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 07/08/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added Jump Remover 2D and a Demo procedure which can generate the DATA INPUT
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+06/26/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added FFT (x) for linecut\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 06/14/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Added convert the Nanonis dI/dV value to G.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+06/13/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5116\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Update the Nanonis loader (average), not only for shape but also the value of dI/dV. It is useful for measurement when tip is keep drifting, you can make forward and backward scan and average them\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-4602\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 06/05/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-5316\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Add nonequal energy range linecut, it is capable to make linecut map based on 2 set and 3 set of data with different energy range, but all the dataset require same dim delta.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+05/15/2023\
+	
+\f2\b0 Add uneven linecut, it can link spectrum with two sets of spectra with different energy range but with same dimdelta.\
+	change the uevenY from factor modes to number point mode.
+\f0\b \
+ \
+04/21/2023 \cf13 Special\cf0 \
+
+\f2\b0 	This is a special version for Baiqing, which debug the pxt and DA30 loader. And recover the ARPES main panel for mat3dk.\
+	[This is not within my normal flow of code development]\
+
+\f0\b \
+04/14-01/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	added Auto Grid Map, and debug the reflect wave.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+04/13-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	added smart displayer for figures di(wave)
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+04/13-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Upgrade Reflection Wave.\
+
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 04/13-01/2023	\cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Change the interpolation to be Function, and fixed bugs.\
+	Added Phase difference Map to compare the FFT phase difference of two matrix with same dimsize and scales.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	\cf6 Rename the KI_panel.pxp to be template.pxp \cf0 \
+
+\f0\b \
+04/08-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Improve the Auto Linecut, Added partial selection of the analysis, for example if you have a very long linecut, but you only want to focus some part of the data, you can choose partial1 and partial2 to only process that part of results.
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+04/08-02/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	Change Drawline and offset to be Function/\
+	Improve the Auto Linecut, can find the lattice offset and effective lattice constant automatically, the offset is determined by findpeak/N/Q gapsizefit, and the lattice constant is related to the FFT peak, in the head of the procedure, we input the P of the FFT peak (FFTp), then the lattice constant equal to length/FFTp.\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+04/08-01/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the Auto Linecut, can read path and print on the layout.\
+	Change the displaymulti to be function. 
+\f0\b \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+04/07-04/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the Auto Linecut, can automatically call the KMloaddata(). Improve the layout by vertical lines.
+\f0\b \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 04/07-03/2023\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx12526\tx20647\ri-4753\pardirnatural\partightenfactor0
+\cf0 	
+\f2\b0 Improve the Auto Linecut, added some codes let the procedure can automatically read the name of the Nanonis data. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx20647\ri-4208\pardirnatural\partightenfactor0
+\cf0 	Improve the Auto Linecut,  improve the layout display by turn on and off the preference.\
+	Made a new pxp, which load KM package in advance.\cf10 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+04/07-02/2023	\cf10 Major change\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf6 	Absorb all the external .ipf to be built-in procedure. And Rename the template.pxp to be KI_panel.pxp\cf0 \
+\
+04/07/2023	\cf8 Big improvement\cf0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx8686\ri-1079\pardirnatural\partightenfactor0
+
+\f2\b0 \cf0 	
+\f0\b Added Auto linecut
+\f2\b0 , it can automatically read the size of the linecut, load data and processing data and made layout of the figures. There are 4 layers of this procedure, You can choose 1st layer only, that only does some general process to give a normalized linecut and STSs. You choose to 2nd layer, that you will get SC gap analysis, with gap fitting, gap/height correlation; choose to the 3rd layer, you will get the normalized correlation analysis of the gap/height; choose to 4th layer, you will get the FFT analysis about the phase difference and gap/height. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\tx7900\ri-976\pardirnatural\partightenfactor0
+\cf0 	Fixed some bugs\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b 04/04-02/2023	\cf10 Major change
+\f2\b0 \cf0 \
+
+\f0\b 	Reformat the panel\
+
+\f2\b0 	Add 1D gap map use GCB method.
+\f0\b \
+\
+04/04/2022\
+
+\f2\b0 	Improve the linecut, and the. Fixjump\
+
+\f0\b \
+04/03/2023
+\f2\b0 \
+	Add lattice simulator\
+\
+
+\f0\b 04/02/2023
+\f2\b0 \
+	Add combined Gaussian Fit and linear background subtraction method for 2D gap map\
+\
+
+\f0\b 04/01/2023
+\f2\b0 \
+	Add Gaussian Fit for 2D gap map
+\f0\b \
+\
+09/20/2022\
+
+\f2\b0 	Enable different x and y number in 2D Gap distribution\
+	Fix bugs\
+\
+
+\f0\b 09/11/2022
+\f2\b0 \
+	Debug 2DSTS\
+\
+
+\f0\b 09/08/2022\
+
+\f2\b0 	Add KMexist()\
+	Add color bwr\
+
+\f0\b \
+09/04/2022\
+
+\f2\b0 	Added uneven-Y\
+	Use to rescale a linecut 2D data with uneven Y scale, to be a even Y scale data,\
+	So that we can use \'93rescale\'94 to modify the data scale\
+
+\f0\b \
+08/28-03/2022\
+
+\f2\b0 	Update the Gap distrubution\
+
+\f0\b \
+07/29-02/2022
+\f2\b0 \
+	Debug	\
+	Fixed 2D STS line indicator bug\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-3789\pardirnatural\partightenfactor0
+\cf0 	Added global variable for deltaE and startE, after do \'933D to 2D\'94, the two variable is automatically corrected in \'93dI/dV(E,x,y)\'94\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+
+\f0\b 07/29-01/2022	\cf10 Major change
+\f2\b0 \cf0 	\
+	
+\f0\b Adapt the panel to be suitable for Igor. 9.01\
+	Adopt the KM package to be suitable for Igor. 9.01 [KM_good for igor 9.01]
+\f2\b0 \
+\
+
+\f0\b 07/21-01/2022
+\f2\b0 \
+	Add 3D to 2D\
+	introduce globale variable index_x/_y/_E to identify the 3D matrix format\
+
+\f0\b \
+07/18-02/2022
+\f2\b0 \
+	this is a wrong version with linecutH/V out of range bug.\
+	I want to add the jumped slicer under the larger quality factor, but somehow failed.\
+	Wait for further debugger.\
+
+\f0\b \
+07/18-01/2022
+\f2\b0 \
+	Debug the 2DSTS smart displayer\
+
+\f0\b \
+07/15-04/2022
+\f2\b0 \
+	Upgrade the Smart 2D displayer\
+	Added quality factor of the rotation\
+	Format ALL the codes.\
+
+\f0\b \
+07/15-02/2022
+\f2\b0 \
+	Upgrade the Smart 2D displayer\
+	Add the simultaneous rotation.\
+	Shift the code of \'93Rotate all\'94 and \'93dI/dV(x,y,E)\'94 to be Function.\
+
+\f0\b \
+07/15-01/2022
+\f2\b0 \
+	Upgrade the Smart 2D displayer\
+	Add the normalization, smooth\
+\
+
+\f0\b 07/12-02/2022
+\f2\b0 \
+	Upgrade the Smart 2D displayer\
+	Add the simultaneously display of waterfall.\
+
+\f0\b \
+07/12/2022
+\f2\b0 	\
+	Upgrade the Smart 2D displayer\
+	Add the slicer to show linecut along both x and y direction.\
+
+\f0\b \
+07/10/2022
+\f2\b0 	\
+	Minor change\
+	Change the default zoom setting\
+
+\f0\b \
+07/09/2022	\cf10 Major change
+\f2\b0 \cf0 	\
+	
+\f0\b Adapt the template to fit Igor 9.
+\f2\b0 \
+	Bugs fixed,\
+	New Load arrangement code mounted,\
+	The basic Pierre template should refer to the Igor 7 template, some Function should be declared as \\WAVE\
+
+\f0\b 	Adopt the KM package to be suitable for Igor. 9.01 [KM_03]
+\f2\b0 \
+
+\f0\b \
+07/06/2022
+\f2\b0 	\
+	add two direction smooth for matrix\
+	add smooth all matrix\
+	improve the dI/dV(E,x,y), now it supports a suff, for smoothed source data.\
+\
+
+\f0\b 07/05/2022
+\f2\b0 	\
+	fix the bug on load .asc\
+\
+
+\f0\b 06/24/2022
+\f2\b0 	\
+	add \'93Jump Cal\'94, to calculate how many steps should jump for a given distance.\
+	set 175% magnification as default.\
+
+\f0\b \
+06/02/2022	\cf8 Big improvement
+\f2\b0 \cf0 \
+	rearrange the panel,\
+	add \'932D to 1D\'94 that convert 2D matrix to 1D wave\
+	add \'93PeakvsGate\'94, get peak evolution of gate (by 4th derivative)\
+	add \'94PeakvsGrid\'94, get peak distribution on a grid data (by 4th derivative)\
+\
+
+\f0\b 06/01/2022
+\f2\b0 \
+	add load asc,\
+	unlock the analysis.ipf\
+	Correct the 2D STS for dI/dV(xyE)  [QPI]\
+\
+
+\f0\b 05/27/2022
+\f2\b0 \
+	add data plotter 2 to change color to mud for topography\
+
+\f0\b \
+02/01/2022
+\f2\b0 \
+	add the slope distraction of the topography \'93slope tpg\'94, in order to make the topography flat.\
+\
+
+\f0\b 09/17/2021	\cf8 Big improvement
+\f2\b0 \cf0 \
+	Update \'932D STS\'94 and \'93Gap distribution\'94 to adapt to the date output of Nanonis.\
+	Tips: to do gap map based on nanonis output.\
+	1. export .3ds by KM package.\
+	2. rename the 3-layer matrix to be \'93mat3d\'94\
+	3. use \'932D STS\'94 and \'93Gap distribution\'94\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-1079\pardirnatural\partightenfactor0
+
+\f0\b \cf0 \
+\
+//**********************************************************************************************************
+\f2\b0 \
+
+\f0\b The KP development starts from 04/15/2016, but there are no logs before 09/17/2021. \
+//**********************************************************************************************************\
+\
+//**********************************************************************************************************\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ri-1079\pardirnatural\qj\partightenfactor0
+
+\f2\b0 \cf0 The Kong Panel (KP) is an Igor GUI Package focusing on STM data analysis and simple model simulations. To run KP, you need to copy the whole package to the datafolder of your target dataset, and launch the template.pxp. All copyright is reserved by the author, Dr. Lingyuan Kong (https://scholar.google.com/citations?user=5uWv_XgAAAAJ&hl=zh-CN). The author is welcome for any noncommercial use of KP. The development of KP bases on a general ARPES Igor Template, written by Pierre Richard (https://scholar.google.com/citations?user=vJ47zG8AAAAJ) and Hong Ding (https://tdli.sjtu.edu.cn/EN/people/middle/190?type=CHAIR_PROFESSOR). For signal enhancement, KP use Peng\'92s Curvature (https://aip.scitation.org/doi/10.1063/1.3585113), developed by Peng Zhang (https://arpes.site). For loading Nanonis Data (.sxm, .3ds), KP combined the KM package (http://www2.riken.jp/lab/magmatlab/kohsaka/km/cmdlist.html), written by Yuhki Kohsaka (http://www2.riken.jp/epmrt/kohsaka/index.html; http://www2.riken.jp/lab/magmatlab/kohsaka/km/changelog.xml). Data processing starting from .sxm and .3ds files require lauching KM Package first. In order to avoid interference, after data loading, the KM package are automatically eliminated. \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+ \'a9 2024 Lingyuan Kong.  All rights reserved.\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+}

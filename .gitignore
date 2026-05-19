@@ -1,0 +1,19 @@
+.DS_Store
+
+# Igor experiment binaries and local working exports
+*.pxp
+*.pxp~
+*.uxp
+*.ibw
+*.packed
+
+# Local extraction and reference material; keep GitHub focused on src/ and docs/.
+Template_kly_2025_06_08/
+KM_good for igor 9.01/
+igor_exported_procedures/
+igor_exported_procedures_lf/
+KP update log.rtf
+docs/KP update log.rtf
+
+# Temporary synced install copies should live in Igor's User Procedures folder, not the repo.
+User Procedures/

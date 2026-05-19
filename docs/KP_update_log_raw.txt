@@ -1,0 +1,857 @@
+06/08/2025  Ver. 9.04.15  (Date: 06/08/2025)
+	Added simulation of P(E) theory.
+	V2: debug
+
+05/22/2025  Ver. 9.04.14  (Date: 05/22/2025)
+	Added simulation of RCSJ model,
+
+
+05/19/2025 "Ver. 9.04.13  (Date: 05/19/2025)”
+	Added some elementary quantities as global variable, all value is based on SI,
+		elementary charge: q0
+		Plank constant: h
+		Conductance quantum: G0 (e^2/h)
+		Bohr Magneton: muB
+		Boltzmann constant: kB
+		Electron volt: eV
+		Millielectron volt: meV
+		electron mass: m0
+
+	Added a new function group into panel “Tip Height Experiment”
+		New functions for rescale the dI/dV curve as applying a voltage divider, scalewave($name,s);calculates(Pvalue,xshouldbe,$name)
+		Make linecut from the dI/dV curves after divider correction, rescalegroup(ratiowave,batchname,num)
+ 		Reformat a wave as a reference wave, madewavebytemplate2(datawave,templatewave)
+		Make linecut from random dim delta waves batch,  unevenlinep(batchname,templatewave,num)
+
+	Added a function to caculate dI/dV curve from I/V curve by differentiate Proc diffeall(mat,totalnum,notes)
+
+	Added a function to extract all the dI/dV curve from a 3D wave, and make these waves as a linecut. Gridtolinecut($grid,indexdim)
+
+
+
+11/25/2024 "Ver. 9.04.12  (Date: 11/27/2024)"
+	Added lattice append,  including honeycomb, triangular, and square lattice.
+	This is an advanced version. The old “line draw” mode was removed.
+	Fitimagehoneycombc()
+	Fitimagetriangularc()
+	Fitimagesquarec()
+
+11/25/2024 "Ver. 9.04.11  (Date: 11/25/2024)"
+	Added honeycomb lattice simulator.
+
+11/23/2024 "Ver. 9.04.10  (Date: 11/23/2024)"
+	Added Lattice simulator of TBG and TTG.
+	The honeycomb lattice position can be calculated by function CreateTriangularLatticeCoordinates(xx, yy, a, theta)
+
+07/30/2024 "Ver. 9.04.06  (Date: 07/30/2024)"
+	Added L map
+
+07/14/2024 "Ver. 9.04.05  (Date: 07/14/2024)"
+	Upgrade QPI simulator, FS and correlation was rotated 45 degree.
+
+07/08/2024 "Ver. 9.04.04  (Date: 07/08/2024)"
+	Upgrade the FFT in Smart 3D displayer, now you can choose the symmetrization mode.
+	V2: correct the bug in close window button
+
+07/07_02/2024 "Ver. 9.04.03  (Date: 07/07/2024)"
+	Upgrade the arbitrary linecut in Smart 3D displayer.
+
+07/07/2024 "Ver. 9.04.02  (Date: 07/07/2024)"
+	Added symmetrization.
+
+07/04/2024 "Ver. 9.04.01  (Date: 07/04/2024)"
+	Adapted the  template for Igor 9.04
+	Change the  image trend remover from 2D fit to 1D fit mode.
+	Fix the bug in QPI estimator, label KF/G to lamda(a0), Further checked the quantity in the simulator, all the quantity is correct.
+	V2: GRAPH remove trend now can do both 1D and 2D fitting
+
+07/01/2024 "Ver. 9.03.06  (Date: 07/01/2024)"
+	Added T-conv to a batch of spectrum. convall(bathname,num,mode,temp)
+
+06/27/2024 Ver. 9.03.05  (Date: 06/27/2024)
+	Upgrade the Multipack 1D. New function was added, now you can manually change the extraction wave by click a button, or equivalently, using command line manualvalue_1Dextrac(";0;", ";0;")
+	Two stringlists contains the value for the left or right peaks. Blank means change the value to be NaN (the peak does not exist), 0 means do not change the value of that peaks.
+	In the stringlist, from left to right the absolute value of peak energy increase.
+
+05/12/2024 Ver. 9.03.04  (Date: 05/12/2023)
+	Added Function DyneS(a,delta,width), for example you can use like
+		make/n=100/o test; setscale/I x,-5,5,””,test; test=DyneS(x,1,0.1)
+ 	Added a new simulation program for 2D PDM with 2 gaps. choiceparameterc()
+	V02:debug
+	V03:updated and added examples
+
+05/10/2024 Ver. 9.03.03  (Date: 05/10/2023)
+	Added a new area ”General Simu.”  in panel.
+	Added T_convolve for any 1D curve convolvetemp(name,tt2)
+	Added ave_inmarque() to the popup window of Frommarqueegetsubmatrixs(name) which can calculate the average value on the partial image (only count the non-Nan value)
+
+
+
+05/09/2024 Ver. 9.03.02  (Date: 05/09/2023)
+	New Function (Refine Q)
+	Calculate the gradient median of the phase map, while changing the q location. New button was added to the popup window of Launch. After the “refined“ button was clicked, it will show a calculated map of phase gradient, you can do further refinement or fit the center by 2D Gaussian, you can also save the fitted results to Qa and Qb.
+	Proc determineqbyphasec()
+	determineqbyphase(grid)
+
+	Added a new get Q button on the main panel.
+	Fixed bugs for Frommarqueegetsubmatrixs(name)
+	Added Global or just fitted Q for LF correction.
+
+	V02: debug
+	V03: debug
+
+05/04/2024 Ver. 9.03.01  (Date: 05/04/2023)
+	New Function (nanoscale strain analysis)
+	Using the Lawler-Fujita extracted displacement field, the strain tensor along arbitrary axis can be computed.
+	To use this new function, you need to “launch” first, and do 2D LF codes next, then you can run strain analysis by extracted displacement fields from LF codes.
+	V02: debug
+	V03: debug for partial differential code, pervious code have a bug for dx, dy
+	V04: debug for line indicator of angle
+
+05/03/2024 "Ver. 9.02.21  (Date: 05/02/2024)"
+	Added Drawarrow(zerox,zeroy,angle,length), can automatically draw x/y and a/b lattice indicator to graph.
+	Added new user color table dvg_BCstrain.
+	Introduce variable/G theta_lattice to FFT engineering launch, it is the lattice angle in degree
+
+
+05/01/2024 "Ver. 9.02.20  (Date: 05/01/2024)"
+	Chang the method for converting the relative amplitude from 2D lock-in to the real value from individual factor mode to averaged factor modes. (Changes implemented in Correct2Dlockinamp(scr,angle,windowsize))
+
+04/28/2024 "Ver. 9.02.19  (Date: 04/28/2024)"
+	Added Model simulation oneUCFeSegapsimu() To plot the 3D surface Gizmo of the 1UC-FeSe gap function.
+
+04/10/2024 "Ver. 9.02.18  (Date: 04/10/2024)"
+	Added simuCDWc(theta,wLength,c1,c2,c3). Simulation of NbSe2 CDW and PDW.
+	V02: added two color tables.
+	V03: modified the input default
+	V04: added a color table.
+
+
+04/09_02/2024 "Ver. 9.02.17  (Date: 04/09/2024)"
+	Added calculation of Moire wavelength for triangular lattice heterostructure with twist angle
+
+04/09/2024 "Ver. 9.02.16  (Date: 04/09/2024)"
+	Added FFTstripesimulationc()
+	Fixed the bug for “”capture 2D wave name from a child graph.
+
+02/02_02/2024 "Ver. 9.02.15  (Date: 02/02/2024)"
+	Added capture 2D wave name from a child	 graph.
+	Added Special 3D displayer for simulation 3D waves.
+
+02/02/2024 "Ver. 9.02.14  (Date: 02/02/2024)"
+	A wonderful simulation.
+	A new simulation. This time I achieved a more sophisticated version. This time I borrow a two-band tight binding model, which mimic the minimal behavior of FeSC, only a hole band at gamma and an electron band at M. Organized very well in a compact panel, we can simultaneously 	simulate spectral function, QPI and LDOS for both SC states and normal states.
+	Cheers!
+	V2: removed a lot of bugs on coherence factor assignment, and added template parameters.
+	V3: debug
+
+01/29/2024 "Ver. 9.02.13  (Date: 01/29/2024)"
+	A new wave can make arbitrary cycle of the color cyclecolorwave(c,index), c is the how many circle, should be >= 2, and index is the color index that used to put into the cyclecolor. The sequences is same of that in the color modulation panel.
+	Added vortex-anti vortex pair simulation. You can turn multiple parameters including the sign of the vorticity the absolute value of the vorticity, the phase shift of the vorticity and several other shape parameters.
+	V2: debug
+
+01/27/2024 "Ver. 9.02.12  (Date: 01/27/2024)"
+	Added vector field plot, and a shrink matrix function to make the matrix coarser.
+
+01/24-02/2024 "Ver. 9.02.11  (Date: 01/24/2024)"
+	Added a tunable incommensurate vector to the multi order simulator
+
+01/24/2024 "Ver. 9.02.10  (Date: 01/24/2024)"
+	Added cal_strainbyshear(angleoff,sh) which can calculate lattice mismatch after shear, the lattice can under arbitrary angle as comparing to the shear axis. Added a new button “ε”, which call this function.
+
+01/22/2024 Ver. 9.02.09  (Date: 01/22/2024)
+	Added getall2dwaveongraph(), which can return the 2D wave name on the top graph, use this function correct the get A and get B of FFT engineer.
+	Added LF to move Q modes. This is combined in the Lockin/Ftd, when you select “DO FL ?” to be 1, when do interaction, the LF correction can also be calculated.
+	Added Rotxy(degree,x0,y0,Dis),which can calculate the rotated (x,y) coordinate by an arbitrary rotation.
+
+01/20/2024 Ver. 9.02.08  (Date: 01/20/2024)
+	Added two color table
+
+01/10/2024 Ver. 9.02.07  (Date: 01/10/2024)
+	Added TTG twist angle map, using moving window algorithm
+	V2: debug
+
+01/03/2024  Ver. 9.02.06  (Date: 01/03/2024)
+	Added QPI Range estimation to FFT engineering.
+	V2; debug
+
+12/03-02/2023 Ver. 9.02.05  (Date: 12/03/2023)
+	Added integrate one dimension of a 3d wave, it is useful if you want to sum all the energy layer of a grid, for example the FFT(x,y,E), sum all the E, get a energy integrated FFT(x,y) to check the existing vector.
+
+12/03/2023 Ver. 9.02.04  (Date: 12/03/2023)
+	New Function (PR-QPI)
+	Added New Procedure page, PR_QPI. Which can perform phase referenced QPI to resolve the sign of superconducting order parameters related to a define Q. A button “PR-QPI: Do it” was added to the area of FFT engineering on the panel. There are several modes can be selected, but the default mode 1 works best.
+	Some functional functions were added.
+	(1) color3s_for3dmprqpi(name,tt) to return the value of sigma for diverging color, it can be used as,	 ModifyImage wave ctab= {-color3s_for3dmprqpi(wave,100), color3s_for3dmprqpi(wave,100),:Packages:NewColortable:dvg_seismic,0};
+	(2)  extendffterealimage(name), extendffterealimage_c(name) The FFT of real image only have half of the reciprocal space, this can expand the FFT image to a XY symmetric form.
+	(3) C4sym(name): C4 symmetrize of a wave
+
+	(V2: debug)
+
+11/26/2023 Ver. 9.02.03  (Date: 11/26/2023)
+	Added More functional PDW linecut simulation, can do both 1Q and 2Q, as well as calculate the inelastic scattering as linear in E; Added a function to integrate one dimension get a spectrum for 2D data, sum2dlinecut($name,zn,sufout,show)
+
+11/24/2023 Ver. 9.02.02  (Date: 11/24/2023)
+	Added Lattice simulation from multi component order vector. (Square lattice and Triangular lattice)
+
+11/15/2023 ver. 9.02.01
+	Added New image Displayer, now you can call it by d()
+
+	Added Moving window correction of relative value of 2D lock-in amplitude. For a given Q, the image will be sliced to be multiple lines first, and moving window along these lines, calculate all the amplitude. Then we have an average value of absolute amplitude, the lock-in results can be scaled by this reference.
+
+	NOTE: this code paste on the Graph building procedure, can introduce a Graph turn off button
+	Button turnoffls3d title="BACK",size={45,12},valueColor=(0,0,0),fColor=(1,65535,33232),pos={650,585},proc=ButtonProc_lsturnoff3d
+
+
+11/13_03/2023 ver. 9.01.03
+	Upgrade the topological defect.
+
+11/13_02/2023 ver. 9.01.02
+	Reorganized codes, gathering procedure windows into one documents. Delete lykong_d, STS_kly, gathering the code to be new “miscellaneous code”, gathering all the old codes belong to  to “Pierre’s template”.
+	(V2: debug)
+
+11/13/2023 ver. 9.01.01 Major change
+	Reformat the Panel Display.
+	Rename the Panel to be Kong Panel.
+	Define a version number, Ver. 9.01.01
+		First digit to indicate the Igor version, each revision can increase the number behind the dot. The middle sector increase when has big improvement of the code.
+
+	Added PDW polarization calculation.
+	(V2: debug)
+
+11/12-02/2023
+	Added three tight binding band simulate FeSC Fermi surface.
+
+11/12/2023
+	Added Topological defect
+
+11/09-02/2023
+	Added two Cyclic_dvg color to newcolortable.
+
+11/09/2023
+	Improved the Moving window technique for tracing the phase difference of two image. Keep the original algorithm, but now fixed a artifact made by the code. In the original version, when the moving window cross a phase jump of the lattice, there is a phase difference artifact. Now we implement new function that is correctboundPhMap(nn,ref,block)to remove the artifacts, a new button related is added also “FixBnd”
+
+11/06-04/2023
+	Improve the GUI of 2D-lockin and Filter, made a new function combine them two. The related new button “Lckin/Ftd”
+	You can fine tune the Q in the display of “Lckin/Ftd”.
+	Modify the FFT peak searching procedure, “Launch”, now, the FFT follow exactly the same manner used in data processing, (padx3)
+	Modify the “FFT”, added interpolation function to it.
+	(V4: modify the MultiM on 3Dplotter; added global Q: GlobalQA GlobalQB; you can choose if you want to use global one or just fitted one at the start of running 2dlockin; global Q can be saved on  “Lckin/Ftd”.)
+	(V5: debug)
+
+11/06-03/2023
+	Improve the GUI of LF drift code, now we use a unified graph with multiple subwindows, instead of a bunch of windows.
+	** Function LF2() and affiliated Functions are deleted.
+
+11/06-02/2023
+	Added LF drift correction for 3D wave. A new button “3D” can be found in the FFT engineering panel, the previous LFdrift button change to be “2D”. Before start, you need get the LF XX and YY corrected location waves first. Generally we can get these waves by apply LF 2D code to the corresponding topograph.
+
+	Corrected the FFT modification from (Version: 10/02-03/2023), we added selected area FFT there, but somehow it missing on the later versions, we fixed that problem.
+	(V2: debug)
+
+11/06/2023
+	Fixed range bug for ZRRho map, and added an individual button for the ZRRho.
+	(V2,V3: debug)
+
+11/04/2023
+	Final version of QHZ model.
+	(1) Corrected the k*p/periodic conversion of QWZ and QHZ model.
+	(2) Corrected the complex paring term in the BdG equation.
+	(3) Added complex slab function for s+is and other pairing symmetry
+	(4) Added several gap symmetry, including s/s+is/p+ip/s±/dx2-y2/dxy/px/py; the slab Hamiltonian of only 3 pairings are complex, namely s+is/dxy/py.
+	(5) Added simultaneous normal band structure of “3D” button, it is calculated from QWZ model with same parameters.
+	(6) Fixed some other bugs and made some more improvements.
+	(V2: debugged)
+
+11/01/2023
+	Added Layer weighted Spectral function calculation of Slab bands to QHZ model.
+	(V2: added rename of the Slab band spectral function, added autoupdate of spectral function when changing parameters)
+	(V3: debug)
+
+10/31/2023
+	Added LDOS calculation to QHZ model, you can choose mode for these calculation, either (1) directly plot the LDOS as a function of eigenvector index [This is band resolved LDOS], or (2) LDOS as a function of eigenvalue [This is overall LDOS defined as usual].
+	Added several functions to do matrix calculation.
+	(1) MergeColumneach(name,each): Merge number of “each” column of the matrix, the output the dimsize(name,1) reduced to be 1/each
+	(2) sortColumnindex(ref,src): Sort the column order of src by the ref. This is useful to sort the eigenvector following the ordering of eigenvalue.
+	(3) Indexofmatrix(mat,show): Calculate the LDOS distribution of each band, indexed by the eigenvalue index.
+	(4) WFofmatrix(mat,show): Calculate the wavefucntion distribution of each band, indexed by the eigenvalue index.
+	(5) LDOSofmatrix(mat,Vmin,Vmax,show): Calculate the overall LDOS as a function of energy.
+	(6) MergeRoweach(name,each): Merge number of “each” row of the matrix, the output the dimsize(name,0) reduced to be 1/each
+	(7) RefY(name): Reflect Y axis of the data matrix
+
+	(V3 is a debugged version)
+	(V4: Performance upgrade)
+	(V5: added Multithread to LDOSofmatrix() spectral weight calculation)
+	(V6: LDOS calculation range corrected to be [0,num-1))
+	(V7: added main panel control for edge modes)
+
+10/29/2023
+	Added slab calculation of QHZ model.
+	Added diagM(num) SuperdiagM(num) SubdiagM(num)
+	(V2: added cursor hooks to also the bulk bands)
+	 (V3 is a debugged version)
+
+10/28_02/2023
+	Added Qi-Hughes-Zhang model for 2D Chern insulator + SC. The interactive plot are only based on  band structure along G-X and G-M, the Berry phase and Chern number only calculated on some specific trace in the phase space. Please refer to Ref. PRB 82,
+184516 (2010).
+	(V3 is a debugged version)
+
+10/28/2023
+	Added Qi-Wu-Zhang model for 2D Chern insulator.  ChernN_QWZ(BCname), [ , ) for square lattice.
+
+10/25/2023
+	Added automatic extraction of KM loaded Topograph, use KM —> Load from data folder to load all the .sxm file first, and then click the “Extr. topo” from the panel.
+	Added Extract single spectrum (a Button titled “p”) to smart 3d displayer.
+
+10/23/2023
+	Upgraded monolayer graphene Landau Level calculation.
+
+10/18_03/2023
+	Added new Berry Curvature method HaldaneBCFukui(t1,t2,M,phi,numxy)
+	Correct the counting range of ChernN_haldane(BCname). now it is [ , ) for both dimension
+
+10/18_02/2023
+	Improve Haldane Model performance, added Chern number calculation ChernN_haldane(BCname)
+	added ShrinkDigit(value, numSigDigits) to shrink a variable to some digit numbers.
+
+10/18/2023
+	Added Haldane Model, figured out the calculation of Berry Curvature through Igor Pro.
+	Debugs for automatrixC() automatrixT()
+	Previous version can not be applicable	to Hamiltonian with only one Pauli matrix (2x2), the problem solved now.
+
+10/17_02/2023
+	Debug for FTlinecutc() [Y-select pass filter for both 1D and 2D wave] and FTclp() [2D-low pass filter for 2D wave]. Now, the even dimsize requirement was removed from the procedure.
+
+10/17/2023
+	TB Simulation for Nat. Phys. 15, 41 (2019).
+	Added vertical linecut to d3d()
+	use
+Button launchLinecut title="Linecut",size={65,14},fSize=10,proc=ButtonProc_Cons3dplotZ
+after call d3d in a function, to replace the previous linecut function by the new one.
+
+
+10/12-04/2023
+	Fixed bugs on model simulations of eq(1) and eq(2) from PRB 98, 214503.
+
+10/12-03/2023
+	Added selected sub lattice dI/dV curve average to smart 3D displayer.
+
+10/12-02/2023
+	Added two model simulations of eq(1) and eq(2) from PRB 98, 214503. Using the eigenvalue of the Hamiltonian to construct spectral function
+
+10/12/2023 Big improvement
+	Added Matrix calculation which can be used for deriving Hamiltonian from Pauli matrix equation.
+	List of new functions
+	(1) automatrixT(paralist,xyzseq): deriving the text wave matrix equation, the paralist is the name list of parameter waves, xyzseq is a real numerical wave containing the Pauli matrix sequence.
+	(2) automatrixC(paralist,$xyzseq): deriving the complex numerical wave.
+	(3) NewDerivPRB98_214503_eq2_T(): Demo to show how to do Text wave Hamiltonian derivation.
+	(4) NewDerivPRB98_214503_eq2_N(): Demo to show how to do complex numerical  wave Hamiltonian derivation. The calculation results are the final matrix.
+	(5) mpc(A,B) mpn(A,B) mpt(A,B): matrix tensor product for complex, real, text square matrix, A and B matrix should be under same dimension.
+	(6) plust(A,B): Text matrix wave summation.
+	(7) s0() sx() sy() sz(): Complex numerical Pauli matrix.
+	(8) st0() stx() sty() stz(): Text Pauli matrix.
+	(9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under “name” for real wave, complex wave, text wave
+
+10/04/2023
+	Can normalize STS by average STS on FFT 3D smart displayer
+
+10/03/2023 Big improvement
+	Create Grid Lattice segregation, and incorporating it to 3D smart Displayer.
+	Upgrade the 3D smart Displayer
+		(1) The average curve now can be updated to be partial area selected automatically follow the Marquee.
+		(2) The global string mat3dn_cons can be automatically relocate to current Graph when setting variable of zn_cons (the energy), that means you can open multiple 3D player and they will not interference with each other.
+		(3) when set variable of zn_cons, all the appended image will be removed except the original one.
+		(4) Change the color inversion of FFT plot
+		(5) Added a new global variable to control the sigma ratio of the FFT image color scale. A control was added to every FFT.
+		(6) Added a simple close button to close the graph created by 3D displayer initially.
+		(7) Upgrade the sumoned() function which is for sum over the Grid to get average 1D wave. Now it can apply to a Grid with Nan value, the procedure will skip that 1D curve while counting the averages.
+	Roughly finalized Lattice Segregation.
+
+10/02-03/2023
+	Upgrade the FFT button, now selected area FFT incorporated.
+
+10/02-02/2023
+	Added Selected area FFT  by Marquee to 3D smart Displayer.
+
+10/02/2023
+	Added Lattice segregation to 3D smart displayer.
+
+10/01_02/2023
+	Upgrade Lattice segregation. Added “other”, Added Contour plot, diff plot and dif_ave displayer to Extracted panel.
+	Upgrade FFT, now it will covert nan to zero on the original data.
+
+10/01/2023 Big improvement
+	Added Lattice segregation.
+
+09/28-02/2023
+	Added 2D lowpass filter FTclp(), only lock to (0,0)
+
+09/28/2023
+	Minor modification of the panel. Put the manual 1D line jump remover active on the panel. (Titled as “1”), fixed the color scale problem, now when calculate 3sigma, do not count the datapoint with value 0, this is for a dataset stopped before the measurement finished.
+
+09/21/2023
+	Upgrade Multipeak extraction for 1d or 2d wave. t2nddpeak(), upgrade layout, now it can display arbitrary number of figures. Added kill layout that will kill all the figures generated, added Turn off, by clicking you will kill all the windows belong to this procedure.
+
+09/19/2023
+	Added Multipeak extraction for 1d or 2d wave. t2nddpeak()
+
+09/16/2023
+	Added Matrix normalization Y mode.  added 1D wave filter to “filter Y” button, the procedure can recongnize it automatically.
+
+
+09/15/2023
+	Added RDF that extract a Radius distribution function from a 2D graph, for example from the correlation.
+
+09/14/2023
+	Added CPR simulator and PDW-linecut simulator
+
+09/13/2023
+	Added FFT filter for Y linecut, this is only do fft filter along the Y of a linecut, this procedure does not require to click “Launch” before run it, so that you need to put the q value by hand, the interactive function can continuously tune the gaussian cutoff and q. FTlinecutc(name,avedia,q0)
+
+09/12/2023
+	Added Shearcorrection to 3d matrix, the Button “Go3D”, Function shearall(mat3dn,refwave,factor). Before launch this procedure, you need to do the shear correction on the reference 2D matrix, generally the corresponding Typograph, after that tell shearall() the name of the topography. This procedure only works for the 3D matrix with the energy dimension index equal to 2.
+
+09/09/2023
+	Incorporate Transfer graph between experiments. (https://www.wavemetrics.com/project/TransferGrpahs)
+
+08/27-02/2023 Big improvement
+	Added Multi 2D-Lock-IN to 3D smart displayer.
+
+08/27/2023 Big improvement
+	Added 3D FFT to 3D smart displayer. You can choice different FFT channel as well as different 2D window functions. The generated 3D FFT matrix are also put into an adopted d3df(), that enables arbitrary linecut extraction, note that in this FFT part, the linecut are X/Y swaps in order to mimic the arrangement of ARPES data.
+
+08/25-02/2023
+	Fix that problem. [New bug found for Append T(r), name issue, it can not work when d3d() grab g(r,V), fix it in future by using the bare name introduced in Shear(V)]
+	Fix a bug on Multimap generator.
+
+08/25/2023
+	Added new function wavelistsub(name) to get wave list from all the subwindow, only in subwindow, the wave in the main window will not be accounted .
+	Added new ckfig_child()to check if there is a window with multiple subwindow display  already exist. As same as other ck functions, you need put it in your procedure right below the display by this form ckfig_child(winname(0,1)).
+	Fix bug for Shear(V) of 3D smart displayer
+	[New bug found for Append T(r), name issue, it can not work when d3d() grab g(r,V), fix it in future by using the bare name introduced in Shear(V)]
+
+08/24/2023
+	Added Shear(V) to 3D smart displayer.
+
+08/23-04/2023
+	Fully Remove the bugs in jump remover in 2D smart displayer.
+	Now you can choice two mode for jump removing,
+	(1) Auto mode will automatically given jump amount and jump criteria by calculate the data itself. This mode is suitable for arbitrary jump.
+	(2) Given mode requires you put the jump amount and jump criteria in. This is suitable for physics meaningful jump, for example the phase jump at phase map. In that case we usually fix the jump amount to be 2*pi, and put the criteria as half of the jump amount.
+
+08/23-03/2023
+	Remove some bug from 2D and 3D smart displayer.
+	(1) Fix the bug in jump remover. Now it works well.  After activate the advanced profile mode, if the jump remove did not work well, try to rerun the jump remover through the popup.
+	(2) Improve the two point mode. Previous version only get linecut through P sweep, that means if you define a linecut is roughly perpendicular, there is only a little points can select. In this new version, we mounted Q sweep, and the procedure can judge which mode they should take.
+	(3) Added Colorscale to the Image.
+	(4) Added pi-norm to the extracted line profile, it is useful when tackle with phase map, it will automatically renormalize the profile by pi, and shift the first point to zero.
+
+	(5) Adjust Buttons in 3D displayer —> launch linecut
+	(6) Improve the two point mode. Same as the 2D case, previous version only get linecut through P sweep, that means if you define a linecut is roughly perpendicular, there is only a little points can select. In this new version, we mounted Q sweep, and the procedure can judge which mode they should take.
+
+08/23-02/2023 Big improvement
+	Combined gap map to 3D smart displayer;
+	Added T(r) & delta(r) appender to 3D smart displayer;
+
+08/23/2023 Big improvement
+	Added automatic display of R Z Rho I map to 3D smart displayer. If the Multlimap exist and the input 3D matrix of the 3D smart displayer is the g(r,V), a button will show up entitled by “Multimap”, click it will display a large graph with 4x3 subwindow. Tuning the bias, every window will be updated automatically.
+
+	Added some new functions:
+	(1) updated tpw() in order to read out active subwindow.
+	(2) Function checkmultiopen() to check if there are a graph with specific number of subwindow exist.
+	(3) New Grabwin function grabwinchild(nameofwave(name)) for subwindow, this will only check the wave appear at a subwindow, if the wave also displayed in a main graph, this function will ignore that, for that case please use grabwin(nameofwave(name)) and related variants.
+	(4) New image color scale function color3s_for3dm(name,tt), which is for the wave at a subwindow.
+	(5) New FFT function, that do magnitude FFT by a give name f_for3dmulti(name).
+
+08/22/2023
+	Update Nanonis 3ds loading, mounted automatic create R map Z map and Rho map, which defined by Seamus’s guys.
+	Fix bug in LF layout and the coordinate of indicative circle plot.
+
+08/21/2023 Big improvement
+	Finalized Advanced EMDC for 2D smart EMDC, several major bugs remain were removed.
+	Added Advanced Linecut to Smart 3D plotter.
+
+08/20/2023
+	Update smarter EMDC. Added Polar plot for circular mode, and jump remover. I suspect there are some bugs remain, wait for further inspection. No major problem.
+
+08/20/2023
+	Update smarter EMDC, new display, adjust tilewindow, format codes.
+
+08/19-02/2023
+	Initial version of smarter EMDC, keep developing. It is cable to get line profile from arbitrary trace, there are basic EMDC mode, Two Points mode, circle mode, and free hand drawing mode.
+
+08/19/2023
+	Some small debugs.
+	Solve the problem of Z-norm 3D wave can not redo. Previously, if the Z-norm is equal to 1 when rerun d3d(), the 3D matrix will be overwirte by the normalized 3D wave thus lose the raw data, we fixed this problem, the Setvariable current item will be automatically set to the current status when run d3d()
+	Remove the check process in Load Nanonis Grid.
+
+08/18-02/2023
+	Some small debugs.
+	correct the scale bar location problem in modifyphase() modifyphasetopo() modifyphasefr() and format/topo.
+	fix the color range in 2D lock-in phase to be [-pi,pi]
+	Modify the width of the FFT FWHM SetVariable.
+	Add KMexist() at the end of Auto Linecut and Auto Grid.
+
+08/18/2023
+	Added real-time 1D STS extraction by cursor to the smarter 3D plotter.
+	Update the Auto Grid Map by using new 3d plotter.
+
+08/17/2023 Big improvement
+	Added Smarter New 3D Matrix plotter d3d(mat3dn,zn),
+	##[Remainder for the old version]
+	The old version was created on early 2021 and was modified until late of 2022, the old version is functional by sequentially running (1) getslicerData(name,a,b,c,xs,ys,Es,Ed) (for slicing a 3D matrix <name>, to be multiple 2D matrix), (2) mapforSTMf(num,name,suff,start,delta) (combining them together to a 3D matrix again, (3) makeextra(), (launch the smarter plot). This is a stupid algorithm owing to retro back to early year, I am trying to make use of some well written procedures in the General ARPES template, in order to make them compatible, I need to slice every layer to be 2D image first.
+	**The slicer may be potentially useful in the future getslicerData(name,a,b,c,xs,ys,Es,Ed)
+ 	##[Features of the new version],
+	In the New version, you need first launch d3d(“name”,zn) , if you are using the button, the prompt function automatically return a list of 3D wave at the root by using a new installed function getall3dwave(), zn is the index of the dimension of energy which is usually the last dimension, i.e. 2, the index of other two dimensions (xn, yn) are automatically corrected to make sure xn is always smaller than yn. After d3d(“name”,zn) is launched, you can find a graph showing a constant-Z image, an integrated f(Z) curve in the bottom subwindow and a FFT image. There are 3 controllers, (1) a SetVariable to interactively tuning the Z value, when it was tuned, the constant-Z image and FFT image will update automatically, in addition, a bar indicator move in the subwindow. (2) a button entitled “Launch Linecut”, by clicking this button, the procedure will launch a linecut slicer, which can get Horizontal and vertical linecut along arbitrary shifting or rotational trace. On the linecut panels, there are also capable to tune on or off the normalization of the linecut, as well as controls the smooth parameters of the linecut. (3) a popup that asking if you want to do Z normalization of the 3D matrix, that will normalize all the (x,y)-spatial resolved Z curve by dividing the average number. All the functions are reversible, e.g. the  Z-normalization will generate a Raw_name data that is equal to the original 3D matrix.
+	There are some advanced applications of this Smarter Plotter.
+	(1) Incorporating FFT enginnering. Let the constant-Z image be active, click the “Launch” from the FFT engineering domain of the main panel, the FFT engineering will get the name of the constant-Z image to be the global string unitizing in the subsequent processings. Then, you can following the manipulation method in the FFT engineering part, to do 2D lock-in analysis, and FFT filter analysis. One amazing utility here is mounted by this 3D smarter plotter, you can continuously change the Z plane used in FFT engineering. The existence of the graph containing “_phi_A” (“_ftd”) is the condition for tuning 2d-lock-in by 3D plotter (FFT filter).
+	(2) Incorporating Z_color to make 1D wave waterfall. After “Launch linecut” you can choose a linecut interested to run “MDC” that will slicing the Linecut to be 1D wave waterfall, and you can do Z_color after that to activate to smart waterfall displayer.
+	New functions mounted, Normalinecut(name) to normalize 2D linecut along x direction. sumoned(dest,orin,zn) to calculate averaged Z curve from a 3D martrix. grabwinnonew(name) can grab the winname of a wave without display a new window.
+
+08/15/2023
+	Improve the Intensity_digimage2(), now you can choose the value range of the color bar
+
+08/14/2023
+	Added a special RGB2Int, Intensity_digimage2() which can be used to extract image data from a paper, screenshot both the color bar and data image, then use the color bar to reproduce the data.
+
+08/13-02/2023 Big improvement
+	Improve the performance of FFT engineering domain. The previous “PreFFT” was change to be “Launch”, by click “launch”, KIP will display the interpolated FFT image, and also the control buttons for all the applications on this domain. The Q_A and Q_B can be got from a button on the preFFT image, and also, in this new version, it no long requires Cursor to read out fitting limit, instead we can use Marquee now! All the interactive procedure belonging to this domain was improved on the calculation speed and final layout of the output figures by “titewindows”. The redundant waves generated from LF() are removed. Other redundant waves can be remove in the future.
+	In this new version, you can chose different application on a sam work flow just by clicking different buttons. But to be awared that the [FFT filter], [LFdrift], [2D-lock-in] are written based on QA and QB in 1st and 4th quadrant, but [C4 Shearing correction] requires QA and QB at 2nd and 1st quadrant respectively.
+
+08/13/2023
+	Added color map from https://matplotlib.org/stable/tutorials/colors/colormaps.html
+	Added Three Set variable function to continues change the colorable of image plot, color waterfall, and Z-color water fall.
+
+08/12-03/2023 Big improvement
+	Added t2dlockin() for 2D lock-in processing.
+	Added three user-defined Color table for Positive/negative contrast.
+
+08/12-02/2023
+	Have no idea how the kernel procedure of remove fig trend disappeared on some stages of codes development, now the bug fixed.
+
+08/12/2023
+	Debug for Z_color.
+	Improve the Quick Format domain on the panel.
+	Added Function ButtonProc_sizemapauto(ctrlName) : ButtonControl to automatically format a topography, with color bar and scale bar.
+	Introduce tpw() to Peng’s Curvature.
+	Added Error saving syntax to 2D_GCB.
+
+08/11-03/2023
+	Added autoallfigure()which can do some command going through all the graphs.
+	Modified 2DSTS, apply tile.
+	Added dic() to smart display a single 1D wave.
+	Added Auto Histogram Conshist(), the single function is gethistgram()
+
+08/11-02/2023
+	Added Z_color button on Adjust panel doamin, which can do smart Z_color plot of waterfall. Function ButtonProc_Zcoloro(ctrlName) : ButtonControl
+	Added maxwaterfall() and minwaterfall() which can get the max and min value from a figure of waterfall traces.
+
+
+08/11/2023
+	***Validity limitation found for LF drift correction and FFT filter. Because I use FFT Padding for these two functions, the Padding  procedure should work well. That requires at the edge of the data there is no big jump between the data and zero-valued padding part. It requires to remove the trend of the image before transfer the data into LF and filter.
+	Added Remove trend for image, this is a interactive procedure, the knob control the power of Poly2D fitting for this trend removing, Conslevel()
+	Added several color tables from gwyddion.
+
+08/09/2023
+	Added gate map gate leak corrector, which can shift the dI/dV measured on different gate voltages individually and combine them to be a 2D matrix. New Botton “Fix gate leak”, and procedure, correct2Dmapc(zbwavename)
+	Adjust the panel, added section “get information”
+	Added linear background subtraction from a waterfall graph linenorm2pongraphc(p1,p2).
+
+08/08/2023
+	Added new color tables in the datafolder, root:Packages:NewColortable, Cividis; Colorcet_diverging_bwr_20_95_c54; Inferno;Magma; Plasma; Viridis; Biploar_matlab; if need to add new table, just put the wave in the datafolder, the procedure can search it automatically. The popupmenu is created by PopupMenu popup0 value=WaveList("*", ";", "", root:Packages:NewColortable)
+
+07/31-02/2023
+	Added continuously tuning smooth Consmoo()and trace offset Consoffset().
+
+07/31/2023
+	Modified Panel.
+
+07/30/2023
+	Added sEDC()and sMDC() which can slice a 2D matrix to be 1D waves.
+.
+07/29/2023
+	Added Auto gatemapm gatemapauto(), and improved the UnevenY by removing redundant waves.
+
+07/24/2023
+	Added interactive procedures Const2dfilter() for continuously tuning the window size of FFT filter. Bug fixed.
+
+07/20/2023
+	Added interactive procedures ConstLF() for Lawler-Fujita, and ContinitialShearFit() for shear correction coef fitting. To use these two procedures, please normally run the single variable procedures first, and after that, click the “adj”.
+	Added grabtable() which can get the table name of a specific wave, different from grabwin() which can only count the first element at the fig, the grabtable() search among all the element at a fig.
+
+
+07/19-02/2023
+	Minor improvement of Shear-Correction.
+
+07/19/2023 Big improvement
+	Added Shear-Correction. In this procedure, assuming the shear distortion is a X-Shear but the Shear axis can be rotated by some angle theta, This procedure can correct the data by provide the q1 (1st quadrant) q2 (2nd quadrant) coordinate from the FFT of distorted image. When using this procedure,  they share same PreFFT and GetA GetB with FFT filter. Please first do PreFFT, and pick up the coordinate of Q1 Q2, then use “Fit Shear” do global fitting to get the shear parameters, finally do “Go” to make correction.
+	[Known Bug: a small bug only influence the corrected data orientation, the global fitting procedure may lead to multiple solution depending on the initial value put into the function, but even these fitted result are not the exactly same value the data is, as long as the Q1 and Q2 are fitted very well, the image can be corrected, but may be needs some rotation later.]
+
+	Added Rotated shear Data, a function can X-shear a data with a rotated shear axis.
+	Added a Demo procedure, which can create a data and a  sheared data image follow the parameters given.
+
+07/16-02/2023
+	Adjust the panel arrangement.
+
+07/16/2023
+	Improve the algorithm of the phase jump remover in Lawler-Fujita code. This new version #3 of the phase jump remover works very good, and is capable for dealing with multiple times phase jump. The result is much better than the JumpRemover added in 07/08/2023. We made a new Botton for this remover. Function  cnfyj(namew,cond,add).
+	Note: This procedure does not work if there are missing phase jump and phase vortex in the image, if that happens, try use the first version of phase jump remover and do some manual work.
+
+07/13-04/2023
+	Fix small bugs.
+
+07/13-03/2023 Big improvement
+	Added Lawler-Fujita Drift correction, they share same PreFFT and GetA GetB with FFT filter
+	Added grabwin(“”),which can grab the Winname of a given wave.This function will return a string which is the winname
+
+07/13-02/2023
+	Added cktable() which can kill redundant table, this should be insert in the function or procedure where new table displayed, in the form of  cktable(winname(0,2)), this can automatically display without repeat.
+	Added smart single wave table display ed() and ed2(), same as di() and di2(), mode 1 is check if there already displayed if so stop display, and mode 2 is kill the displayed window and display new.
+
+07/13/2023
+	Add LtE, that can transfer a 2D matrix to be new scaled x quantity. In the procedure, we change the X from wave length (nm) to Energy (eV). You need to tell the procedure the name of the original 2D wave.
+
+07/12/2023
+	Add color range n*sigma.
+
+07/11-2/2023
+	debug of FFT filter, and 2D peak picker.
+
+07/11/2023
+	Add FFT filter, and 2D peak picker by 2D Gaussian function fitting.
+
+07/10/2023
+	Add tpw() return a string which is the name of the wave in the topmost image.
+	Add an additional mode for line FFT in a 2D wave, by FFT/COLS or FFT/ROWS
+	Add Smart FFT, which can do it on any data, no matter how many points or if there are NAN data point.
+	f() do FFT on the first wave of the topmost figure.
+
+07/09-04/2023
+	Add tiling window. A good number is around
+	tilewindows/WINS=WinList("*", ";","WIN:1")/R/w=(4,0,56,80)
+
+07/09-03/2023
+	Add function ckfig() and cklayout(), which can kill redundant figure and layout, this should be insert in the function or procedure where new figure or layout displayed, in the form of  ckfig(winname(0,1)) and cklayout(winname(0,4)), this can automatically display without repeat. The Jump Remover 2D  is improved based on these new features, “don” is removed.
+
+07/09-02/2023
+	Add function padm() to pad the 2D matrix, add some 0 points in the outer of the data and enlarge the dimsize.
+
+07/09-01/2023
+	Improve auto image display function di(), add an new di2(), they now can search and check if the destwave already displayed solely at a graph, if so, di() will not display again but bring that window to front, but  di2() will kill that window and display again. Also inside these function, they calls two function that one can kill a window with a specific name and one can kill a graph which only contains the destwave.
+
+07/08/2023
+	Added Jump Remover 2D and a Demo procedure which can generate the DATA INPUT
+
+06/26/2023
+	Added FFT (x) for linecut
+
+06/14/2023
+	Added convert the Nanonis dI/dV value to G.
+
+06/13/2023
+	Update the Nanonis loader (average), not only for shape but also the value of dI/dV. It is useful for measurement when tip is keep drifting, you can make forward and backward scan and average them
+
+06/05/2023
+	Add nonequal energy range linecut, it is capable to make linecut map based on 2 set and 3 set of data with different energy range, but all the dataset require same dim delta.
+
+05/15/2023
+	Add uneven linecut, it can link spectrum with two sets of spectra with different energy range but with same dimdelta.
+	change the uevenY from factor modes to number point mode.
+
+04/21/2023 Special
+	This is a special version for Baiqing, which debug the pxt and DA30 loader. And recover the ARPES main panel for mat3dk.
+	[This is not within my normal flow of code development]
+
+04/14-01/2023
+	added Auto Grid Map, and debug the reflect wave.
+
+04/13-03/2023
+	added smart displayer for figures di(wave)
+
+04/13-02/2023
+	Upgrade Reflection Wave.
+
+04/13-01/2023	Big improvement
+	Change the interpolation to be Function, and fixed bugs.
+	Added Phase difference Map to compare the FFT phase difference of two matrix with same dimsize and scales.
+	Rename the KI_panel.pxp to be template.pxp
+
+04/08-03/2023
+	Improve the Auto Linecut, Added partial selection of the analysis, for example if you have a very long linecut, but you only want to focus some part of the data, you can choose partial1 and partial2 to only process that part of results.
+
+04/08-02/2023
+	Change Drawline and offset to be Function/
+	Improve the Auto Linecut, can find the lattice offset and effective lattice constant automatically, the offset is determined by findpeak/N/Q gapsizefit, and the lattice constant is related to the FFT peak, in the head of the procedure, we input the P of the FFT peak (FFTp), then the lattice constant equal to length/FFTp.
+
+04/08-01/2023
+	Improve the Auto Linecut, can read path and print on the layout.
+	Change the displaymulti to be function.
+
+04/07-04/2023
+	Improve the Auto Linecut, can automatically call the KMloaddata(). Improve the layout by vertical lines.
+
+04/07-03/2023
+	Improve the Auto Linecut, added some codes let the procedure can automatically read the name of the Nanonis data.
+	Improve the Auto Linecut,  improve the layout display by turn on and off the preference.
+	Made a new pxp, which load KM package in advance.
+
+04/07-02/2023	Major change
+	Absorb all the external .ipf to be built-in procedure. And Rename the template.pxp to be KI_panel.pxp
+
+04/07/2023	Big improvement
+	Added Auto linecut, it can automatically read the size of the linecut, load data and processing data and made layout of the figures. There are 4 layers of this procedure, You can choose 1st layer only, that only does some general process to give a normalized linecut and STSs. You choose to 2nd layer, that you will get SC gap analysis, with gap fitting, gap/height correlation; choose to the 3rd layer, you will get the normalized correlation analysis of the gap/height; choose to 4th layer, you will get the FFT analysis about the phase difference and gap/height.
+	Fixed some bugs
+
+04/04-02/2023	Major change
+	Reformat the panel
+	Add 1D gap map use GCB method.
+
+04/04/2022
+	Improve the linecut, and the. Fixjump
+
+04/03/2023
+	Add lattice simulator
+
+04/02/2023
+	Add combined Gaussian Fit and linear background subtraction method for 2D gap map
+
+04/01/2023
+	Add Gaussian Fit for 2D gap map
+
+09/20/2022
+	Enable different x and y number in 2D Gap distribution
+	Fix bugs
+
+09/11/2022
+	Debug 2DSTS
+
+09/08/2022
+	Add KMexist()
+	Add color bwr
+
+09/04/2022
+	Added uneven-Y
+	Use to rescale a linecut 2D data with uneven Y scale, to be a even Y scale data,
+	So that we can use “rescale” to modify the data scale
+
+08/28-03/2022
+	Update the Gap distrubution
+
+07/29-02/2022
+	Debug
+	Fixed 2D STS line indicator bug
+	Added global variable for deltaE and startE, after do “3D to 2D”, the two variable is automatically corrected in “dI/dV(E,x,y)”
+
+07/29-01/2022	Major change
+	Adapt the panel to be suitable for Igor. 9.01
+	Adopt the KM package to be suitable for Igor. 9.01 [KM_good for igor 9.01]
+
+07/21-01/2022
+	Add 3D to 2D
+	introduce globale variable index_x/_y/_E to identify the 3D matrix format
+
+07/18-02/2022
+	this is a wrong version with linecutH/V out of range bug.
+	I want to add the jumped slicer under the larger quality factor, but somehow failed.
+	Wait for further debugger.
+
+07/18-01/2022
+	Debug the 2DSTS smart displayer
+
+07/15-04/2022
+	Upgrade the Smart 2D displayer
+	Added quality factor of the rotation
+	Format ALL the codes.
+
+07/15-02/2022
+	Upgrade the Smart 2D displayer
+	Add the simultaneous rotation.
+	Shift the code of “Rotate all” and “dI/dV(x,y,E)” to be Function.
+
+07/15-01/2022
+	Upgrade the Smart 2D displayer
+	Add the normalization, smooth
+
+07/12-02/2022
+	Upgrade the Smart 2D displayer
+	Add the simultaneously display of waterfall.
+
+07/12/2022
+	Upgrade the Smart 2D displayer
+	Add the slicer to show linecut along both x and y direction.
+
+07/10/2022
+	Minor change
+	Change the default zoom setting
+
+07/09/2022	Major change
+	Adapt the template to fit Igor 9.
+	Bugs fixed,
+	New Load arrangement code mounted,
+	The basic Pierre template should refer to the Igor 7 template, some Function should be declared as \WAVE
+	Adopt the KM package to be suitable for Igor. 9.01 [KM_03]
+
+07/06/2022
+	add two direction smooth for matrix
+	add smooth all matrix
+	improve the dI/dV(E,x,y), now it supports a suff, for smoothed source data.
+
+07/05/2022
+	fix the bug on load .asc
+
+06/24/2022
+	add “Jump Cal”, to calculate how many steps should jump for a given distance.
+	set 175% magnification as default.
+
+06/02/2022	Big improvement
+	rearrange the panel,
+	add “2D to 1D” that convert 2D matrix to 1D wave
+	add “PeakvsGate”, get peak evolution of gate (by 4th derivative)
+	add ”PeakvsGrid”, get peak distribution on a grid data (by 4th derivative)
+
+06/01/2022
+	add load asc,
+	unlock the analysis.ipf
+	Correct the 2D STS for dI/dV(xyE)  [QPI]
+
+05/27/2022
+	add data plotter 2 to change color to mud for topography
+
+02/01/2022
+	add the slope distraction of the topography “slope tpg”, in order to make the topography flat.
+
+09/17/2021	Big improvement
+	Update “2D STS” and “Gap distribution” to adapt to the date output of Nanonis.
+	Tips: to do gap map based on nanonis output.
+	1. export .3ds by KM package.
+	2. rename the 3-layer matrix to be “mat3d”
+	3. use “2D STS” and “Gap distribution”
+
+
+//**********************************************************************************************************
+The KP development starts from 04/15/2016, but there are no logs before 09/17/2021.
+//**********************************************************************************************************
+
+//**********************************************************************************************************
+The Kong Panel (KP) is an Igor GUI Package focusing on STM data analysis and simple model simulations. To run KP, you need to copy the whole package to the datafolder of your target dataset, and launch the template.pxp. All copyright is reserved by the author, Dr. Lingyuan Kong (https://scholar.google.com/citations?user=5uWv_XgAAAAJ&hl=zh-CN). The author is welcome for any noncommercial use of KP. The development of KP bases on a general ARPES Igor Template, written by Pierre Richard (https://scholar.google.com/citations?user=vJ47zG8AAAAJ) and Hong Ding (https://tdli.sjtu.edu.cn/EN/people/middle/190?type=CHAIR_PROFESSOR). For signal enhancement, KP use Peng’s Curvature (https://aip.scitation.org/doi/10.1063/1.3585113), developed by Peng Zhang (https://arpes.site). For loading Nanonis Data (.sxm, .3ds), KP combined the KM package (http://www2.riken.jp/lab/magmatlab/kohsaka/km/cmdlist.html), written by Yuhki Kohsaka (http://www2.riken.jp/epmrt/kohsaka/index.html; http://www2.riken.jp/lab/magmatlab/kohsaka/km/changelog.xml). Data processing starting from .sxm and .3ds files require lauching KM Package first. In order to avoid interference, after data loading, the KM package are automatically eliminated.
+
+ © 2024 Lingyuan Kong.  All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
