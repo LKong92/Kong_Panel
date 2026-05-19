@@ -2598,9 +2598,9 @@ def render_md(entries: list[dict]) -> str:
     lines = [
         f"# {BRAND} Function Index",
         "",
-        "This Markdown index is generated from `src/*.ipf` and organized by workflow rather than by IPF file. For the color-coded manual, open `docs/FUNCTION_BOOK.html`.",
+        "This Markdown index lists the KP procedure library by workflow, so GitHub text search can find commands even when the interactive HTML manual is not open.",
         "",
-        "The HTML manual is the preferred browsing format. This Markdown version keeps the same workflow order for GitHub text search.",
+        "For the color-coded manual with search, cross-links, and collapsible control callbacks, open `docs/FUNCTION_BOOK.html` or the GitHub Pages documentation site.",
         "",
         f"Total entries: {len(entries)}",
         "",
@@ -2972,7 +2972,7 @@ def render_panel_md(entries: list[dict], files: dict[str, list[str]], controls: 
     lines = [
         f"# {BRAND} Guide",
         "",
-        "This guide is generated from `Kong_Igor_panel.ipf` and the compiled source catalog. The HTML version, `PANEL_GUIDE.html`, is the preferred browsing format because it keeps the main-panel sections in a fixed navigation index.",
+        "This guide maps the main panel controls to their Igor action procedures and wrapped commands. The HTML version, `PANEL_GUIDE.html`, is the preferred browsing format because it keeps the panel sections in a fixed navigation index.",
         "",
         f"![{BRAND} main interface](assets/kong_panel_main.png)",
         "",

@@ -1,6 +1,6 @@
 # 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Guide
 
-This guide is generated from `Kong_Igor_panel.ipf` and the compiled source catalog. The HTML version, `PANEL_GUIDE.html`, is the preferred browsing format because it keeps the main-panel sections in a fixed navigation index.
+This guide maps the main panel controls to their Igor action procedures and wrapped commands. The HTML version, `PANEL_GUIDE.html`, is the preferred browsing format because it keeps the panel sections in a fixed navigation index.
 
 ![𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 main interface](assets/kong_panel_main.png)
 

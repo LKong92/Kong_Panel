@@ -1,8 +1,8 @@
 # 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Function Index
 
-This Markdown index is generated from `src/*.ipf` and organized by workflow rather than by IPF file. For the color-coded manual, open `docs/FUNCTION_BOOK.html`.
+This Markdown index lists the KP procedure library by workflow, so GitHub text search can find commands even when the interactive HTML manual is not open.
 
-The HTML manual is the preferred browsing format. This Markdown version keeps the same workflow order for GitHub text search.
+For the color-coded manual with search, cross-links, and collapsible control callbacks, open `docs/FUNCTION_BOOK.html` or the GitHub Pages documentation site.
 
 Total entries: 3208
 
