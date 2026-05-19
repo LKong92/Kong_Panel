@@ -1,8 +1,8 @@
-# 𝑲𝑶𝑵𝑮 Panel Guide
+# 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Guide
 
 This guide is generated from `Kong_Igor_panel.ipf` and the compiled source catalog. The HTML version, `PANEL_GUIDE.html`, is the preferred browsing format because it keeps the main-panel sections in a fixed navigation index.
 
-![𝑲𝑶𝑵𝑮 Panel main interface](assets/kong_panel_main.png)
+![𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 main interface](assets/kong_panel_main.png)
 
 - Main panel controls: 396
 - Main panel sections: 41

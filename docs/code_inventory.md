@@ -97,7 +97,7 @@ The function reference was generated from all `src/*.ipf` files with `scripts/bu
 
 - `docs/FUNCTION_BOOK.html`: color-coded browser manual.
 - `docs/FUNCTION_INDEX.md`: Markdown index suitable for GitHub browsing.
-- `docs/assets/kong_panel_main.png`: main 𝑲𝑶𝑵𝑮 Panel image for use in the GitHub README and panel guide.
+- `docs/assets/kong_panel_main.png`: main 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 image for use in the GitHub README and panel guide.
 - `docs/PANEL_GUIDE.html`: main-panel image plus button-to-procedure guide.
 - `docs/PANEL_GUIDE.md`: Markdown version of the panel guide.
 - `docs/STARTUP_STATE.html`: browser-readable startup-state compatibility note.

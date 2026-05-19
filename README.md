@@ -1,10 +1,10 @@
-# 𝑲𝑶𝑵𝑮 Panel
+# 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥
 
-𝑲𝑶𝑵𝑮 Panel (KP) is an Igor Pro source package for scanning tunneling microscopy (STM/STS) data processing, interactive visualization, spectral analysis, FFT/QPI workflows, lattice/strain analysis, and simple model simulation. It was developed by [Lingyuan Kong](https://www.westlake.edu.cn/faculty/lingyuan-kong.html) as a working research panel: the goal is to keep the everyday analysis path inside one Igor environment, from loading raw Nanonis data to plotting maps, extracting spectra, fitting linecuts, running simulations, and formatting final figures.
+𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 (KP) is an Igor Pro source package for scanning tunneling microscopy (STM/STS) data processing, interactive visualization, spectral analysis, FFT/QPI workflows, lattice/strain analysis, and simple model simulation. It was developed by [Lingyuan Kong](https://www.westlake.edu.cn/faculty/lingyuan-kong.html) as a working research panel: the goal is to keep the everyday analysis path inside one Igor environment, from loading raw Nanonis data to plotting maps, extracting spectra, fitting linecuts, running simulations, and formatting final figures.
 
-![𝑲𝑶𝑵𝑮 Panel main interface](docs/assets/kong_panel_main.png)
+![𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 main interface](docs/assets/kong_panel_main.png)
 
-Main 𝑲𝑶𝑵𝑮 Panel interface image, packaged for the GitHub description and linked to the button/procedure map in `docs/PANEL_GUIDE.html`.
+Main 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 interface image, packaged for the GitHub description and linked to the button/procedure map in `docs/PANEL_GUIDE.html`.
 
 ## Documentation
 
@@ -35,7 +35,7 @@ KP has been developed as a personal research workflow since 2016-04-15, with the
 
 ## Demonstration and Citation
 
-Many STM/STS workflows for real-space image analysis, Fourier-transform analysis, and spectroscopic-map processing in KP were developed while processing data for [Kong et al., "Cooper-pair density modulation state in an iron-based superconductor," Nature 640, 55-61 (2025)](https://www.nature.com/articles/s41586-025-08703-x). This GitHub package provides the Igor analysis source code used for data analysis in that Nature work; the source data themselves are published with the article. Together, the paper and its associated source data provide a scientific demonstration of the type of real-space STM analysis that can be realized with 𝑲𝑶𝑵𝑮 Panel.
+Many STM/STS workflows for real-space image analysis, Fourier-transform analysis, and spectroscopic-map processing in KP were developed while processing data for [Kong et al., "Cooper-pair density modulation state in an iron-based superconductor," Nature 640, 55-61 (2025)](https://www.nature.com/articles/s41586-025-08703-x). This GitHub package provides the Igor analysis source code used for data analysis in that Nature work; the source data themselves are published with the article. Together, the paper and its associated source data provide a scientific demonstration of the type of real-space STM analysis that can be realized with 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥.
 
 If KP is useful for your work, citation of that Nature paper is appreciated:
 
@@ -55,7 +55,7 @@ Nature 640, 55-61 (2025). https://doi.org/10.1038/s41586-025-08703-x
 
 ## Quick Start
 
-𝑲𝑶𝑵𝑮 Panel is distributed as an Igor Pro 9 source package. The loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
+𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 is distributed as an Igor Pro 9 source package. The loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
 
 ## Prerequisite: Install Igor Pro 9
 
@@ -116,7 +116,7 @@ Avoid loading this source package on top of another KP experiment that already c
 
 When preparing a GitHub release or ZIP archive, include both `src/KP_ColorTables.ipf` and `src/KP_NewColorTables.itx`. Without the `.itx` file, the source package can still compile, but popups and graph-formatting functions that reference `root:Packages:NewColortable:*` will not have the custom color waves available.
 
-## What 𝑲𝑶𝑵𝑮 Panel Does
+## What 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Does
 
 KP is broad by design. The panel is arranged as a collection of compact work areas rather than a single linear wizard. The following map summarizes the main functional groups visible in the panel and the corresponding IPF modules.
 
@@ -318,7 +318,7 @@ For GitHub browsing, use:
 docs/FUNCTION_INDEX.md
 ```
 
-For the main 𝑲𝑶𝑵𝑮 Panel layout, button map, and secondary/internal panel overview, use:
+For the main 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 layout, button map, and secondary/internal panel overview, use:
 
 ```text
 docs/PANEL_GUIDE.html
@@ -350,6 +350,6 @@ KP was developed by [Lingyuan Kong](https://www.westlake.edu.cn/faculty/lingyuan
 
 ## License
 
-𝑲𝑶𝑵𝑮 Panel is released under the MIT License.
+𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 is released under the MIT License.
 
 Copyright (c) 2026 Lingyuan Kong. See [LICENSE](LICENSE) for details.

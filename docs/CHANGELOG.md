@@ -1,10 +1,10 @@
-# 𝑲𝑶𝑵𝑮 Panel Changelog
+# 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Changelog
 
 This file is a polished GitHub-facing version of the original `KP update log.rtf`. The full plain-text conversion is kept in `docs/KP_update_log_raw.txt` for historical detail.
 
 ## 9.04.16 - 2026-05-18
 
-- Exported 𝑲𝑶𝑵𝑮 Panel procedure pages from `template.pxp` through Igor Pro.
+- Exported 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 procedure pages from `template.pxp` through Igor Pro.
 - Reorganized the package into source files under `src/`, with `src/KongPanel.ipf` as the umbrella include file.
 - Added `Load_KongPanel.ipf`, the recommended loader that compiles all panel action procedures before opening KP.
 - Made `Kong_Igor_panel.ipf` self-contained, so opening the panel file also includes the required source files instead of creating a button-only shell.

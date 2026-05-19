@@ -18,7 +18,7 @@ SRC = ROOT / "src"
 DOCS = ROOT / "docs"
 ASSETS = DOCS / "assets"
 UPDATE_LOG = DOCS / "KP_update_log_raw.txt"
-BRAND = "𝑲𝑶𝑵𝑮 Panel"
+BRAND = "𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥"
 
 
 ENTRY_RE = re.compile(
@@ -1770,12 +1770,17 @@ def md_description_lines(description: str) -> list[str]:
     parts = short_description_parts(description)
     lines: list[str] = []
     if parts["purpose"]:
-        lines.append(f"- Purpose: {' '.join(parts['purpose'])}")
+        lines.append(f"- Purpose: {md_escape_liquid(' '.join(parts['purpose']))}")
     if parts["usage"]:
-        lines.append(f"- Usage: {' '.join(parts['usage'])}")
+        lines.append(f"- Usage: {md_escape_liquid(' '.join(parts['usage']))}")
     if parts["details"]:
-        lines.append(f"- Notes: {' '.join(parts['details'][:4])}")
+        lines.append(f"- Notes: {md_escape_liquid(' '.join(parts['details'][:4]))}")
     return lines
+
+
+def md_escape_liquid(text: str) -> str:
+    """Escape Igor brace examples that GitHub Pages/Jekyll may parse as Liquid."""
+    return text.replace("{{", "&#123;&#123;").replace("{%", "&#123;%")
 
 
 def first_meaningful_sentence(description: str) -> str:
@@ -2517,13 +2522,13 @@ def render_md(entries: list[dict]) -> str:
     )
     for group in md_feature_groups:
         for title, summary, usage in by_text_group.get(group, []):
-            lines += [f"### {group}: {title}", "", summary, "", usage, ""]
+            lines += [f"### {group}: {title}", "", md_escape_liquid(summary), "", md_escape_liquid(usage), ""]
         cards = by_feature_group.get(group, [])
         if not cards:
             continue
         lines += [f"### {group}: functions", ""]
         for name, title, summary in cards:
-            lines.append(f"- `{name}()`: **{title}.** {summary}")
+            lines.append(f"- `{name}()`: **{title}.** {md_escape_liquid(summary)}")
         lines.append("")
     for category, _ in CATEGORY_RULES:
         items = by_category.get(category, [])
@@ -2548,7 +2553,7 @@ def render_md(entries: list[dict]) -> str:
                     lines.append("- Parameters:")
                     for arg in args[:10]:
                         note = e.get("param_docs", {}).get(arg, "")
-                        lines.append(f"  - `{arg}`: {note}")
+                        lines.append(f"  - `{arg}`: {md_escape_liquid(note)}")
                     if len(args) > 10:
                         lines.append(f"  - ... {len(args) - 10} additional parameters")
                 controls = [c.get("title") or c.get("control") for c in e.get("controls", [])]
@@ -2877,7 +2882,7 @@ def render_panel_md(entries: list[dict], files: dict[str, list[str]], controls: 
             action = f"`{proc}`" + (f" -> `{target}()`" if target else "")
             lines.append(f"### `{c.get('title') or c.get('control')}`")
             lines.append("")
-            lines.append(f"- Summary: {note}")
+            lines.append(f"- Summary: {md_escape_liquid(note)}")
             lines.append(f"- Control: `{c.get('control')}` `{c.get('control_kind','')}`")
             lines.append(f"- Action: {action}")
             lines.append(f"- Source: `{c.get('file')}:{c.get('line')}`")
@@ -2888,7 +2893,7 @@ def render_panel_md(entries: list[dict], files: dict[str, list[str]], controls: 
         lines.append(f"### `{w['name']}()`")
         lines.append("")
         lines.append(f"- Workflow group: {w['category']}")
-        lines.append(f"- Purpose: {w['description']}")
+        lines.append(f"- Purpose: {md_escape_liquid(w['description'])}")
         lines.append(f"- Source: `{w['file']}:{w['line']}`")
         lines.append("")
     lines.append("")

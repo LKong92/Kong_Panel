@@ -1,4 +1,4 @@
-# 𝑲𝑶𝑵𝑮 Panel Function Index
+# 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 Function Index
 
 This Markdown index is generated from `src/*.ipf` and organized by workflow rather than by IPF file. For the color-coded manual, open `docs/FUNCTION_BOOK.html`.
 
@@ -2280,7 +2280,7 @@ Function ButtonProc_Cons3dplot(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotlc(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Launch arbitary Linecut extraction }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Launch Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartpp()`, `findendpp()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqq()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Launch arbitary Linecut extraction }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Launch Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartpp()`, `findendpp()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqq()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Launch Linecut`
@@ -2292,7 +2292,7 @@ Function ButtonProc_Cons3dplotlc(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotlcf(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Launch arbitary Linecut extraction }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut FFT`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Launch arbitary Linecut extraction }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut FFT`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Linecut FFT`
@@ -2304,7 +2304,7 @@ Function ButtonProc_Cons3dplotlcf(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotmulti(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Multimap Function }}}}}}}}}} #1 Control Function Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `MultiMap`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `f_for3dmulti()`, `levelimage2()`, `color3s_for3dm()`, `ckfig_child()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Multimap Function }}}}}}}}}} #1 Control Function Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `MultiMap`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `f_for3dmulti()`, `levelimage2()`, `color3s_for3dm()`, `ckfig_child()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `MultiMap`
@@ -2599,7 +2599,7 @@ Function ButtonProc_Loadnewmkfab(ctrlName) : ButtonControl//"Load BNL Data in Fo
 Function ButtonProc_ls3dcons(ctrlName) : ButtonControl
 ```
 - Usage: triggered as a wrapper that opens/runs `ffc3dpls()`.
-- Notes: {{{{{{{{{{ Lattice segregation }}}}}}}}}} Panel control(s): `Latt.Serg`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Lattice segregation }}}}}}}}}} Panel control(s): `Latt.Serg`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Latt.Serg`
@@ -2983,7 +2983,7 @@ Function movie_maker_mat_popUp(ctrlName,popNum,popStr) : PopupMenuControl
 Function PopMenuProc_appendimage(ctrlName,popNum,popStr) : PopupMenuControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Overlay T(r) and Δ(r) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `stringmatch()`, `elseif()`, `grabwinnonew()`, `gethistgram_npcolor()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Overlay T(r) and Δ(r) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `stringmatch()`, `elseif()`, `grabwinnonew()`, `gethistgram_npcolor()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `popNum`: Selected popup-menu item index.
@@ -3365,7 +3365,7 @@ Function PopMenuProc_Zcoloronthegraph2(ctrlName,popNum,popStr) : PopupMenuContro
 Function PopMenuProc_Znormornot(ctrlName,popNum,popStr) : PopupMenuControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ normalize 3D by sts }}}}}}}}}} Purpose: smooths, normalizes, or removes background/trend components. Panel control(s): `popupnormornot`. Main internal calls: `Norma3dmatrix()`, `Cons3dplotc()`, `f_for3d()`, `color3s_for3d()`, `grabwinnonew()`, `UpdateControls_3dp()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; normalize 3D by sts }}}}}}}}}} Purpose: smooths, normalizes, or removes background/trend components. Panel control(s): `popupnormornot`. Main internal calls: `Norma3dmatrix()`, `Cons3dplotc()`, `f_for3d()`, `color3s_for3d()`, `grabwinnonew()`, `UpdateControls_3dp()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `popNum`: Selected popup-menu item index. In this context it is used for Fourier/QPI or phase-map processing.
@@ -3624,7 +3624,7 @@ Function SetVarProc_colorratio_consFFTdemo(ctrlName,varNum,varStr,varName) : Set
 Function SetVarProc_Cons3dplot(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Dsiplay 3D matrix by selected layer:control function }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `removeappendimage()`, `tpw()`, `Cons3dplotc()`, `grabwinnonew()`, `Cons3dplotcf()`, `grabwinchild()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Dsiplay 3D matrix by selected layer:control function }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `removeappendimage()`, `tpw()`, `Cons3dplotc()`, `grabwinnonew()`, `Cons3dplotcf()`, `grabwinchild()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -3655,7 +3655,7 @@ Function SetVarProc_Cons3dplotdivc(ctrlName,varNum,varStr,varName) : SetVariable
 Function SetVarProc_Cons3dplotf(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Dsiplay 3D matrix by selected layer:control function }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Main internal calls: `Cons3dplotc()`, `Cons3dplotcf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Dsiplay 3D matrix by selected layer:control function }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Main internal calls: `Cons3dplotc()`, `Cons3dplotcf()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -5805,7 +5805,7 @@ Function Complextorealf_for3d(name1w,select)
 Function Cons3dplotc()
 ```
 - Usage: call `Cons3dplotc()` from Igor procedure code or the command line.
-- Notes: {{{{{{{{{{ Update layer }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `func_zeroNaN()`, `max()`, `grabwinchild()`, `color3s_for3d()`, `checkmultiopen()`, `color3s_for3dm()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Update layer }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `func_zeroNaN()`, `max()`, `grabwinchild()`, `color3s_for3d()`, `checkmultiopen()`, `color3s_for3dm()`.
 - Source: `Smart_3D_Viewer_New.ipf:545`
 
 #### `Cons3dplotcf`
@@ -5814,7 +5814,7 @@ Function Cons3dplotc()
 Function Cons3dplotcf()
 ```
 - Usage: call `Cons3dplotcf()` from Igor procedure code or the command line.
-- Notes: {{{{{{{{{{ Update layer }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: formats graph axes, labels, colors, or annotations. Main internal calls: `color3s_for3dinv()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Update layer }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Code behavior: formats graph axes, labels, colors, or annotations. Main internal calls: `color3s_for3dinv()`.
 - Source: `Smart_3D_Viewer_New.ipf:6177`
 
 #### `ConsZcuiz`
@@ -6674,7 +6674,7 @@ Function minwaterfall()
 ```igor
 Function myCursorMovedHook(s)
 ```
-- Notes: {{{{{{{{{{ Interactive Cursor, to get 1D sts }}}}}}}}}} Usage: call as `myCursorMovedHook(s)`. Main internal calls: `UpdateControls_3dp()`, `grabwinnonew()`, `UpdateControls_3dpf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Interactive Cursor, to get 1D sts }}}}}}}}}} Usage: call as `myCursorMovedHook(s)`. Main internal calls: `UpdateControls_3dp()`, `grabwinnonew()`, `UpdateControls_3dpf()`.
 - Parameters:
   - `s`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `Smart_3D_Viewer_New.ipf:243`
@@ -7218,7 +7218,7 @@ Function ButtonProc_2dlockinmulti(ctrlName) : ButtonControl
 Function ButtonProc_2dlockinmultifft(ctrlName) : ButtonControl
 ```
 - Usage: triggered as a wrapper that opens/runs `ffc3dp()`.
-- Notes: {{{{{{{{{{ Multiple 2D-lock-in }}}}}}}}}} Purpose: performs Fourier, filtering, phase, or lock-in processing. Panel control(s): `M-lockin`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Multiple 2D-lock-in }}}}}}}}}} Purpose: performs Fourier, filtering, phase, or lock-in processing. Panel control(s): `M-lockin`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `M-lockin`
@@ -7825,7 +7825,7 @@ Function ButtonProc_t2dlockinandFilter(ctrlName) : ButtonControl
 Function PopMenuProc_FFTmarquearea_3dplot(ctrlName,popNum,popStr) : PopupMenuControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ MultiFunctional FFT with in a Marquee }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `FFTmarque`. Main internal calls: `DoFFT_3dplot()`, `DoFFT_3dplot_marquee()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; MultiFunctional FFT with in a Marquee }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `FFTmarque`. Main internal calls: `DoFFT_3dplot()`, `DoFFT_3dplot_marquee()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `popNum`: Selected popup-menu item index. In this context it is used for Fourier/QPI or phase-map processing.
@@ -7839,7 +7839,7 @@ Function PopMenuProc_FFTmarquearea_3dplot(ctrlName,popNum,popStr) : PopupMenuCon
 Function PopMenuProc_FFTmode_3dplot(ctrlName,popNum,popStr) : PopupMenuControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Here is the start of 3D FFT player }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `FFTMode`. Main internal calls: `DoFFT_3dplot()`, `DoFFT_3dplot_marquee()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Here is the start of 3D FFT player }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `FFTMode`. Main internal calls: `DoFFT_3dplot()`, `DoFFT_3dplot_marquee()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `popNum`: Selected popup-menu item index. In this context it is used for Fourier/QPI or phase-map processing.
@@ -10986,10 +10986,10 @@ Function setvarwide_emat3dVD(ctrlName,varNum,varStr,varName): SetVariableControl
 Proc automatrixTC(paralist,xyzseq,sel)
 ```
 - Usage: run from Igor with parameters `paralist`, `xyzseq`, `sel`.
-- Notes: Interactive Igor procedure for Igor wave/matrix/cube data operation. Dialog prompts: paralist = List (by;) of parameter waves (1x1 waves); xyzseq = Wave of Pauli sequence, e.g. a polynomial with 6 terms, each term has 3 paulis, the wave should be like {{0,1,2},{2,3,1},{0,2,2},{1,1,1},{2,2,2},{1,0,0}}; sel = Select Modes. Code behavior: asks the user for parameters through Igor prompts.
+- Notes: Interactive Igor procedure for Igor wave/matrix/cube data operation. Dialog prompts: paralist = List (by;) of parameter waves (1x1 waves); xyzseq = Wave of Pauli sequence, e.g. a polynomial with 6 terms, each term has 3 paulis, the wave should be like &#123;&#123;0,1,2},{2,3,1},{0,2,2},{1,1,1},{2,2,2},{1,0,0}}; sel = Select Modes. Code behavior: asks the user for parameters through Igor prompts.
 - Parameters:
   - `paralist`: List (by;) of parameter waves (1x1 waves)
-  - `xyzseq`: Wave of Pauli sequence, e.g. a polynomial with 6 terms, each term has 3 paulis, the wave should be like {{0,1,2},{2,3,1},{0,2,2},{1,1,1},{2,2,2},{1,0,0}}
+  - `xyzseq`: Wave of Pauli sequence, e.g. a polynomial with 6 terms, each term has 3 paulis, the wave should be like &#123;&#123;0,1,2},{2,3,1},{0,2,2},{1,1,1},{2,2,2},{1,0,0}}
   - `sel`: Select Modes
 - Source: `MatrixCalculation.ipf:83`
 
@@ -13651,7 +13651,7 @@ Function unevenlinep(batchname,templatewave,num)
 ```igor
 Function/Wave wC(name,ww)
 ```
-- Notes: #3. Complex wave (real) try wT("name",{cmplx(,)}), {cmplx(1,1)} for 1D, {{cmplx(1,1)}} for 2D, {{{cmplx(1,1)}}} for 3D Usage: call as `wC(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
+- Notes: #3. Complex wave (real) try wT("name",{cmplx(,)}), {cmplx(1,1)} for 1D, &#123;&#123;cmplx(1,1)}} for 2D, &#123;&#123;{cmplx(1,1)}}} for 3D Usage: call as `wC(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
@@ -13673,7 +13673,7 @@ Function/wave WFofmatrix(mat,show)
 ```igor
 Function/Wave wN(name,ww)
 ```
-- Notes: #1. Numerical wave (real) try wN("name",{}), {1} for 1D, {{1}} for 2D, {{{1}}} for 3D Usage: call as `wN(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
+- Notes: #1. Numerical wave (real) try wN("name",{}), {1} for 1D, &#123;&#123;1}} for 2D, &#123;&#123;{1}}} for 3D Usage: call as `wN(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
@@ -13684,7 +13684,7 @@ Function/Wave wN(name,ww)
 ```igor
 Function/Wave wT(name,ww)
 ```
-- Notes: #2. Text wave (real) try wT("name",{""}), {"t"} for 1D, {{"t"}} for 2D, {{{"t"}}} for 3D Usage: call as `wT(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
+- Notes: #2. Text wave (real) try wT("name",{""}), {"t"} for 1D, &#123;&#123;"t"}} for 2D, &#123;&#123;{"t"}}} for 3D Usage: call as `wT(name, ww)`. Code behavior: duplicates or stages waves for downstream processing. Update log: 10/12/2023: (9) wN(name,ww) wC(name,ww) wT(name,ww): Make wave ww under "name" for real wave, complex wave, text wave.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `ww`: Igor wave reference used as input or output.
@@ -14163,7 +14163,7 @@ Function ButtonProc_sMDC(ctrlName) : ButtonControl
 Function ButtonProc_subavedidv(ctrlName) : ButtonControl
 ```
 - Usage: triggered as a wrapper that opens/runs `comparehotandcoldc()`.
-- Notes: {{{{{{{{{{ Select area average dI/dV curve }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Grp.dI/dV`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Select area average dI/dV curve }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Grp.dI/dV`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Grp.dI/dV`, `Grp.dI/dV`
@@ -14254,7 +14254,7 @@ Function SetVarProc_changegap(ctrlName,varNum,varStr,varName) : SetVariableContr
 Function SetVarProc_Cons3dplotprbcSC(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Control the simulation parameters }}}}}}}}}} Purpose: fits or extracts spectral/peak parameters. Panel control(s): `Z`. Main internal calls: `updatePRB_98_214503_SCFS()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Control the simulation parameters }}}}}}}}}} Purpose: fits or extracts spectral/peak parameters. Panel control(s): `Z`. Main internal calls: `updatePRB_98_214503_SCFS()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -30073,7 +30073,7 @@ Function ButtonProc_cnfyjc(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotgetshear(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Extract Energy dependent Shearing parameters }}}}}}}}}} #0_1 PreFFT:control Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Shear(V)`. Main internal calls: `ff_3dplot()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Extract Energy dependent Shearing parameters }}}}}}}}}} #0_1 PreFFT:control Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Shear(V)`. Main internal calls: `ff_3dplot()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Shear(V)`
@@ -33296,7 +33296,7 @@ Function ButtonProc_CdGMDirac(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotlcf2(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Linecut`
@@ -33308,7 +33308,7 @@ Function ButtonProc_Cons3dplotlcf2(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotlcf2SC(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Linecut`
@@ -33346,7 +33346,7 @@ Function ButtonProc_Cons3dplotlcfmodel(ctrlName) : ButtonControl
 Function ButtonProc_Cons3dplotZ(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Launch arbitary Linecut extraction (Z is horizental) }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Linecut`. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `findstartppf()`, `findendppf()`, `grabwin()`, `lsize()`, `rgb()`, `findstartqqf()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Linecut`, `Linecut`, `Linecut`, `Linecut`
@@ -34421,7 +34421,7 @@ Function SetVarProc_Cons3dplotpdw(ctrlName,varNum,varStr,varName) : SetVariableC
 Function SetVarProc_Cons3dplotprbc(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: {{{{{{{{{{ Control the simulation parameters }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Main internal calls: `updatePRB_98_214503_normalFS()`.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Control the simulation parameters }}}}}}}}}} Purpose: displays waves, images, contours, or graph overlays. Panel control(s): `Z`. Main internal calls: `updatePRB_98_214503_normalFS()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -37699,7 +37699,7 @@ Function updatefourbandFeSC2D()
 Function updatePRB_98_214503_normal()
 ```
 - Usage: call `updatePRB_98_214503_normal()` from Igor procedure code or the command line.
-- Notes: {{{{{{{{{{ Functional main function }}}}}}}}}} Purpose: updates parameters, controls, scales, or display state. Code behavior: assigns Igor axis scaling/units to the output.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Functional main function }}}}}}}}}} Purpose: updates parameters, controls, scales, or display state. Code behavior: assigns Igor axis scaling/units to the output.
 - Source: `Models.ipf:1457`
 
 #### `updatePRB_98_214503_SC`
@@ -37708,7 +37708,7 @@ Function updatePRB_98_214503_normal()
 Function updatePRB_98_214503_SC()
 ```
 - Usage: call `updatePRB_98_214503_SC()` from Igor procedure code or the command line.
-- Notes: {{{{{{{{{{ Functional main function }}}}}}}}}} Purpose: updates parameters, controls, scales, or display state. Code behavior: assigns Igor axis scaling/units to the output.
+- Notes: &#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123;&#123; Functional main function }}}}}}}}}} Purpose: updates parameters, controls, scales, or display state. Code behavior: assigns Igor axis scaling/units to the output.
 - Source: `Models.ipf:2008`
 
 #### `UserFunctionG`

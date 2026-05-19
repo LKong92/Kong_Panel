@@ -6,7 +6,7 @@ This note documents the non-code Igor objects that were present in `Template_kly
 
 The GitHub release is source based: the panel is loaded from `src/*.ipf` files and the color tables are loaded from `KP_NewColorTables.itx`. A clean Igor experiment does not automatically contain root-level globals that were previously saved as experiment objects inside `template.pxp`.
 
-Some older 𝑲𝑶𝑵𝑮 Panel display, graph-color, popup, and modeling workflows assume these globals already exist. To keep the source release compatible with those workflows, `src/KP_GlobalState.ipf` now recreates the required root-level variables and strings when the main panel starts.
+Some older 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 display, graph-color, popup, and modeling workflows assume these globals already exist. To keep the source release compatible with those workflows, `src/KP_GlobalState.ipf` now recreates the required root-level variables and strings when the main panel starts.
 
 ## Startup Entry Point
 
