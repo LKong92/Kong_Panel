@@ -27,6 +27,15 @@ Function KP_EnsureNewColorTables()
 	if (!loaded)
 		loaded = KP_LoadNewColorTablesFrom(basePath + "User Procedures:")
 	endif
+	if (!loaded)
+		// Try looking in the same folder as this procedure file.
+		String thisProcFileFullPath = FunctionPath("")
+		if (strlen(thisProcFileFullPath) > 0)
+			// Strip off the file name from the full path
+			String thisProcFileDirectory = ParseFilePath(1, thisProcFileFullPath, ":", 1, 0)
+			loaded = KP_LoadNewColorTablesFrom(thisProcFileDirectory)
+		endif
+	endif
 
 	SetDataFolder dfrSav
 	if (!loaded)
@@ -55,6 +64,12 @@ Static Function KP_LoadNewColorTablesFrom(folderPath)
 	if (V_Flag != 0)
 		return 0
 	endif
+	
+	// Test that the destination file exists.
+	GetFileFolderInfo/P=KPNewColorTablePath/Z/Q KP_COLOR_TABLE_FILE
+	if (V_Flag != 0)
+		return 0
+	endif	
 
 	SetDataFolder root:Packages:NewColortable
 	LoadWave/T/O/Q/P=KPNewColorTablePath KP_COLOR_TABLE_FILE
