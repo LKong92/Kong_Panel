@@ -4,7 +4,7 @@ This Markdown index lists the KP procedure library by workflow, so GitHub text s
 
 For the color-coded manual with search, cross-links, and collapsible control callbacks, open `docs/FUNCTION_BOOK.html` or the GitHub Pages documentation site.
 
-Total entries: 3208
+Total entries: 3219
 
 ## Featured Utilities
 
@@ -190,7 +190,7 @@ Window Kong_Igor_panel() : Panel
 ```
 - Usage: call `Kong_Igor_panel()` to recreate or bring up the Igor window/panel.
 - Notes: Igor window/panel recreation routine for geometric correction, rotation, shear, drift, or strain analysis; ARPES-style loading, plotting, or momentum conversion; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; smooths wave data; differentiates wave data. Main internal calls: `KP_EnsureNewColorTables()`, `KP_EnsureStartupGlobals()`, `txt()`, `dat()`, `asc()`, `tabLabel()`.
-- Source: `Kong_Igor_panel.ipf:32`
+- Source: `Kong_Igor_panel.ipf:33`
 
 
 
@@ -5713,6 +5713,18 @@ Function color3s_for3dmf(name,tt)
   - `tt`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `Lattice Segregation.ipf:1582`
 
+#### `color3s_for3dmfMoire`
+
+```igor
+Function color3s_for3dmfMoire(name,tt)
+```
+- Usage: call as `color3s_for3dmfMoire(name, tt)`.
+- Notes: grabwinchild() and the custom colortable::Packages:NewColortable:XLiu_G tt controls the displayed color interval. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `gethistgram_npcolor()`, `grabwinchild()`.
+- Parameters:
+  - `name`: Name or reference of the source wave/matrix being processed.
+  - `tt`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `Moire_STM_Topography_Simulator.ipf:1897`
+
 #### `color3s_for3dmLS`
 
 ```igor
@@ -6568,7 +6580,7 @@ Function Killsinglewindow(name) //kill window of a specific name
 Function KP_EnsureNewColorTables()
 ```
 - Usage: call `KP_EnsureNewColorTables()` from Igor procedure code or the command line.
-- Notes: Public entry point used by Kong_Igor_panel(). It restores the color waves that were embedded in the old template experiment. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_HaveNewColorTables()`, `SpecialDirPath()`, `KP_LoadNewColorTablesFrom()`.
+- Notes: Public entry point used by Kong_Igor_panel(). It restores the color waves that were embedded in the old template experiment. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_HaveNewColorTables()`, `SpecialDirPath()`, `KP_LoadNewColorTablesFrom()`, `FunctionPath()`.
 - Source: `KP_ColorTables.ipf:10`
 
 #### `levelimage2`
@@ -7192,7 +7204,7 @@ Static Function KP_HaveNewColorTables()
 - Purpose: combines many waves/slices into a map, linecut, or averaged output.
 - Usage: call `KP_HaveNewColorTables()` from Igor procedure code or the command line.
 - Notes: Internal helper function for graph display, formatting, or window management; Igor wave/matrix/cube data operation.
-- Source: `KP_ColorTables.ipf:38`
+- Source: `KP_ColorTables.ipf:47`
 
 #### `KP_LoadNewColorTablesFrom`
 
@@ -7203,7 +7215,7 @@ Static Function KP_LoadNewColorTablesFrom(folderPath)
 - Notes: Internal helper function for graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: loads data from files or paths; creates, switches, or removes Igor data folders. Main internal calls: `KP_HaveNewColorTables()`.
 - Parameters:
   - `folderPath`: File-system path or data-folder string used for loading or saving data.
-- Source: `KP_ColorTables.ipf:50`
+- Source: `KP_ColorTables.ipf:59`
 
 
 
@@ -23318,7 +23330,7 @@ Proc Get_ledge_kf(numedc,fermi_level,search_halfwindow,method,smoothlevel,backgn
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: run from Igor with parameters `numedc`, `fermi_level`, `search_halfwindow`, `method`, `smoothlevel`, `backgnd_type`, `num_back`, `neworold`.
-- Notes: Interactive Igor procedure for linecut, slice, or region extraction; smoothing, normalization, or background removal; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: numedc = Number of EDC to combine (odd):; fermi_level = Fermi level:; search_halfwindow = Enter the half window size:; method = Method; smoothlevel = Smoothlevel (-1=no smoothing):; backgnd_type = Type of background. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `update_making_fs()`, 
+- Notes: Interactive Igor procedure for linecut, slice, or region extraction; smoothing, normalization, or background removal; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: numedc = Number of EDC to combine (odd):; fermi_level = Fermi level:; search_halfwindow = Enter the half window size:; method = Method; smoothlevel = Smoothlevel (-1=no smoothing):; backgnd_type = Type of background. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `update_making_fs()`,
 - Parameters:
   - `numedc`: Number of EDC to combine (odd):
   - `fermi_level`: Fermi level:
@@ -30211,6 +30223,19 @@ Function ButtonProc_Fitimagetriangularc(ctrlName) : ButtonControl
 - Panel controls: `Tri`
 - Source: `General_Simu.ipf:2416`
 
+#### `ButtonProc_GenerateMoireSquareFastc`
+
+```igor
+Function ButtonProc_GenerateMoireSquareFastc(ctrlName) : ButtonControl
+```
+- Purpose: creates new waves, maps, figures, or simulation data.
+- Usage: triggered as a wrapper that opens/runs `GenerateMoireSquareFastc()`.
+- Notes: Internal pixel spacing: pixelSize = lengthScale/(nPoint-1) Therefore changing nPoint changes spatial sampling but does not change the physical field of view. Panel control(s): `Moiré STM`.
+- Parameters:
+  - `ctrlName`: Igor control name passed automatically by the panel callback.
+- Panel controls: `Moiré STM`
+- Source: `Moire_STM_Topography_Simulator.ipf:107`
+
 #### `ButtonProc_GPAtwist`
 
 ```igor
@@ -30703,6 +30728,20 @@ Function PopMenuProc_mirroronoff(ctrlName,popNum,popStr) : PopupMenuControl
 - Panel controls: `mirror_onoff`, `mirror_onoff`
 - Source: `Pierre's Template.ipf:1227`
 
+#### `PopMenuProc_MoireLattice`
+
+```igor
+Function PopMenuProc_MoireLattice(ctrlName,popNum,popStr) : PopupMenuControl
+```
+- Usage: called automatically by Igor when the linked panel control changes.
+- Notes: 1 = Square 2 = Honeycomb 3 = Triangular 4 = Kagome Panel control(s): `L_{ / m top}`, `L_{ / m bottom}`. Main internal calls: `UpdateMoireInteractive()`.
+- Parameters:
+  - `ctrlName`: Igor control name passed automatically by the panel callback.
+  - `popNum`: Selected popup-menu item index. In this context it is used for Fourier/QPI or phase-map processing.
+  - `popStr`: Selected popup-menu item text.
+- Panel controls: `L_{ / m top}`, `L_{ / m bottom}`
+- Source: `Moire_STM_Topography_Simulator.ipf:373`
+
 #### `PopMenuProc_symmode_3dplot`
 
 ```igor
@@ -31121,6 +31160,21 @@ Function SetVarProc_lsthresh(ctrlName,varNum,varStr,varName) : SetVariableContro
 - Panel controls: `Threshold`
 - Source: `Lattice Segregation.ipf:757`
 
+#### `SetVarProc_MoireSquare`
+
+```igor
+Function SetVarProc_MoireSquare(ctrlName,varNum,varStr,varName) : SetVariableControl
+```
+- Usage: called automatically by Igor when the linked panel control changes.
+- Notes: SetVariable callback All numerical controls call UpdateMoireInteractive(). Panel control(s): `N`, `L (Å)`, `a_{ / m top} (Å)`, `a_{ / m bottom} (Å)`, `phi`, `theta`. Main internal calls: `UpdateMoireInteractive()`.
+- Parameters:
+  - `ctrlName`: Igor control name passed automatically by the panel callback.
+  - `varNum`: Numeric value from an Igor SetVariable control.
+  - `varStr`: String form of the SetVariable control value.
+  - `varName`: Name of the Igor variable edited by the SetVariable control.
+- Panel controls: `N`, `L (Å)`, `a_{ / m top} (Å)`, `a_{ / m bottom} (Å)`, `phi`, `theta`, `sigma_{ / m atom} (Å)`, `xi_{ / m stack} (Å)`
+- Source: `Moire_STM_Topography_Simulator.ipf:347`
+
 #### `SetVarProc_SumCompOrder_square`
 
 ```igor
@@ -31506,6 +31560,26 @@ Proc Fitimagetriangularc(name, a, theta, dx, dy)
   - `dx`: = 2 // Phase shift in x-direction
   - `dy`: = 1
 - Source: `General_Simu.ipf:2420`
+
+#### `GenerateMoireSquareFastc`
+
+```igor
+Proc GenerateMoireSquareFastc(nPoint, lengthScale, aBottom, aTop, globalAngle, twistAngle, sigmaAtom, xiStack, AM)
+```
+- Purpose: creates new waves, maps, figures, or simulation data.
+- Usage: run from Igor with parameters `nPoint`, `lengthScale`, `aBottom`, `aTop`, `globalAngle`, `twistAngle`, `sigmaAtom`, `xiStack`.
+- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: nPoint = Number of points along x and y; lengthScale = Total image length along x and y; aBottom = Bottom Bravais lattice constant; aTop = Top Bravais lattice constant; globalAngle = Overall lattice angle relative to x axis (deg); twistAngle = Top-layer twist relative to bottom layer (deg). Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; cleans up waves/windows or
+- Parameters:
+  - `nPoint`: Number of points along x and y
+  - `lengthScale`: Total image length along x and y
+  - `aBottom`: Bottom Bravais lattice constant
+  - `aTop`: Top Bravais lattice constant
+  - `globalAngle`: Overall lattice angle relative to x axis (deg)
+  - `twistAngle`: Top-layer twist relative to bottom layer (deg)
+  - `sigmaAtom`: Atomic Gaussian width
+  - `xiStack`: Stacking-contrast decay length
+  - `AM`: Moire modulation amplitude
+- Source: `Moire_STM_Topography_Simulator.ipf:113`
 
 #### `gpac_twist`
 
@@ -32281,6 +32355,18 @@ Function fflf(name)
   - `name`: Name or reference of the source wave/matrix being processed. In this context it is used for Fourier/QPI or phase-map processing.
 - Source: `Lawler-Fujita Drift Correction.ipf:1067`
 
+#### `FFTrmoire`
+
+```igor
+Function FFTrmoire(name,sel)
+```
+- Usage: call as `FFTrmoire(name, sel)`.
+- Notes: sel = 2: Apply a two-dimensional Hanning window before FFT. Output wave: input wave name + "_FFT" Purpose: performs Fourier, filtering, phase, or lock-in processing. Code behavior: performs Fourier-transform or inverse-transform operations; duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `func_NaN0()`, `cvtcmplx()`.
+- Parameters:
+  - `name`: Name or reference of the source wave/matrix being processed. In this context it is used for Fourier/QPI or phase-map processing.
+  - `sel`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `Moire_STM_Topography_Simulator.ipf:1827`
+
 #### `findxsjump`
 
 ```igor
@@ -32425,6 +32511,27 @@ Function func_vol_lac4(surfx_x,surfx_y,sizegrid,griddelta,lattice,deepness_matri
   - `position_deepness`: Step size or energy/voltage increment used by the calculation.
   - `inside_out`: Step size or energy/voltage increment used by the calculation.
 - Source: `Pierre's Template.ipf:21629`
+
+#### `GenerateMoireSquareFast`
+
+```igor
+Function GenerateMoireSquareFast(nPoint, lengthScale, aBottom, aTop, bottomForm, topForm, globalAngle, twistAngle, sigmaAtom, xiStack, AM)
+```
+- Usage: call as `GenerateMoireSquareFast(nPoint, lengthScale, aBottom, aTop, bottomForm, topForm, globalAngle, twistAngle)`.
+- Notes: Every top-layer atom is written as: R(i,j,s) = i*a1 + j*a2 + b_s followed by a rotation through: topAngle = globalAngle + twistAngle Purpose: creates new waves, maps, figures, or simulation data. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `elseif()`, `ceil()`, `max()`, `MoireNearestBottomD2()`, `min()`.
+- Parameters:
+  - `nPoint`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `lengthScale`: Scaling, normalization, interpolation, or correction factor.
+  - `aBottom`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `aTop`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `bottomForm`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `topForm`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `globalAngle`: Angle parameter used for ARPES momentum conversion or rotation.
+  - `twistAngle`: Igor wave reference used as input or output.
+  - `sigmaAtom`: Width or sigma parameter for smoothing, fitting, or Fourier filtering.
+  - `xiStack`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - ... 1 additional parameters
+- Source: `Moire_STM_Topography_Simulator.ipf:1167`
 
 #### `getabsamp`
 
@@ -32854,6 +32961,20 @@ Function Moffdiag_sym(name)
   - `name`: Name or reference of the source wave/matrix being processed. In this context it is used for Fourier/QPI or phase-map processing.
 - Source: `Symmetrization.ipf:392`
 
+#### `MoireNearestBottomD2`
+
+```igor
+Function MoireNearestBottomD2(xp,yp,aBottom,bottomForm)
+```
+- Usage: call as `MoireNearestBottomD2(xp, yp, aBottom, bottomForm)`.
+- Notes: searched for every basis atom. The local search is needed because independently rounding fractional coordinates in an oblique lattice does not always return the nearest Euclidean lattice point. Main internal calls: `elseif()`.
+- Parameters:
+  - `xp`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `yp`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `aBottom`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `bottomForm`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `Moire_STM_Topography_Simulator.ipf:749`
+
 #### `Mx_sym`
 
 ```igor
@@ -33007,6 +33128,21 @@ Function rotatedshear(name,pp,theta)
   - `pp`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `theta`: Angle parameter used for ARPES momentum conversion or rotation.
 - Source: `Shear Correction for C4.ipf:501`
+
+#### `SetMoireFFTAxis`
+
+```igor
+Function SetMoireFFTAxis(aTop,globalAngle,twistAngle,topForm)
+```
+- Purpose: updates parameters, controls, scales, or display state.
+- Usage: call as `SetMoireFFTAxis(aTop, globalAngle, twistAngle, topForm)`.
+- Notes: produce structure-factor suppression, but the Bragg-point positions remain those of the triangular Bravais lattice. The displayed x and y limits are 1.3 times the largest corresponding components of the complete first-order Bragg shell. Code behavior: formats graph axes, labels, colors, or annotations. Main internal calls: `max()`.
+- Parameters:
+  - `aTop`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `globalAngle`: Angle parameter used for ARPES momentum conversion or rotation.
+  - `twistAngle`: Igor wave reference used as input or output. In this context it is used for Fourier/QPI or phase-map processing.
+  - `topForm`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `Moire_STM_Topography_Simulator.ipf:552`
 
 #### `Shear_q1x`
 
@@ -33273,6 +33409,25 @@ Function unpadding(name,winput)
   - `name`: name of the original image which contain the original dimsize before padding
   - `winput`: the padded wave
 - Source: `Lawler-Fujita Drift Correction.ipf:402`
+
+#### `UpdateMoireInteractive`
+
+```igor
+Function UpdateMoireInteractive()
+```
+- Usage: call `UpdateMoireInteractive()` from Igor procedure code or the command line.
+- Notes: 1. Real-space MoireMap 2. MoireMap_FFT 3. FFT display range 4.
+- Source: `Moire_STM_Topography_Simulator.ipf:422`
+
+#### `UpdateMoireTheoryAnnotation`
+
+```igor
+Function UpdateMoireTheoryAnnotation()
+```
+- Purpose: updates parameters, controls, scales, or display state.
+- Usage: call `UpdateMoireTheoryAnnotation()` from Igor procedure code or the command line.
+- Notes: = distance from top atom i to the nearest bottom-layer atom theta_bottom = globalAngle theta_top = globalAngle + twistAngle The equation is displayed in a single line using Igor WMTEX. Code behavior: formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward.
+- Source: `Moire_STM_Topography_Simulator.ipf:2006`
 
 
 

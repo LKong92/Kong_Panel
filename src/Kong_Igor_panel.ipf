@@ -11,6 +11,7 @@
 #include "KP_NanonisLoaders"
 #include "ModelingTunneling"
 #include "General_Simu"
+#include "Moire_STM_Topography_Simulator"
 #include "Miscellaneous_Codes"
 #include "SmartDisplay"
 #include "Smart_3D_Viewer_New"
@@ -172,7 +173,7 @@ Window Kong_Igor_panel() : Panel
 	SetDrawEnv fname= "Times New Roman",fsize= 15,fstyle= 1,textrot= 0
 	DrawText 38,26,"Kong Panel"
 	SetDrawEnv fname= "Times New Roman",fsize= 9,fstyle= 1,textrgb= (65535,65535,65535),textrot= 0
-	DrawText 16,37,"Ver. 9.04.16  (Date: 05/18/2026)"
+	DrawText 16,37,"Ver. 9.04.17  (Date: 08/04/2026)"
 	SetDrawEnv fname= "Times New Roman",fsize= 10,textrot= 0
 	DrawText 516,650,"PR-QPI"
 	SetDrawEnv linethick= 0,linefgc= (49163,65535,16385),linebgc= (49163,65535,32768),fillpat= 0
@@ -1045,6 +1046,8 @@ Window Kong_Igor_panel() : Panel
 	Button SMap6,title="TTG",fSize=10
 	Button SMap7,pos={4.00,695.00},size={85.00,12.00},proc=ButtonProc_Honeycomb
 	Button SMap7,title="A(honeycomb)",fSize=10
+	Button SMap8,pos={4.00,708.00},size={85.00,12.00},proc=ButtonProc_GenerateMoireSquareFastc
+	Button SMap8,title="Moiré STM",fSize=10
 	Button Map66,pos={358.00,172.00},size={92.00,12.00},proc=ButtonProc_appendVline
 	Button Map66,title="Draw lines",fSize=10
 	Button Map08,pos={358.00,188.00},size={37.00,12.00},proc=ButtonProc_Fitimagehoneycombc

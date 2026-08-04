@@ -1855,6 +1855,7 @@ def short_description_parts(description: str) -> dict[str, list[str]]:
     parts = {"purpose": [], "usage": [], "details": []}
     chunks = re.split(r"(?<=\.)\s+", description)
     for chunk in chunks:
+        chunk = chunk.strip()
         if not chunk:
             continue
         if chunk.startswith("Purpose:"):

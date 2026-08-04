@@ -13,7 +13,7 @@ Start with these two guides when browsing the package on GitHub:
 - [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
 - [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
 - [Startup State](docs/STARTUP_STATE.md): exact list of color-table, physical-constant, graph/color, popup, and compatibility globals recreated when the panel starts in a clean Igor experiment.
-- [Ready-to-use PXP template](templates/KongPanel_Template_20260520.pxp): self-contained Igor experiment template with the KP procedure pages and startup objects already packed in.
+- [Ready-to-use PXP template](templates/KongPanel_Template_20260804.pxp): Ver. 9.04.17 self-contained Igor experiment template with the KP procedure pages, startup objects, and Moiré STM simulator already packed in.
 
 The repository also includes interactive HTML manuals with search and navigation. After GitHub Pages is enabled for this repository, these links open the rendered manuals directly in a browser:
 
@@ -47,20 +47,21 @@ Nature 640, 55-61 (2025). https://doi.org/10.1038/s41586-025-08703-x
 
 ## Release Status
 
-- Version prepared for GitHub: `9.04.16`, dated `2026-05-18`.
+- Version prepared for GitHub: `9.04.17`, dated `2026-08-04`.
 - Recommended Igor Pro version: Igor Pro 9 series; this package was prepared from the Igor 9.04 KP line.
 - KP-local Nanonis loading code is now in `src/KP_NanonisLoaders.ipf`.
 - Custom color-table waves are loaded from `src/KP_NewColorTables.itx` when the panel opens.
+- The `Moiré STM` panel button opens an interactive two-layer STM topography simulator with independently selectable square, honeycomb, triangular, and kagome lattices.
 - Startup globals saved as Igor experiment objects in `template.pxp` are recreated from `src/KP_GlobalState.ipf` when the panel opens.
 - `src/Kong_Igor_panel.ipf` is self-contained: opening that panel source also includes all of the action-procedure files used by its controls.
-- A clean self-contained Igor experiment template is included at `templates/KongPanel_Template_20260520.pxp`.
+- A clean Ver. 9.04.17 self-contained Igor experiment template is included at `templates/KongPanel_Template_20260804.pxp`.
 
 ## Quick Start
 
 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 can be used in two ways:
 
 - **Source install:** copy `src/` into Igor's `User Procedures` area, include `Load_KongPanel.ipf`, and compile. This keeps KP available from any new Igor experiment.
-- **PXP template:** copy `templates/KongPanel_Template_20260520.pxp` into a dataset folder and open that copy directly. This starts from a self-contained Igor experiment with the KP procedure pages, custom color tables, physical constants, startup globals, and main panel template already packed in.
+- **PXP template:** copy `templates/KongPanel_Template_20260804.pxp` into a dataset folder and open that copy directly. This starts from a self-contained Igor experiment with the KP procedure pages, custom color tables, physical constants, startup globals, main panel, and Moiré STM simulator already packed in.
 
 For the source install, the loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
 
@@ -108,13 +109,13 @@ You can also explicitly open the loader file using `File -> Open File -> Procedu
 If you prefer each dataset to live in its own self-contained Igor experiment, use the included clean template:
 
 ```text
-templates/KongPanel_Template_20260520.pxp
+templates/KongPanel_Template_20260804.pxp
 ```
 
 Recommended workflow:
 
 1. Create a new folder for the dataset you want to analyze.
-2. Copy `templates/KongPanel_Template_20260520.pxp` into that folder.
+2. Copy `templates/KongPanel_Template_20260804.pxp` into that folder.
 3. Rename the copied file for the dataset or sample if desired.
 4. Open the copied `.pxp` in Igor Pro 9 and load/analyze the data there.
 
@@ -303,6 +304,7 @@ Main files:
 - `src/Models.ipf`
 - `src/ModelingTunneling.ipf`
 - `src/General_Simu.ipf`
+- `src/Moire_STM_Topography_Simulator.ipf`
 
 ## Documentation
 
@@ -310,6 +312,7 @@ The `docs/` folder contains both release notes and generated code references.
 
 - `docs/CHANGELOG.md`: polished GitHub-facing changelog.
 - `docs/STARTUP_STATE.md`: startup-state compatibility note listing the globals restored from `template.pxp`.
+- `docs/KP_update_log_20260804.md`: short update entry for Ver. 9.04.17 and the Moiré STM simulator.
 - `docs/KP_update_log_20260518.md`: short update entry for the 2026-05-18 GitHub preparation.
 - `docs/KP_update_log_original.rtf`: original update-log copy.
 - `docs/KP_update_log_raw.txt`: plain-text conversion of the original log.

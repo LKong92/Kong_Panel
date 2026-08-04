@@ -2,6 +2,15 @@
 
 This file is a polished GitHub-facing version of the original `KP update log.rtf`. The full plain-text conversion is kept in `docs/KP_update_log_raw.txt` for historical detail.
 
+## 9.04.17 - 2026-08-04
+
+- Added an interactive Moiré STM topography simulator for two independently configurable lattice layers.
+- Added square, honeycomb, triangular, and kagome lattice forms for both the bottom and top layers.
+- Added live controls for sampling, field of view, lattice constants, global and twist angles, atomic width, stacking decay, and moiré amplitude.
+- Added synchronized real-space and FFT displays with lattice/moire theory annotations.
+- Added the `Moiré STM` button to the General Simu section of the main Kong Panel.
+- Added `templates/KongPanel_Template_20260804.pxp`, the self-contained Ver. 9.04.17 package built from the author's updated PXP.
+
 ## 9.04.16 - 2026-05-18
 
 - Exported 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 procedure pages from `template.pxp` through Igor Pro.

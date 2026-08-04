@@ -8,6 +8,7 @@
 *.packed
 !templates/
 !templates/KongPanel_Template_20260520.pxp
+!templates/KongPanel_Template_20260804.pxp
 
 # Local extraction and reference material; keep GitHub focused on src/ and docs/.
 Template_kly_2025_06_08/

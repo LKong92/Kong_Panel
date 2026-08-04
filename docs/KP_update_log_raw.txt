@@ -1,3 +1,11 @@
+08/04/2026  Ver. 9.04.17  (Date: 08/04/2026)
+	Added an interactive Moiré STM topography simulator.
+	Bottom and top layers can independently use square, honeycomb, triangular, or kagome lattices.
+	Added live controls for image sampling, field of view, lattice constants, global angle, twist angle, atomic width, stacking-contrast decay length, and moiré amplitude.
+	Added synchronized real-space and FFT displays with lattice and moiré theory annotations.
+	Added the “Moiré STM” button to the General Simu section of the Kong Panel.
+	Packaged the self-contained Ver. 9.04.17 experiment as templates/KongPanel_Template_20260804.pxp.
+
 06/08/2025  Ver. 9.04.15  (Date: 06/08/2025)
 	Added simulation of P(E) theory.
 	V2: debug
@@ -836,8 +844,6 @@ The KP development starts from 04/15/2016, but there are no logs before 09/17/20
 The Kong Panel (KP) is an Igor GUI Package focusing on STM data analysis and simple model simulations. To run KP, you need to copy the whole package to the datafolder of your target dataset, and launch the template.pxp. All copyright is reserved by the author, Dr. Lingyuan Kong (https://scholar.google.com/citations?user=5uWv_XgAAAAJ&hl=zh-CN). The author is welcome for any noncommercial use of KP. The development of KP bases on a general ARPES Igor Template, written by Pierre Richard (https://scholar.google.com/citations?user=vJ47zG8AAAAJ) and Hong Ding (https://tdli.sjtu.edu.cn/EN/people/middle/190?type=CHAIR_PROFESSOR). For signal enhancement, KP use Peng’s Curvature (https://aip.scitation.org/doi/10.1063/1.3585113), developed by Peng Zhang (https://arpes.site). For loading Nanonis Data (.sxm, .3ds), KP combined the KM package (http://www2.riken.jp/lab/magmatlab/kohsaka/km/cmdlist.html), written by Yuhki Kohsaka (http://www2.riken.jp/epmrt/kohsaka/index.html; http://www2.riken.jp/lab/magmatlab/kohsaka/km/changelog.xml). Data processing starting from .sxm and .3ds files require lauching KM Package first. In order to avoid interference, after data loading, the KM package are automatically eliminated.
 
  © 2024 Lingyuan Kong.  All rights reserved.
-
-
 
 
 

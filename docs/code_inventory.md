@@ -8,6 +8,10 @@ The source in `src/` was exported from:
 
 The export was performed through Igor Pro, using procedure text export for real procedure pages and `WinRecreation("Kong_Igor_panel", 0)` for the panel window.
 
+For Ver. 9.04.17, the author-provided Moiré STM procedure code and the `SMap8` panel changes from the manually updated packaged PXP were synchronized into the source tree on 2026-08-04.
+
+The matching self-contained experiment is distributed as `templates/KongPanel_Template_20260804.pxp` (SHA-256: `c4ecb6d8d23df999cd50ffee7e6b3f87f95b8b84c92628da962aa11638ac0403`).
+
 ## Exported KP Source Files
 
 The GitHub package keeps the KP-specific Igor Pro files in `src/`:
@@ -22,6 +26,7 @@ The GitHub package keeps the KP-specific Igor Pro files in `src/`:
 - `Procedure.ipf`
 - `ModelingTunneling.ipf`
 - `General_Simu.ipf`
+- `Moire_STM_Topography_Simulator.ipf`
 - `Miscellaneous_Codes.ipf`
 - `SmartDisplay.ipf`
 - `Smart_3D_Viewer_New.ipf`
@@ -105,7 +110,7 @@ The function reference was generated from all `src/*.ipf` files with `scripts/bu
 - `docs/function_catalog.json`: machine-readable catalog.
 - `docs/panel_catalog.json`: machine-readable panel/control catalog.
 
-The current function catalog contains 3208 entries from 26 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
+The current function catalog contains 3219 entries from 27 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
 
 ## Verification Notes
 
