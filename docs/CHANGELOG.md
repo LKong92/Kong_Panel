@@ -2,6 +2,17 @@
 
 This file is a polished GitHub-facing version of the original `KP update log.rtf`. The full plain-text conversion is kept in `docs/KP_update_log_raw.txt` for historical detail.
 
+## 9.04.18 - 2026-11-20
+
+- Added a native Igor Pro 9 loader for OMICRON MATRIX data; no Python runtime is required.
+- Added `Data -> Load Waves -> Load OMICRON Matrix` menu commands for voltage grids, folders of Z topographs, and folders of independent voltage spectra.
+- Grid loading discovers matching channels and creates coordinated 3D waves plus x, y, and bias axes, channel/source tables, units, calibration, and acquisition notes.
+- Topography and spectroscopy folder loading preserves trace/retrace direction, records source files, and reports incomplete acquisitions without silently fabricating acquired data.
+- Kept the PXP's legacy-compatible `File_Name` output for topographs while safely archiving an existing text list instead of overwriting it.
+- Added validation for MATRIX parameter chains, dimensions, supported spectroscopy modes, channel calibration, and wave-name collisions.
+- Added the OMICRON MATRIX loader guide and regenerated the Function Book, Function Index, package summary, and searchable HTML manuals.
+- Added `templates/KongPanel_Template_20261120.pxp`, the self-contained Ver. 9.04.18 package from the author's updated PXP.
+
 ## 9.04.17 - 2026-08-04
 
 - Added an interactive Moiré STM topography simulator for two independently configurable lattice layers.

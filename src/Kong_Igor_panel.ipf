@@ -9,6 +9,7 @@
 #include "KP_GlobalState"
 #include "Procedure"
 #include "KP_NanonisLoaders"
+#include "OmicronMatrixLoader"
 #include "ModelingTunneling"
 #include "General_Simu"
 #include "Moire_STM_Topography_Simulator"
@@ -173,7 +174,7 @@ Window Kong_Igor_panel() : Panel
 	SetDrawEnv fname= "Times New Roman",fsize= 15,fstyle= 1,textrot= 0
 	DrawText 38,26,"Kong Panel"
 	SetDrawEnv fname= "Times New Roman",fsize= 9,fstyle= 1,textrgb= (65535,65535,65535),textrot= 0
-	DrawText 16,37,"Ver. 9.04.17  (Date: 08/04/2026)"
+	DrawText 16,37,"Ver. 9.04.18  (Date: 11/20/2026)"
 	SetDrawEnv fname= "Times New Roman",fsize= 10,textrot= 0
 	DrawText 516,650,"PR-QPI"
 	SetDrawEnv linethick= 0,linefgc= (49163,65535,16385),linebgc= (49163,65535,32768),fillpat= 0

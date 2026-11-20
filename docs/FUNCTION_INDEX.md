@@ -4,7 +4,7 @@ This Markdown index lists the KP procedure library by workflow, so GitHub text s
 
 For the color-coded manual with search, cross-links, and collapsible control callbacks, open `docs/FUNCTION_BOOK.html` or the GitHub Pages documentation site.
 
-Total entries: 3219
+Total entries: 3243
 
 ## Featured Utilities
 
@@ -190,7 +190,7 @@ Window Kong_Igor_panel() : Panel
 ```
 - Usage: call `Kong_Igor_panel()` to recreate or bring up the Igor window/panel.
 - Notes: Igor window/panel recreation routine for geometric correction, rotation, shear, drift, or strain analysis; ARPES-style loading, plotting, or momentum conversion; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; smooths wave data; differentiates wave data. Main internal calls: `KP_EnsureNewColorTables()`, `KP_EnsureStartupGlobals()`, `txt()`, `dat()`, `asc()`, `tabLabel()`.
-- Source: `Kong_Igor_panel.ipf:33`
+- Source: `Kong_Igor_panel.ipf:34`
 
 
 
@@ -291,7 +291,7 @@ Function ButtonProc_displaytopog(ctrlName) : ButtonControl
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: triggered as a wrapper that opens/runs `displaytopog()`.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Source: `Miscellaneous_Codes.ipf:9279`
@@ -303,7 +303,7 @@ Function ButtonProc_extract3dslinecut(ctrlName) : ButtonControl
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: triggered as a wrapper that opens/runs `extract3dslinecut()`.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `Reorder 2D / (Grid Linecut)`.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `Reorder 2D / (Grid Linecut)`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Reorder 2D / (Grid Linecut)`
@@ -341,7 +341,7 @@ Function ButtonProc_getslicerData(ctrlName) : ButtonControl
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: triggered as a wrapper that opens/runs `Initialize_Global_Variables()`.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `3D to 2Ds / (Grid Map)`.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `3D to 2Ds / (Grid Map)`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `3D to 2Ds / (Grid Map)`
@@ -426,7 +426,7 @@ Function ButtonProc_mapaa2(ctrlName) : ButtonControl
 Function ButtonProc_openmat3dslicer(ctrlName) : ButtonControl
 ```
 - Usage: triggered as a wrapper that opens/runs `ini_mat3dslicer()`.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Panel control(s): `Slicer`. Code behavior: cleans up waves/windows or brings an existing window forward. Main internal calls: `Wintype()`.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Panel control(s): `Slicer`. Code behavior: cleans up waves/windows or brings an existing window forward. Main internal calls: `Wintype()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Slicer`
@@ -462,7 +462,7 @@ Function ButtonProc_sizemapauto(ctrlName) : ButtonControl
 Function ButtonProc_slice1ddpro(ctrlName) : ButtonControl
 ```
 - Usage: triggered as a wrapper that opens/runs `slice1ddpro()`.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `2D to 1Ds / (Grid Linecut)`.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `2D to 1Ds / (Grid Linecut)`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `2D to 1Ds / (Grid Linecut)`
@@ -536,7 +536,7 @@ Proc autoloadgrid()
 ```
 - Purpose: loads data or launches an automatic loading workflow.
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: duplicates or stages waves for downstream processing; creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisData()`, `KP_GetLastLoadedNanonisFolder()`, `Z_R_Rhomap()`, `d3d()`, `KP_NanonisCleanup()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: duplicates or stages waves for downstream processing; creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisData()`, `KP_GetLastLoadedNanonisFolder()`, `Z_R_Rhomap()`, `d3d()`, `KP_NanonisCleanup()`.
 - Source: `UNISOKU3dscutextract.ipf:831`
 
 #### `automultiSV`
@@ -545,7 +545,7 @@ Proc autoloadgrid()
 proc automultiSV(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,num,mat)
 ```
 - Usage: run from Igor with parameters `grid`, `Kc`, `Db`, `deltaGs`, `deltaGt`, `tem`, `xrange`, `Erange`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: Grid = Number of data point; Kc = Coherent length (nm); db = Dyne broadenig (meV); deltaGs = Gap Amplitude of sample (meV); deltaGt = Gap Amplitude of tip (meV); tem = Temperature (K). Code behavior: duplicates or stages waves for downstream processing; asks the user for parameters through Igor prompts. Main internal calls: `testint()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: Grid = Number of data point; Kc = Coherent length (nm); db = Dyne broadenig (meV); deltaGs = Gap Amplitude of sample (meV); deltaGt = Gap Amplitude of tip (meV); tem = Temperature (K). Code behavior: duplicates or stages waves for downstream processing; asks the user for parameters through Igor prompts. Main internal calls: `testint()`.
 - Parameters:
   - `grid`: Grid/map size, grid wave, or grid-data selector used by STM/STS workflows. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `Kc`: Coherent length (nm)
@@ -565,7 +565,7 @@ proc automultiSV(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,num,mat)
 Proc AutoNanislinecut(FFTp,partial1,partial2,AorB,flag,flag2,flag3)
 ```
 - Usage: run from Igor with parameters `FFTp`, `partial1`, `partial2`, `AorB`, `flag`, `flag2`, `flag3`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: FFTp = the P number of the FFT peak, where to pick the phase difference; partial1 = the Q Start of interested region of the linecut; partial2 = the Q End of interested region of the linecut; AorB = A or B; flag = Do you want advanced gap analysis (gap extraction & gapsize/Z-height correlation analysis)? Yes[1]/No[0]; / If yes, the fitting parameters need to be adjusted inside the codes; flag2 = Do you want normalized correlation ? Yes[1]/No[0]; / If yes, the smooth number for [Normalization reference curve] need to be adjusted inside the codes. Code behavior: performs Fourier-transform or inverse-transform operations; crea
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: FFTp = the P number of the FFT peak, where to pick the phase difference; partial1 = the Q Start of interested region of the linecut; partial2 = the Q End of interested region of the linecut; AorB = A or B; flag = Do you want advanced gap analysis (gap extraction & gapsize/Z-height correlation analysis)? Yes[1]/No[0]; / If yes, the fitting parameters need to be adjusted inside the codes; flag2 = Do you want normalized correlation ? Yes[1]/No[0]; / If yes, the smooth number for [Normalization reference curve] need to be adjusted inside the codes. Code behavior: performs Fourier-transform or inverse-transform operatio
 - Parameters:
   - `FFTp`: the P number of the FFT peak, where to pick the phase difference
   - `partial1`: the Q Start of interested region of the linecut
@@ -582,7 +582,7 @@ Proc AutoNanislinecut(FFTp,partial1,partial2,AorB,flag,flag2,flag3)
 proc Batchscaling(xmin,xmax,tem,po_s,po_delta,num,grid)
 ```
 - Usage: run from Igor with parameters `xmin`, `xmax`, `tem`, `po_s`, `po_delta`, `num`, `grid`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays. Main internal calls: `calGSpo()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays. Main internal calls: `calGSpo()`.
 - Parameters:
   - `xmin`: gamma
   - `xmax`: Axis limit or numeric range boundary used for cropping, fitting, or display.
@@ -599,7 +599,7 @@ proc Batchscaling(xmin,xmax,tem,po_s,po_delta,num,grid)
 proc Batchscalingoure(xmin,xmax,ymin,ymax,po,grid)
 ```
 - Usage: run from Igor with parameters `xmin`, `xmax`, `ymin`, `ymax`, `po`, `grid`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `calGS()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `calGS()`.
 - Parameters:
   - `xmin`: Axis limit or numeric range boundary used for cropping, fitting, or display.
   - `xmax`: Axis limit or numeric range boundary used for cropping, fitting, or display.
@@ -615,7 +615,7 @@ proc Batchscalingoure(xmin,xmax,ymin,ymax,po,grid)
 Proc d3dsimu(mat3dn,zn)
 ```
 - Usage: run from Igor with parameters `mat3dn`, `zn`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: mat3dn = Name of the 3D simulation matrix; zn = Index of the Energy. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `getall3dwave()`, `sumoned()`, `di2lf()`, `func_zeroNaN()`, `color3s_for3d()`, `grabwin()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: mat3dn = Name of the 3D simulation matrix; zn = Index of the Energy. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `getall3dwave()`, `sumoned()`, `di2lf()`, `func_zeroNaN()`, `color3s_for3d()`, `grabwin()`.
 - Parameters:
   - `mat3dn`: Name of the 3D simulation matrix
   - `zn`: Index of the Energy
@@ -628,7 +628,7 @@ proc displaytopog(name,size)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run from Igor with parameters `name`, `size`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Code behavior: assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Code behavior: assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `size`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -640,7 +640,7 @@ proc displaytopog(name,size)
 Proc ExtacttopoafterKM()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `DataFolderList()`, `KP_LoadNanonisData()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `DataFolderList()`, `KP_LoadNanonisData()`.
 - Source: `UNISOKU3dscutextract.ipf:1271`
 
 #### `extract3dslinecut`
@@ -650,7 +650,7 @@ Proc extract3dslinecut(name)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: run from Igor with parameters `name`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: name = Data name from nanonis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; asks the user for parameters through Igor prompts.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: name = Data name from nanonis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; asks the user for parameters through Igor prompts.
 - Parameters:
   - `name`: Data name from nanonis
 - Source: `UNISOKU3dscutextract.ipf:9`
@@ -662,7 +662,7 @@ proc extractallsts(ptotal, qtotal, name)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: run from Igor with parameters `ptotal`, `qtotal`, `name`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing. Main internal calls: `ExtractSTS2()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing. Main internal calls: `ExtractSTS2()`.
 - Parameters:
   - `ptotal`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `qtotal`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -749,7 +749,7 @@ proc extrastsfrommap3dGuassian3(indicate,froml,tol,fromr,tor,flag)
 Proc ffc3dpls(topo)
 ```
 - Usage: run from Igor with parameters `topo`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: topo = Name of Topograph (The wave from which lattice location can be extracted). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall2dwave()`, `ff3dpls()`, `grabwinnonew()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: topo = Name of Topograph (The wave from which lattice location can be extracted). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall2dwave()`, `ff3dpls()`, `grabwinnonew()`.
 - Parameters:
   - `topo`: Name of Topograph (The wave from which lattice location can be extracted)
 - Source: `Smart_3D_Viewer_New.ipf:9187`
@@ -760,7 +760,7 @@ Proc ffc3dpls(topo)
 Proc gatemapauto(x,y,gate, evenornot,Interpnum)
 ```
 - Usage: run from Igor with parameters `x`, `y`, `gate`, `evenornot`, `Interpnum`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; symmetry or reflection processing; linecut, slice, or region extraction. Dialog prompts: x = Column Number of x wave; y = Column Number of y wave; gate = Column number for gate; evenornot = Gate even spacing?; Interpnum = If gate is not even spacing, how many points you want to interpolate. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `Makegraphtable()`, `LoadDataFromNewmkgate()`, `Initialize_Global_Variables()`, `linkstsmapgate()`, `rescalexmultiwhat()`, `normrange()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; linecut, slice, or region extraction. Dialog prompts: x = Column Number of x wave; y = Column Number of y wave; gate = Column number for gate; evenornot = Gate even spacing?; Interpnum = If gate is not even spacing, how many points you want to interpolate. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `Makegraphtable()`, `LoadDataFromNewmkgate()`, `Initialize_Global_Variables()`, `linkstsmapgate()`, `rescalexmultiwhat()`, `normrange()`.
 - Parameters:
   - `x`: Column Number of x wave
   - `y`: Column Number of y wave
@@ -776,7 +776,7 @@ Proc gatemapextractpeak(number, right1,right2,left1,left2,vl,vh)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: run from Igor with parameters `number`, `right1`, `right2`, `left1`, `left2`, `vl`, `vh`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: number = How many gate slices; right1 = right peak_small point; right2 = right peak_large point; left1 = left peak_small point; left2 = left peak_large point; vl = small gate voltage. Code behavior: assigns Igor axis scaling/units to the output; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `secondDall2()`, `autoclbzerogateuse()`, `renameall()`, `linkstsmap_P()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: number = How many gate slices; right1 = right peak_small point; right2 = right peak_large point; left1 = left peak_small point; left2 = left peak_large point; vl = small gate voltage. Code behavior: assigns Igor axis scaling/units to the output; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `secondDall2()`, `autoclbzerogateuse()`, `renameall()`, `linkstsmap_P()`.
 - Parameters:
   - `number`: How many gate slices
   - `right1`: right peak_small point
@@ -794,7 +794,7 @@ Proc gridextractpeak(start,delta,right1,right2,left1,left2)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: run from Igor with parameters `start`, `delta`, `right1`, `right2`, `left1`, `left2`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Dialog prompts: start = (meV) The energy of first slice; delta = (meV) energy step of slice set; right1 = right peak_small point; right2 = right peak_large point; left1 = left peak_small point; left2 = left peak_large point. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `mapforSTM()`, `makeextra()`, `extractallsts()`, `secondDall2()`, `autoclbzerogateuse()`, `renameall()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Dialog prompts: start = (meV) The energy of first slice; delta = (meV) energy step of slice set; right1 = right peak_small point; right2 = right peak_large point; left1 = left peak_small point; left2 = left peak_large point. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `mapforSTM()`, `makeextra()`, `extractallsts()`, `secondDall2()`, `autoclbzerogateuse()`, `renameall()`.
 - Parameters:
   - `start`: (meV) The energy of first slice
   - `delta`: (meV) energy step of slice set
@@ -810,7 +810,7 @@ Proc gridextractpeak(start,delta,right1,right2,left1,left2)
 Proc Gridtolinecutc(grid,indexdim)
 ```
 - Usage: run from Igor with parameters `grid`, `indexdim`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Dialog prompts: grid = Name of the 3Dwave; indexdim = Energy dimension index. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `Gridtolinecut()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Dialog prompts: grid = Name of the 3Dwave; indexdim = Energy dimension index. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `Gridtolinecut()`.
 - Parameters:
   - `grid`: Name of the 3Dwave
   - `indexdim`: Energy dimension index
@@ -823,7 +823,7 @@ proc indivlinecut(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,rv)//
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run from Igor with parameters `grid`, `Kc`, `Db`, `deltaGs`, `deltaGt`, `tem`, `xrange`, `Erange`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: Grid = Number of data point; Kc = Coherent length (nm); db = Dyne broadenig (meV); deltaGs = Gap Amplitude of sample (meV); deltaGt = Gap Amplitude of tip (meV); tem = Temperature (K). Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; differentiates wave data; asks the user for parameters through Igor prompts. Main internal calls: `integrate1d()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Dialog prompts: Grid = Number of data point; Kc = Coherent length (nm); db = Dyne broadenig (meV); deltaGs = Gap Amplitude of sample (meV); deltaGt = Gap Amplitude of tip (meV); tem = Temperature (K). Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; differentiates wave data; asks the user for parameters through Igor prompts. Main internal calls: `integrate1d()`.
 - Parameters:
   - `grid`: Grid/map size, grid wave, or grid-data selector used by STM/STS workflows. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `Kc`: Coherent length (nm)
@@ -842,7 +842,7 @@ proc indivlinecut(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,rv)//
 Proc ini_mat3dslicer()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing.
 - Source: `Pierre's Template.ipf:31293`
 
 #### `initialg`
@@ -851,7 +851,7 @@ Proc ini_mat3dslicer()
 Proc initialg()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation.
 - Source: `UNISOKU3dscutextract.ipf:84`
 
 #### `initialgl`
@@ -860,7 +860,7 @@ Proc initialg()
 Proc initialgl()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation.
 - Source: `UNISOKU3dscutextract.ipf:88`
 
 #### `interpsts`
@@ -1010,7 +1010,7 @@ Proc LoadDataFromNewmkgate(x,y,gate)
 ```
 - Purpose: loads data or launches an automatic loading workflow.
 - Usage: run from Igor with parameters `x`, `y`, `gate`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: duplicates or stages waves for downstream processing; loads data from files or paths; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `IndexedFile()`, `wintype()`, `winType()`, `sortlist()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: duplicates or stages waves for downstream processing; loads data from files or paths; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `IndexedFile()`, `wintype()`, `winType()`, `sortlist()`.
 - Parameters:
   - `x`: Used in: LoadWave/G/D/A=load/K=1/L={0,0,0,x,1}/o/P=$PATHName Filename
   - `y`: y=1: current// y=8: dI/dV
@@ -1035,7 +1035,7 @@ proc normstsline(mat)/////delete a line fitted all range
 Proc openmat3dslicer()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: creates output waves; cleans up waves/windows or brings an existing window forward. Main internal calls: `Wintype()`, `Mat3d_slicer()`, `Set_Vline_slice_control()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Code behavior: creates output waves; cleans up waves/windows or brings an existing window forward. Main internal calls: `Wintype()`, `Mat3d_slicer()`, `Set_Vline_slice_control()`.
 - Source: `Pierre's Template.ipf:28383`
 
 #### `plotrawsts`
@@ -1054,7 +1054,7 @@ Proc plotrawsts()
 Proc slice1ddpro(matt)
 ```
 - Usage: run from Igor with parameters `matt`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Main internal calls: `slice1dd()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Main internal calls: `slice1dd()`.
 - Parameters:
   - `matt`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `UNISOKU3dscutextract.ipf:28`
@@ -1088,7 +1088,7 @@ Proc stsnorm(name)
 proc testint(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,rv)//
 ```
 - Usage: run from Igor with parameters `grid`, `Kc`, `Db`, `deltaGs`, `deltaGt`, `tem`, `xrange`, `Erange`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; smoothing, normalization, or background removal. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; differentiates wave data. Main internal calls: `integrate1d()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; smoothing, normalization, or background removal. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; differentiates wave data. Main internal calls: `integrate1d()`.
 - Parameters:
   - `grid`: Grid/map size, grid wave, or grid-data selector used by STM/STS workflows. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `Kc`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1107,7 +1107,7 @@ proc testint(grid,Kc,Db,deltaGs,deltaGt,tem,xrange,Erange,rv)//
 Proc white2transparant(name)
 ```
 - Usage: run from Igor with parameters `name`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Pierre's Template.ipf:22382`
@@ -1118,7 +1118,7 @@ Proc white2transparant(name)
 Proc Z_R_Rhomapc(wg,wi,zn_consl)
 ```
 - Usage: run from Igor with parameters `wg`, `wi`, `zn_consl`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Dialog prompts: wg = Name of G matrix (3D); wi = Name of I matrix (3D); zn_consl = Index of Energy. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `Z_R_Rhomap()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Dialog prompts: wg = Name of G matrix (3D); wi = Name of I matrix (3D); zn_consl = Index of Energy. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `Z_R_Rhomap()`.
 - Parameters:
   - `wg`: Name of G matrix (3D)
   - `wi`: Name of I matrix (3D)
@@ -1134,7 +1134,7 @@ Proc Z_R_Rhomapc(wg,wi,zn_consl)
 Function calGS(xmin,xmax,ymin,ymax,po,grid)
 ```
 - Usage: call as `calGS(xmin, xmax, ymin, ymax, po, grid)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `Integrate1D()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `Integrate1D()`.
 - Parameters:
   - `xmin`: Axis limit or numeric range boundary used for cropping, fitting, or display.
   - `xmax`: Axis limit or numeric range boundary used for cropping, fitting, or display.
@@ -1150,7 +1150,7 @@ Function calGS(xmin,xmax,ymin,ymax,po,grid)
 Function calGSpo(xmin,xmax,tem,po,grid)
 ```
 - Usage: call as `calGSpo(xmin, xmax, tem, po, grid)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `Integrate1D()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `Integrate1D()`.
 - Parameters:
   - `xmin`: gamma
   - `xmax`: Axis limit or numeric range boundary used for cropping, fitting, or display.
@@ -1177,7 +1177,7 @@ Function color3s_followtopo(name,tt,topo)
 Function color3s_followtopo2(name,tt,topo)
 ```
 - Usage: call as `color3s_followtopo2(name, tt, topo)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `gethistgram_npcolor()`, `grabwinchild2()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `gethistgram_npcolor()`, `grabwinchild2()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `tt`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1190,7 +1190,7 @@ Function color3s_followtopo2(name,tt,topo)
 Function color3s_followtopof(name,tt,topo)
 ```
 - Usage: call as `color3s_followtopof(name, tt, topo)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `gethistgram_npcolor()`, `grabwinchild()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `gethistgram_npcolor()`, `grabwinchild()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
   - `tt`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1217,7 +1217,7 @@ Function ExtractSTS2(xpoint,ypoint,name)
 Function func_give_area1(namex,namey,surfx_x,surfx_y,griddelta,lattice)//extrapolates the curve on the x-grid and y-grid
 ```
 - Usage: call as `func_give_area1(namex, namey, surfx_x, surfx_y, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `namex`: String name used to locate an Igor wave, graph, folder, or output object.
   - `namey`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -1233,7 +1233,7 @@ Function func_give_area1(namex,namey,surfx_x,surfx_y,griddelta,lattice)//extrapo
 Function func_give_area2(surfx_x,surfx_y,inside_out,sizegrid,griddelta,lattice)//calculates the area
 ```
 - Usage: call as `func_give_area2(surfx_x, surfx_y, inside_out, sizegrid, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `surfx_x`: Used in: Make/O/N=(3*dimsize(surfx_x,0)) tempx
   - `surfx_y`: Used in: Make/O/N=(3*dimsize(surfx_y,0)) tempy
@@ -1249,7 +1249,7 @@ Function func_give_area2(surfx_x,surfx_y,inside_out,sizegrid,griddelta,lattice)/
 Function func_give_area2_old(surfx_x,surfx_y,sizegrid,griddelta,lattice)
 ```
 - Usage: call as `func_give_area2_old(surfx_x, surfx_y, sizegrid, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `surfx_x`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `surfx_y`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1264,7 +1264,7 @@ Function func_give_area2_old(surfx_x,surfx_y,sizegrid,griddelta,lattice)
 Function func_homework5a(namex,namey,surfx_x,surfx_y,surfy_x,surfy_y,xnoise,ynoise,sizegrid,thenumber,griddelta,lattice)
 ```
 - Usage: call as `func_homework5a(namex, namey, surfx_x, surfx_y, surfy_x, surfy_y, xnoise, ynoise)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `namex`: String name used to locate an Igor wave, graph, folder, or output object.
   - `namey`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -1297,7 +1297,7 @@ Function func_vol_lac0(namex,namey)//extrapolates the curve on the x-grid and y-
 Function func_vol_lac1(namex,namey,surfx_x,surfx_y,griddelta,lattice)//extrapolates the curve on the x-grid and y-grid
 ```
 - Usage: call as `func_vol_lac1(namex, namey, surfx_x, surfx_y, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `namex`: String name used to locate an Igor wave, graph, folder, or output object.
   - `namey`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -1313,7 +1313,7 @@ Function func_vol_lac1(namex,namey,surfx_x,surfx_y,griddelta,lattice)//extrapola
 Function func_vol_lac2(surfx_x,surfx_y,inside_out,sizegrid,griddelta,lattice)//calculates the area
 ```
 - Usage: call as `func_vol_lac2(surfx_x, surfx_y, inside_out, sizegrid, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `surfx_x`: Used in: Make/O/N=(3*dimsize(surfx_x,0)) tempx
   - `surfx_y`: Used in: Make/O/N=(3*dimsize(surfx_y,0)) tempy
@@ -1329,7 +1329,7 @@ Function func_vol_lac2(surfx_x,surfx_y,inside_out,sizegrid,griddelta,lattice)//c
 Function func_vol_lac3(tsurfx_x,tsurfx_y,sizegrid,griddelta,lattice,px,py,pdeep,inside_out)
 ```
 - Usage: call as `func_vol_lac3(tsurfx_x, tsurfx_y, sizegrid, griddelta, lattice, px, py, pdeep)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `tsurfx_x`: Used in: Duplicate/O tsurfx_x sq_distance2
   - `tsurfx_y`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1378,7 +1378,7 @@ Function getsinglestsf(name,pp,qq,zn)
 Function Gridtolinecut(grid,indexdim)
 ```
 - Usage: call as `Gridtolinecut(grid, indexdim)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`. Update log: 2025-05-19: Extracts all dI/dV spectra from a 3D grid wave and organizes them as a linecut for downstream plotting or analysis.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`. Update log: 2025-05-19: Extracts all dI/dV spectra from a 3D grid wave and organizes them as a linecut for downstream plotting or analysis.
 - Parameters:
   - `grid`: 3Dwave
   - `indexdim`: the dimensional index of energy
@@ -1391,7 +1391,7 @@ Function/S KP_GetLastLoadedNanonisFolder()
 ```
 - Purpose: returns the most recently created KP Nanonis data folder.
 - Usage: call `KP_GetLastLoadedNanonisFolder()` from Igor procedure code or the command line.
-- Notes: String-returning helper for Nanonis/STM data loading or map conversion. Main internal calls: `SVAR_Exists()`, `DataFolderList()`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion. Main internal calls: `SVAR_Exists()`, `DataFolderList()`.
 - Source: `KP_NanonisLoaders.ipf:118`
 
 #### `KP_LoadNanonis3ds`
@@ -1401,7 +1401,7 @@ Function/WAVE KP_LoadNanonis3ds(pathStr)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3ds(pathStr)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonis3dsGetHeader()`, `KP_LoadNanonis3dsGetData()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonis3dsGetHeader()`, `KP_LoadNanonis3dsGetData()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
 - Source: `KP_NanonisLoaders.ipf:144`
@@ -1413,7 +1413,7 @@ Function KP_LoadNanonis3dsCopyMLSBias(srcw, destw)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsCopyMLSBias(srcw, destw)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Main internal calls: `GetDimLabel()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Main internal calls: `GetDimLabel()`.
 - Parameters:
   - `srcw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `destw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1426,7 +1426,7 @@ Function/WAVE KP_LoadNanonis3dsGetMLSBias(srcw, dim)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetMLSBias(srcw, dim)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: creates output waves. Main internal calls: `str2num()`, `GetDimLabel()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: creates output waves. Main internal calls: `str2num()`, `GetDimLabel()`.
 - Parameters:
   - `srcw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `dim`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1439,7 +1439,7 @@ Function KP_LoadNanonis3dsIsMLSBias(w)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsIsMLSBias(w)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Main internal calls: `GetDimLabel()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Main internal calls: `GetDimLabel()`.
 - Parameters:
   - `w`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `KP_NanonisLoaders.ipf:357`
@@ -1450,7 +1450,7 @@ Function KP_LoadNanonis3dsIsMLSBias(w)
 Function/WAVE KP_LoadNanonisData(pathStr)
 ```
 - Usage: call as `KP_LoadNanonisData(pathStr)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisFolder()`, `KP_UniqueRootDataFolderName()`, `KP_RecordLoadedFile()`, `KP_LoadNanonis3ds()`, `KP_LoadNanonisSxmNsp()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisFolder()`, `KP_UniqueRootDataFolderName()`, `KP_RecordLoadedFile()`, `KP_LoadNanonis3ds()`, `KP_LoadNanonisSxmNsp()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
 - Source: `KP_NanonisLoaders.ipf:12`
@@ -1462,7 +1462,7 @@ Function/WAVE KP_LoadNanonisFolder(pathStr)
 ```
 - Purpose: walks a folder and loads supported Nanonis files through the KP-local loader.
 - Usage: call as `KP_LoadNanonisFolder(pathStr)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion. Code behavior: loads data from files or paths. Main internal calls: `IndexedDir()`, `KP_LoadNanonisData()`, `IndexedFile()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion. Code behavior: loads data from files or paths. Main internal calls: `IndexedDir()`, `KP_LoadNanonisData()`, `IndexedFile()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
 - Source: `KP_NanonisLoaders.ipf:80`
@@ -1474,7 +1474,7 @@ Function/WAVE KP_LoadNanonisSxmNsp(pathStr)
 ```
 - Purpose: parses Nanonis sxm/nsp topography-style files and returns loaded waves.
 - Usage: call as `KP_LoadNanonisSxmNsp(pathStr)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisSxmNspGetHeader()`, `KP_LoadNanonisSXMGetData()`, `elseif()`, `KP_LoadNanonisNSPGetData()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisSxmNspGetHeader()`, `KP_LoadNanonisSXMGetData()`, `elseif()`, `KP_LoadNanonisNSPGetData()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
 - Source: `KP_NanonisLoaders.ipf:371`
@@ -1486,7 +1486,7 @@ Function KP_NanonisCleanup()
 ```
 - Purpose: cleanup hook replacing the old KM exit call; KP's local loader has no external package to unload.
 - Usage: call `KP_NanonisCleanup()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion.
 - Source: `KP_NanonisLoaders.ipf:139`
 
 #### `KP_NanonisCommonConversion`
@@ -1495,7 +1495,7 @@ Function KP_NanonisCleanup()
 Function KP_NanonisCommonConversion(w, [driveamp, modulated])
 ```
 - Usage: call as `KP_NanonisCommonConversion(w, [driveamp, modulated])`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: assigns Igor axis scaling/units to the output. Main internal calls: `GrepString()`, `numtype()`, `elseif()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: assigns Igor axis scaling/units to the output. Main internal calls: `GrepString()`, `numtype()`, `elseif()`.
 - Parameters:
   - `w`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `[driveamp`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1508,7 +1508,7 @@ Function KP_NanonisCommonConversion(w, [driveamp, modulated])
 Function/WAVE KP_NanonisCommonDataAvg(bwdStr)
 ```
 - Usage: call as `KP_NanonisCommonDataAvg(bwdStr)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `GrepString()`, `numpnts()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `GrepString()`, `numpnts()`.
 - Parameters:
   - `bwdStr`: String name used to locate an Igor wave, graph, folder, or output object.
 - Source: `KP_NanonisLoaders.ipf:726`
@@ -1519,7 +1519,7 @@ Function/WAVE KP_NanonisCommonDataAvg(bwdStr)
 Function KP_NanonisCommonGetHeader(pathStr)
 ```
 - Usage: call as `KP_NanonisCommonGetHeader(pathStr)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: creates output waves; loads data from files or paths; writes or exports data; creates, switches, or removes Igor data folders. Main internal calls: `str2num()`, `KP_NanonisCommonVariableString()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: creates output waves; loads data from files or paths; writes or exports data; creates, switches, or removes Igor data folders. Main internal calls: `str2num()`, `KP_NanonisCommonVariableString()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
 - Source: `KP_NanonisLoaders.ipf:645`
@@ -1530,7 +1530,7 @@ Function KP_NanonisCommonGetHeader(pathStr)
 Function KP_NanonisCommonVariableString(name, value)
 ```
 - Usage: call as `KP_NanonisCommonVariableString(name, value)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction. Main internal calls: `char2num()`, `RemoveEnding()`, `GrepString()`, `str2num()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction. Main internal calls: `char2num()`, `RemoveEnding()`, `GrepString()`, `str2num()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `value`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1543,7 +1543,7 @@ Function KP_RecordLoadedFile(fileName)
 ```
 - Purpose: records loaded file names in `root:File_Name` for downstream KP workflows.
 - Usage: call as `KP_RecordLoadedFile(fileName)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves.
 - Parameters:
   - `fileName`: File name or file-derived label used by the loader/export routine.
 - Source: `KP_NanonisLoaders.ipf:126`
@@ -1554,7 +1554,7 @@ Function KP_RecordLoadedFile(fileName)
 Function/S KP_UniqueRootDataFolderName(baseName)
 ```
 - Usage: call as `KP_UniqueRootDataFolderName(baseName)`.
-- Notes: String-returning helper for Nanonis/STM data loading or map conversion.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion.
 - Parameters:
   - `baseName`: String name used to locate an Igor wave, graph, folder, or output object.
 - Source: `KP_NanonisLoaders.ipf:104`
@@ -1684,7 +1684,7 @@ Function linkstsmapgate(name,num,startnum)
 ```
 - Purpose: combines many waves/slices into a map, linecut, or averaged output.
 - Usage: call as `linkstsmapgate(name, num, startnum)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `num`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1698,7 +1698,7 @@ Function linkstsmapgl(name,num,startnum)
 ```
 - Purpose: combines many waves/slices into a map, linecut, or averaged output.
 - Usage: call as `linkstsmapgl(name, num, startnum)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `num`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1751,10 +1751,45 @@ Function linkstsmapV(name,num)
 Function Matrixtranspose_off(name)
 ```
 - Usage: call as `Matrixtranspose_off(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Symmetrization.ipf:428`
+
+#### `MX9NextSTSName`
+
+```igor
+Function/S MX9NextSTSName(nextSTS)
+```
+- Usage: call as `MX9NextSTSName(nextSTS)`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `num2istr()`.
+- Parameters:
+  - `nextSTS`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:912`
+
+#### `MX9SpectraListSlotOK`
+
+```igor
+Function MX9SpectraListSlotOK(fullName)
+```
+- Usage: call as `MX9SpectraListSlotOK(fullName)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation.
+- Parameters:
+  - `fullName`: String name used to locate an Igor wave, graph, folder, or output object.
+- Source: `OmicronMatrixLoader.ipf:922`
+
+#### `MX9TopoShowSourceTable`
+
+```igor
+Function MX9TopoShowSourceTable(nameLog, fileLog, folder)
+```
+- Usage: call as `MX9TopoShowSourceTable(nameLog, fileLog, folder)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `MX9SpectraListSlotOK()`, `MX9SpectraArchiveList()`, `num2istr()`, `width()`.
+- Parameters:
+  - `nameLog`: Used in: Duplicate nameLog, $namesPath
+  - `fileLog`: File name or file-derived label used by the loader/export routine.
+  - `folder`: File-system path or data-folder string used for loading or saving data.
+- Source: `OmicronMatrixLoader.ipf:678`
 
 #### `Selnumavests_n`
 
@@ -1792,7 +1827,7 @@ Function Selnumavests_p(name,prefwave,thresh,stsname)
 Function slice1dd(matt)
 ```
 - Usage: call as `slice1dd(matt)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
 - Parameters:
   - `matt`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `UNISOKU3dscutextract.ipf:33`
@@ -1840,7 +1875,7 @@ Function/S wavelistsub(name)
 Function Z_R_Rhomap(wg,wi,zn_consl)
 ```
 - Usage: call as `Z_R_Rhomap(wg, wi, zn_consl)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; linecut, slice, or region extraction. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `gammaNoise()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; linecut, slice, or region extraction. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `gammaNoise()`.
 - Parameters:
   - `wg`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `wi`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1857,7 +1892,7 @@ Static Function/WAVE KP_LoadNanonis3dsGetData(pathStr, s)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetData(pathStr, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves; loads data from files or paths; cleans up waves/windows or brings an existing window forward. Main internal calls: `KP_LoadNanonis3dsGetDataParam()`, `KP_LoadNanonis3dsGetDataWaveNames()`, `KP_LoadNanonis3dsGetDataSpec()`, `GetKeyState()`, `numpnts()`, `KP_NanonisCommonDataAvg()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves; loads data from files or paths; cleans up waves/windows or brings an existing window forward. Main internal calls: `KP_LoadNanonis3dsGetDataParam()`, `KP_LoadNanonis3dsGetDataWaveNames()`, `KP_LoadNanonis3dsGetDataSpec()`, `GetKeyState()`, `numpnts()`, `KP_NanonisCommonDataAvg()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `s`: Used in: GBLoadWave/O/Q/N=KP_tmp3ds/T={2,4}/S=(s.headerSize)/W=1 pathStr
@@ -1870,7 +1905,7 @@ Static Function/WAVE KP_LoadNanonis3dsGetDataParam(w, fileName, s)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetDataParam(w, fileName, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders. Main internal calls: `WhichListItem()`, `x()`, `y()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders. Main internal calls: `WhichListItem()`, `x()`, `y()`.
 - Parameters:
   - `w`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `fileName`: File name or file-derived label used by the loader/export routine.
@@ -1884,7 +1919,7 @@ Static Function/WAVE KP_LoadNanonis3dsGetDataSpec(w, namew, s)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetDataSpec(w, namew, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `WhichListItem()`, `x()`, `y()`, `KP_LoadNanonis3dsSetMLSBias()`, `KP_NanonisCommonConversion()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `WhichListItem()`, `x()`, `y()`, `KP_LoadNanonis3dsSetMLSBias()`, `KP_NanonisCommonConversion()`.
 - Parameters:
   - `w`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `namew`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1898,7 +1933,7 @@ Static Function/WAVE KP_LoadNanonis3dsGetDataWaveNames(fileName, chanList)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetDataWaveNames(fileName, chanList)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `fileName`: File name or file-derived label used by the loader/export routine.
   - `chanList`: Used in: Make/N=(ItemsInList(chanList))/T/FREE namew
@@ -1911,7 +1946,7 @@ Static Function KP_LoadNanonis3dsGetHeader(pathStr, s)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsGetHeader(pathStr, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Main internal calls: `KP_NanonisCommonGetHeader()`, `NumVarOrDefault()`, `StrVarOrDefault()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Main internal calls: `KP_NanonisCommonGetHeader()`, `NumVarOrDefault()`, `StrVarOrDefault()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `s`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -1924,7 +1959,7 @@ Static Function KP_LoadNanonis3dsSetMLSBias(specw, mlsw)
 ```
 - Purpose: parses a Nanonis 3ds spectroscopy/grid file and returns loaded waves.
 - Usage: call as `KP_LoadNanonis3dsSetMLSBias(specw, mlsw)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation.
 - Parameters:
   - `specw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `mlsw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1936,7 +1971,7 @@ Static Function KP_LoadNanonis3dsSetMLSBias(specw, mlsw)
 Static Function/WAVE KP_LoadNanonisNSPGetData(pathStr, s)
 ```
 - Usage: call as `KP_LoadNanonisNSPGetData(pathStr, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: reshapes existing waves; assigns Igor axis scaling/units to the output; loads data from files or paths.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: reshapes existing waves; assigns Igor axis scaling/units to the output; loads data from files or paths.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `s`: Used in: GBLoadWave/O/Q/N=KP_tmpnsp/T={2,4}/S=(s.headerSize)/W=1 pathStr / SetScale/I x, s.starttime, s.endtime, "dat", tw
@@ -1948,7 +1983,7 @@ Static Function/WAVE KP_LoadNanonisNSPGetData(pathStr, s)
 Static Function KP_LoadNanonisNSPGetHeaderCvt(s)
 ```
 - Usage: call as `KP_LoadNanonisNSPGetHeaderCvt(s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Main internal calls: `date2secs()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Main internal calls: `date2secs()`.
 - Parameters:
   - `s`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `KP_NanonisLoaders.ipf:542`
@@ -1959,7 +1994,7 @@ Static Function KP_LoadNanonisNSPGetHeaderCvt(s)
 Static Function/WAVE KP_LoadNanonisSXMGetData(pathStr, s)
 ```
 - Usage: call as `KP_LoadNanonisSXMGetData(pathStr, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves; assigns Igor axis scaling/units to the output; uses Igor matrix operations for vectorized calculation; loads data from files or paths. Main internal calls: `WaveUnits()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves; assigns Igor axis scaling/units to the output; uses Igor matrix operations for vectorized calculation; loads data from files or paths. Main internal calls: `WaveUnits()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `s`: Used in: GBLoadWave/O/Q/N=KP_tmpsxm/T={2,4}/S=(s.headerSize)/W=1 pathStr / SetScale/I x, s.xcenter - s.xscale / 2, s.xcenter + s.xscale / 2, "A", lw
@@ -1971,7 +2006,7 @@ Static Function/WAVE KP_LoadNanonisSXMGetData(pathStr, s)
 Static Function KP_LoadNanonisSXMGetHeaderCvt(s)
 ```
 - Usage: call as `KP_LoadNanonisSXMGetHeaderCvt(s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping. Main internal calls: `time()`, `width()`, `height()`, `x()`, `y()`, `angle()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping. Main internal calls: `time()`, `width()`, `height()`, `x()`, `y()`, `angle()`.
 - Parameters:
   - `s`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `KP_NanonisLoaders.ipf:504`
@@ -1983,7 +2018,7 @@ Static Function/WAVE KP_LoadNanonisSXMGetHeaderDI(pathStr, refNum)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call as `KP_LoadNanonisSXMGetHeaderDI(pathStr, refNum)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; reshapes existing waves.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; reshapes existing waves.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `refNum`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
@@ -1995,7 +2030,7 @@ Static Function/WAVE KP_LoadNanonisSXMGetHeaderDI(pathStr, refNum)
 Static Function KP_LoadNanonisSXMGetHeaderZC(refNum)
 ```
 - Usage: call as `KP_LoadNanonisSXMGetHeaderZC(refNum)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion. Main internal calls: `KP_NanonisCommonVariableString()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion. Main internal calls: `KP_NanonisCommonVariableString()`.
 - Parameters:
   - `refNum`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `KP_NanonisLoaders.ipf:449`
@@ -2007,7 +2042,7 @@ Static Function KP_LoadNanonisSxmNspGetHeader(pathStr, s)
 ```
 - Purpose: parses Nanonis sxm/nsp topography-style files and returns loaded waves.
 - Usage: call as `KP_LoadNanonisSxmNspGetHeader(pathStr, s)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: loads data from files or paths; creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisSXMGetHeaderZC()`, `KP_LoadNanonisSXMGetHeaderDI()`, `KP_NanonisCommonVariableString()`, `NumVarOrDefault()`, `elseif()`, `KP_LoadNanonisSxmNspGetHeaderEnd()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: loads data from files or paths; creates, switches, or removes Igor data folders. Main internal calls: `KP_LoadNanonisSXMGetHeaderZC()`, `KP_LoadNanonisSXMGetHeaderDI()`, `KP_NanonisCommonVariableString()`, `NumVarOrDefault()`, `elseif()`, `KP_LoadNanonisSxmNspGetHeaderEnd()`.
 - Parameters:
   - `pathStr`: File-system path or data-folder string used for loading or saving data.
   - `s`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -2020,7 +2055,7 @@ Static Function KP_LoadNanonisSxmNspGetHeaderEnd(refNum)
 ```
 - Purpose: parses Nanonis sxm/nsp topography-style files and returns loaded waves.
 - Usage: call as `KP_LoadNanonisSxmNspGetHeaderEnd(refNum)`.
-- Notes: Internal helper function for Nanonis/STM data loading or map conversion. Code behavior: creates output waves; writes or exports data. Main internal calls: `elseif()`.
+- Notes: Internal helper function for Nanonis/OMICRON STM data loading or map conversion. Code behavior: creates output waves; writes or exports data. Main internal calls: `elseif()`.
 - Parameters:
   - `refNum`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `KP_NanonisLoaders.ipf:486`
@@ -2662,7 +2697,7 @@ Function ButtonProc_ls3dcons(ctrlName) : ButtonControl
 Function ButtonProc_lsturnoff3d(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Panel control(s): `BACK`, `X`. Code behavior: cleans up waves/windows or brings an existing window forward.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Panel control(s): `BACK`, `X`. Code behavior: cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `BACK`, `X`, `X`, `BACK`, `BACK`, `BACK`, `BACK`, `BACK`
@@ -5396,7 +5431,7 @@ Window Help_Rotate_image() : Graph
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: call `Help_Rotate_image()` to recreate or bring up the Igor window/panel.
-- Notes: Igor window/panel recreation routine for Nanonis/STM data loading or map conversion; geometric correction, rotation, shear, drift, or strain analysis; graph display, formatting, or window management. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls.
+- Notes: Igor window/panel recreation routine for Nanonis/OMICRON STM data loading or map conversion; geometric correction, rotation, shear, drift, or strain analysis; graph display, formatting, or window management. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls.
 - Source: `Pierre's Template.ipf:11272`
 
 #### `Help_Smooth_factor`
@@ -6732,6 +6767,19 @@ Function minwaterfall()
 - Notes: Function for graph display, formatting, or window management; Igor wave/matrix/cube data operation. Code behavior: creates output waves; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Update log: 08/11-02/2023: Added maxwaterfall() and minwaterfall() which can get the max and min value from a figure of waterfall traces.
 - Source: `SmartDisplay.ipf:1888`
 
+#### `MX9SpectraShowSourceTable`
+
+```igor
+Function MX9SpectraShowSourceTable(nameLog,fileLog,folder)
+```
+- Usage: call as `MX9SpectraShowSourceTable(nameLog, fileLog, folder)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `MX9SpectraArchiveList()`, `width()`.
+- Parameters:
+  - `nameLog`: Used in: Duplicate nameLog,root:File_Name
+  - `fileLog`: File name or file-derived label used by the loader/export routine.
+  - `folder`: File-system path or data-folder string used for loading or saving data.
+- Source: `OmicronMatrixLoader.ipf:949`
+
 #### `myCursorMovedHook`
 
 ```igor
@@ -8007,7 +8055,7 @@ Function SetVarProc_lsnormfftq(ctrlName,varNum,varStr,varName) : SetVariableCont
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Panel control(s): `NormFFT`. Code behavior: creates output waves.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Panel control(s): `NormFFT`. Code behavior: creates output waves.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -8302,7 +8350,7 @@ Proc doampfftforphase(gapname,topname)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: run from Igor with parameters `gapname`, `topname`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `twoDinterpolatexy()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `twoDinterpolatexy()`.
 - Parameters:
   - `gapname`: Gap/amplitude parameter used by superconducting or spectral fitting routines.
   - `topname`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -8518,7 +8566,7 @@ Proc gpac3dp()
 Proc gpac3dpls()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `Gpa3dpls()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `Gpa3dpls()`.
 - Source: `Smart_3D_Viewer_New.ipf:9329`
 
 #### `gpbc`
@@ -8545,7 +8593,7 @@ Proc gpbc3dp()
 Proc gpbc3dpls()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `GpB3dpls()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `GpB3dpls()`.
 - Source: `Smart_3D_Viewer_New.ipf:9395`
 
 #### `gpc`
@@ -8604,7 +8652,7 @@ Proc PhaseMap(name1,name2,size1,x1,y1,x2,y2)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: run from Igor with parameters `name1`, `name2`, `size1`, `x1`, `y1`, `x2`, `y2`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: name1 = name of the gap map; name2 = name of the topography; size1 = dimsize of the subwindow (must be even number, but I write a correction code inside, you do not need to care about the even odd here); x1 = x of FFT Point 1; y1 = y of FFT Point 1; x2 = x of FFT Point 2. Code behavior: performs Fourier-transform or inverse-transform operations; asks the user for parameters through Igor prompts. Main internal calls: `makechunkdataFFT()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: name1 = name of the gap map; name2 = name of the topography; size1 = dimsize of the subwindow (must be even number, but I write a correction code inside, you do not need to care about the even odd here); x1 = x of FFT Point 1; y1 = y of FFT Point 1; x2 = x of FFT Point 2. Code behavior: performs Fourier-transform or inverse-transform operations; asks the user for parameters through Igor prompts. Main internal calls: `makechunkdataFFT()`.
 - Parameters:
   - `name1`: name of the gap map
   - `name2`: name of the topography
@@ -8621,7 +8669,7 @@ Proc PhaseMap(name1,name2,size1,x1,y1,x2,y2)
 Proc pickupPA()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; duplicates or stages waves for downstream processing. Main internal calls: `pcsr()`, `qcsr()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; duplicates or stages waves for downstream processing. Main internal calls: `pcsr()`, `qcsr()`.
 - Source: `Map_the_phase_difference_between_two_image.ipf:131`
 
 #### `pickupPB`
@@ -8630,7 +8678,7 @@ Proc pickupPA()
 Proc pickupPB()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; duplicates or stages waves for downstream processing. Main internal calls: `pcsr()`, `qcsr()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; duplicates or stages waves for downstream processing. Main internal calls: `pcsr()`, `qcsr()`.
 - Source: `Map_the_phase_difference_between_two_image.ipf:185`
 
 #### `SumlayerFFT3D2`
@@ -8807,7 +8855,7 @@ Function determineqbyphase(grid)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: call as `determineqbyphase(grid)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `phaseextractionforq()`, `getslopmap()`, `di()`. Update log: 2024-05-09: Backend calculation for Refine Q.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `phaseextractionforq()`, `getslopmap()`, `di()`. Update log: 2024-05-09: Backend calculation for Refine Q.
 - Parameters:
   - `grid`: dimsize of x direction
 - Source: `FFT.ipf:2520`
@@ -8851,7 +8899,7 @@ Function Dowindow2dlockinandfilter(name,avedia,qax,qay,qbx,qby)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: call as `Dowindow2dlockinandfilter(name, avedia, qax, qay, qbx, qby)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `modifyphasetoponew()`, `modifyphasefrnew()`, `modifyphasenew()`, `color3s_for3dmf()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `modifyphasetoponew()`, `modifyphasefrnew()`, `modifyphasenew()`, `color3s_for3dmf()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it is used for Fourier/QPI or phase-map processing.
   - `avedia`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -8933,7 +8981,7 @@ Function FFTL2(name,sel)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: call as `FFTL2(name, sel)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: performs Fourier-transform or inverse-transform operations. Main internal calls: `func_NaN0()`, `cvtcmplx()`, `Complextorealf()`, `tpw()`, `mean()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: performs Fourier-transform or inverse-transform operations. Main internal calls: `func_NaN0()`, `cvtcmplx()`, `Complextorealf()`, `tpw()`, `mean()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `sel`: 1 for x, 2 for y
@@ -9054,7 +9102,7 @@ Function findjumpphMap(nn)
 Function findpolarization(DA,DB,TA,TB)
 ```
 - Usage: call as `findpolarization(DA, DB, TA, TB)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `shift2pi()`, `modifyphasenew()`, `modifyphasetoponew()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `shift2pi()`, `modifyphasenew()`, `modifyphasetoponew()`.
 - Parameters:
   - `DA`: Used in: Display/HOST=#/W=(0,0.05,0.33,0.33);appendimage DA;ModifyGraph width={Plan,1,bottom,left},noLabel=2,axThick=0;TextBox/C/N=text0/F=0/X=0.00/Y
   - `DB`: Used in: setActiveSubwindow ##;Display/HOST=#/W=(0,0.3,0.33,0.58);appendimage DB;ModifyGraph width={Plan,1,bottom,left},noLabel=2,axThick=0;TextBox/C
@@ -9068,7 +9116,7 @@ Function findpolarization(DA,DB,TA,TB)
 Function FT(name,avedia)
 ```
 - Usage: call as `FT(name, avedia)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `grabwin()`, `margin()`, `tpw()`, `color3s()`, `grabwinnonew()`, `modifyphasetopo()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `grabwin()`, `margin()`, `tpw()`, `color3s()`, `grabwinnonew()`, `modifyphasetopo()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it is used for Fourier/QPI or phase-map processing.
   - `avedia`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -9092,7 +9140,7 @@ Function FTcons(name,avedia)
 Function FTconslp(avedia)
 ```
 - Usage: call as `FTconslp(avedia)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `unpadding()`, `tpw()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `unpadding()`, `tpw()`.
 - Parameters:
   - `avedia`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `FFT.ipf:2348`
@@ -9191,7 +9239,7 @@ Function getslopmap(name)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: call as `getslopmap(name)`.
-- Notes: Utility function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; differentiates wave data. Main internal calls: `median()`.
+- Notes: Utility function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; differentiates wave data. Main internal calls: `median()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `FFT.ipf:2789`
@@ -9226,7 +9274,7 @@ Function/Wave Gp(name111)
 Function/Wave GpA(name111,nameraw)
 ```
 - Usage: call as `GpA(name111, nameraw)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `atan2()`, `ckwaveonfig()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `atan2()`, `ckwaveonfig()`.
 - Parameters:
   - `name111`: String name used to locate an Igor wave, graph, folder, or output object.
   - `nameraw`: Igor wave reference used as input or output. In this context it is used for Fourier/QPI or phase-map processing.
@@ -9249,7 +9297,7 @@ Function/Wave GpA3dp(name111)
 Function/Wave GpA3dpls(name111)
 ```
 - Usage: call as `GpA3dpls(name111)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `ckwaveonfig()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `ckwaveonfig()`.
 - Parameters:
   - `name111`: String name used to locate an Igor wave, graph, folder, or output object.
 - Source: `Smart_3D_Viewer_New.ipf:9337`
@@ -9307,7 +9355,7 @@ Function/Wave GpB3dp(name111)
 Function/Wave GpB3dpls(name111)
 ```
 - Usage: call as `GpB3dpls(name111)`.
-- Notes: Wave-returning helper for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `ckwaveonfig()`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `name111w()`, `name1111w()`, `ckwaveonfig()`.
 - Parameters:
   - `name111`: String name used to locate an Igor wave, graph, folder, or output object.
 - Source: `Smart_3D_Viewer_New.ipf:9403`
@@ -9399,7 +9447,7 @@ Function makechunkdataFFT(name1,name2,size1,x1,y1,x2,y2)
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: call as `makechunkdataFFT(name1, name2, size1, x1, y1, x2, y2)`.
-- Notes: Utility function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays. Main internal calls: `twoDinterpolatexyfd()`, `margin()`.
+- Notes: Utility function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays. Main internal calls: `twoDinterpolatexyfd()`, `margin()`.
 - Parameters:
   - `name1`: String name used to locate an Igor wave, graph, folder, or output object.
   - `name2`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -9417,7 +9465,7 @@ Function MDoLSegrereapplyfftmode()
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: call `MDoLSegrereapplyfftmode()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves. Main internal calls: `FFTrls()`, `color3s_for3dm2()`, `color3s_for3dmf()`, `color3s_followtopo()`, `color3s_followtopof()`, `color3s_followtopo2()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves. Main internal calls: `FFTrls()`, `color3s_for3dm2()`, `color3s_for3dmf()`, `color3s_followtopo()`, `color3s_followtopof()`, `color3s_followtopo2()`.
 - Source: `Lattice Segregation.ipf:1042`
 
 #### `MinEnvelopeFilter`
@@ -10920,7 +10968,7 @@ Function SetVarProc_appendmatrix(ctrlName,varNum,varStr,varName) : SetVariableCo
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `Ctr`. Code behavior: opens or updates graph/image displays.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; Igor wave/matrix/cube data operation. Panel control(s): `Ctr`. Code behavior: opens or updates graph/image displays.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -11118,7 +11166,7 @@ Proc ChangeOneWaveLook(Waveoffset, R,G,B, size)
 proc correct2Dmapc(indicate,zbwavename)
 ```
 - Usage: run from Igor with parameters `indicate`, `zbwavename`. Update-log guidance - 2023-08-09: Added the gate-map leakage corrector behind the "Fix gate leak" button.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Dialog prompts: Indicate = Notice!!! Before Lauch; zbwavename = please enter the name of a 1D wave containing the real zero bias voltage of different gate voltages, / if this wave can be extracted from the same watefall, please enter /. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getZB()`, `str2num()`, `correct2Dmap()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; graph display, formatting, or window management. Dialog prompts: Indicate = Notice!!! Before Lauch; zbwavename = please enter the name of a 1D wave containing the real zero bias voltage of different gate voltages, / if this wave can be extracted from the same watefall, please enter /. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getZB()`, `str2num()`, `correct2Dmap()`.
 - Parameters:
   - `indicate`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `zbwavename`: please enter the name of a 1D wave containing the real zero bias voltage of different gate voltages, / if this wave can be extracted from the same watefall, please enter /
@@ -11352,7 +11400,7 @@ Proc limitmat3d(theexponent)
 Proc Lsmatrix3d(indicate,mat3dn,refwave)
 ```
 - Usage: run from Igor with parameters `indicate`, `mat3dn`, `refwave`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: indicate = Indication; mat3dn = The 3D matrix to Segregated; refwave = The 2D shape reference matrix [Topography]. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `Lsmatrix3dall()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: indicate = Indication; mat3dn = The 3D matrix to Segregated; refwave = The 2D shape reference matrix [Topography]. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `Lsmatrix3dall()`.
 - Parameters:
   - `indicate`: Indication
   - `mat3dn`: The 3D matrix to Segregated
@@ -12258,7 +12306,7 @@ Proc transform2equiv_waves(nameref,name2)
 proc tta(name,setpointv,currentwave)
 ```
 - Usage: run from Igor with parameters `name`, `setpointv`, `currentwave`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Dialog prompts: name = Name of the data set; setpointv = Voltage setpoint (mV); currentwave = The name of the wave of current (nA). Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `linkstsmap_P()`, `duplicateall()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management; Igor wave/matrix/cube data operation. Dialog prompts: name = Name of the data set; setpointv = Voltage setpoint (mV); currentwave = The name of the wave of current (nA). Code behavior: duplicates or stages waves for downstream processing; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `linkstsmap_P()`, `duplicateall()`.
 - Parameters:
   - `name`: Name of the data set
   - `setpointv`: Voltage setpoint (mV)
@@ -12380,6 +12428,19 @@ Proc wave4bkgndremoval(newname)
 - Parameters:
   - `newname`: Enter the name of the wave
 - Source: `Pierre's Template.ipf:9032`
+
+
+### Windows, panels, and menus
+
+#### `Load Waves`
+
+```igor
+Menu "Load Waves"
+```
+- Purpose: loads data or launches an automatic loading workflow.
+- Usage: defines Igor menu entries; users normally access it from the Igor menu bar.
+- Notes: Version 1.4: grid, folder Z topographs, and folder 1D voltage spectra. Based on the user-supplied grid loader; native Igor 9, no Python at runtime. MATRIX format definitions adapted from access2theMatrix 0.4.4 (BSD). Main internal calls: `MatrixLoadGrid()`, `MatrixLoadTopologyGraph()`, `MatrixLoadSpectra()`.
+- Source: `OmicronMatrixLoader.ipf:10`
 
 
 ### Computational and data helpers
@@ -12973,7 +13034,7 @@ Function/wave LDOSofmatrix_cmplx(mat,Vmin,Vmax,show)
 Function Lsmatrix3dall(mat3dn,refwave,factor)
 ```
 - Usage: call as `Lsmatrix3dall(mat3dn, refwave, factor)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `DoLSegre()`, `DoLSegreXY()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output. Main internal calls: `DoLSegre()`, `DoLSegreXY()`.
 - Parameters:
   - `mat3dn`: name of the mat3d to be sheared = "g2_001_G"
   - `refwave`: name of the shear reference wave = "g2_001_T" string barename = replaceString("_G",mat3dn,"_T")
@@ -13073,6 +13134,45 @@ Function makematrix3(namee,sizex,sizey)
   - `sizey`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `FFT.ipf:480`
 
+#### `MatrixLoadGrid`
+
+```igor
+Function MatrixLoadGrid([filePath, biasAscending, flipX])
+```
+- Usage: call as `MatrixLoadGrid([filePath, biasAscending, flipX])`.
+- Notes: Main entry point. With no arguments, opens a file picker. All outputs go directly in root. The current data folder is unchanged.
+- Parameters:
+  - `[filePath`: File-system path or data-folder string used for loading or saving data.
+  - `biasAscending`: End point, index, or coordinate for the selected range.
+  - `flipX]`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:31`
+
+#### `MatrixLoadSpectra`
+
+```igor
+Function MatrixLoadSpectra([folderPath, biasAscending, includeRetrace])
+```
+- Usage: call as `MatrixLoadSpectra([folderPath, biasAscending, includeRetrace])`.
+- Notes: Folder loader for independent voltage spectra, directly into root:STS1 etc. File_Name and STS_SourceFiles describe the latest successful batch. Code behavior: creates output waves; duplicates or stages waves for downstream processing; loads data from files or paths. Main internal calls: `ParamIsDefault()`, `IndexedFile()`, `StringMatch()`, `SortList()`, `MX9SpectraListSlotOK()`, `MX9ReadSpectra()`.
+- Parameters:
+  - `[folderPath`: File-system path or data-folder string used for loading or saving data.
+  - `biasAscending`: End point, index, or coordinate for the selected range.
+  - `includeRetrace]`: Step size or energy/voltage increment used by the calculation.
+- Source: `OmicronMatrixLoader.ipf:825`
+
+#### `MatrixLoadTopologyGraph`
+
+```igor
+Function MatrixLoadTopologyGraph([folderPath, includeRetrace, flipX])
+```
+- Usage: call as `MatrixLoadTopologyGraph([folderPath, includeRetrace, flipX])`.
+- Notes: Folder loader for Z topographs. Each acquired direction is a separate 2D double wave in root:DataN. Missing pixels in stopped scans remain NaN. Code behavior: creates output waves; duplicates or stages waves for downstream processing; loads data from files or paths.
+- Parameters:
+  - `[folderPath`: File-system path or data-folder string used for loading or saving data.
+  - `includeRetrace`: Step size or energy/voltage increment used by the calculation.
+  - `flipX]`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:579`
+
 #### `Medianfinder`
 
 ```igor
@@ -13117,6 +13217,192 @@ Function/Wave mpt(A,B)
   - `A`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `B`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
 - Source: `MatrixCalculation.ipf:355`
+
+#### `MX9CheckMagic`
+
+```igor
+Function MX9CheckMagic(bytes)
+```
+- Usage: call as `MX9CheckMagic(bytes)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:335`
+
+#### `MX9Need`
+
+```igor
+Function MX9Need(bytes, pos, n)
+```
+- Usage: call as `MX9Need(bytes, pos, n)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `pos`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `n`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:342`
+
+#### `MX9NextDataName`
+
+```igor
+Function/S MX9NextDataName(nextData)
+```
+- Usage: call as `MX9NextDataName(nextData)`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `num2istr()`.
+- Parameters:
+  - `nextData`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:668`
+
+#### `MX9ParamBlock`
+
+```igor
+Function MX9ParamBlock(bytes, start, limit, meta)
+```
+- Usage: call as `MX9ParamBlock(bytes, start, limit, meta)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `MX9Need()`, `MX9U32()`, `WhichListItem()`, `MX9String()`, `MX9Value()`, `ReplaceStringByKey()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `start`: Start point, index, or coordinate for the selected range.
+  - `limit`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `meta`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:415`
+
+#### `MX9ReadFile`
+
+```igor
+Function/S MX9ReadFile(filePath, missingOK)
+```
+- Purpose: extracts values, metadata, cursor information, or derived waves.
+- Usage: call as `MX9ReadFile(filePath, missingOK)`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: loads data from files or paths; writes or exports data. Main internal calls: `PadString()`.
+- Parameters:
+  - `filePath`: File-system path or data-folder string used for loading or saving data.
+  - `missingOK`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:306`
+
+#### `MX9ReadGrid`
+
+```igor
+Function/WAVE MX9ReadGrid(folder, filename, biasAscending, flipX)
+```
+- Purpose: extracts values, metadata, cursor information, or derived waves.
+- Usage: call as `MX9ReadGrid(folder, filename, biasAscending, flipX)`.
+- Notes: Wave-returning helper for Nanonis/OMICRON STM data loading or map conversion; ARPES-style loading, plotting, or momentum conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `MX9ReadFile()`, `MX9CheckMagic()`, `MX9ParamBlock()`, `MX9Required()`, `ceil()`, `MX9DataBlocks()`.
+- Parameters:
+  - `folder`: File-system path or data-folder string used for loading or saving data.
+  - `filename`: File name or file-derived label used by the loader/export routine.
+  - `biasAscending`: End point, index, or coordinate for the selected range.
+  - `flipX`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:199`
+
+#### `MX9ReadSpectra`
+
+```igor
+Function/WAVE MX9ReadSpectra(folder,filename,biasAscending,includeRetrace,directions,isPartial,errorText)
+```
+- Purpose: extracts values, metadata, cursor information, or derived waves.
+- Usage: call as `MX9ReadSpectra(folder, filename, biasAscending, includeRetrace, directions, isPartial, errorText)`.
+- Notes: One file contains one stored trace/retrace pair. Unknown multi-curve layouts are rejected instead of being silently resized or combined. Code behavior: creates output waves; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `StringMatch()`, `MX9ReadFile()`, `MX9CheckMagic()`, `MX9ParamBlock()`, `MX9Required()`, `elseif()`.
+- Parameters:
+  - `folder`: File-system path or data-folder string used for loading or saving data.
+  - `filename`: File name or file-derived label used by the loader/export routine.
+  - `biasAscending`: End point, index, or coordinate for the selected range.
+  - `includeRetrace`: Step size or energy/voltage increment used by the calculation.
+  - `directions`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `isPartial`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `errorText`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:967`
+
+#### `MX9ReadTopographs`
+
+```igor
+Function/WAVE MX9ReadTopographs(folder, filename, includeRetrace, flipX, directions, isPartial, errorText)
+```
+- Purpose: extracts values, metadata, cursor information, or derived waves.
+- Usage: call as `MX9ReadTopographs(folder, filename, includeRetrace, flipX, directions, isPartial, errorText)`.
+- Notes: Returns a free wave-reference wave. Expected input problems are returned in errorText so a bad file does not interrupt the remaining folder batch. Code behavior: creates output waves; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `MX9ReadFile()`, `MX9CheckMagic()`, `MX9ParamBlock()`, `MX9Required()`, `MX9DataBlocksFull()`, `StringToUnsignedByteWave()`.
+- Parameters:
+  - `folder`: File-system path or data-folder string used for loading or saving data.
+  - `filename`: File name or file-derived label used by the loader/export routine.
+  - `includeRetrace`: Step size or energy/voltage increment used by the calculation.
+  - `flipX`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `directions`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `isPartial`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `errorText`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:705`
+
+#### `MX9Required`
+
+```igor
+Function MX9Required(map, key)
+```
+- Usage: call as `MX9Required(map, key)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `str2num()`, `numtype()`.
+- Parameters:
+  - `map`: Igor wave or matrix input consumed by the calculation.
+  - `key`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:405`
+
+#### `MX9RootPrefix`
+
+```igor
+Function/S MX9RootPrefix(runID, channelNames)
+```
+- Usage: call as `MX9RootPrefix(runID, channelNames)`.
+- Notes: Reserve a common suffix for the entire output set. Check root explicitly, even if the command is run while another data folder is current. Main internal calls: `CleanupName()`, `numpnts()`, `num2istr()`.
+- Parameters:
+  - `runID`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `channelNames`: String name used to locate an Igor wave, graph, folder, or output object.
+- Source: `OmicronMatrixLoader.ipf:171`
+
+#### `MX9SpectraArchiveList`
+
+```igor
+Function MX9SpectraArchiveList(fullName,baseName)
+```
+- Usage: call as `MX9SpectraArchiveList(fullName, baseName)`.
+- Notes: Rename the previous list, retaining its contents and existing table references. Main internal calls: `num2istr()`.
+- Parameters:
+  - `fullName`: String name used to locate an Igor wave, graph, folder, or output object.
+  - `baseName`: String name used to locate an Igor wave, graph, folder, or output object.
+- Source: `OmicronMatrixLoader.ipf:932`
+
+#### `MX9String`
+
+```igor
+Function/S MX9String(bytes, pos)
+```
+- Usage: call as `MX9String(bytes, pos)`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `MX9U32()`, `MX9Need()`, `ConvertTextEncoding()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `pos`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:359`
+
+#### `MX9U32`
+
+```igor
+Function MX9U32(bytes, pos)
+```
+- Usage: call as `MX9U32(bytes, pos)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Main internal calls: `MX9Need()`, `char2num()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `pos`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:350`
+
+#### `MX9Value`
+
+```igor
+Function/S MX9Value(bytes, pos, skip)
+```
+- Usage: call as `MX9Value(bytes, pos, skip)`.
+- Notes: String-returning helper for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: reshapes existing waves. Main internal calls: `MX9Need()`, `MX9U32()`, `StringToUnsignedByteWave()`, `MX9String()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `pos`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `skip`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+- Source: `OmicronMatrixLoader.ipf:372`
 
 #### `NewDerivPRB98_214503_eq2_N`
 
@@ -14852,7 +15138,7 @@ proc plotdgap(grid, gam, delta, range)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run from Igor with parameters `grid`, `gam`, `delta`, `range`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: grid = Number of points; range = Energy range of spectra (meV); gam = Dyne width (meV); delta = SC gap (meV). Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `integrate1D()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: grid = Number of points; range = Energy range of spectra (meV); gam = Dyne width (meV); delta = SC gap (meV). Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `integrate1D()`.
 - Parameters:
   - `grid`: Number of points
   - `gam`: Dyne width (meV)
@@ -15230,7 +15516,7 @@ Function const2nddpeakd()
 Function DOSvor(grid,K,b1,delta,xrange,Erange)
 ```
 - Usage: call as `DOSvor(grid, K, b1, delta, xrange, Erange)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `tanh()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `tanh()`.
 - Parameters:
   - `grid`: Grid/map size, grid wave, or grid-data selector used by STM/STS workflows. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `K`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -15315,7 +15601,7 @@ Function extractgapbymax(from,to,sizex,sizey)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: call as `extractgapbymax(from, to, sizex, sizey)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
 - Parameters:
   - `from`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `to`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -15330,7 +15616,7 @@ Function extractgapbymaxGuassian(from,to,sizex,sizey)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: call as `extractgapbymaxGuassian(from, to, sizex, sizey)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `from`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `to`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -15345,7 +15631,7 @@ Function extractgapbymaxGuassian2(froml,tol,fromr,tor,sizex,sizey)
 ```
 - Purpose: extracts values, metadata, cursor information, or derived waves.
 - Usage: call as `extractgapbymaxGuassian2(froml, tol, fromr, tor, sizex, sizey)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
 - Parameters:
   - `froml`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
   - `tol`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -15625,7 +15911,7 @@ Function p2dtopeak(name)
 ```
 - Purpose: fits or extracts spectral/peak parameters.
 - Usage: call as `p2dtopeak(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
 - Source: `Miscellaneous_Codes.ipf:1799`
@@ -15637,7 +15923,7 @@ Function p2dtopeak_rot(name)
 ```
 - Purpose: fits or extracts spectral/peak parameters.
 - Usage: call as `p2dtopeak_rot(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; geometric correction, rotation, shear, drift, or strain analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; geometric correction, rotation, shear, drift, or strain analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed.
 - Source: `Miscellaneous_Codes.ipf:92`
@@ -15649,7 +15935,7 @@ Function peakp2d(name)
 ```
 - Purpose: fits or extracts spectral/peak parameters.
 - Usage: call as `peakp2d(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Code behavior: creates output waves; opens or updates graph/image displays.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Code behavior: creates output waves; opens or updates graph/image displays.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Miscellaneous_Codes.ipf:12595`
@@ -20533,7 +20819,7 @@ Function SetVarProc_KZ_changev0(ctrlName,varNum,varStr,varName) : SetVariableCon
 Function SetVarProc_tdefecct(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Panel control(s): `Latt.Q(°)`, `Latt. a`, `Dislo.(°)`, `Ph. shif`, `Background`, `Amplitude`.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Panel control(s): `Latt.Q(°)`, `Latt. a`, `Dislo.(°)`, `Ph. shif`, `Background`, `Amplitude`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -21550,7 +21836,7 @@ proc calculateRCc(pp,qq,pc,qc,angle)
 proc calibrationFS(cutnumber)
 ```
 - Usage: triggered as a wrapper that opens/runs `get_fermi_profile2()`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward. Main internal calls: `y()`, `Wintype()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward. Main internal calls: `y()`, `Wintype()`.
 - Parameters:
   - `cutnumber`: Number of spectra, waves, points, bins, or iterations to process. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Miscellaneous_Codes.ipf:1369`
@@ -21883,7 +22169,7 @@ Proc ConvtAlldat()
 Proc ConvtAllpxt()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `GetIndexedObjName()`, `Center_detector()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `GetIndexedObjName()`, `Center_detector()`.
 - Source: `Pierre's Template.ipf:17747`
 
 #### `ConvtAlltxt`
@@ -21909,7 +22195,7 @@ Proc ConvtOne()
 Proc ConvtOneProc(index)
 ```
 - Usage: run from Igor with parameters `index`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `GetIndexedObjName()`, `Center_detector()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; Igor wave/matrix/cube data operation. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; creates, switches, or removes Igor data folders; cleans up waves/windows or brings an existing window forward. Main internal calls: `GetIndexedObjName()`, `Center_detector()`.
 - Parameters:
   - `index`: Step size or energy/voltage increment used by the calculation.
 - Source: `Pierre's Template.ipf:17491`
@@ -22307,7 +22593,7 @@ Proc CVT2K_vs_kz_2D(matname,BEmat,Vzero,kzgridfactor,LatticeC)
 Proc CVT2K_vs_kz_2D_2()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; ARPES-style loading, plotting, or momentum conversion. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `func_CVT2K_vs_kz_boundaries_2D()`, `func_CVT2K_vs_kz_interp_2D()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; ARPES-style loading, plotting, or momentum conversion. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `func_CVT2K_vs_kz_boundaries_2D()`, `func_CVT2K_vs_kz_interp_2D()`.
 - Source: `Miscellaneous_Codes.ipf:1698`
 
 #### `deleteallpnts`
@@ -23390,7 +23676,7 @@ Macro GetWidth()
 Proc give_area(namex,namey,sizegrid)
 ```
 - Usage: run from Igor with parameters `namex`, `namey`, `sizegrid`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid. Code behavior: creates output waves; duplicates or stages waves for downstream processing; extracts image/wave statistics; asks the user for parameters through Igor prompts. Main internal calls: `func_give_area1()`, `func_give_area2()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid. Code behavior: creates output waves; duplicates or stages waves for downstream processing; extracts image/wave statistics; asks the user for parameters through Igor prompts. Main internal calls: `func_give_area1()`, `func_give_area2()`.
 - Parameters:
   - `namex`: Enter the name of the wave in x:
   - `namey`: Enter the name of the wave in y:
@@ -23403,7 +23689,7 @@ Proc give_area(namex,namey,sizegrid)
 Proc give_area_old(namex,namey,sizegrid)
 ```
 - Usage: run from Igor with parameters `namex`, `namey`, `sizegrid`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid. Code behavior: creates output waves; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `func_give_area1_old()`, `func_give_area2_old()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid. Code behavior: creates output waves; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `func_give_area1_old()`, `func_give_area2_old()`.
 - Parameters:
   - `namex`: Enter the name of the wave in x:
   - `namey`: Enter the name of the wave in y:
@@ -23416,7 +23702,7 @@ Proc give_area_old(namex,namey,sizegrid)
 Proc give_vol_lac(namex,namey,sizegrid,measure_x,measure_y,measure_deep)
 ```
 - Usage: run from Igor with parameters `namex`, `namey`, `sizegrid`, `measure_x`, `measure_y`, `measure_deep`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid; measure_x = Enter the position x-wave name:; measure_y = Enter the position y-wave name:; measure_deep = Enter the deepness wave name:. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; asks the user for parameters through Igor prompts. Main internal calls: `func_vol_lac0()`, `func_vol_lac1()`, `func_vol_lac2()`, `func_vol_lac3()`, `func_vol_
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid; measure_x = Enter the position x-wave name:; measure_y = Enter the position y-wave name:; measure_deep = Enter the deepness wave name:. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; asks the user for parameters through Igor prompts. Main internal calls: `func_vol_lac0()`, `func_vol_lac1()`, `func_vol_lac2()`, `func_vol_lac3()`, `f
 - Parameters:
   - `namex`: Enter the name of the wave in x:
   - `namey`: Enter the name of the wave in y:
@@ -23613,7 +23899,7 @@ Proc homework3b(name,boxwidth,boxheight,boxoffset,boxcenter)
 Proc homework5a(namex,namey,sizegrid,thenumber)
 ```
 - Usage: run from Igor with parameters `namex`, `namey`, `sizegrid`, `thenumber`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid; thenumber = Enter the number of pnts for calc.. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `func_homework5a()`, `mode()`, `marker()`, `msize()`, `rgb()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; smoothing, normalization, or background removal; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: namex = Enter the name of the wave in x:; namey = Enter the name of the wave in y:; sizegrid = Enter the number of rows and columns for the grid; thenumber = Enter the number of pnts for calc.. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `func_homework5a()`, `mode()`, `marker()`, `msize()`, `rgb()`.
 - Parameters:
   - `namex`: Enter the name of the wave in x:
   - `namey`: Enter the name of the wave in y:
@@ -23858,7 +24144,7 @@ Proc Kz_predict(C,v0,Delta_k)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run from Igor with parameters `C`, `v0`, `Delta_k`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: Delta_k = In-plane K (1/A); v0 = Inner potential - phi; C = Lattice constance of Z. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; asks the user for parameters through Igor prompts. Main internal calls: `grid()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: Delta_k = In-plane K (1/A); v0 = Inner potential - phi; C = Lattice constance of Z. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; asks the user for parameters through Igor prompts. Main internal calls: `grid()`.
 - Parameters:
   - `C`: Lattice constance of Z
   - `v0`: Inner potential - phi
@@ -23872,7 +24158,7 @@ Proc Kz_predict2()
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; symmetry or reflection processing; ARPES-style loading, plotting, or momentum conversion. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `makeCEM()`, `CVT2K_vs_kz_2D_2()`, `grid()`, `nticks()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; ARPES-style loading, plotting, or momentum conversion. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `makeCEM()`, `CVT2K_vs_kz_2D_2()`, `grid()`, `nticks()`.
 - Source: `Miscellaneous_Codes.ipf:1563`
 
 #### `lattice1_0_incset`
@@ -26674,7 +26960,7 @@ Proc symG_on_M(matname)
 ```
 - Purpose: applies symmetry, mirror, or reflection operations.
 - Usage: run from Igor with parameters `matname`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Dialog prompts: matname = Enter the name of the matrix. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; cleans up waves/windows or brings an existing window forward. Main internal calls: `interp()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Dialog prompts: matname = Enter the name of the matrix. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; cleans up waves/windows or brings an existing window forward. Main internal calls: `interp()`.
 - Parameters:
   - `matname`: Enter the name of the matrix
 - Source: `Pierre's Template.ipf:20481`
@@ -27255,7 +27541,7 @@ Proc twistanglemap_3qave(name2,size,threshold)
 ```
 - Purpose: combines many waves/slices into a map, linecut, or averaged output.
 - Usage: run from Igor with parameters `name2`, `size`, `threshold`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Dialog prompts: name2 = name of the topography; size = Move window length (nm); threshold = Threshold for twist angle (˚). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `makechunkdatatamap()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Dialog prompts: name2 = name of the topography; size = Move window length (nm); threshold = Threshold for twist angle (˚). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `makechunkdatatamap()`.
 - Parameters:
   - `name2`: name of the topography
   - `size`: Move window length (nm)
@@ -28960,7 +29246,7 @@ Function Func_Get_ledge_edc(edcname,fermi_level,search_halfwindow,which_way,smoo
 Function func_give_area1_old(namex,namey,surfx_x,surfx_y,surfy_x,surfy_y,griddelta,lattice,firstx,firsty)
 ```
 - Usage: call as `func_give_area1_old(namex, namey, surfx_x, surfx_y, surfy_x, surfy_y, griddelta, lattice)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; Igor wave/matrix/cube data operation. Code behavior: creates output waves.
 - Parameters:
   - `namex`: String name used to locate an Igor wave, graph, folder, or output object.
   - `namey`: String name used to locate an Igor wave, graph, folder, or output object.
@@ -29627,7 +29913,7 @@ Function makeLLspectraf(hv,ED,tem,num,field,ER)
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: call as `makeLLspectraf(hv, ED, tem, num, field, ER)`.
-- Notes: Utility function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: hv = Fermi velocity (meV*A); ED = Binding Energy of Dirac Point (meV); tem = Temperature of the system (K); num = number of levels; field = Field Range: (1 to ?)T; ER = Energe range of spectrum (meV). Code behavior: duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `madelldos()`, `linkstsmapno()`, `di()`.
+- Notes: Utility function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: hv = Fermi velocity (meV*A); ED = Binding Energy of Dirac Point (meV); tem = Temperature of the system (K); num = number of levels; field = Field Range: (1 to ?)T; ER = Energe range of spectrum (meV). Code behavior: duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `madelldos()`, `linkstsmapno()`, `di()`.
 - Parameters:
   - `hv`: Fermi velocity (meV*A)
   - `ED`: Binding Energy of Dirac Point (meV)
@@ -29696,6 +29982,39 @@ Function mergekchunks2d(merged,matout)
   - `matout`: Matrix/2D wave input or matrix output name.
 - Source: `Pierre's Template.ipf:35271`
 
+#### `MX9DataBlocks`
+
+```igor
+Function MX9DataBlocks(bytes, start, limit, dataOffset, dataCount, declaredCount)
+```
+- Usage: call as `MX9DataBlocks(bytes, start, limit, dataOffset, dataCount, declaredCount)`.
+- Notes: Compatibility wrapper used by the unchanged grid loader. Main internal calls: `MX9DataBlocksFull()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `start`: Start point, index, or coordinate for the selected range.
+  - `limit`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `dataOffset`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `dataCount`: Number of spectra, waves, points, bins, or iterations to process.
+  - `declaredCount`: Step size or energy/voltage increment used by the calculation.
+- Source: `OmicronMatrixLoader.ipf:525`
+
+#### `MX9DataBlocksFull`
+
+```igor
+Function MX9DataBlocksFull(bytes, start, limit, dataOffset, dataCount, declaredCount, fullCount)
+```
+- Usage: call as `MX9DataBlocksFull(bytes, start, limit, dataOffset, dataCount, declaredCount, fullCount)`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; ARPES-style loading, plotting, or momentum conversion; Igor wave/matrix/cube data operation. Main internal calls: `MX9Need()`, `MX9U32()`, `MX9String()`.
+- Parameters:
+  - `bytes`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `start`: Start point, index, or coordinate for the selected range.
+  - `limit`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `dataOffset`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
+  - `dataCount`: Number of spectra, waves, points, bins, or iterations to process.
+  - `declaredCount`: Step size or energy/voltage increment used by the calculation.
+  - `fullCount`: Number of spectra, waves, points, bins, or iterations to process.
+- Source: `OmicronMatrixLoader.ipf:533`
+
 #### `Newrotate`
 
 ```igor
@@ -29703,7 +30022,7 @@ Function Newrotate(name,theta1)
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: call as `Newrotate(name, theta1)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `func_NaN0()`, `dilf()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `func_NaN0()`, `dilf()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `theta1`: counter clock-wise degree
@@ -29716,7 +30035,7 @@ Function Newrotatecont(name,theta1)
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: call as `Newrotatecont(name, theta1)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `func_NaN0()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output. Main internal calls: `func_NaN0()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `theta1`: counter clock-wise degree
@@ -30301,7 +30620,7 @@ Function ButtonProc_Honeycomb(ctrlName) : ButtonControl
 Function ButtonProc_latticesergeon3d(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Panel control(s): `Lattice Segregation`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `LS22()`, `grabwinnonew()`.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Panel control(s): `Lattice Segregation`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; formats graph axes, labels, colors, or annotations; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `LS22()`, `grabwinnonew()`.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `Lattice Segregation`
@@ -30361,7 +30680,7 @@ Function ButtonProc_LS2(ctrlName) : ButtonControl
 Function ButtonProc_lsturnoff(ctrlName) : ButtonControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel button callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; lattice, moire, or twist-angle simulation/analysis. Panel control(s): `X`. Code behavior: cleans up waves/windows or brings an existing window forward.
+- Notes: Panel button callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; lattice, moire, or twist-angle simulation/analysis. Panel control(s): `X`. Code behavior: cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
 - Panel controls: `X`
@@ -31079,7 +31398,7 @@ Function SetVarProc_lsend(ctrlName,varNum,varStr,varName) : SetVariableControl
 Function SetVarProc_lsends(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Panel control(s): `End`. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Panel control(s): `End`. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -31107,7 +31426,7 @@ Function SetVarProc_lsn(ctrlName,varNum,varStr,varName) : SetVariableControl
 Function SetVarProc_lsns(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -31136,7 +31455,7 @@ Function SetVarProc_lsstart(ctrlName,varNum,varStr,varName) : SetVariableControl
 Function SetVarProc_lsstarts(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Panel control(s): `Start`. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis; graph display, formatting, or window management. Panel control(s): `Start`. Code behavior: formats graph axes, labels, colors, or annotations; reads or updates panel controls.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -31568,7 +31887,7 @@ Proc GenerateMoireSquareFastc(nPoint, lengthScale, aBottom, aTop, globalAngle, t
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: run from Igor with parameters `nPoint`, `lengthScale`, `aBottom`, `aTop`, `globalAngle`, `twistAngle`, `sigmaAtom`, `xiStack`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: nPoint = Number of points along x and y; lengthScale = Total image length along x and y; aBottom = Bottom Bravais lattice constant; aTop = Top Bravais lattice constant; globalAngle = Overall lattice angle relative to x axis (deg); twistAngle = Top-layer twist relative to bottom layer (deg). Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; cleans up waves/windows or
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: nPoint = Number of points along x and y; lengthScale = Total image length along x and y; aBottom = Bottom Bravais lattice constant; aTop = Top Bravais lattice constant; globalAngle = Overall lattice angle relative to x axis (deg); twistAngle = Top-layer twist relative to bottom layer (deg). Code behavior: performs Fourier-transform or inverse-transform operations; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; cleans up waves/win
 - Parameters:
   - `nPoint`: Number of points along x and y
   - `lengthScale`: Total image length along x and y
@@ -31638,7 +31957,7 @@ Proc LawlerFujita2()
 Proc LFtc(ind1,ind2,ind3,scrwave,XX,YY)
 ```
 - Usage: run from Igor with parameters `ind1`, `ind2`, `ind3`, `scrwave`, `XX`, `YY`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: ind1 = Tip #1; ind2 = Tip #2; ind3 = Tip #3; scrwave = The 3D wave; XX = LF YY wave. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `LFt()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: ind1 = Tip #1; ind2 = Tip #2; ind3 = Tip #3; scrwave = The 3D wave; XX = LF YY wave. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `getall3dwave()`, `LFt()`.
 - Parameters:
   - `ind1`: Tip #1
   - `ind2`: Tip #2
@@ -31654,7 +31973,7 @@ Proc LFtc(ind1,ind2,ind3,scrwave,XX,YY)
 Proc LSc2(src,topo)
 ```
 - Usage: run from Igor with parameters `src`, `topo`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: src = Source Wave [Data]; topo = Location wave [Topograph]. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `LS22()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: src = Source Wave [Data]; topo = Location wave [Topograph]. Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `LS22()`.
 - Parameters:
   - `src`: Source Wave [Data]
   - `topo`: Location wave [Topograph]
@@ -31667,7 +31986,7 @@ Proc makelatticec(a,angle,num,areaL,q_por)
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: run from Igor with parameters `a`, `angle`, `num`, `areaL`, `q_por`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Dialog prompts: a = Lattice constant (Å); angle = degree of the lattice axis; num = Grid Points; areaL = Map area (Å x Å); q_por = Interpocket |q| vector, portion of G. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; asks the user for parameters through Igor prompts. Main internal calls: `makelattice()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Dialog prompts: a = Lattice constant (Å); angle = degree of the lattice axis; num = Grid Points; areaL = Map area (Å x Å); q_por = Interpocket |q| vector, portion of G. Code behavior: creates output waves; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; asks the user for parameters through Igor prompts. Main internal calls: `makelattice()`.
 - Parameters:
   - `a`: Lattice constant (Å)
   - `angle`: degree of the lattice axis
@@ -31821,7 +32140,7 @@ Proc Strainanalysisc(uxt,uyt,order,mothername,selqmode)
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: run from Igor with parameters `uxt`, `uyt`, `order`, `mothername`, `selqmode`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: uxt = name of the displacement matrix ux; uyt = name of the displacement matrix uy; order = Polynimal order for BKremove; mothername = name of the topography; selqmode = Which Q?. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `atan2()`, `Strainanalysis()`, `mdg_strain1()`, `manTick()`, `manMinor()`, `grid()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: uxt = name of the displacement matrix ux; uyt = name of the displacement matrix uy; order = Polynimal order for BKremove; mothername = name of the topography; selqmode = Which Q?. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `atan2()`, `Strainanalysis()`, `mdg_strain1()`, `manTick()`, `manMinor()`, `grid()`.
 - Parameters:
   - `uxt`: name of the displacement matrix ux
   - `uyt`: name of the displacement matrix uy
@@ -31892,7 +32211,7 @@ Proc t2dlockin(avedia)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: run from Igor with parameters `avedia`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: avedia = The FWHM in real space (guassian window). Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `lockinp()`, `grabwin2()`, `modifyphasetopo()`, `grabwin()`, `tpw()`, `Const2dlockin()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; geometric correction, rotation, shear, drift, or strain analysis. Dialog prompts: avedia = The FWHM in real space (guassian window). Code behavior: performs Fourier-transform or inverse-transform operations; creates output waves; formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward; asks the user for parameters through Igor prompts. Main internal calls: `lockinp()`, `grabwin2()`, `modifyphasetopo()`, `grabwin()`, `tpw()`, `Const2dlockin()`.
 - Parameters:
   - `avedia`: The FWHM in real space (guassian window)
 - Source: `Lawler-Fujita Drift Correction.ipf:1433`
@@ -32230,7 +32549,7 @@ Function D4_sym(name)
 ```
 - Purpose: applies symmetry, mirror, or reflection operations.
 - Usage: call as `D4_sym(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`, `color3s_for3dFFT()`, `tpw()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`, `color3s_for3dFFT()`, `tpw()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Symmetrization.ipf:525`
@@ -32242,7 +32561,7 @@ Function D4_sym_3dplot(name)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call as `D4_sym_3dplot(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Smart_3D_Viewer_New.ipf:10578`
@@ -32498,7 +32817,7 @@ Function func_nantonoise(matname)
 Function func_vol_lac4(surfx_x,surfx_y,sizegrid,griddelta,lattice,deepness_matrix,position_x,position_y,position_deepness,inside_out)//calculates the volume
 ```
 - Usage: call as `func_vol_lac4(surfx_x, surfx_y, sizegrid, griddelta, lattice, deepness_matrix, position_x, position_y)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `surfx_x`: Used in: Duplicate/O surfx_x xsurfx_x
   - `surfx_y`: Used in: Duplicate/O surfx_y xsurfx_y
@@ -32751,7 +33070,7 @@ Function lockinpnew(name,qx1,qy1,qx2,qy2,avedia)
 Function LS()
 ```
 - Usage: call `LS()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `levelimage2()`, `FTconsls()`, `SimlatticebyFit()`, `MDoLSegre()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `levelimage2()`, `FTconsls()`, `SimlatticebyFit()`, `MDoLSegre()`.
 - Source: `Lattice Segregation.ipf:39`
 
 #### `LS22`
@@ -32760,7 +33079,7 @@ Function LS()
 Function LS22(src,topo)
 ```
 - Usage: call as `LS22(src, topo)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `levelimage2()`, `FTconsls()`, `SimlatticebyFit()`, `MDoLSegre()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Main internal calls: `levelimage2()`, `FTconsls()`, `SimlatticebyFit()`, `MDoLSegre()`.
 - Parameters:
   - `src`: This is the 2D wave to be segregated
   - `topo`: This is the 2D wave to extract simulated sublattices
@@ -32829,7 +33148,7 @@ Function Mdiag_sym(name)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call as `Mdiag_sym(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `di()`, `color3s_for3dFFT()`, `tpw()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; symmetry or reflection processing. Code behavior: duplicates or stages waves for downstream processing. Main internal calls: `di()`, `color3s_for3dFFT()`, `tpw()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Symmetrization.ipf:312`
@@ -32841,7 +33160,7 @@ Function Mdiag_sym_3dplot(name)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call as `Mdiag_sym_3dplot(name)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; Igor wave/matrix/cube data operation. Code behavior: duplicates or stages waves for downstream processing; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
 - Source: `Smart_3D_Viewer_New.ipf:10532`
@@ -32863,7 +33182,7 @@ Function MDoLSegre(Src,Topo)
 Function MDoLSegrereapply()
 ```
 - Usage: call `MDoLSegrereapply()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `DoLSegre()`, `DoLSegreXY()`, `FFTrls()`, `color3s_for3dm2()`, `color3s_for3dmf()`, `color3s_followtopo()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; formats graph axes, labels, colors, or annotations; extracts image/wave statistics. Main internal calls: `DoLSegre()`, `DoLSegreXY()`, `FFTrls()`, `color3s_for3dm2()`, `color3s_for3dmf()`, `color3s_followtopo()`.
 - Source: `Lattice Segregation.ipf:764`
 
 #### `meanexceptzero`
@@ -32936,7 +33255,7 @@ Function modifyphasetopo()
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call `modifyphasetopo()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `margin()`, `tpw()`. Update log: 08/18-02/2023: correct the scale bar location problem in modifyphase() modifyphasetopo() modifyphasefr() and format/topo.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `margin()`, `tpw()`. Update log: 08/18-02/2023: correct the scale bar location problem in modifyphase() modifyphasetopo() modifyphasefr() and format/topo.
 - Source: `Lawler-Fujita Drift Correction.ipf:1765`
 
 #### `modifyphasetoponew`
@@ -32946,7 +33265,7 @@ Function modifyphasetoponew()
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call `modifyphasetoponew()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `tpw()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: formats graph axes, labels, colors, or annotations; cleans up waves/windows or brings an existing window forward. Main internal calls: `tpw()`.
 - Source: `Lawler-Fujita Drift Correction.ipf:2841`
 
 #### `Moffdiag_sym`
@@ -33030,7 +33349,7 @@ Function Newrotate_forstrain_c(name,theta1)
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: call as `Newrotate_forstrain_c(name, theta1)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; geometric correction, rotation, shear, drift, or strain analysis. Code behavior: creates output waves; duplicates or stages waves for downstream processing; reshapes existing waves; assigns Igor axis scaling/units to the output; cleans up waves/windows or brings an existing window forward.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `theta1`: counter clock-wise degree
@@ -33239,7 +33558,7 @@ Function Strain_angle(ux,uy,order,mothername,selqmode)
 ```
 - Purpose: applies geometric correction or extracts deformation/strain information.
 - Usage: call as `Strain_angle(ux, uy, order, mothername, selqmode)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `umatrixsubbackground_c()`, `atan2()`, `projectstrainmatrix_c()`, `Newrotate_forstrain_c()`, `differentiatealongx()`, `differentiatealongy()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics; cleans up waves/windows or brings an existing window forward. Main internal calls: `umatrixsubbackground_c()`, `atan2()`, `projectstrainmatrix_c()`, `Newrotate_forstrain_c()`, `differentiatealongx()`, `differentiatealongy()`.
 - Parameters:
   - `ux`: bare displacement matrix Ux
   - `uy`: bare displacement matrix Uy
@@ -34505,7 +34824,7 @@ Function PopMenuProc_simuSISTM1(ctrlName,popNum,popStr) : PopupMenuControl
 Function PopMenuProc_simuSISTMSeFe(ctrlName,popNum,popStr) : PopupMenuControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel popup-menu callback for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Panel control(s): `r(Delta_{ / m max})`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
+- Notes: Panel popup-menu callback for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; spectroscopy, superconducting-gap, or vortex-model analysis. Panel control(s): `r(Delta_{ / m max})`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `popNum`: Selected popup-menu item index.
@@ -35241,7 +35560,7 @@ Function SetVarProc_simuSISTM2(ctrlName,varNum,varStr,varName) : SetVariableCont
 Function SetVarProc_simuSISTMlinecutx(ctrlName,varNum,varStr,varName) : SetVariableControl
 ```
 - Usage: called automatically by Igor when the linked panel control changes.
-- Notes: Panel set-variable callback for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Panel control(s): `x-slice`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
+- Notes: Panel set-variable callback for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Panel control(s): `x-slice`. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
 - Parameters:
   - `ctrlName`: Igor control name passed automatically by the panel callback.
   - `varNum`: Numeric value from an Igor SetVariable control.
@@ -35444,7 +35763,7 @@ Proc CdGM_Dirac_singlevortex(EF,hv,delta,level)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: run from Igor with parameters `EF`, `hv`, `delta`, `level`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Dialog prompts: EF = Fermi Energy (meV); hv = Fermi Velocity (meV A); delta = SC gap (meV); level = How many levels do you want to display. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; asks the user for parameters through Igor prompts. Main internal calls: `macdonald()`, `zero()`, `nticks()`, `grid()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Dialog prompts: EF = Fermi Energy (meV); hv = Fermi Velocity (meV A); delta = SC gap (meV); level = How many levels do you want to display. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; asks the user for parameters through Igor prompts. Main internal calls: `macdonald()`, `zero()`, `nticks()`, `grid()`.
 - Parameters:
   - `EF`: Fermi Energy (meV)
   - `hv`: Fermi Velocity (meV A)
@@ -35532,7 +35851,7 @@ proc DyneModbyvortex(grid,K,b1,delta,xrange,Erange)
 ```
 - Purpose: fits or extracts spectral/peak parameters.
 - Usage: run from Igor with parameters `grid`, `K`, `b1`, `delta`, `xrange`, `Erange`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: Grid = Number of data point; K = Coherent length (nm); b1 = Dyne broadenig (meV); delta = Gap Amplitude (meV); xrange = Distance from Core center (nm); Erange = Energy Range (meV). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `DOSvor()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; spectroscopy, superconducting-gap, or vortex-model analysis. Dialog prompts: Grid = Number of data point; K = Coherent length (nm); b1 = Dyne broadenig (meV); delta = Gap Amplitude (meV); xrange = Distance from Core center (nm); Erange = Energy Range (meV). Code behavior: asks the user for parameters through Igor prompts. Main internal calls: `DOSvor()`.
 - Parameters:
   - `grid`: Grid/map size, grid wave, or grid-data selector used by STM/STS workflows. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `K`: Coherent length (nm)
@@ -35594,7 +35913,7 @@ Proc fourbandkpFeSC(sel)
 Proc fourbandmodel(a,t2,t2p,t1,t3,u,grid,rx1,rx2,ry1)
 ```
 - Usage: run from Igor with parameters `a`, `t2`, `t2p`, `t1`, `t3`, `u`, `grid`, `rx1`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: t1 = t1(N) meV; a = Lattice constance (A); t2 = t2(NN_1) meV; t2p = t2p(NN_2) meV; t3 = t3(NNN) meV; u = Chemical potential meV. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; lattice, moire, or twist-angle simulation/analysis. Dialog prompts: t1 = t1(N) meV; a = Lattice constance (A); t2 = t2(NN_1) meV; t2p = t2p(NN_2) meV; t3 = t3(NNN) meV; u = Chemical potential meV. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations.
 - Parameters:
   - `a`: Lattice constance (A)
   - `t2`: t2(NN_1) meV
@@ -35703,7 +36022,7 @@ Proc makeFeSC_normalFSc(t1,t2,t,tp,u,selfimg,selfreal)
 Proc nonsinodal()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `tanh()`, `renormcuts_k()`, `nticks()`, `grid()`, `margin()`, `rgb()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `tanh()`, `renormcuts_k()`, `nticks()`, `grid()`, `margin()`, `rgb()`.
 - Source: `Models.ipf:919`
 
 #### `nonsinodalcprf`
@@ -35922,7 +36241,7 @@ Proc SimuPDW2Dc(delta0,deltap,FWHM,T,Edb)
 proc simupdwwithw(indicate)
 ```
 - Usage: run from Igor with parameters `indicate`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: indicate = Indicate. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; loads data from files or paths; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`, `FFTL2()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; linecut, slice, or region extraction. Dialog prompts: indicate = Indicate. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; loads data from files or paths; cleans up waves/windows or brings an existing window forward. Main internal calls: `di()`, `FFTL2()`.
 - Parameters:
   - `indicate`: Indicate
 - Source: `Models.ipf:11756`
@@ -35933,7 +36252,7 @@ proc simupdwwithw(indicate)
 Proc SIMUtopodefectc(a1,a2,add,lattice,zero,amp,x0,y0,windhalf,windsingle)
 ```
 - Usage: run from Igor with parameters `a1`, `a2`, `add`, `lattice`, `zero`, `amp`, `x0`, `y0`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Dialog prompts: a1 = Angle of dislocation (°); a2 = Angle of Order Q (°); add = Phase offset; lattice = Lattice constant; zero = ∆0 background; amp = Amplitude of PDW. Code behavior: opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; asks the user for parameters through Igor prompts. Main internal calls: `SIMUtopodefecthalf()`, `SIMUtopodefectsingle()`, `makeQindicate()`, `ckfig_child()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; smoothing, normalization, or background removal. Dialog prompts: a1 = Angle of dislocation (°); a2 = Angle of Order Q (°); add = Phase offset; lattice = Lattice constant; zero = ∆0 background; amp = Amplitude of PDW. Code behavior: opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls; asks the user for parameters through Igor prompts. Main internal calls: `SIMUtopodefecthalf()`, `SIMUtopodefectsingle()`, `makeQindicate()`, `ckfig_child()`.
 - Parameters:
   - `a1`: Angle of dislocation (°)
   - `a2`: Angle of Order Q (°)
@@ -36004,7 +36323,7 @@ proc tbmodel(t1,t2,t3,u,rx1,rx2,ry1,ry2,grid)
 ```
 - Purpose: runs a model/simulation workflow and produces calculated spectra, bands, or maps.
 - Usage: run from Igor with parameters `t1`, `t2`, `t3`, `u`, `rx1`, `rx2`, `ry1`, `ry2`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: t1 = t1(N) meV; t2 = t2(NN) meV; t3 = t3(NNN) meV; u = Chemical potential meV; grid = Number of points; rx1 = left of kx (0,2pi). Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `linkstsmap_P()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; ARPES-style loading, plotting, or momentum conversion. Dialog prompts: t1 = t1(N) meV; t2 = t2(NN) meV; t3 = t3(NNN) meV; u = Chemical potential meV; grid = Number of points; rx1 = left of kx (0,2pi). Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations. Main internal calls: `linkstsmap_P()`.
 - Parameters:
   - `t1`: t1(N) meV
   - `t2`: t2(NN) meV
@@ -36153,7 +36472,7 @@ Function choiceparametercf(ampw1,ampw2,ampini1,ampini2,ampg1,ampg2,ampgini1,ampg
 Function claculateband()
 ```
 - Usage: call `claculateband()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; ARPES-style loading, plotting, or momentum conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; ARPES-style loading, plotting, or momentum conversion; Igor wave/matrix/cube data operation. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays.
 - Source: `Models.ipf:163`
 
 #### `color3s_PDMsimu`
@@ -36422,7 +36741,7 @@ Function FFTLpdw(name,sel)
 ```
 - Purpose: performs Fourier, filtering, phase, or lock-in processing.
 - Usage: call as `FFTLpdw(name, sel)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; formats graph axes, labels, colors, or annotations. Main internal calls: `func_NaN0()`, `cvtcmplx()`, `Complextorealfpdw()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; graph display, formatting, or window management. Code behavior: performs Fourier-transform or inverse-transform operations; formats graph axes, labels, colors, or annotations. Main internal calls: `func_NaN0()`, `cvtcmplx()`, `Complextorealfpdw()`.
 - Parameters:
   - `name`: Name or reference of the source wave/matrix being processed. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `sel`: 1 for x, 2 for y
@@ -36519,7 +36838,7 @@ Function gapdisGua2_forPDMsimu(namemat3d,froml,tol,fromr,tor)
 ```
 - Purpose: displays waves, images, contours, or graph overlays.
 - Usage: call as `gapdisGua2_forPDMsimu(namemat3d, froml, tol, fromr, tor)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output; extracts image/wave statistics.
 - Parameters:
   - `namemat3d`: the 3D matrix g(r,v)
   - `froml`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.
@@ -36699,7 +37018,7 @@ Function makeQindicate(a2_td)
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: call as `makeQindicate(a2_td)`.
-- Notes: Utility function for Nanonis/STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves.
+- Notes: Utility function for Nanonis/OMICRON STM data loading or map conversion; lattice, moire, or twist-angle simulation/analysis. Code behavior: creates output waves.
 - Parameters:
   - `a2_td`: = lattice//lattice constance
 - Source: `Models.ipf:10500`
@@ -36791,7 +37110,7 @@ Function pdmsimu_example(ampw1,ampw2,ampini1,ampini2,ampg1,ampg2,ampgini1,ampgin
 Function PDMSIMU_examplecore()
 ```
 - Usage: call `PDMSIMU_examplecore()` from Igor procedure code or the command line.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `controlsimuSISTM1()`, `tconvchoiceparameter()`, `make3DfakeSISTM()`, `gapdisGua2_forPDMsimu2()`, `extracthight_PDMsimu()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; extracts image/wave statistics; reads or updates panel controls. Main internal calls: `controlsimuSISTM1()`, `tconvchoiceparameter()`, `make3DfakeSISTM()`, `gapdisGua2_forPDMsimu2()`, `extracthight_PDMsimu()`.
 - Source: `General_Simu.ipf:1490`
 
 #### `PDWonSC`
@@ -37631,7 +37950,7 @@ Function SimuPDW2D(delta0,deltap,FWHM,T,Edb)
 Function SIMUtopodefecthalf(a1,a2,add,lattice,zero,amp,x0,y0,wind)
 ```
 - Usage: call as `SIMUtopodefecthalf(a1, a2, add, lattice, zero, amp, x0, y0)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output. Main internal calls: `atan2()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output. Main internal calls: `atan2()`.
 - Parameters:
   - `a1`: = 190 // angle of dislocation
   - `a2`: = 50 // angle of lattice vector q
@@ -37650,7 +37969,7 @@ Function SIMUtopodefecthalf(a1,a2,add,lattice,zero,amp,x0,y0,wind)
 Function SIMUtopodefectsingle(a1,a2,add,lattice,zero,amp,x0,y0,wind)
 ```
 - Usage: call as `SIMUtopodefectsingle(a1, a2, add, lattice, zero, amp, x0, y0)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output. Main internal calls: `atan2()`, `shift2pi()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; FFT, QPI, phase, or lock-in analysis; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; duplicates or stages waves for downstream processing; assigns Igor axis scaling/units to the output. Main internal calls: `atan2()`, `shift2pi()`.
 - Parameters:
   - `a1`: = 190 // angle of dislocation
   - `a2`: = 50 // angle of lattice vector q
@@ -39069,7 +39388,7 @@ proc autoclbzero2(mat,num,left,right)
 proc autoclbzerogateuse(mat,num,left,right)
 ```
 - Usage: run from Igor with parameters `mat`, `num`, `left`, `right`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Dialog prompts: mat = name of Batch; num = Number of Batch; left = Fit From (Point); right = Fit To (Point). Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `pcsr()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Dialog prompts: mat = name of Batch; num = Number of Batch; left = Fit From (Point); right = Fit To (Point). Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `pcsr()`.
 - Parameters:
   - `mat`: name of Batch
   - `num`: Number of Batch
@@ -39300,7 +39619,7 @@ proc eval2(I,delta,kesai,Pf)// unit nm
 Proc exitkm()
 ```
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion. Main internal calls: `KP_NanonisCleanup()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion. Main internal calls: `KP_NanonisCleanup()`.
 - Source: `Miscellaneous_Codes.ipf:10238`
 
 #### `extending1D`
@@ -39454,7 +39773,7 @@ proc imtb()
 proc intercurve(mat,totalnum,points)
 ```
 - Usage: run from Igor with parameters `mat`, `totalnum`, `points`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Dialog prompts: mat = name of the Batch waves; totalnum = numbers of the Batch; Points = How many points do you want. Code behavior: asks the user for parameters through Igor prompts.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; matrix resampling, scaling, or reshaping; graph display, formatting, or window management. Dialog prompts: mat = name of the Batch waves; totalnum = numbers of the Batch; Points = How many points do you want. Code behavior: asks the user for parameters through Igor prompts.
 - Parameters:
   - `mat`: name of the Batch waves
   - `totalnum`: numbers of the Batch
@@ -39609,7 +39928,7 @@ proc makeu1u2()
 ```
 - Purpose: creates new waves, maps, figures, or simulation data.
 - Usage: run interactively from Igor or from a panel callback.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `rgb()`, `remakeu1u2()`, `grid()`, `nticks()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; symmetry or reflection processing; matrix resampling, scaling, or reshaping. Code behavior: creates output waves; assigns Igor axis scaling/units to the output; opens or updates graph/image displays; formats graph axes, labels, colors, or annotations; reads or updates panel controls. Main internal calls: `rgb()`, `remakeu1u2()`, `grid()`, `nticks()`.
 - Source: `Miscellaneous_Codes.ipf:6342`
 
 #### `mapforSTM`
@@ -39879,7 +40198,7 @@ Proc slopeall(mat,number)
 proc slopedata(mat)
 ```
 - Usage: run from Igor with parameters `mat`.
-- Notes: Interactive Igor procedure for Nanonis/STM data loading or map conversion; graph display, formatting, or window management. Dialog prompts: mat = name of the topograph. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `tpw()`, `ssx()`, `ssy()`.
+- Notes: Interactive Igor procedure for Nanonis/OMICRON STM data loading or map conversion; graph display, formatting, or window management. Dialog prompts: mat = name of the topograph. Code behavior: runs fitting routines on spectra, curves, or map-derived traces; creates output waves; duplicates or stages waves for downstream processing; opens or updates graph/image displays; asks the user for parameters through Igor prompts. Main internal calls: `tpw()`, `ssx()`, `ssy()`.
 - Parameters:
   - `mat`: name of the topograph
 - Source: `Miscellaneous_Codes.ipf:9565`
@@ -40329,7 +40648,7 @@ Function scsc2S(pw,yw,xw):FitFunc
 Function scscS(pw,inx):FitFunc
 ```
 - Usage: call as `scscS(pw, inx)`.
-- Notes: Function for Nanonis/STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Main internal calls: `integrate1d()`.
+- Notes: Function for Nanonis/OMICRON STM data loading or map conversion; linecut, slice, or region extraction; matrix resampling, scaling, or reshaping. Main internal calls: `integrate1d()`.
 - Parameters:
   - `pw`: Igor wave reference used as input or output. In this context it usually refers to STM/STS or Nanonis-derived data.
   - `inx`: Numeric parameter controlling the calculation branch, index, range, scale, or model value.

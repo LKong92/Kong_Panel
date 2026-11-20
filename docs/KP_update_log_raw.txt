@@ -1,3 +1,12 @@
+11/20/2026  Ver. 9.04.18  (Date: 11/20/2026)
+	Added a native Igor Pro 9 loader for OMICRON MATRIX data, without a Python runtime dependency.
+	Added Data > Load Waves > Load OMICRON Matrix menu workflows for voltage grids, folders of Z topographs, and folders of independent voltage spectra.
+	Grid loading imports all matching channels and creates 3D waves, x/y/bias axes, channel/source tables, calibrated units, and acquisition notes.
+	Folder loading preserves trace/retrace direction and source-file metadata and reports incomplete acquisitions.
+	Topography output keeps the legacy-compatible File_Name list and archives an existing text list safely.
+	Added the OMICRON MATRIX loader manual and regenerated the Function Book and searchable HTML documentation.
+	Packaged the self-contained Ver. 9.04.18 experiment as templates/KongPanel_Template_20261120.pxp.
+
 08/04/2026  Ver. 9.04.17  (Date: 08/04/2026)
 	Added an interactive Moiré STM topography simulator.
 	Bottom and top layers can independently use square, honeycomb, triangular, or kagome lattices.

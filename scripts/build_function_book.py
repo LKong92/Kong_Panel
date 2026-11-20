@@ -132,7 +132,7 @@ IGOR_COMMAND_PATTERNS = [
 ]
 
 DOMAIN_RULES = [
-    (r"nanonis|3ds|sxm|nsp|topo|grid|gate", "Nanonis/STM data loading or map conversion"),
+    (r"nanonis|omicron|matrixload|mx9|3ds|sxm|nsp|topo|grid|gate", "Nanonis/OMICRON STM data loading or map conversion"),
     (r"fft|fourier|filter|qpi|qvec|phase|lockin", "FFT, QPI, phase, or lock-in analysis"),
     (r"sym|c4|d4|mirror|reflect", "symmetry or reflection processing"),
     (r"linecut|slice|cut|extract|marquee", "linecut, slice, or region extraction"),
@@ -1988,6 +1988,16 @@ def build_search_index(entries: list[dict], files: dict[str, list[str]], control
             "summary": "Exact list of source-restored physical constants, graph/color globals, string globals, and validation commands.",
         }
     )
+    index.append(
+        {
+            "title": "OMICRON MATRIX Loader",
+            "kind": "Documentation",
+            "page": "OMICRON MATRIX Loader",
+            "url": "OMICRON_MATRIX_LOADER.html",
+            "text": "OMICRON MATRIX loader grid topography spectra MatrixLoadGrid MatrixLoadTopologyGraph MatrixLoadSpectra Igor 9 metadata calibration trace retrace",
+            "summary": "Native Igor Pro 9 loading for OMICRON MATRIX voltage grids, Z topographs, and independent spectra.",
+        }
+    )
     for e in entries:
         index.append(
             {
@@ -2175,6 +2185,7 @@ def documentation_nav() -> str:
         [
             '<li><a href="PANEL_GUIDE.html">Panel Guide</a></li>',
             '<li><a href="FUNCTION_BOOK.html">Function Book</a></li>',
+            '<li><a href="OMICRON_MATRIX_LOADER.html">OMICRON MATRIX Loader</a></li>',
             '<li><a href="STARTUP_STATE.html">Startup State</a></li>',
         ]
     )

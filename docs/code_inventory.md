@@ -12,6 +12,8 @@ For Ver. 9.04.17, the author-provided Moiré STM procedure code and the `SMap8` 
 
 The matching self-contained experiment is distributed as `templates/KongPanel_Template_20260804.pxp` (SHA-256: `c4ecb6d8d23df999cd50ffee7e6b3f87f95b8b84c92628da962aa11638ac0403`).
 
+For Ver. 9.04.18, the author-provided `KongPanel.pxp` was inspected on 2026-11-20. Its `OMICRON Matrix Loader` procedure page matches the v1.4 loader implementation used for the source release, and its panel recreation identifies Ver. 9.04.18 dated 2026-11-20. The matching self-contained experiment is `templates/KongPanel_Template_20261120.pxp` (SHA-256: `9ae1bc029cce99940f97343bf3236220984ef02981da889dd49f8457ef0f18a6`).
+
 ## Exported KP Source Files
 
 The GitHub package keeps the KP-specific Igor Pro files in `src/`:
@@ -23,6 +25,7 @@ The GitHub package keeps the KP-specific Igor Pro files in `src/`:
 - `KP_GlobalState.ipf`
 - `KP_NewColorTables.itx`
 - `KP_NanonisLoaders.ipf`
+- `OmicronMatrixLoader.ipf`
 - `Procedure.ipf`
 - `ModelingTunneling.ipf`
 - `General_Simu.ipf`
@@ -79,6 +82,7 @@ KP now uses `KP_NanonisLoaders.ipf` instead of `KMLoadData()` and `KMExit()`.
 - `Load_KongPanel.ipf` is the recommended file to include from a clean Igor experiment.
 - `Kong_Igor_panel.ipf` is also self-contained now: it includes all action-procedure files before defining the panel window, so opening the panel file does not create a button-only shell.
 - `KongPanel.ipf` remains as a compatibility umbrella that includes `Kong_Igor_panel.ipf`.
+- `OmicronMatrixLoader.ipf` adds `Data -> Load Waves -> Load OMICRON Matrix`, with grid, topography-folder, and spectra-folder entry points.
 
 ## Custom Color Tables
 
@@ -107,14 +111,17 @@ The function reference was generated from all `src/*.ipf` files with `scripts/bu
 - `docs/PANEL_GUIDE.md`: Markdown version of the panel guide.
 - `docs/STARTUP_STATE.html`: browser-readable startup-state compatibility note.
 - `docs/STARTUP_STATE.md`: Markdown startup-state compatibility note.
+- `docs/OMICRON_MATRIX_LOADER.html`: browser-readable OMICRON MATRIX loader guide.
+- `docs/OMICRON_MATRIX_LOADER.md`: Markdown OMICRON MATRIX loader guide.
 - `docs/function_catalog.json`: machine-readable catalog.
 - `docs/panel_catalog.json`: machine-readable panel/control catalog.
 
-The current function catalog contains 3219 entries from 27 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
+The current function catalog contains 3243 entries from 28 IPF files, including `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions. It is organized by workflow and entry role rather than by IPF file. The panel catalog contains parsed main-panel and secondary-panel controls, including visible titles, action procedures, source locations, and reconstructed panel positions where available.
 
 ## Verification Notes
 
 - `rg` confirms there are no remaining `KMLoadData`, `KMloadData`, or `KMExit` calls in `src/`.
 - Igor Pro was able to scan and compile the new source package after `src/` was synced into Igor's User Procedures folder.
 - Clean-Igor startup validation returned 47 custom color-table waves and confirmed that `topgraphnum`, `colorsetedc3`, `G0`, `epslon0`, `topgraphcolor`, and `S_info` are available after `Kong_Igor_panel()` opens.
+- Static catalog validation found 24 OMICRON loader definitions with no duplicate definitions inside the module and no collisions with the existing KP source files.
 - Compiling inside the original exported PXP can hit duplicate definitions such as `imtb`, because both the old PXP procedure pages and the new `src/` package are loaded at the same time. Use a clean experiment/session for this source package.

@@ -1,6 +1,6 @@
 # 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥
 
-𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 (KP) is an Igor Pro source package for scanning tunneling microscopy (STM/STS) data processing, interactive visualization, spectral analysis, FFT/QPI workflows, lattice/strain analysis, and simple model simulation. It was developed by [Lingyuan Kong](https://www.westlake.edu.cn/faculty/lingyuan-kong.html) as a working research panel: the goal is to keep the everyday analysis path inside one Igor environment, from loading raw Nanonis data to plotting maps, extracting spectra, fitting linecuts, running simulations, and formatting final figures.
+𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 (KP) is an Igor Pro source package for scanning tunneling microscopy (STM/STS) data processing, interactive visualization, spectral analysis, FFT/QPI workflows, lattice/strain analysis, and simple model simulation. It was developed by [Lingyuan Kong](https://www.westlake.edu.cn/faculty/lingyuan-kong.html) as a working research panel: the goal is to keep the everyday analysis path inside one Igor environment, from loading raw Nanonis and OMICRON MATRIX data to plotting maps, extracting spectra, fitting linecuts, running simulations, and formatting final figures.
 
 ![𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 main interface](docs/assets/kong_panel_main.png)
 
@@ -13,7 +13,8 @@ Start with these two guides when browsing the package on GitHub:
 - [Panel Guide](docs/PANEL_GUIDE.md): visual map of the main panel, each button/control, the action procedure it calls, and the related internal panels.
 - [Function Index](docs/FUNCTION_INDEX.md): workflow-organized index of the `Function`, `Proc`, `Window`, `Macro`, and `Menu` definitions parsed from `src/*.ipf`.
 - [Startup State](docs/STARTUP_STATE.md): exact list of color-table, physical-constant, graph/color, popup, and compatibility globals recreated when the panel starts in a clean Igor experiment.
-- [Ready-to-use PXP template](templates/KongPanel_Template_20260804.pxp): Ver. 9.04.17 self-contained Igor experiment template with the KP procedure pages, startup objects, and Moiré STM simulator already packed in.
+- [OMICRON MATRIX Loader Guide](docs/OMICRON_MATRIX_LOADER.md): supported grid, topography, and spectroscopy imports, menu paths, outputs, and current format limits.
+- [Ready-to-use PXP template](templates/KongPanel_Template_20261120.pxp): Ver. 9.04.18 self-contained Igor experiment template with the KP procedures and OMICRON MATRIX loader already packed in.
 
 The repository also includes interactive HTML manuals with search and navigation. After GitHub Pages is enabled for this repository, these links open the rendered manuals directly in a browser:
 
@@ -47,21 +48,22 @@ Nature 640, 55-61 (2025). https://doi.org/10.1038/s41586-025-08703-x
 
 ## Release Status
 
-- Version prepared for GitHub: `9.04.17`, dated `2026-08-04`.
+- Version prepared for GitHub: `9.04.18`, dated `2026-11-20`.
 - Recommended Igor Pro version: Igor Pro 9 series; this package was prepared from the Igor 9.04 KP line.
 - KP-local Nanonis loading code is now in `src/KP_NanonisLoaders.ipf`.
+- Native Igor 9 loading for OMICRON MATRIX data is provided by `src/OmicronMatrixLoader.ipf`, without a Python runtime dependency.
 - Custom color-table waves are loaded from `src/KP_NewColorTables.itx` when the panel opens.
 - The `Moiré STM` panel button opens an interactive two-layer STM topography simulator with independently selectable square, honeycomb, triangular, and kagome lattices.
 - Startup globals saved as Igor experiment objects in `template.pxp` are recreated from `src/KP_GlobalState.ipf` when the panel opens.
 - `src/Kong_Igor_panel.ipf` is self-contained: opening that panel source also includes all of the action-procedure files used by its controls.
-- A clean Ver. 9.04.17 self-contained Igor experiment template is included at `templates/KongPanel_Template_20260804.pxp`.
+- A clean Ver. 9.04.18 self-contained Igor experiment template is included at `templates/KongPanel_Template_20261120.pxp`.
 
 ## Quick Start
 
 𝐊𝐎𝐍𝐆 𝐏𝐚𝐧𝐞𝐥 can be used in two ways:
 
 - **Source install:** copy `src/` into Igor's `User Procedures` area, include `Load_KongPanel.ipf`, and compile. This keeps KP available from any new Igor experiment.
-- **PXP template:** copy `templates/KongPanel_Template_20260804.pxp` into a dataset folder and open that copy directly. This starts from a self-contained Igor experiment with the KP procedure pages, custom color tables, physical constants, startup globals, main panel, and Moiré STM simulator already packed in.
+- **PXP template:** copy `templates/KongPanel_Template_20261120.pxp` into a dataset folder and open that copy directly. This starts from a self-contained Igor experiment with the KP procedure pages, custom color tables, physical constants, startup globals, main panel, Moiré STM simulator, and OMICRON MATRIX loader already packed in.
 
 For the source install, the loader file, `src/Load_KongPanel.ipf`, includes the main panel recreation file, which then includes the analysis, display, fitting, simulation, and utility procedure files used by the panel. When the procedures compile, Igor adds a `Kong Panel` menu item; opening the panel loads the 47 custom color-table waves from `KP_NewColorTables.itx` into `root:Packages:NewColortable` and recreates the required startup globals documented in `docs/STARTUP_STATE.md`.
 
@@ -109,13 +111,13 @@ You can also explicitly open the loader file using `File -> Open File -> Procedu
 If you prefer each dataset to live in its own self-contained Igor experiment, use the included clean template:
 
 ```text
-templates/KongPanel_Template_20260804.pxp
+templates/KongPanel_Template_20261120.pxp
 ```
 
 Recommended workflow:
 
 1. Create a new folder for the dataset you want to analyze.
-2. Copy `templates/KongPanel_Template_20260804.pxp` into that folder.
+2. Copy `templates/KongPanel_Template_20261120.pxp` into that folder.
 3. Rename the copied file for the dataset or sample if desired.
 4. Open the copied `.pxp` in Igor Pro 9 and load/analyze the data there.
 
@@ -143,7 +145,7 @@ When preparing a GitHub release or ZIP archive, include both `src/KP_ColorTables
 
 KP is broad by design. The panel is arranged as a collection of compact work areas rather than a single linear wizard. The following map summarizes the main functional groups visible in the panel and the corresponding IPF modules.
 
-### Nanonis, STM, and STS Data Loading
+### Nanonis, OMICRON MATRIX, STM, and STS Data Loading
 
 KP provides loaders and converters for common Nanonis-style STM/STS workflows:
 
@@ -157,9 +159,18 @@ KP provides loaders and converters for common Nanonis-style STM/STS workflows:
 
 The KP-local Nanonis loader in `KP_NanonisLoaders.ipf` supports the panel's `.3ds`, `.sxm`, and `.nsp` workflows. It was rewritten from the small subset of [Kohsaka Macro (KM)](http://www2.riken.jp/lab/magmatlab/kohsaka/km/cmdlist.html) loading behavior that KP used; KM was written by [Yuhki Kohsaka](https://kdb.iimc.kyoto-u.ac.jp/profile/ja.436d1ff61062e548.html). No full KM package management or unrelated KM UI behavior is included.
 
+The native Igor 9 OMICRON MATRIX loader adds `Data -> Load Waves -> Load OMICRON Matrix` with three workflows:
+
+- Load a voltage-grid channel and automatically import all matching grid channels as 3D waves with x/y/bias axes, units, source-file tables, and acquisition metadata.
+- Load a folder of Z topographs, preserving trace/retrace direction and source metadata.
+- Load a folder of independent voltage spectra into sequential `STS` waves, with optional retrace import and ascending-bias normalization.
+
+The loader reads MATRIX parameter chains and channel files directly in Igor; Python is not required at runtime. See the [OMICRON MATRIX Loader Guide](docs/OMICRON_MATRIX_LOADER.md) for supported acquisition modes and current restrictions.
+
 Main files:
 
 - `src/KP_NanonisLoaders.ipf`
+- `src/OmicronMatrixLoader.ipf`
 - `src/UNISOKU3dscutextract.ipf`
 - `src/Miscellaneous_Codes.ipf`
 
@@ -312,11 +323,13 @@ The `docs/` folder contains both release notes and generated code references.
 
 - `docs/CHANGELOG.md`: polished GitHub-facing changelog.
 - `docs/STARTUP_STATE.md`: startup-state compatibility note listing the globals restored from `template.pxp`.
+- `docs/OMICRON_MATRIX_LOADER.md`: OMICRON MATRIX loader workflows, outputs, metadata, and format limits.
+- `docs/KP_update_log_20261120.md`: short update entry for Ver. 9.04.18 and the OMICRON MATRIX loader.
 - `docs/KP_update_log_20260804.md`: short update entry for Ver. 9.04.17 and the Moiré STM simulator.
 - `docs/KP_update_log_20260518.md`: short update entry for the 2026-05-18 GitHub preparation.
 - `docs/KP_update_log_original.rtf`: original update-log copy.
 - `docs/KP_update_log_raw.txt`: plain-text conversion of the original log.
-- `docs/code_inventory.md`: source extraction, include layout, and Nanonis loader notes.
+- `docs/code_inventory.md`: source extraction, include layout, and loader notes.
 - `docs/FUNCTION_BOOK.html`: color-coded function manual generated from all IPF files.
 - `docs/FUNCTION_INDEX.md`: GitHub-readable Markdown function index, organized by workflow rather than by IPF file.
 - `docs/assets/kong_panel_main.png`: GitHub-friendly main-panel image.
@@ -335,7 +348,7 @@ Open this file in a browser for the best reading experience:
 docs/FUNCTION_BOOK.html
 ```
 
-The HTML manual is styled to resemble Igor procedure-code structure: keywords are blue, function/procedure names are visually separated, signatures use a monospace font, and panel callback controls are marked in purple. It is organized by workflow and role, not by IPF file, while still showing source file and line for navigation. The current generated catalog contains `3203` entries from `25` IPF files.
+The HTML manual is styled to resemble Igor procedure-code structure: keywords are blue, function/procedure names are visually separated, signatures use a monospace font, and panel callback controls are marked in purple. It is organized by workflow and role, not by IPF file, while still showing source file and line for navigation. The current generated catalog contains `3243` entries from `28` IPF files.
 
 For GitHub browsing, use:
 
@@ -355,6 +368,7 @@ docs/PANEL_GUIDE.html
 - `src/Kong_Igor_panel.ipf`: self-contained panel entry; opening it includes all required action-procedure files.
 - `src/KongPanel.ipf`: compatibility umbrella include.
 - `src/KP_NanonisLoaders.ipf`: KP-local Nanonis `.3ds`, `.sxm`, and `.nsp` loader.
+- `src/OmicronMatrixLoader.ipf`: native Igor 9 loader for OMICRON MATRIX grids, topographs, and independent spectra.
 - `src/*.ipf`: KP analysis, display, simulation, fitting, formatting, and panel modules.
 - `docs/`: changelog, update-log copies, code inventory, and function reference.
 - `scripts/build_function_book.py`: regenerates the function book, function index, panel guide, and JSON catalogs.
